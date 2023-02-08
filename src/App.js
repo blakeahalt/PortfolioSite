@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+import React from "react";
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import CountryPage from './components/CountryPage.js'
+import PhoneBook from './components/PhoneBook.js'
+import { Parallax } from "react-parallax";
+import WorldMap from "./assets/WorldMap_opacity.png"
+import Nav from './components/NavBar.js'
+import Home from './components/Home.js'
+import Team from './components/Team.js'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <Nav />
+        <Routes>
+          <Route
+              exact
+              path="/"
+              element={<Home />}
+              Team={Team}
+          />
+          <Route
+              exact
+              path="/countryPage"
+              element={<CountryPage />}
+          />
+          <Route
+              exact
+              path="/phoneBook"
+              element={<PhoneBook />}
+          />
+        </Routes>
+        </div>
   );
 }
 

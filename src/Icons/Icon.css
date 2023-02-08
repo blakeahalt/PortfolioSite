@@ -1,0 +1,66 @@
+.icon-con{
+  	display: flex;
+	max-width: 500px;
+	align-items: center;
+	text-align: center;
+	margin-left: 50%;
+	margin-right: 50%;
+}
+
+.icon{
+	width: 75px;
+	background-size: contain;
+	flex: 1;
+}
+.icon img {
+	max-width: 130px;
+	height: auto;
+  }
+
+.icons{
+	margin: 30px 30px 20px 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 600px
+}
+.icons-width {
+	max-width: 500px;
+	justify-content: center;
+}
+.icon-title{
+	margin-bottom: 20px;
+	color:#066dc6;
+	font-weight: 600;
+	text-align: center;
+	padding: 15px;
+
+}
+.parallax-features {
+	height: 725px;
+	margin-top: -50px;
+}
+
+@media screen and (max-width: 1000px) {
+	.icon {
+		width: 50px;
+		background-size: 50px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.icon img {
+		max-width: 75px;
+		height: auto;
+	}
+	.icons {
+		margin:5px;
+	}
+	.replaceFeature {
+		margin-top: 20px;
+	}
+	
+}
