@@ -48,26 +48,28 @@ width: 95%;
 `
 
 const Item = styled.div`
+position: relative;
+background-color: rgb(238, 237, 222);
 display: flex;
 padding: 1rem .7rem 14rem .7rem;
 color: ${props => props.theme.body};
 margin: 3rem 1.5rem;
 flex-wrap: wrap;
-z-index:5;
 justify-content: center;
-height: 240px;
+height: 265px;
 backdrop-filter: blur(4px);
-margin: 15px;
+margin: 10px;
 justify-content: center;
 max-width: 250px;
 
 border: 1px solid ${props => props.theme.text};
 border-radius: 20px;
 
-
 &:hover{
   img{
     transform: translateY(-1rem) scale(1.2);
+    position: relative;
+
   }
 }
 
@@ -95,12 +97,11 @@ border-radius: 20px;
 const ImageContainer = styled.div`
 width: auto;
 height: auto;
-background-color:${props => props.theme.carouselColor};
 border: 1px solid ${props => props.theme.text};
 padding: 1.4rem;
 border-radius: 20px;
 cursor: pointer;
-
+z-index:1;
 
 img{
   width: 100%;
@@ -131,11 +132,14 @@ justify-content: center;
 color: ${props => props.theme.text};
 width: 100%;
 min-height: 4.5vh;
+
 `
 const Description = styled.p`
 font-size: .8em;
-text-align: start;
+text-align: center;
+align-items: center;
 width: 90%;
+height: 40px;
 margin-top: -20px;
 margin-bottom: 10px;
 
@@ -144,7 +148,10 @@ margin-bottom: 10px;
   flex-wrap: wrap;
   justify-content: center;
   width: auto;
+  height: 2em;
   margin: 17px;
+  margin-top: -1.5em;
+  margin-bottom: 3em;
 }
 @media screen and (max-width: 481px) {
   display: flex ;
@@ -152,15 +159,19 @@ margin-bottom: 10px;
   justify-content: center;
   width: auto;
   margin: 17px;
+  height: 2.5em;
   margin-top:-10px;
+  margin-bottom:10px;
 }
 `
 
 const SkillsContainer = styled.div`
 display: flex;
 justify-content: center;
+align-items: center;
 flex-wrap: wrap;
 max-width: 250px;
+margin-top: 10px;
 `
 
 const Skills = styled.h2`
@@ -213,13 +224,13 @@ const Team = () => {
     <Section id="team">
       <Container>
       <a href="/countrypage">
-          <MemberComponent img={icon2}  name="NFT Sales Tracker" desc="A personal project that allows you to track the top trending NFT collections and individual sales using various API data." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2"]} /></a>
+          <MemberComponent img={icon2}  name="NFT Sales Tracker" desc="A personal project that tracks the top trending NFT sales using various API's." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
         <a href="/stocktrader">
-          <MemberComponent img={icon2}  name="Stock Trading App" desc="A stock portfolio application that can store and update user transactions with real-time stock quotes from the IEX Cloud API." skills={["Python","flask","SQL","jinja"]} /></a>
+          <MemberComponent img={icon2}  name="Stock Trading App" desc="A stock portfolio application that stores and updates user transactions with real-time stock quotes." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
         <a href="/countrypage">
-          <MemberComponent img={icon2}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts using two APIs." skills={["JavaScript","React","Node.js","express.js","axios"]}  /></a>
+          <MemberComponent img={icon2}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts using two APIs." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
         <a href="/phonebook">
-          <MemberComponent img={icon2}  name="Phonebook Feature" desc="A CRUD phonebook feature that adds contact names and numbers built using a MERN stack." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors"]}  /></a>
+          <MemberComponent img={icon2}  name="Phonebook Feature" desc="A CRUD phonebook feature that adds contact names and numbers built using a MERN stack." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
       </Container>
     </Section>
   )

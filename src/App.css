@@ -8,6 +8,17 @@ a {
   text-decoration: none;
   color: inherit;
 }
+li {
+  text-align: left;
+  margin-left: 10%;
+  margin-top: 5px;
+}
+.opaque-image {
+  opacity: 0.4;
+  background-size: cover;
+  filter: blur(3px);
+ }
+
 .container{
   margin: 0 auto;
   text-align: center;
@@ -61,9 +72,24 @@ a {
 }
 
 .box-con{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
   font-size: 18px;
   line-height: 1.4em;
   color: #066dc6;
+  min-width: 500px;
+}
+.box-con-li{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: -60px;
+  font-size: 18px;
+  line-height: 1.4em;
+  color: #000000;
 }
 
 .blue{
@@ -84,7 +110,7 @@ a {
   width: 100%;
   height: 40px;
   color: #fff;
-  margin-top: 50px;
+  margin-top: -50px;
   text-align: center;
   align-items: center;
   line-height: 40px;
@@ -124,20 +150,77 @@ h4.introduction a {
   color: inherit;
 }
 
-.opaque-image {
-  opacity: 0.3;
-  padding: 250px;
+.parallax-projects{
+  background-color: rgb(26, 26, 26);
+  z-index: 0;
 }
 
+.title-date{
+  margin-top: -1em;
+  color: rgb(92, 92, 92);
+}
 
 @media screen and (max-width: 1000px) {
   .parallax-projects {
     display: flex;
-    min-height: 1200px;
+    min-height: 1275px;
   }
+  .box-con{
+    justify-content: center;
+    min-width: 280px;
+    margin: 25px 0px 0px 0px;
+    font-size: 14px;
   }
+  .box-con-li{
+    justify-content: center;
+    min-width: 280px;
+    margin: 25px 0px 0px 0px;
+    font-size: 14px;
+  }
+
+}
 @media screen and (max-width: 665px) {
   .parallax-projects {
-    min-height: 2350px;
+    min-height: 2400px;
+  }
+  .box-con{
+    justify-content: center;
+    min-width: 280px;
+    max-width: 450px;
+    margin: 25px 0px 0px 0px;
+    font-size: 14px;
+  }
+  .box-con-li{
+    margin-left: -30px;
+    font-size: 12px;
+    margin-top: 10px;
+    line-height: 1.4em;
+    color: #000000;
+  }
+}
+@media screen and (min-width: 665px) {
+  .box-con{
+    justify-content: center;
+    margin: 25px 0px 0px 0px;
+    font-size: 20px;
+  }
+  .box-con-li{
+    margin-left: -30px;
+    font-size: 17px;
+    margin-top: 10px;
+    line-height: 1.4em;
+    color: #000000;
+  }
+  .list1{
+    margin-left: 10px;
+  }
+  .list2{
+    margin-right: 0px;
+  }
+  .list3{
+    margin-right: 28px;
+  }
+  .list4{
+    margin-right: -6px;
   }
 }

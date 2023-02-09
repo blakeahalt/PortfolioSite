@@ -8,6 +8,7 @@ import WorldMap from "./assets/WorldMap_opacity.png"
 import Nav from './components/NavBar.js'
 import Home from './components/Home.js'
 import Team from './components/Team.js'
+import Resume from './components/Resume.js'
 
 function App() {
   return (

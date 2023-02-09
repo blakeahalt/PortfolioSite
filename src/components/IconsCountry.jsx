@@ -79,30 +79,33 @@ return (
     <div className="replaceFeature">
     {currentVisibility === 'visibility1' ? (
         <>
-          <img style={{marginTop:10, marginBottom:20}} src={icon1} alt="test1" />
-          <div>
-            Visibility1 replaced content
+          <img style={{marginTop:10, marginBottom:30, }} src={icon1} alt="test1" />
+          <div style={{fontSize: 21}}>
+            Responsive Design delivers better UX/UI experiences on all devices.
           </div>
         </>) : null}
     {currentVisibility === 'visibility2' ? (
         <>
-          <img style={{marginTop:10, marginBottom:20}} src={icon2} alt="test2" />
-          <div>
-            Visibility2 replaced content
+          <img style={{marginTop:10, marginBottom:15}} src={icon2} alt="test2" />
+          <div style={{fontSize: 18}}>
+            See each country's flag and coat of arms.
+          </div>
+          <div style={{fontSize: 18}}>
+            Also discover its capital, population, language(s), and currency.
           </div>
         </>) : null}
     {currentVisibility === 'visibility3' ? (
         <>
-          <img style={{marginTop:10, marginBottom:20}} src={icon3} alt="test3" />
-          <div>
-            Visibility3 replaced content
+          <img style={{marginTop:10, marginBottom:30}} src={icon3} alt="test3" />
+          <div style={{fontSize: 21}}>
+            Get the capital city's 3-day weather forecast and temperatures.
           </div>
         </>) : null}
     {currentVisibility === 'visibility4' ? (
         <>
-          <img style={{marginTop:10, marginBottom:20}} src={icon1} alt="MobileMap" />
-          <div>
-            Replace this main Features content with each visibility when clicked.
+          <img style={{marginTop:10, marginBottom:30 }} src={icon1} alt="MobileMap" />
+          <div style={{fontSize: 21}}>
+            Check out each feature to learn more.
           </div>
         </>
       ) : null}
