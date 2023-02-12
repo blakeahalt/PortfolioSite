@@ -2,13 +2,14 @@ import React from "react";
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import CountryPage from './components/CountryPage.js'
-import PhoneBook from './components/PhoneBook.js'
-import { Parallax } from "react-parallax";
-import WorldMap from "./assets/WorldMap_opacity.png"
+import PhoneBook from './components/PhoneBookPage.js'
+import NFT from './components/NFTPage.js'
+import StockPage from './components/StockPage.js'
 import Nav from './components/NavBar.js'
 import Home from './components/Home.js'
-import Team from './components/Team.js'
+import Team from './components/ProjectCards.js'
 import Resume from './components/Resume.js'
+import About from './components/About.js'
 
 function App() {
   return (
@@ -23,14 +24,34 @@ function App() {
           />
           <Route
               exact
+              path="/nftpage"
+              element={<NFT />}
+          />
+          <Route
+              exact
               path="/countryPage"
               element={<CountryPage />}
           />
           <Route
               exact
-              path="/phoneBook"
+              path="/stockpage"
+              element={<StockPage />}
+          />
+          <Route
+              exact
+              path="/phonebookpage"
               element={<PhoneBook />}
           />
+          <Route
+              exact
+              path="/about"
+              element={<About />}
+          />
+          <Route
+              exact
+              path="/resume"
+              element={<Resume />}
+        />
         </Routes>
         </div>
   );

@@ -1,10 +1,20 @@
+.country-features{
+	height: 740px;
+}
+.phonebook-features{
+	height: 700px;
+}
+.nft-features{
+	height: 775px;
+}
+.stock-features{
+	height: 775px;
+}
 .icon-con{
   	display: flex;
 	max-width: 500px;
 	align-items: center;
 	text-align: center;
-	margin-left: 50%;
-	margin-right: 50%;
 }
 
 .icon{
@@ -18,30 +28,29 @@
   }
 
 .icons{
-	margin: 30px 30px 20px 30px;
+	max-width: 850px;
+	margin: auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 600px
+	
 }
 .icons-width {
 	max-width: 500px;
 	justify-content: center;
+	
 }
 .icon-title{
 	margin-bottom: 20px;
 	color:#066dc6;
-	font-weight: 600;
 	text-align: center;
-	padding: 15px;
+	padding: 10px;
 	font-size: 1.2em;
-
+	min-width: 150px;
 }
 .parallax-features {
-	height: 725px;
+	height: 225px;
 	margin-top: -50px;
 }
 
@@ -52,18 +61,54 @@
 	}
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 665px) {
 	.icon img {
-		max-width: 75px;
+		max-width: 125px;
 		height: auto;
 	}
 	.icons {
-		margin:5px;
+		display: flex;
+		flex-wrap: wrap;
+		/* border: 2px solid black;
+		border-radius: 0px; */
 	}
 	.replaceFeature {
 		margin-top: 20px;
 		padding-right: 30px;
 		padding-left: 30px;
 	}
+	.parallax-features {
+		height: 900px;
+		margin-top: -50px;
+		width: 100%;
+		/* border: 2px solid black;
+		border-radius: 0px; */
+	}
 	
-}
+	.icon{
+		width: 50%;
+		margin-bottom: -25px;
+	}
+	
+	.icon-title{
+		color:#066dc6;
+		font-size: 1.1em;
+	}
+	.country-features{
+		height: 100%;
+		margin-top: 30px;
+		width: 100%;
+	}
+	.nft-features{
+		height: 100%;
+		margin-top: -50px;
+		width: 100%;
+	}
+	.phonebook-features{
+		height: 850px;
+		width: 100%;
+	}
+	.stock-features{
+		height: 975px
+	}
+}	

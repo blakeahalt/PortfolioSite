@@ -1,256 +1,69 @@
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import React, { useLayoutEffect, useRef } from "react";
-import styled from "styled-components";
-import DrawSvg from "./DrawSvg";
+import React from 'react'
+import ResumePage from "../assets/Resume.pdf"
+import ResumeImage from "../assets/Resume.png"
+import ResumePDF from "../assets/Resume.pdf"
+import '../App.css';
 
-const Section = styled.section`
-  min-height: 100vh;
-  width: 120vw;
-  background-color: ${(props) => props.theme.body};
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  margin: 0 0px 0 -50px;
-`;
-const Title = styled.h1`
-  font-size: 2em;
-  text-transform: capitalize;
-  color: ${(props) => props.theme.text};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem auto;
-  border-bottom: 2px solid ${(props) => props.theme.text};
-  width: fit-content;
 
-  @media (max-width: 40em) {
-    font-size: ${(props) => props.theme.fontxl};
-  }
-`;
-const Container = styled.div`
-  width: 70%;
-  height: 200vh;
-  background-color: ${(props) => props.theme.body};
-  margin: -120px auto -30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-
-  @media (max-width: 64em) {
-    width: 80%;
-  }
-  @media (max-width: 48em) {
-    width: 90%;
-  }
-`;
-const SvgContainer = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-left: -200px;
-`;
-
-const Items = styled.ul`
-  list-style: none;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* background-color: lightblue; */
-
-  @media (max-width: 48em) {
-    width: 90%;
-  }
-
-  ${'' /* & > *:nth-of-type(2n + 1) {
-    justify-content: start;
-    @media (max-width: 48em) {
-      justify-content: center;
+const ResumeIframe = () => {
+    const onButtonClick = () => {
+        fetch(ResumePDF).then(response => {
+            response.blob().then(blob => {
+                // Creating new object of PDF file
+                const fileURL = window.URL.createObjectURL(blob);
+                let alink = document.createElement('a');
+                alink.href = fileURL;
+                alink.download = "Resume.pdf";
+                alink.click();
+            })
+        })
     }
-
-    div {
-      border-radius: 50px 0 50px 0;
-      text-align: right;
-
-      @media (max-width: 48em) {
-        border-radius: 0 50px 0 50px;
-      text-align: left;
-        p {
-          border-radius: 0 40px 0 40px;
-
-        }
-      }
-    }
-    p {
-      border-radius: 40px 0 40px 0;
-    }
-  }
-  & > *:nth-of-type(2n) {
-    justify-content: end;
-    @media (max-width: 48em) {
-      justify-content: center;
-    }
-    div {
-      border-radius: 0 50px 0 50px;
-      text-align: left;
-
-      
-    }
-    p {
-      border-radius: 0 40px 0 40px;
-    }
-  } */}
-`;
-const Item = styled.li`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  height: 215px;
-
-  @media (max-width: 48em) {
-    justify-content: flex-start;
-  }
-`;
-
-const ItemContainer = styled.div`
-  width: 100%;
-  height: 200px;
-  padding: .65rem;
-  border: 2px solid ${(props) => props.theme.text};
-  margin-bottom:-180px;
-  @media (max-width: 48em) {
-    width: 70%;
-
-  }
-`;
-
-const Box = styled.p`
-  height: 75%;
-  align-content: center;
-  background-color: ${(props) => props.theme.carouselColor};
-  color: ${(props) => props.theme.text};
-  padding: 1rem;
-  margin-top: 10px;
-  position: relative;
-  border: 1px solid ${(props) => props.theme.text};
-`;
-const SubTitle = styled.span`
-  display: block;
-  font-size: ${(props) => props.theme.fontxl};
-  text-transform: capitalize;
-  color: ${(props) => props.theme.text};
-
-  @media (max-width: 40em) {
-    font-size: ${(props) => props.theme.fontlg};
-    font-weight: 600;
-  }
-`;
-const Text = styled.span`
-  display: block;
-  font-size: ${(props) => props.theme.fontsm};
-  text-transform: capitalize;
-  color: ${(props) => props.theme.text};
-
-  font-weight: 400;
-  margin: 0.5rem 0;
-  @media (max-width: 40em) {
-    font-size: ${(props) => props.theme.fontxs};
-  }
-`;
-
-const ResumeItem = ({ title, subtext, addToRef }) => {
-  return (
-    <Item ref={addToRef}>
-      <ItemContainer>
-        <Box>
-          <SubTitle>{title} </SubTitle>
-          <Text>{subtext}</Text>
-        </Box>
-      </ItemContainer>
-    </Item>
-  );
-};
+    return (
+        <>
+        <div className="resume-iframe-length" >
+            <iframe src={ResumePage} width="95%" height="100%" object-fit="contain" title="Resume" ></iframe>
+        </div>
+        <center style={{marginTop: 30, marginBottom: 40}}>
+            <button onClick={onButtonClick}>
+                Download PDF
+            </button>
+        </center>
+        </>
+    )
+}
 
 const Resume = () => {
-  const revealRefs = useRef([]);
-  revealRefs.current = [];
-  gsap.registerPlugin(ScrollTrigger);
-
-  const addToRefs = (el) => {
-    if (el && !revealRefs.current.includes(el)) {
-      revealRefs.current.push(el);
+    const onButtonClick = () => {
+        fetch(ResumePDF).then(response => {
+            response.blob().then(blob => {
+                // Creating new object of PDF file
+                const fileURL = window.URL.createObjectURL(blob);
+                let alink = document.createElement('a');
+                alink.href = fileURL;
+                alink.download = "Resume.pdf";
+                alink.click();
+            })
+        })
     }
-  };
 
-  useLayoutEffect(() => {
-    let t1 = gsap.timeline();
-    revealRefs.current.forEach((el, index) => {
-      t1.fromTo(
-        el.childNodes[0],
-        {
-          y: "0",
-        },
-        {
-          y: "-30%",
+    return (
+        <>
+        <div className="resume-length">
+            <img src={ResumeImage} width="100%" height="auto" object-fit="contain" alt="Resume"/>
+        </div>
+        <center style={{ marginBottom: '1em'}}>
+            <button className="resume-button" onClick={onButtonClick}>
+                Download PDF
+            </button>
+        </center>
+        </>
+    )
+}
 
-          scrollTrigger: {
-            id: `section-${index + 1}`,
-            trigger: el,
-            start: "top center+=200px",
-            end: "bottom center",
-            scrub: true,
-            // markers:true,
-          },
-        }
-      );
-    });
+const DisplayResume = () => {
+    const isMinWidth1325px = window.matchMedia("(min-width: 1325px)").matches;
 
-    return () => {
-      if (t1) t1.kill();
-    };
-  }, []);
+    return isMinWidth1325px ? <ResumeIframe /> : <Resume />;
+}
 
-  return (
-    <Section id="roadmap">
-      <Container>
-        <SvgContainer>
-          <DrawSvg />
-        </SvgContainer>
-        <Items>
-          <Item style={{height: 50}}>&nbsp;</Item>
-          <ResumeItem style={{height: 450}}
-            addToRef={addToRefs}
-            title="Grand Opening"
-            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
-          />
-          <ResumeItem
-            addToRef={addToRefs}
-            title="Great Benefits"
-            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
-          />
-          <ResumeItem
-            addToRef={addToRefs}
-            title="Early Access"
-            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
-          />
-          <ResumeItem
-            addToRef={addToRefs}
-            title="New Merch"
-            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
-          />
-          <ResumeItem
-            addToRef={addToRefs}
-            title="Holders Ranking"
-            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
-          />
-        </Items>
-      </Container>
-    </Section>
-  );
-};
-
-export default Resume;
+export default DisplayResume;
