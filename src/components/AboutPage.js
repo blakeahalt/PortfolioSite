@@ -3,7 +3,7 @@ import React from "react";
 import '../App.css';
 import { Parallax } from "react-parallax";
 import { AwesomeButton } from "react-awesome-button";
-import Icons from './CountryFeatures.jsx'
+import Icons from './Skills.js'
 
 
 import image1 from "../assets/01.jpeg";
@@ -11,24 +11,23 @@ import image3 from "../assets/03.jpeg";
 import image4 from "../assets/04.jpeg";
 import WorldMap from "../assets/WorldMap_opacity.png"
 import MobileMap from "../assets/MobileMap.jpg"
+import StandArt from "../assets/Stand_Art.jpg"
+import ResumePic from "../assets/ResumePic.jpg";
 
 
-function CountryPage() {
+
+function About() {
   return (
     <div >
         <div className="container">
-        <Parallax bgImage={WorldMap} 
+        <Parallax bgImage={StandArt} 
           blur={{ min: -5, max: 5 }}
           bgImageClassName="opaque-image" 
           strength={300} 
           >
-          <div style={{ height: 825 }}>
+          <div style={{ height: 1000 }}>
             <div className="boxs header">
-              <h1 className="title-country">Country and Weather Application</h1>
-              <h4 className="title-date"><i>August 2022</i></h4>
-              <h4 className="introduction">
-                A full stack application that displays country information and a 3-day weather forecast.
-              </h4>
+              <h1 className="title-country">About me...</h1>
               <div className="buttons">
                 <a href="http://country.fly.dev/">
                   <AwesomeButton
@@ -54,10 +53,10 @@ function CountryPage() {
         <Parallax  >
         <div style={{height: '1200px', marginTop:-400}}>
             <div className="boxs-title">
-              <h2 className="blue ">What is it?</h2>
+              <h2 className="blue ">Add Behavioral Questions</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                  A full stack app from the University of Helsinki's Full Stack Open 2022 course that fetches and displays information from the <a href="https://restcountries.com/" target="_blank" rel="noreferrer"><i>REST Countries</i></a> and <a href="https://openweathermap.org/" target="_blank" rel="noreferrer"><i>Open Weather Map</i></a> API's.
+                  A full stack app from the University of Hels...
                 </div>
               </div>
             </div>
@@ -92,4 +91,4 @@ function CountryPage() {
   );
 }
 
-export default CountryPage;
+export default About;

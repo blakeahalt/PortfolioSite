@@ -23,7 +23,7 @@ const ResumeIframe = () => {
         <div className="resume-iframe-length" >
             <iframe src={ResumePage} width="95%" height="100%" object-fit="contain" title="Resume" ></iframe>
         </div>
-        <center style={{marginTop: 30, marginBottom: 40}}>
+        <center style={{marginTop: 30, paddingBottom: 40}}>
             <button onClick={onButtonClick}>
                 Download PDF
             </button>
@@ -51,7 +51,7 @@ const Resume = () => {
         <div className="resume-length">
             <img src={ResumeImage} width="100%" height="auto" object-fit="contain" alt="Resume"/>
         </div>
-        <center style={{ marginBottom: '1em'}}>
+        <center style={{ paddingBottom: '1em'}}>
             <button className="resume-button" onClick={onButtonClick}>
                 Download PDF
             </button>

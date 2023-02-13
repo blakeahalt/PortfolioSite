@@ -25,7 +25,7 @@ function CountryPage() {
           <div style={{ height: 825 }}>
             <div className="boxs header">
               <h1 className="title-country">Country and Weather Application</h1>
-              <h4 className="title-date"><i>August 2022</i></h4>
+              <h4 className="title-date">August 2022</h4>
               <h4 className="introduction">
                 A full stack application that displays country information and a 3-day weather forecast.
               </h4>

@@ -9,7 +9,7 @@ import Nav from './components/NavBar.js'
 import Home from './components/Home.js'
 import Team from './components/ProjectCards.js'
 import Resume from './components/Resume.js'
-import About from './components/About.js'
+import About from './components/AboutPage.js'
 
 function App() {
   return (

@@ -6,10 +6,16 @@ import icon1 from "../assets/i1.png";
 import icon2 from "../assets/i2.png";
 import icon3 from "../assets/i3.png";
 
+import Slide from 'react-reveal/Slide';
+
+
 const Section = styled.section`
 display: flex;
-overflow: hidden;
+overflow: visible;
 justify-content: center;
+box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3)
+background-color: rgb(221,208,195);
+
 
 @media screen and (max-width: 1000px){
   justify-content: center;
@@ -26,6 +32,12 @@ display: flex;
 flex-wrap: nowrap;
 justify-content: center;
 padding: 20px;
+width: 2500px;
+height: 675px;
+margin-top:50px;
+
+box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3);
+background-color: rgb(251,249,236,0.6);
 ${'' /* border: 2px solid black;
 border-radius: 0px; */}
 
@@ -45,9 +57,16 @@ width: 95%;
 }
 `
 
+const ContainerTitle = styled.div`
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: 3em;
+  align-content: center;
+  color: rgb(0, 62, 128);
+`
+
 const Item = styled.div`
 position: relative;
-background-color: rgb(238, 237, 222);
 display: flex;
 padding: 1rem .7rem 15rem .7rem;
 color: ${props => props.theme.body};
@@ -63,6 +82,8 @@ max-height: auto;
 
 border: 1px solid ${props => props.theme.text};
 border-radius: 20px;
+box-shadow: 5px 5px 12px 5px rgba(0,0,0,0.3);
+background-color: rgb(204,145,29,0.1);
 
 &:hover{
   img{
@@ -96,6 +117,8 @@ border-radius: 20px;
 const ImageContainer = styled.div`
 width: auto;
 height: auto;
+box-shadow: 7px 7px 15px -3px rgba(0,0,0,0.3);
+background-color: rgb(255,255,255, 0.5);
 border: 1px solid ${props => props.theme.text};
 padding: 1.8rem;
 border-radius: 20px;
@@ -128,19 +151,26 @@ display: flex;
 flex-wrap: wrap;
 align-items: center;
 justify-content: center;
-color: ${props => props.theme.text};
+margin-top: 0px;
+color: rgb(0, 62, 128);
 width: 100%;
 min-height: 4.5vh;
 
 `
 const Description = styled.p`
 font-size: .8em;
-text-align: center;
-align-items: center;
-width: 90%;
-height: 40px;
-margin-top: -20px;
-margin-bottom: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 40px;
+  padding: 10px;
+  margin: 10px;
+  margin-top: -25px;
+  margin-bottom: 10px;
+  color: rgb(0, 62, 128);
+
 
 @media screen and (max-width: 1000px) {
   display: flex ;
@@ -171,6 +201,7 @@ align-items: center;
 flex-wrap: wrap;
 max-width: auto;
 margin-top: 10px;
+
 `
 
 const Skills = styled.h2`
@@ -179,11 +210,12 @@ display: flex;
 align-items: center;
 justify-content: center;
 text-transform: capitalize;
-color: ${props => `rgba(${props.theme.textRgba},0.9)`};
+background-color: rgb(230,230,230, 0.5);
+color: rgb(0, 62, 128);
 font-weight:400;
-border: 1px solid ${props => props.theme.text};
+border: 1px solid rgb(0, 62, 128);
 border-radius: 10px;
-padding: 5px;
+padding: 6px;
 margin: 2px;
 
 @media screen and (max-width: 1000px) {
@@ -207,8 +239,10 @@ const MemberComponent = ({img, name=" ", desc='',skills=[]}) => {
       <ImageContainer>
         <img width={500} src={img} alt={name} />
       </ImageContainer>
-      <Name>{name}</Name>
-      <Description>{desc}</Description>
+      <div style={{ width: '95%', marginTop: '10px', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignContent: 'center', textAlign: 'center', border: '1px solid black', borderRadius: '15px', boxShadow: '3px 7px 15px 2px rgba(0,0,0,0.3)', backgroundColor:'rgb(255,255,255,0.6)' }}>
+        <Name>{name}</Name>
+        <Description>{desc}</Description>
+      </div>
       <SkillsContainer>
         {skills.map((skill, index) => (
           <Skills key={index}>{skill}</Skills>
@@ -223,14 +257,29 @@ const ProjectCards = () => {
   return (
     <Section id="ProjectCards">
       <Container>
-      <a href="/nftpage">
+      <div>
+      <ContainerTitle>
+          Projects
+      </ContainerTitle>
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+      <Slide left delay={350} >
+        <a href="/nftpage">
           <MemberComponent img={icon2}  name="NFT Sales Tracker" desc="A personal project that tracks the top trending NFT sales using various API's." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
+      </Slide>
+      <Slide left delay={150} >
         <a href="/stockpage">
           <MemberComponent img={icon2}  name="Stock Trading App" desc="A stock portfolio application that stores and updates user transactions with real-time stock quotes." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
+      </Slide>
+      <Slide right delay={150} >
         <a href="/countrypage">
           <MemberComponent img={icon2}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts using two APIs." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
+      </Slide>
+      <Slide right delay={350} >
         <a href="/phonebookpage">
           <MemberComponent img={icon2}  name="Phonebook Feature" desc="A CRUD phonebook feature that adds contact names and numbers built using a MERN stack." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
+      </Slide>
+        </div>
+        </div>
       </Container>
     </Section>
   )

@@ -17,7 +17,7 @@ function Page() {
   return (
     <div className="nft-features">
         <div className="container">
-        <Parallax bgImage={WorldMap} 
+        <Parallax 
           blur={{ min: -5, max: 5 }}
           bgImageClassName="opaque-image" 
           strength={300} 
@@ -25,7 +25,7 @@ function Page() {
           <div style={{ height: 725 }}>
             <div className="boxs header">
               <h1 className="title-country">NFT Sales Tracker</h1>
-              <h4 className="title-date"><i>November 2022</i></h4>
+              <h4 className="title-date">November 2022</h4>
               <h4 className="introduction">
               A full stack application that tracks the most recent trending NFT sales
               </h4>
@@ -73,7 +73,7 @@ function Page() {
               <h2 className="blue">What did I learn?</h2>
               <div className="box-con">
               <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop: -15}}>
-              I learned quite a bit from this project. The technical aspects I learned from scratch include: 
+              By completing this project, I learned how to build the following features from scratch: 
               <ul style={{marginLeft: -70}}>
                 <li>
                 enabling OAuth2 login capability for users to log in with their Google accounts
@@ -85,7 +85,7 @@ function Page() {
                 creating protected routes with JSON access and refresh web tokens for both registered users and Google users
                 </li>
                 <li style={{ listStyleType: 'disclosure-open' }}>
-                mapping and filtering specific data from API responses
+                mapping and filtering specific data from API responses:
                 <ul style={{ listStyleType: 'none', marginLeft: -90 }}>
                   <li>
                     changing ISP180 number data into '1 hour ago' string format

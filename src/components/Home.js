@@ -7,10 +7,13 @@ import Resume from './Resume.js'
 
 import Slide from 'react-reveal/Slide';
 import Reveal from 'react-reveal/Reveal';
+import Pulse from 'react-reveal/Pulse';
+import Flip from 'react-reveal/Flip';
 
 import icon1 from "../assets/i1.png";
 import icon2 from "../assets/i2.png";
 import ResumePic from "../assets/ResumePic.jpg";
+import devImg from "../assets/devImg.png"
 import StandArt from "../assets/Stand_Art.jpg"
 import blogPic1 from "../assets/blogPic1.jpg"
 
@@ -30,27 +33,6 @@ function Home() {
   const [currentRow, setCurrentRow] = useState(0);
   const [hover, setHover] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentPosition = window.pageYOffset;
-      // Update the currentRow value based on the current scroll position
-      if (currentPosition >= 700 && currentPosition < 900) {
-        setCurrentRow(0);
-      } else if (currentPosition >= 975 && currentPosition < 1450) {
-        setCurrentRow(1);
-      } else if (currentPosition >= 1500 && currentPosition < 2150) {
-        setCurrentRow(2);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
- 
-
   return (
     <div >
       <div className="container">
@@ -61,22 +43,23 @@ function Home() {
           bgImageClassName="opaque-image" 
           strength={300} 
           >
-          <div style={{ height: 650}}>
+          <div style={{ height: 675}}>
             <div className="boxs-header">
-            <img src={ResumePic} width='250px' alt='Resume Pic' style={{ borderRadius: '150px' }} />
+            <Pulse >
+              <img src={ResumePic} width='250px' alt='Resume Pic' style={{ borderRadius: '150px' }} />
+            </Pulse>
               <div className="header-title">
                 Hi, I'm Blake!</div>
                 <p className="header-title2">
-                  <span id="word1" onClick={() => { 
-                    window.location.hash = '#word1-section';
-                    window.scrollBy({ top: -240, behavior: 'smooth' });
-                  }}>Full Stack Developer</span> |
-                  <span id="word2" onClick={() => { window.location.hash = '#word2-section';
-                    window.scrollBy({ top: -220, behavior: 'smooth' });
-                  }}> Artist </span> | 
-                  <span id="word3" onClick={() => { window.location.hash = '#word3-section';
-                    window.scrollBy({ top: 20, behavior: 'smooth' });
-                  }}> Educator</span>
+                <Flip left distance='500%' delay={200}> 
+                  <span>Full Stack Developer </span> &nbsp; | &nbsp;
+                </Flip> 
+                <Flip left delay={375}>
+                  <span> Artist </span> &nbsp; | &nbsp;
+                </Flip> 
+                <Flip left delay={525}>
+                  <span> Educator</span>
+                </Flip> 
                 </p>
               <h4 className="introduction">
                 I like to create beautiful things that work well
@@ -87,56 +70,124 @@ function Home() {
 
 
           <Parallax>
-            <div style={{ height: 2150, display: 'flex', flexDirection: 'column' }}>
+            <div className='parallax-container' style={{ height: 2450 }}>
               <div className='about-outside-container'>
-                <div className='about-container' id='word1-section'>
-                  <div className='about-text'>
-                  {(currentRow === 0 || currentRow === 1) && (
+                <div className='about-dev-container'>
                   <Slide left delay={150}>
-                  <h4 className="introduction">
-                    As a full stack developer, I bring ideas to life 
-                  </h4>
-                  <h4 style={{ marginTop: -20, marginLeft: 120 }} className="introduction">
-                    with clean, inuitive, and thoughtful design.
-                  </h4>
+                    <div className='dev-text-border'>
+                      <div className='about-text' id='word2-section'>
+                      <Slide left delay={450}>
+                        <h4 className="dev-introduction1">
+                        As a full stack developer, I bring ideas to life 
+                        </h4>
+                      </Slide>
+                      <Slide left delay={550}>
+                        <h4 className="dev-introduction2">
+                          with clean, inuitive, and thoughtful design.
+                        </h4>
+                      </Slide>
+                      </div>
+                    </div>
                   </Slide>
-                )}
-                  </div>
-                  <div className='about-animation custom-animation'>
-                  {(currentRow === 0 || currentRow === 1) && (
-                    <Slide 
-                      right
-                      delay={150}
-                    >
-                      <img 
-                        style={{ padding: 5, width: '175px', height: '175px', margin: 'auto', borderRadius: '75px'}} 
-                        src={icon1} 
-                        alt="icon1" 
-                      />
-                    </Slide>
-                )}
+                <div className='about-animation custom-animation'>
+                  <Slide right delay={150} >
+                    <div 
+                        className="devImg"
+                          onMouseEnter={() => {
+                            setHover(false);
+                          }}
+                          onMouseLeave={() => {
+                            setHover(true);
+                          }}
+                          onClick={() => { 
+                              window.location.replace('http://localhost:3000/#projects-section')
+                              window.scrollBy({ behavior: 'smooth' });
+                            }}
+                        >
+                          <img 
+                            className="img-hover"
+                            src={devImg} 
+                            alt="dev pic" 
+                            title='Click to learn more'
+                          />
+                            <div className="dev-slide-hover">
+                              <p style={{fontSize:'2em'}}>See the projects &#10230;</p>
+                            </div>
+                        </div>
+                      </Slide>
                   </div>
                 </div>
               </div>
 
               <div className='about-outside-container'>
-                <div className='about-container'>
-                  <div className='about-text' id='word2-section'>
-                    {(currentRow === 1 || currentRow === 2) && (
-                      <Slide left delay={150}>
-                      <h4 className="art-introduction1">
-                      As an artist, I explore the aesthetics of math
-                      </h4>
-                      <h4 className="art-introduction2">
-                      to create captivating visual narratives.
-                      </h4>
+                <div className='about-blog-container'>
+                    <Slide left delay={150} >
+                    <div className='blog-text-border'>
+                        <div className='about-text' id='word3-section'>
+                      <Slide left delay={450} >
+                        <h4 className="edu-introduction1">
+                        As a former educator, I convey information 
+                        </h4>
                       </Slide>
-                    )}
-                  </div>
-                  <div className='about-animation custom-animation'>
-                    {(currentRow === 1 || currentRow === 2) && (
-                      <Slide right distance='200%' delay={150} >
+                      <Slide left delay={550} >
+                        <h4 className="edu-introduction2">
+                        using clear and concise methods.
+                        </h4>
+                      </Slide>
+                        </div>
+                      </div>
+                    </Slide>
+                <div className='about-animation custom-animation'>
+                    <Slide right distance='200%' delay={150}>
                         <div 
+                          className="blogPic"
+                          onMouseEnter={() => {
+                            setHover(true);
+                          }}
+                          onMouseLeave={() => {
+                            setHover(false);
+                          }}
+                          onClick={() => { 
+                            window.location.replace('http://localhost:3000/blog');
+                            window.scrollBy({ behavior: 'smooth' });
+                          }}
+                        >
+                          <img
+                            className="img-hover"
+                            src={blogPic1} 
+                            alt="blog pic" 
+                            title='Click to learn more'
+                          />
+                          <div className="blog-slide-hover">
+                              <p style={{fontSize:'2em'}}>See the blog &#10230;</p>
+                            </div>
+                        </div>
+                      </Slide>
+                  </div>
+                </div>
+              </div>
+              
+              <div className='about-outside-container'>
+                <div className='about-art-container'>
+                    <Slide left delay={150}>
+                      <div className='art-text-border'>
+                        <div className='about-text' id='word2-section'>
+                        <Slide left delay={450}>
+                          <h4 className="art-introduction1">
+                          As an artist, I explore visual narratives
+                          </h4>
+                        </Slide>
+                        <Slide left delay={550}>
+                          <h4 className="art-introduction2">
+                          within the aesthetic of mathematics.
+                          </h4>
+                        </Slide>
+                        </div>
+                      </div>
+                    </Slide>
+                  <div className='about-animation custom-animation'>
+                    <Slide right distance='200%' delay={150} >
+                      <div 
                           className="standart"
                           onMouseEnter={() => {
                             setHover(false);
@@ -160,54 +211,6 @@ function Home() {
                             </div>
                         </div>
                       </Slide>
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              <div className='about-outside-container'>
-                <div className='about-container'>
-                  <div className='about-text' id='word3-section'>
-                  {currentRow === 2 && (
-                    <Slide left delay={150} >
-                    <h4 className="edu-introduction1">
-                    As a former educator, I convey information 
-                    </h4>
-                    <h4 className="edu-introduction2">
-                    with clear and concise methods.
-                    </h4>
-                    </Slide>
-                  )}
-                  </div>
-                  <div className='about-animation custom-animation'>
-                  {currentRow === 2 && (
-                    <Slide right distance='200%' delay={150}>
-                        <div 
-                          className="blogPic"
-                          onMouseEnter={() => {
-                            setHover(true);
-                          }}
-                          onMouseLeave={() => {
-                            setHover(false);
-                          }}
-                          onClick={() => { 
-                            window.location.replace('http://localhost:3000/blog');
-                            window.scrollBy({ behavior: 'smooth' });
-                          }}
-                        >
-                      
-                          <img
-                            className="img-hover"
-                            src={blogPic1} 
-                            alt="blog pic" 
-                            title='Click to learn more'
-                          />
-                          <div className="blog-slide-hover">
-                              <p style={{fontSize:'2em'}}>See the blog &#10230;</p>
-                            </div>
-                        </div>
-                      </Slide>
-                  )}
                   </div>
                 </div>
               </div>
@@ -240,19 +243,23 @@ function Home() {
           <Parallax>
           <div style={{ height: 2150, display: 'flex', flexDirection: 'column' }}>
             <div className='about-outside-container'>
-                <div className='about-container'>
-                  <div className='about-text' id='word2-section'>
-                      <Slide left delay={150}>
-                      <h4 className="art-introduction1">
-                      As an artist, I explore the aesthetics of math
-                      </h4>
-                      <h4 className="art-introduction2">
-                      to create captivating visual narratives.
-                      </h4>
-                      </Slide>
-                  </div>
+                <div className='about-art-container'>
+                    <Slide left delay={150}>
+                      <div className='art-text-border'>
+                        <Slide left delay={450}>
+                          <div className='about-text' id='word2-section'>
+                          <h4 className="art-introduction1">
+                          As an artist, I explore visual narratives
+                          </h4>
+                          <h4 className="art-introduction2">
+                          within the aesthetic of mathematics.
+                          </h4>
+                          </div>
+                        </Slide>
+                      </div>
+                    </Slide>
                   <div className='about-animation custom-animation'>
-                      <Slide right distance='200%' delay={150} >
+                      <Slide right distance='200%' delay={450} >
                         <div 
                           className="standart"
                           onMouseEnter={() => {
@@ -266,8 +273,6 @@ function Home() {
                               window.scrollBy({ behavior: 'smooth' });
                             }}
                         >
-                            
-                            
                           <img 
                             className="img-hover"
                             src={StandArt} 
@@ -283,17 +288,20 @@ function Home() {
                 </div>
               </div>
             <div className='about-outside-container'>
-                <div className='about-container'>
-                  <div className='about-text' id='word2-section'>
+                <div className='about-blog-container'>
                       <Slide left delay={150}>
-                      <h4 className="edu-introduction1">
-                      As a former educator, I convey information 
-                      </h4>
-                      <h4 className="edu-introduction2">
-                      with clear and concise methods.
-                      </h4>
+                        <div className='blog-text-border'>
+                          <Slide left delay={450}>
+                            <div className='about-text' id='word3-section'>
+                            <h4 className="edu-introduction1">
+                            As a former educator, I convey information</h4>
+                            <h4 className="edu-introduction2">
+                            using clear and concise methods.
+                            </h4>
+                            </div>
+                          </Slide>
+                        </div>
                       </Slide>
-                  </div>
                   <div className='about-animation custom-animation'>
                       <Slide right distance='200%' delay={150} >
                         <div 
@@ -309,8 +317,6 @@ function Home() {
                               window.scrollBy({ behavior: 'smooth' });
                             }}
                         >
-                            
-                            
                           <img 
                             className="img-hover"
                             src={blogPic1} 
@@ -330,21 +336,13 @@ function Home() {
           </>
         )}
 
-        <Parallax className="parallax-projects">
-          <h1 id="projects-section" style={{ marginBottom: 15, color: 'black', fontSize: '3em' }}>Projects</h1>
-          <Projects/>
+        <Parallax className="parallax-projects" >
+          <div id="projects-section"/>
+          <Projects />
         </Parallax>
-        
-        {/* <Parallax  >
-          <div style={{ height: 1700, marginBottom: -150 }}>
-              <h1 >Resume</h1>
-              <Resume className='resume'/>
-          </div>
-        </Parallax> */}
-    </div>
-      <div className="footer">Footer. This code is open source.</div>
-
-    </div>
+      </div>
+    <div className="footer">Footer. This code is open source.</div>
+  </div>
   );
 }
 

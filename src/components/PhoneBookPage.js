@@ -72,7 +72,10 @@ function PhoneBook() {
               <h2 className="blue">What did I learn?</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                  I learned how to set state variables by sending async requests to an API with axios. Applying a filter to the state variable 'countries' users can quickly search for and see country data. Beyond the scope of the course requirements, I learned a lot about CSS styling by implementing responsive design as well as how to deploy on a host server.  
+                  I learned how to set state variables by sending async requests to an API with axios. By applying a filter to the state variable 'countries', the app can very quickly display a list of countries and their data. Originally deployed on Heroku, but was migrated to fly.io.
+              </div>
+                <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
+                  Beyond the scope of the course requirements, I learned how to style the CSS in order to accomodate for better responsive design on all devices.
               </div>
               </div>
             </div>
@@ -85,7 +88,7 @@ function PhoneBook() {
       </Parallax>
 
     </div>
-    <div className="footer">Footer. This code is open source.</div>
+    <div className="footer">Footer. --Add Links--</div>
 
         </div>
   );

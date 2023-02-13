@@ -17,7 +17,7 @@ function Page() {
   return (
     <div className="stock-features">
         <div className="container">
-        <Parallax bgImage={WorldMap} 
+        <Parallax 
           blur={{ min: -5, max: 5 }}
           bgImageClassName="opaque-image" 
           strength={300} 
@@ -25,12 +25,12 @@ function Page() {
           <div style={{ height: 725 }}>
             <div className="boxs header">
               <h1 className="title-country">Stock Market App</h1>
-              <h4 className="title-date"><i>November 2022</i></h4>
+              <h4 className="title-date">November 2022</h4>
               <h4 className="introduction">
               A full stack stock portfolio manager using real-time data
               </h4>
               <div className="buttons">
-                <a href="https://nftleague2.herokuapp.com/">
+                <a href="https://stockpapertrader.fly.dev/">
                   <AwesomeButton
                     size="medium"
                     type="secondary"
@@ -39,7 +39,7 @@ function Page() {
                   </AwesomeButton> 
                 </a> 
                 <div className="space"></div>
-                <a href="https://github.com/blakeahalt/nftleague2">
+                <a href="https://github.com/blakeahalt/">
                   <AwesomeButton
                     size="medium"
                     type="primary"
