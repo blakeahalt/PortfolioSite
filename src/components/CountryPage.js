@@ -1,33 +1,29 @@
 import React from "react";
-
 import '../App.css';
 import { Parallax } from "react-parallax";
 import { AwesomeButton } from "react-awesome-button";
 import Icons from './CountryFeatures.jsx'
+import Nav from './NavBar'
 
-
-import image1 from "../assets/01.jpeg";
-import image3 from "../assets/03.jpeg";
-import image4 from "../assets/04.jpeg";
-import WorldMap from "../assets/WorldMap_opacity.png"
-import MobileMap from "../assets/MobileMap.jpg"
-
+import WorldMap from "../assets/country-background.png"
 
 function CountryPage() {
   return (
-    <div >
+    <div className="country-features">
+        <Nav isWhite={true} />
         <div className="container">
-        <Parallax bgImage={WorldMap} 
+        <Parallax 
+          bgImage={WorldMap} 
           blur={{ min: -5, max: 5 }}
           bgImageClassName="opaque-image" 
           strength={300} 
           >
-          <div style={{ height: 825 }}>
+          <div style={{ height: 750 }}>
             <div className="boxs header">
               <h1 className="title-country">Country and Weather Application</h1>
               <h4 className="title-date">August 2022</h4>
               <h4 className="introduction">
-                A full stack application that displays country information and a 3-day weather forecast.
+                Learn new country facts and get a 3-day weather forecast.
               </h4>
               <div className="buttons">
                 <a href="http://country.fly.dev/">
@@ -52,7 +48,7 @@ function CountryPage() {
           </div>
         </Parallax>
         <Parallax  >
-        <div style={{height: '1200px', marginTop:-400}}>
+        <div style={{ height: '1200px', marginTop:-475 }}>
             <div className="boxs-title">
               <h2 className="blue ">What is it?</h2>
               <div className="box-con">
@@ -61,7 +57,7 @@ function CountryPage() {
                 </div>
               </div>
             </div>
-            <div style={{marginTop:-30}} className="boxs-title">
+            <div style={{marginTop:-50}} className="boxs-title">
               <h2 className="blue">What was it built with?</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
@@ -69,11 +65,11 @@ function CountryPage() {
               </div>
               </div>
             </div>
-            <div className="boxs-title">
+            <div style={{marginTop: -30}} className="boxs-title">
               <h2 className="blue">What did I learn?</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                  I learned how to set state variables by sending async requests to an API with axios. Applying a filter to the state variable 'countries' users can quickly search for and see country data. Beyond the scope of the course requirements, I learned a lot about CSS styling by implementing responsive design as well as how to deploy on a host server.  
+                  I learned how to set state variables by making axios async requests to an API. Applying a filter to the state variable 'countries' users are able to quickly search for and display country data. Beyond the scope of the course requirements I learned how to implement responsive design with stylized CSS and how to deploy the app to a cloud-based platform (i.e. Fly.io).
               </div>
               </div>
             </div>

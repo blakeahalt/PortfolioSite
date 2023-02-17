@@ -23,7 +23,12 @@ li {
 }
 .nav{
   background-color: transparent;
+  padding: 5px;
 }
+.white-nav {
+  background-color: white;
+}
+
 .nav-titles{
   display:flex;
   flex-direction: row;
@@ -38,6 +43,7 @@ li {
   width: 100%;
   font-size: 20px;
   margin: 15px;
+  cursor: pointer;
 }
 .home-button {
   width: 100%;
@@ -78,14 +84,19 @@ li {
   -webkit-transform: translate(-50%,-50%);
   
 }
+.boxs-circles{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 .boxs-header{
   margin-top: 0vh;
 }
 .boxs-header img{
   margin-top: 16vh;
   border: 1px solid black;
-  padding: 10px;
-  background-color: rgb(255,255,255,0.4);
+  padding: 8px;
+  background-color: rgb(255,255,255,0.8);
 }
 .boxs-title{
   width: 80%;
@@ -461,9 +472,7 @@ li {
 }
 
 .opaque-image {
-  opacity: 0.4;
   background-size: cover;
-  filter: blur(3px);
  }
 
 .container{
@@ -576,6 +585,7 @@ h4.introduction a {
   justify-content: center; 
   align-items: center;
   height: 1200px;
+  margin-top: 15px;
 }
 
 .resume-length{
@@ -584,6 +594,7 @@ h4.introduction a {
   align-items: center;
   height: 1200px;
 }
+
 
 .slide-in-element {
   margin-top: 100px;

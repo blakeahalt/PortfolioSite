@@ -1,4 +1,6 @@
 import React from 'react'
+import Nav from './NavBar'
+
 import ResumePage from "../assets/Resume.pdf"
 import ResumeImage from "../assets/Resume.png"
 import ResumePDF from "../assets/Resume.pdf"
@@ -20,6 +22,7 @@ const ResumeIframe = () => {
     }
     return (
         <>
+        <Nav />
         <div className="resume-iframe-length" >
             <iframe src={ResumePage} width="95%" height="100%" object-fit="contain" title="Resume" ></iframe>
         </div>

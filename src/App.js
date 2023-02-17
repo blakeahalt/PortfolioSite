@@ -5,16 +5,17 @@ import CountryPage from './components/CountryPage.js'
 import PhoneBook from './components/PhoneBookPage.js'
 import NFT from './components/NFTPage.js'
 import StockPage from './components/StockPage.js'
-import Nav from './components/NavBar.js'
 import Home from './components/Home.js'
 import Team from './components/ProjectCards.js'
 import Resume from './components/Resume.js'
 import About from './components/AboutPage.js'
+import ArtPage from './components/ArtPage.js'
+import ArtPageSpiro from './components/ArtPage-spiroPage.js'
+import ArtPagePortraits from './components/ArtPage-portraitPage.js'
 
 function App() {
   return (
     <div className="App">
-        <Nav />
         <Routes>
           <Route
               exact
@@ -46,6 +47,21 @@ function App() {
               exact
               path="/about"
               element={<About />}
+          />
+          <Route
+              exact
+              path="/art"
+              element={<ArtPage />}
+          />
+          <Route
+              exact
+              path="/art/spiro/"
+              element={<ArtPageSpiro />}
+          />
+          <Route
+              exact
+              path="/art/portraits/"
+              element={<ArtPagePortraits />}
           />
           <Route
               exact

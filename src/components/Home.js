@@ -3,6 +3,7 @@ import '../App.css';
 import { Parallax } from "react-parallax";
 import styled from 'styled-components';
 import Projects from './ProjectCards.js'
+import Nav from './NavBar'
 import Resume from './Resume.js'
 
 import Slide from 'react-reveal/Slide';
@@ -12,21 +13,23 @@ import Flip from 'react-reveal/Flip';
 
 import icon1 from "../assets/i1.png";
 import icon2 from "../assets/i2.png";
+import Human from "../assets/Art/HumanHemi.jpg";
 import ResumePic from "../assets/ResumePic.jpg";
 import devImg from "../assets/devImg.png"
 import StandArt from "../assets/Stand_Art.jpg"
 import blogPic1 from "../assets/blogPic1.jpg"
 
-const TextWrapper = styled.div`
-  &:hover .introduction {
-    visibility: visible;
-  }
 
-  .introduction {
-    visibility: hidden;
-    transition: visibility 0.2s;
-  }
-`;
+// const TextWrapper = styled.div`
+//   &:hover .introduction {
+//     visibility: visible;
+//   }
+
+//   .introduction {
+//     visibility: hidden;
+//     transition: visibility 0.2s;
+//   }
+// `;
 
 
 function Home() {
@@ -35,6 +38,7 @@ function Home() {
 
   return (
     <div >
+    <Nav />
       <div className="container">
       {window.innerWidth > 1325 ? (
         <>
@@ -45,9 +49,14 @@ function Home() {
           >
           <div style={{ height: 675}}>
             <div className="boxs-header">
-            <Pulse >
-              <img src={ResumePic} width='250px' alt='Resume Pic' style={{ borderRadius: '150px' }} />
-            </Pulse>
+            <div className="boxs-circles">
+              <Pulse delay={100} >
+                <div style={{position: 'absolute', marginTop: '118px', width: '275px', height: '270px', justifyContent: 'center', borderRadius: '150px', border: '1px solid black', backgroundColor: 'rgb(255,255,255,0.5)' }} />
+              </Pulse>
+              <Pulse delay={0}>
+                <img src={ResumePic} width='250px' alt='Resume Pic' style={{ borderRadius: '150px' }} />
+              </Pulse>
+            </div>
               <div className="header-title">
                 Hi, I'm Blake!</div>
                 <p className="header-title2">
@@ -55,10 +64,10 @@ function Home() {
                   <span>Full Stack Developer </span> &nbsp; | &nbsp;
                 </Flip> 
                 <Flip left delay={375}>
-                  <span> Artist </span> &nbsp; | &nbsp;
+                  <span> Educator</span> &nbsp; | &nbsp;
                 </Flip> 
                 <Flip left delay={525}>
-                  <span> Educator</span>
+                  <span> Artist </span> 
                 </Flip> 
                 </p>
               <h4 className="introduction">

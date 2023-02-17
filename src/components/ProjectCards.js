@@ -5,6 +5,10 @@ import styled from 'styled-components';
 import icon1 from "../assets/i1.png";
 import icon2 from "../assets/i2.png";
 import icon3 from "../assets/i3.png";
+import nftImg from '../assets/nft-background.png'
+import stockImg from '../assets/stock-background.png'
+import countryImg from '../assets/country-background-home.png'
+import phoneImg from '../assets/phone-background-home.png'
 
 import Slide from 'react-reveal/Slide';
 
@@ -120,15 +124,20 @@ height: auto;
 box-shadow: 7px 7px 15px -3px rgba(0,0,0,0.3);
 background-color: rgb(255,255,255, 0.5);
 border: 1px solid ${props => props.theme.text};
-padding: 1.8rem;
+padding: .2rem;
+margin:5px;
 border-radius: 20px;
 cursor: pointer;
 z-index:1;
 
 img{
-  width: 100%;
-  height: auto;
-transition: all 0.3s ease;
+  margin-bottom: -5px;
+  max-width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  ${'' /* border: 1px solid ${props => props.theme.text}; */}
+
+  transition: all 0.3s ease;
 }
 
 
@@ -264,19 +273,19 @@ const ProjectCards = () => {
       <div style={{display: 'flex', justifyContent: 'center'}}>
       <Slide left delay={350} >
         <a href="/nftpage">
-          <MemberComponent img={icon2}  name="NFT Sales Tracker" desc="A personal project that tracks the top trending NFT sales using various API's." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
+          <MemberComponent img={nftImg}  name="NFT Sales Tracker" desc="A personal project that tracks the top trending NFT sales using various API's." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
       </Slide>
       <Slide left delay={150} >
         <a href="/stockpage">
-          <MemberComponent img={icon2}  name="Stock Trading App" desc="A stock portfolio application that stores and updates user transactions with real-time stock quotes." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
+          <MemberComponent img={stockImg}  name="Stock Trading App" desc="A stock portfolio application that stores and updates user transactions with real-time stock quotes." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
       </Slide>
       <Slide right delay={150} >
         <a href="/countrypage">
-          <MemberComponent img={icon2}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts using two APIs." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
+          <MemberComponent img={countryImg}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts using two APIs." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
       </Slide>
       <Slide right delay={350} >
         <a href="/phonebookpage">
-          <MemberComponent img={icon2}  name="Phonebook Feature" desc="A CRUD phonebook feature that adds contact names and numbers built using a MERN stack." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
+          <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A CRUD phonebook feature that adds contact names and numbers built using a MERN stack." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
       </Slide>
         </div>
         </div>

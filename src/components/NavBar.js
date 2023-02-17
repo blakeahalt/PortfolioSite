@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import '../App.css'
 import Slide from 'react-reveal/Slide';
 
-function Nav () {
+function Nav ({ isWhite }) {
   const [showNav, setShowNav] = useState(false);
 
   return(
-    <nav className="nav">
-        <div className="home-button" >
+    <nav className={`nav ${isWhite ? 'white-nav' : ''}`}>
+        <div className="home" >
             <a className="home-button" href="/" >Home</a>
         </div>
         
