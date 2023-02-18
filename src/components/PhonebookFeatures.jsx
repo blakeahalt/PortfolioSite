@@ -145,7 +145,7 @@ return (
           style={{ padding: 5, maxWidth:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
           src={responsive} 
           alt="icon1" 
-          onMouseEnter={() => slideToIndex(1)}
+          onMouseEnter={() => slideToIndex(0)}
           onMouseLeave={() => slideToIndex(activeSlideIndex)}
         />
         <div className="icon-title">Responsive Design</div>
@@ -155,7 +155,7 @@ return (
           style={{ padding: 5, width:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
           src={phoneEdit} 
           alt="icon2" 
-          onMouseEnter={() => slideToIndex(2)}
+          onMouseEnter={() => slideToIndex(1)}
           onMouseLeave={() => slideToIndex(activeSlideIndex)}
         />
         <div className="icon-title">Edit Contacts</div>
@@ -165,7 +165,7 @@ return (
           style={{ padding: 5, width:'200px', height:'150px',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
           src={phoneSearch} 
           alt="icon3" 
-          onMouseEnter={() => slideToIndex(0)}
+          onMouseEnter={() => slideToIndex(2)}
           onMouseLeave={() => slideToIndex(activeSlideIndex)}
         />
         <div className="icon-title">Search Contacts</div>
@@ -188,7 +188,7 @@ return (
         modules={[EffectCards,Pagination, Navigation, Autoplay]}
         navigation={true}
         grabCursor={true}
-        loop={true}
+        loop={false}
         centeredSlides={true}
         autoplay={{ delay: 3000 }}
       >

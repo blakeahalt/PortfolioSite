@@ -9,6 +9,7 @@ import Home from './components/Home.js'
 import Team from './components/ProjectCards.js'
 import Resume from './components/Resume.js'
 import About from './components/AboutPage.js'
+import Blog from './components/Devto.js'
 import ArtPage from './components/ArtPage.js'
 import ArtPageSpiro from './components/ArtPage-spiroPage.js'
 import ArtPagePortraits from './components/ArtPage-portraitPage.js'
@@ -62,6 +63,11 @@ function App() {
               exact
               path="/art/portraits/"
               element={<ArtPagePortraits />}
+          />
+          <Route
+              exact
+              path="/blog"
+              element={<Blog />}
           />
           <Route
               exact

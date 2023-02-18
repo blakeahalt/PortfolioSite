@@ -145,7 +145,7 @@ return (
           style={{ padding: 5, width:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
           src={quotes} 
           alt="icon1" 
-          onMouseEnter={() => slideToIndex(1)}
+          onMouseEnter={() => slideToIndex(0)}
           onMouseLeave={() => slideToIndex(activeSlideIndex)}
         />
         <div className="icon-title">Quotes Archive</div>
@@ -157,7 +157,7 @@ return (
           style={{ padding: 5, width:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
           src={transactions} 
           alt="icon2" 
-          onMouseEnter={() => slideToIndex(2)}
+          onMouseEnter={() => slideToIndex(1)}
           onMouseLeave={() => slideToIndex(activeSlideIndex)}
         />
         <div className="icon-title">Transactions</div>
@@ -169,7 +169,7 @@ return (
           style={{ padding: 5, maxWidth:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
           src={buysell} 
           alt="icon4" 
-          onMouseEnter={() => slideToIndex(0)}
+          onMouseEnter={() => slideToIndex(2)}
           onMouseLeave={() => slideToIndex(activeSlideIndex)}
         />
         <div className="icon-title" >Portfolio</div>
@@ -192,7 +192,7 @@ return (
         modules={[EffectCards,Pagination, Navigation, Autoplay]}
         navigation={true}
         grabCursor={true}
-        loop={true}
+        loop={false}
         centeredSlides={true}
         autoplay={{ delay: 3000 }}
       >

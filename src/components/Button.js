@@ -5,10 +5,11 @@ import styled from 'styled-components'
 
 const Btn = styled.button`
 display: inline-block;
-background-color: ${props => props.theme.text};
-color: ${props => props.theme.body};
+background-color: rgb(248,243,233);
+color: rgb(0, 62, 128);
 outline: none;
-border: none;
+border: 1px solid rgb(0, 62, 128,0.4);
+box-shadow: 5px 7px 15px 2px rgba(0,0,0,0.3);
 
 font-size: ${props => props.theme.fontmd};
 padding: 0.9rem 2.3rem;
@@ -26,7 +27,7 @@ position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    border: 2px solid ${props => props.theme.text};
+    border: 1px solid ${props => props.theme.text};
     width: 100%;
     height: 100%;
     border-radius: 50px;

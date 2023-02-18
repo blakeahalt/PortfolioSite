@@ -3,46 +3,34 @@ import '../App.css';
 import { Parallax } from "react-parallax";
 import { AwesomeButton } from "react-awesome-button";
 import Icons from './NFTFeatures.jsx'
-import Nav from './NavBar'
+import NavBlue from './NavBarBlue'
+import Button from './Button'
 
 import nftBackground from "../assets/nft-background.png"
 
 function Page() {
   return (
-    <div className="nft-features">
-      <Nav isWhite={true} />
-        <div className="container">
+    <div className="parallax-features">
+      <NavBlue  />
+        <div className="nft-top-container">
         <Parallax 
+          style={{marginTop:"-50px"}}
           bgImage={nftBackground} 
           blur={{ min: 3, max: 3 }}
           bgImageClassName="opaque-image" 
           strength={300} 
           >
-          <div style={{ height: 725 }}>
+          <div style={{ height: 800 }}>
             <div className="boxs header">
               <h1 className="title-nft">NFT Sales Tracker</h1>
               <h4 style={{ color: 'rgb(180,180,180)' }} className="title-date">November 2022</h4>
               <h4 style={{ color: 'white' }} className="introduction">
               A full stack application that tracks the most recent trending NFT sales
               </h4>
-              <div className="buttons">
-                <a href="https://nftleague2.herokuapp.com/">
-                  <AwesomeButton
-                    size="medium"
-                    type="secondary"
-                  >
-                    Demo
-                  </AwesomeButton> 
-                </a> 
+              <div>
+              <Button style={{backgroundColor: 'white'}} text="See Demo" link='https://nftleague2.herokuapp.com/' />
                 <div className="space"></div>
-                <a href="https://github.com/blakeahalt/nftleague2">
-                  <AwesomeButton
-                    size="medium"
-                    type="primary"
-                  >
-                    github
-                  </AwesomeButton>
-                </a> 
+              <Button text="Github" link="https://github.com/blakeahalt/nftleague2" />
               </div>
             </div>
           </div>

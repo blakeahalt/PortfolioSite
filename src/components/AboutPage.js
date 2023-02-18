@@ -40,13 +40,13 @@ function About() {
               <h2 style={{marginTop: '250px', marginBottom: '50px' }} className="blue ">About me:</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                After obtaining a Bachelor of Arts degree in Art and a minor in Mathematics from the University of San Francisco in 2006, I spent ten years teaching English at elite after school programs in Thailand and South Korea. Aside from teaching, I developed curriculums, trained teachers, and established relationships with students, teachers, parents, and administrators. 
+                When I returned to the United States in 2017, after spending ten years teaching English at elite after school programs in Thailand and South Korea, I taught Kindergarten at a private elementary school in Pacific Palisades, CA. During this time, I began attending and volunteering at several machine learning, data science, and tech conferences in the Los Angeles area to explore my greater interest in the tech world. I also began teaching myself how to code in Python and Javascript.
                 </div>
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                Returning to the United States in 2017, I taught Kindergarten at a private elementary school in Pacific Palisades while attending several machine learning and data science conferences in the Los Angeles area. During this time, I began teaching myself how to code in Python and Javascript.
+                By 2021, I decided to transition from teaching to pursue a software development career due to my continued interest in technology, desire to work on things that have purpose and solve real problems, and developing stronger technical skills. Although I've left the classroom, I remain committed to applying my teaching skills to new environments while continuing to grow professionally.
                 </div>
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                In 2021, I decided to transition from teaching to pursue a career in technology because of my deep interest in technological advancement, a passion to design and create things that have purpose and solve real problems, and an eagerness to continuously learn new skills. Despite having left the classroom, I remain committed to applying my teaching skills to new environments while and growing professionally.
+                When I get a chance to relax, I like to golf around Los Angeles, watch movies, try new restaurants, and create math inspired art. This year, I'd like to create less with my iPad and work with large-sized traditional media again.
                 </div>
               </div>
             </div>

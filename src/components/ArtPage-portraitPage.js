@@ -7,6 +7,8 @@ import icon1 from "../assets/i1.png";
 import icon2 from "../assets/i2.png";
 import icon3 from "../assets/i3.png";
 import Human from "../assets/Art/HumanHemi.jpg"
+import Dizzy from '../assets/portraits/Dizzy_Done.png'
+import SaganTyson from '../assets/portraits/Sagan_tyson.png'
 
 import Slide from 'react-reveal/Slide';
 
@@ -279,7 +281,8 @@ const ProjectCards = () => {
     <Section className="spiro-cards">
       <Container>
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom:'150px' }}>
-          <MemberComponent img={Human} name="World Map" desc="Human Hemisphere"/>
+          <MemberComponent img={Dizzy} name="Dizzy Gillespie" desc="pencil on paper"/>
+          <MemberComponent img={SaganTyson} name="Sagan Tyson" desc="Colored pencil on paper"/>
         </div>
       </Container>
     </Section>

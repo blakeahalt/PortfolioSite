@@ -11,7 +11,7 @@ import StockBackground from '../assets/stock-background.png'
 
 function Page() {
   return (
-    <div className="stock-features">
+    <div className="parallax-features">
       <Nav isWhite={true} />
         <div className="container">
         <Parallax 
@@ -37,7 +37,7 @@ function Page() {
                   </AwesomeButton> 
                 </a> 
                 <div className="space"></div>
-                <a href="https://github.com/blakeahalt/">
+                <a href="https://github.com/blakeahalt/CS50_2022/tree/master/finance">
                   <AwesomeButton
                     size="medium"
                     type="primary"

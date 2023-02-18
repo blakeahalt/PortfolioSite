@@ -12,17 +12,8 @@ import { Pagination, Navigation, Autoplay, EffectCards } from "swiper";
 
 import Human from "../assets/Art/HumanHemi.jpg"
 import Biggins from "../assets/Art/Biggins.png"
-import Chrysanthemum from "../assets/Art/Chrysanthemum.jpg"
-import Hydrangea from "../assets/Art/Hydrangea.jpg"
-import Korea from "../assets/Art/Korea.jpg"
-import NorthAmerica from "../assets/Art/NorthAmerica.jpg"
-import RoseOfSharon from "../assets/Art/RoseOfSharon.jpg"
-import Tulips from "../assets/Art/Tulips.jpg"
-import GlobeThistle from "../assets/Art/GlobeThistle.png"
-import BlackEyedSusan from "../assets/Art/BlackEyedSusan.png"
-import Misc1 from "../assets/Art/Misc1.png"
-import Misc2 from "../assets/Art/Misc2.png"
-import Neon from "../assets/Art/NeonSpiro.png"
+import Dizzy from '../assets/portraits/Dizzy_Done.png'
+import SaganTyson from '../assets/portraits/Sagan_tyson.png'
 
 import Arrow from '../assets/Arrow.svg';
 
@@ -141,8 +132,8 @@ const Carousel = () => {
         
         className="mySwiper"
       >
-        <SwiperSlide>  <img width={500} height={400}  src={Human} alt="The Weirdos" />   </SwiperSlide>
-        <SwiperSlide>  <img width={500} height={400}  src={Biggins} alt="The Weirdos" />   </SwiperSlide>
+        <SwiperSlide>  <img width={500} height={400}  src={Dizzy} alt="pic1" />   </SwiperSlide>
+        <SwiperSlide>  <img width={500} height={400}  src={SaganTyson} alt="pic2" />   </SwiperSlide>
 
       </Swiper>
     </Container>

@@ -145,7 +145,7 @@ return (
           style={{ padding: 5, maxWidth:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
           src={responsive} 
           alt="icon1" 
-          onMouseEnter={() => slideToIndex(1)}
+          onMouseEnter={() => slideToIndex(0)}
           onMouseLeave={() => slideToIndex(activeSlideIndex)}
         />
         <div className="icon-title">Responsive Design</div>
@@ -156,7 +156,7 @@ return (
           style={{ padding: 5, minWidth:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
           src={countryFacts} 
           alt="icon2" 
-          onMouseEnter={() => slideToIndex(2)}
+          onMouseEnter={() => slideToIndex(1)}
           onMouseLeave={() => slideToIndex(activeSlideIndex)}
         />
         <div className="icon-title">Country Facts</div>
@@ -166,7 +166,7 @@ return (
           style={{ padding: 5, maxWidth:'200px', height:'150px',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
           src={weatherFacts} 
           alt="icon3" 
-          onMouseEnter={() => slideToIndex(0)}
+          onMouseEnter={() => slideToIndex(2)}
           onMouseLeave={() => slideToIndex(activeSlideIndex)}
         />
         <div className="icon-title">3-Day Forecast</div>
@@ -189,7 +189,7 @@ return (
         modules={[EffectCards,Pagination, Navigation, Autoplay]}
         navigation={true}
         grabCursor={true}
-        loop={true}
+        loop={false}
         centeredSlides={true}
         autoplay={{ delay: 3000 }}
       >
@@ -223,7 +223,7 @@ return (
           alt="feature 1"
           /> 
             <div style={{fontSize: 21, position:'absolute', marginLeft: '25px', marginTop: '235px',color: 'rgb(0, 62, 128)'}}>
-                Get a 3-day weather forecast
+                Get a 3-day weather forecast of the capital city
               </div>
           </SwiperSlide>
       </Swiper>

@@ -4,12 +4,13 @@ import { Parallax } from "react-parallax";
 import { AwesomeButton } from "react-awesome-button";
 import Icons from './CountryFeatures.jsx'
 import Nav from './NavBar'
+import Button from './Button'
 
 import WorldMap from "../assets/country-background.png"
 
 function CountryPage() {
   return (
-    <div className="country-features">
+    <div className="parallax-features">
         <Nav isWhite={true} />
         <div className="container">
         <Parallax 
@@ -25,23 +26,11 @@ function CountryPage() {
               <h4 className="introduction">
                 Learn new country facts and get a 3-day weather forecast.
               </h4>
-              <div className="buttons">
-                <a href="http://country.fly.dev/">
-                  <AwesomeButton
-                    size="medium"
-                    type="secondary"
-                  >
-                    Demo
-                  </AwesomeButton> 
-                </a> 
+              <div>
+              <Button style={{backgroundColor: 'white'}} text="See Demo" link='http://country.fly.dev/' />
                 <div className="space"></div>
+              <Button text="Github" link="https://github.com/blakeahalt/Full-Stack-Open-2022/tree/main/part2/countries" />
                 <a href="https://github.com/blakeahalt/Full-Stack-Open-2022/tree/main/part2/countries">
-                  <AwesomeButton
-                    size="medium"
-                    type="primary"
-                  >
-                    github
-                  </AwesomeButton>
                 </a> 
               </div>
             </div>

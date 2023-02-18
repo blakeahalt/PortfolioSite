@@ -10,7 +10,7 @@ import Phonebackground from "../assets/phone-background.png"
 
 function PhoneBook() {
   return (
-    <div className="phonebook-features">
+    <div className="parallax-features">
       <Nav isWhite={true} />
         <div className="container">
         <Parallax 
@@ -68,7 +68,7 @@ function PhoneBook() {
               </div>
               </div>
             </div>
-            <div style={{marginTop: 30}} className="boxs-title">
+            <div style={{marginTop: 50}} className="boxs-title">
               <h2 className="blue">What did I learn?</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>

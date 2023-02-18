@@ -148,7 +148,7 @@ return (
           style={{ padding: 5, width:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
           src={OAuth2} 
           alt="icon1" 
-          onMouseEnter={() => slideToIndex(1)}
+          onMouseEnter={() => slideToIndex(0)}
           onMouseLeave={() => slideToIndex(activeSlideIndex)}
         />
         <div className="icon-title">Google Login</div>
@@ -158,7 +158,7 @@ return (
           style={{ padding: 5, width:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
           src={argon2} 
           alt="icon2" 
-          onMouseEnter={() => slideToIndex(2)}
+          onMouseEnter={() => slideToIndex(1)}
           onMouseLeave={() => slideToIndex(activeSlideIndex)}
         />
         <div className="icon-title">Secure Passwords</div>
@@ -168,7 +168,7 @@ return (
           style={{ padding: 5, width:'200px', height:'150px',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
           src={jwt} 
           alt="icon3" 
-          onMouseEnter={() => slideToIndex(3)}
+          onMouseEnter={() => slideToIndex(2)}
           onMouseLeave={() => slideToIndex(activeSlideIndex)}
         />
         <div className="icon-title">Protected Routes</div>
@@ -178,7 +178,7 @@ return (
           style={{ padding: 5, marginLeft: '20px', marginTop: '15px', width:'200px', height:'150px',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
           src={sales} 
           alt="icon4" 
-          onMouseEnter={() => slideToIndex(0)}
+          onMouseEnter={() => slideToIndex(3)}
           onMouseLeave={() => slideToIndex(activeSlideIndex)}
         />
         <div className="icon-title" >Daily/Weekly/Monthly Sales</div>
@@ -201,7 +201,7 @@ return (
         modules={[EffectCards,Pagination, Navigation, Autoplay]}
         navigation={true}
         grabCursor={true}
-        loop={true}
+        loop={false}
         centeredSlides={true}
         autoplay={{ delay: 3000 }}
       >
@@ -242,46 +242,6 @@ return (
         </SwiperSlide>
       </Swiper>
     </Container>
-   
-   
-    {/* <div className="replaceFeature">
-    {currentVisibility === 'visibility1' ? (
-      <div className='phone-feature-replace'>
-          <img style={{ marginBottom:15, width: 'auto', height:'300px', border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)'}} src={OAuth2} alt="feature 1" />
-          <div style={{fontSize: 21, marginLeft: '15px', marginTop: '-70px', color: 'rgb(0, 62, 128)'}}>
-          &#8592; Easily log in with your Google account.
-          </div>
-        </div>) : null}
-    {currentVisibility === 'visibility2' ? (
-        <div className='phone-feature-replace'>
-          <img style={{ marginBottom:15, width: 'auto', height:'300px',border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} src={argon2} alt="feature 2" />
-            <div style={{fontSize: 21, marginLeft: '25px', marginTop: '-90px', maxWidth: '450px', textAlign: 'left', color: 'rgb(0, 62, 128)'}}>
-              Argon2, considered one of the most secure hashing algorithms, keeps your password safe. 
-          </div>
-        </div>) : null}
-    {currentVisibility === 'visibility3' ? (
-        <div className='phone-feature-replace'>
-        <img style={{ marginBottom:15, width: 'auto', height:'300px',border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} src={jwt} alt="feature 3" />
-        <div style={{fontSize: 21, marginLeft: '25px', marginTop: '80px', maxWidth: '400px', textAlign: 'left', color: 'rgb(0, 62, 128)'}}>
-              &#8592; JSON web tokens: protect private routes while providing logged-in users easy access. 
-          </div>
-        </div>) : null}
-    {currentVisibility === 'visibility4' ? (
-        <>
-          <img style={{marginTop:-10, marginBottom:15, width: 'auto', height:'250px',border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} src={sales} alt="feature 4" />
-            <div style={{fontSize: 21, marginLeft: '25px', marginTop: '10px', color: 'rgb(0, 62, 128)'}}>
-              View Daily/Weekly/Monthly sales for individual assets and collections
-          </div>
-        </>) : null}
-      {currentVisibility === 'visibility5' ? (
-          <>
-            <img style={{marginTop:10, marginBottom:30 }} src={icon1} alt="MobileMap" />
-            <div style={{fontSize: 21, color: 'rgb(0, 62, 128)'}}>
-              Check out each feature to learn more.
-            </div>
-          </>
-        ) : null}
-  </div> */}
   </div>
 
 );

@@ -28,6 +28,18 @@ li {
 .white-nav {
   background-color: white;
 }
+.nav-transparent{
+  background-color: transparent;
+}
+.navBlue{
+  background-color: transparent;
+  position: absolute;
+  justify-content: flex-end;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 
 .nav-titles{
   display:flex;
@@ -39,12 +51,23 @@ li {
   float: right;
   color: rgb(0, 62, 128);
 }
+.navblue-titles{
+  display:flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: center;
+  opacity: 1;
+  margin: 10px;
+  float: right;
+  color: white
+}
 .navbar-title {
   width: 100%;
   font-size: 20px;
   margin: 15px;
   cursor: pointer;
 }
+
 .home-button {
   width: 100%;
   font-size: 20px;
@@ -55,6 +78,17 @@ li {
   justify-content: flex-start;
   color: rgb(0, 62, 128);
 }
+.homeblue-button {
+  width: 100%;
+  font-size: 20px;
+  margin: 5px;
+  margin-left: 10px;
+  float: left;
+  display: flex;
+  justify-content: flex-start;
+  color: white;
+  z-index: 2;
+}
 .menu-icon {
   display: flex;
   font-size: 20px;
@@ -62,9 +96,22 @@ li {
   float: left;
   color: rgb(0, 62, 128);
 }
+.menublue-icon {
+  display: flex;
+  font-size: 20px;
+  cursor: pointer;
+  float: left;
+  color: white;
+}
 .hide{
   display: flex;
   opacity: 1;
+}
+
+.nft-top-container{
+  z-index: 0;
+  text-align: center;
+  background-color: rgb(221,208,195);
 }
 
 .parallax-container{
@@ -611,6 +658,36 @@ h4.introduction a {
     transform: translateX(37%);
   }
 }
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.article {
+  box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3);
+  background-color: rgb(204,145,29,0.2);
+  width: 650px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  flex-direction: column;
+  color: rgb(0, 62, 128);
+  border: 1px solid #000000;
+  border-radius: 25px;
+  margin-top: 2rem;
+  padding: 0 0.7rem;
+}
+.article-title {
+  text-decoration: none;
+  color: rgb(0, 62, 128);
+  font-size: 25px;
+  margin: 10px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
 
 @media screen and (max-width: 1200px) {
   .parallax-projects {

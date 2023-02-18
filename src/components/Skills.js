@@ -15,7 +15,7 @@ display: flex;
 justify-content: center;
 flex-wrap: wrap;
 max-width: 100%;
-padding:15px;
+padding:5px;
 
 `
 
@@ -30,7 +30,7 @@ font-weight:400;
 border: 1px solid rgb(0, 62, 128);
 border-radius: 10px;
 padding: 8px;
-margin: 3px;
+margin: 2px;
 
 @media screen and (max-width: 1000px) {
   justify-content: center;
@@ -50,7 +50,7 @@ margin: 3px;
 
 const MemberComponent = ({skills=[]}) => {
   return(
-    <div style={{ width: '95%', height: 'auto', display: 'flex', justifyContent: 'center', flexDirection: 'column', margin: 'auto', marginBottom: '10px', border: '1px solid black', borderRadius: '15px', boxShadow: '3px 7px 15px 2px rgba(0,0,0,0.3)', backgroundColor:'rgb(255,255,255,0.6)' }}>
+    <div style={{ width: '95%', height: '115px', display: 'flex', justifyContent: 'center', flexDirection: 'column', margin: 'auto', marginBottom: '10px', border: '1px solid black', borderRadius: '15px', boxShadow: '3px 7px 15px 2px rgba(0,0,0,0.3)', backgroundColor:'rgb(255,255,255,0.6)' }}>
       <SkillsContainer>
         {skills.map((skill, index) => (
           <Skills key={index}>{skill}</Skills>
@@ -70,7 +70,7 @@ return (
       <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
         <div className='skills-item-container' >
           <div className="skills-title">Backend Development</div>
-          <MemberComponent skills={["Node.js","Express.js","Python","Flask","SQL","MySQL","SQLite","MongoDB","Jinja"]} />
+          <MemberComponent skills={["Node.js","Express.js","Python","Flask","Jinja","SQL","MySQL","SQLite","MongoDB"]} />
         </div>
         <div className='skills-item-container' >
           <div className="skills-title">Frontend Development</div>
@@ -80,7 +80,7 @@ return (
       <div style={{ flex: 1, display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
         <div className='skills-item-container' >
           <div className="skills-title">Testing and Deployment</div>
-            <MemberComponent skills={["Jest","Cypress","webpack"]} />
+            <MemberComponent style={{height: '50px' }} skills={["Jest","Cypress","webpack"]} />
           </div>
         </div>
       <div style={{ flex: 1, display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
