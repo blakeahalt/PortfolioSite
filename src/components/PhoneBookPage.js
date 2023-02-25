@@ -4,13 +4,26 @@ import { Parallax } from "react-parallax";
 import { AwesomeButton } from "react-awesome-button";
 import Icons from './PhonebookFeatures.jsx'
 import Nav from './NavBar'
+import Button from './Button'
+import Footer from './Footer'
 
 import PhoneBookPic from "../assets/PhoneBookPic.png"
 import Phonebackground from "../assets/phone-background.png"
 
 function PhoneBook() {
+
+  let backgroundImage;
+  
+    if (window.innerWidth > 1200) {
+      backgroundImage = 710
+    } else if (window.innerWidth > 665) {
+      backgroundImage = '100vh'
+    } else {
+      backgroundImage = '100vh'
+    }
+
   return (
-    <div className="parallax-features">
+    < >
       <Nav isWhite={true} />
         <div className="container">
         <Parallax 
@@ -19,7 +32,7 @@ function PhoneBook() {
           className="opaque-image" 
           strength={300} 
           >
-          <div style={{ height: 750, justifyContent: 'center' }}>
+          <div style={{ height: backgroundImage, justifyContent: 'center' }}>
             <div className="boxs header">
               <h1 style={{color: 'black'}} className="title">Phonebook Feature</h1>
               <h4 className="introduction">
@@ -28,30 +41,16 @@ function PhoneBook() {
               <h4 style={{ marginTop: '-1em' }}className="introduction">
                   add, search, edit, and delete names and numbers.
               </h4>
-              <div className="buttons">
-                <a href="http://crud-phonebook.fly.dev/">
-                  <AwesomeButton
-                    size="medium"
-                    type="secondary"
-                  >
-                    Demo
-                  </AwesomeButton> 
-                </a> 
+              <div >
+              <Button style={{backgroundColor: 'white'}} text="See Demo" link='https://crud-phonebook.fly.dev/' />
                 <div className="space"></div>
-                <a href="https://github.com/blakeahalt/Full-Stack-Open-2022/tree/main/part3">
-                  <AwesomeButton
-                    size="medium"
-                    type="primary"
-                  >
-                    github
-                  </AwesomeButton>
-                </a> 
+              <Button text="Github" link="https://github.com/blakeahalt/Full-Stack-Open-2022/tree/main/part3" />
               </div>
             </div>
           </div>
         </Parallax>
         <Parallax  >
-        <div style={{ height: '1200px', marginTop:-475 }}>
+        <div style={{ height: '1300px', marginTop:-550 }}>
             <div className="boxs-title">
               <h2 className="blue ">What is it?</h2>
               <div className="box-con">
@@ -63,12 +62,12 @@ function PhoneBook() {
             <div style={{marginTop:-50}} className="boxs-title">
               <h2 className="blue">What was it built with?</h2>
               <div className="box-con">
-                <div style={{justifyContent: 'flex-start', textAlign: 'left', marginLeft: '50px', width: '100%', color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                  This app was built with a MERN stack (MongoDB, Express.js, React.js, and Node.js).
+              <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
+                  This app was built with a MERN stack (MongoDB, Express.js, React.js, and Node.js).sefsefsefsefsefqeqweqweqwe
               </div>
               </div>
             </div>
-            <div style={{marginTop: 50}} className="boxs-title">
+            <div style={{marginTop: 70}} className="boxs-title">
               <h2 className="blue">What did I learn?</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
@@ -80,15 +79,13 @@ function PhoneBook() {
           </div>
         </Parallax>
 
-
-      <Parallax className='phonebook-features'>
-        <Icons />
-      </Parallax>
-
-    </div>
-    <div className="footer">Footer. --Add Links--</div>
-
-        </div>
+        <Parallax className='phonebookPage-features'>
+          <Icons />
+        </Parallax>
+      </div>
+    
+      <Footer/>
+    </>
   );
 }
 

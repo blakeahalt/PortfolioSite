@@ -11,7 +11,7 @@ outline: none;
 border: 1px solid rgb(0, 62, 128,0.4);
 box-shadow: 5px 7px 15px 2px rgba(0,0,0,0.3);
 
-font-size: ${props => props.theme.fontmd};
+font-size: ${props => props.fontSize};
 padding: 0.9rem 2.3rem;
 border-radius: 50px;
 cursor: pointer;
@@ -34,22 +34,18 @@ position: relative;
     transition: all 0.2s ease;
 }
 
-&:hover::after{
-    transform: translate(-50%, -50%) scale(1);
-    padding: 0.3rem;
-}
 
 @media (max-width: 48em) {
-font-size: ${props => props.theme.fontsm};
+font-size: ${props => props.fontSize};
 
 }
 `
 
-const Button = ({text, link}) => {
+const Button = ({text, link, fontSize}) => {
   return (
     
-<a href={link} aria-label={text}  rel="noreferrer" >
-<Btn>
+<a href={link} aria-label={text} rel="noreferrer" style={{fontSize: fontSize}}>
+<Btn fontSize={fontSize}>
 {text}
 </Btn>
 </a>

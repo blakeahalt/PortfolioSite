@@ -15,6 +15,7 @@ import Arrow from '../assets/Arrow.svg';
 import phoneEdit from "../assets/phone-edit.png";
 import phoneSearch from "../assets/phone-search.png"
 
+
 const Container = styled.div`
 display: flex;
 justify-content: center;
@@ -25,26 +26,24 @@ width: 625px;
 height: 300px;
 padding: 15px;
 
-@media (max-width: 70em){
-    height: 60vh;
+@media (max-width: 1200px){
+  height: 60vh;
 }
 
-@media (max-width: 64em){
-    height: 50vh;
+@media (max-width: 665px){
+    height: 315px;
     width: 30vw;
-}
-@media (max-width: 48em){
-    height: 50vh;
-    width: 40vw;
-}
-@media (max-width: 30em){
-    height: 45vh;
-    width: 60vw;
 }
 
 .swiper{
     width: 100%;
     height: 350px;
+
+    @media (max-width: 665px){
+      margin-top: 0px;
+      height: 95%;
+      width: 95vw;
+  }
 }
 .swiper-pagination{
   text-align: right;
@@ -71,47 +70,47 @@ padding: 15px;
 
 .swiper-button-next{
     color: ${props => props.theme.text};
-    right: 0;
     width: 4rem;
-    top: 60%;
-    right: -100px;
     background-image: url(${Arrow});
     background-position: center;
     background-size: cover;
+    right: -100px;
 
     &:after{
         display: none;
     }
 
-    @media (max-width: 64em){
+    @media (max-width: 1200px){
     width: 3rem;
-
+    right: -75px;
     }
-    @media (max-width: 30em){
+    @media (max-width: 665px){
     width: 2rem;
+    right: 10px;
+    margin-top: 160px;
 
     }
 }
 .swiper-button-prev{
     color: ${props => props.theme.text};
-    left: -100px;
-    top: 60%;
     width: 4rem;
     transform: rotate(180deg);
     background-image: url(${Arrow});
     background-position: center;
     background-size: cover;
+    left: -100px;
 
     &:after{
         display: none;
     }
-    @media (max-width: 64em){
+    @media (max-width: 1200px){
     width: 3rem;
-
-    }
-    @media (max-width: 30em){
+    left: -75px;
+  }
+  @media (max-width: 665px){
     width: 2rem;
-
+    left: 10px;
+    margin-top: 160px
     }
 }
 `
@@ -136,13 +135,193 @@ const slideToIndex = (index) => {
   }
 };
 
-return (
-  <div className="parallax-features">
+let screen;
+
+  if (window.innerWidth > 1200) {
+    screen = (
+      <>
+      <div className="phonebook-features">
+          <h1 className="features-title">Features</h1>
+          <div className="icons">
+            <div className="icon">
+              <img 
+                style={{ padding: 5, maxWidth:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                src={responsive} 
+                alt="icon1" 
+                onMouseEnter={() => slideToIndex(0)}
+                onMouseLeave={() => slideToIndex(activeSlideIndex)}
+              />
+              <div className="icon-title">Responsive Design</div>
+          </div>
+          <div className="icon">
+              <img 
+                style={{ padding: 5, width:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                src={phoneEdit} 
+                alt="icon2" 
+                onMouseEnter={() => slideToIndex(1)}
+                onMouseLeave={() => slideToIndex(activeSlideIndex)}
+              />
+              <div className="icon-title">Edit Contacts</div>
+          </div>
+          <div className="icon">
+              <img 
+                style={{ padding: 5, width:'200px', height:'150px',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
+                src={phoneSearch} 
+                alt="icon3" 
+                onMouseEnter={() => slideToIndex(2)}
+                onMouseLeave={() => slideToIndex(activeSlideIndex)}
+              />
+              <div className="icon-title">Search Contacts</div>
+          </div>
+          </div>
+          <Container>
+            <Swiper
+              effect="cards"
+              spaceBetween={20}
+              slidesPerView={1}
+              onSlideChange={handleSlideChange}
+              onSwiper={(swiper) => setSwiperInstance(swiper)}
+              pagination={{
+                className: 'paginationStyle',
+                clickable: true,
+                type: 'fraction',
+                paginationClickable: true,
+              }}
+              scrollbar={{ draggable: true }}
+              modules={[EffectCards,Pagination, Navigation, Autoplay]}
+              navigation={true}
+              grabCursor={true}
+              loop={false}
+              centeredSlides={true}
+              autoplay={{ delay: 3000 }}
+            >
+              <SwiperSlide>  
+                  <img 
+                  style={{marginTop: -50, marginBottom:15, width: 'auto', height:'225px', border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} 
+                  src={responsive} 
+                  alt="feature 1"
+                  />  
+                  <div style={{fontSize: 21, position:'absolute', marginLeft: '25px', marginTop: '235px',color: 'rgb(0, 62, 128)'}}>
+                      Responsive design adapts to various devices and screen sizes
+                    </div> 
+              </SwiperSlide>
+              <SwiperSlide > 
+                <img style={{marginLeft: '30px', marginTop:10, marginBottom:15, width: 'auto', height:'275px',border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} 
+                src={phoneEdit} 
+                alt="feature 2" />
+                <div style={{fontSize: 21, maxWidth: '250px', padding: '20px', marginLeft: '0px', marginTop: '175px', color: 'rgb(0, 62, 128)'}}>
+                    &#8592; Easily update a contact's name and number.
+                </div>
+              </SwiperSlide>
+              <SwiperSlide > 
+                <img style={{marginLeft: '30px', marginTop:10, marginBottom:15, width: 'auto', height:'300px',border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} src={phoneSearch} alt="feature 3" />
+                  <div style={{fontSize: 21, marginLeft: '20px', marginTop: '-165px', color: 'rgb(0, 62, 128)'}}>
+                    &#8592; Quickly search for any contact.
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </Container>
+        </div>
+      </>
+ )
+} else if (window.innerWidth > 665) {
+  screen =(
+     <>
+      <div className="phonebook-features">
+        <h1 className="features-title">Features</h1>
+        <div className="icons">
+          <div className="icon">
+            <img 
+              style={{ padding: 5, maxWidth:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+              src={responsive} 
+              alt="icon1" 
+              onMouseEnter={() => slideToIndex(0)}
+              onMouseLeave={() => slideToIndex(activeSlideIndex)}
+            />
+            <div className="icon-title">Responsive Design</div>
+        </div>
+        <div className="icon">
+            <img 
+              style={{ padding: 5, width:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+              src={phoneEdit} 
+              alt="icon2" 
+              onMouseEnter={() => slideToIndex(1)}
+              onMouseLeave={() => slideToIndex(activeSlideIndex)}
+            />
+            <div className="icon-title">Edit Contacts</div>
+        </div>
+        <div className="icon">
+            <img 
+              style={{ padding: 5, width:'200px', height:'150px',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
+              src={phoneSearch} 
+              alt="icon3" 
+              onMouseEnter={() => slideToIndex(2)}
+              onMouseLeave={() => slideToIndex(activeSlideIndex)}
+            />
+            <div className="icon-title">Search Contacts</div>
+        </div>
+        </div>
+        <Container>
+          <Swiper
+            effect="cards"
+            spaceBetween={20}
+            slidesPerView={1}
+            onSlideChange={handleSlideChange}
+            onSwiper={(swiper) => setSwiperInstance(swiper)}
+            pagination={{
+              className: 'paginationStyle',
+              clickable: true,
+              type: 'fraction',
+              paginationClickable: true,
+            }}
+            scrollbar={{ draggable: true }}
+            modules={[EffectCards,Pagination, Navigation, Autoplay]}
+            navigation={true}
+            grabCursor={true}
+            loop={false}
+            centeredSlides={true}
+            autoplay={{ delay: 3000 }}
+          >
+            <SwiperSlide>  
+            <>
+              <img 
+                style={{marginTop: -35, marginTop:-75, width: '375px', height:'210px', border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} 
+                src={responsive} 
+                alt="feature 2"
+                /> 
+                  <div style={{fontSize: 21, position:'absolute', marginTop: '230px', padding: '5px', color: 'rgb(0, 62, 128)'}}>
+                  Responsive design adapts to various screen sizes
+                </div>
+                </>
+            </SwiperSlide>
+            <SwiperSlide > 
+              <img style={{marginLeft: '30px', marginTop:10, marginBottom:15, width: 'auto', height:'275px',border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} 
+              src={phoneEdit} 
+              alt="feature 2" />
+              <div style={{fontSize: 21, maxWidth: '250px', padding: '20px', marginLeft: '0px', marginTop: '175px', color: 'rgb(0, 62, 128)'}}>
+                  &#8592; Easily update a contact's name and number.
+              </div>
+            </SwiperSlide>
+            <SwiperSlide > 
+              <img style={{marginLeft: '30px', marginTop:10, marginBottom:15, width: 'auto', height:'300px',border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} src={phoneSearch} alt="feature 3" />
+                <div style={{fontSize: 21, marginLeft: '20px', marginTop: '-165px', color: 'rgb(0, 62, 128)'}}>
+                  &#8592; Quickly search for any contact.
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </Container>
+      </div>
+     </>
+    )
+  } else {
+  screen = (
+    <>
+      <div className="phonebook-features">
     <h1 className="features-title">Features</h1>
     <div className="icons">
       <div className="icon">
         <img 
-          style={{ padding: 5, maxWidth:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+          style={{ padding: 5, width:'125px', height:'125px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
           src={responsive} 
           alt="icon1" 
           onMouseEnter={() => slideToIndex(0)}
@@ -152,7 +331,7 @@ return (
     </div>
     <div className="icon">
         <img 
-          style={{ padding: 5, width:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+          style={{ padding: 5, width:'125px', height:'125px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
           src={phoneEdit} 
           alt="icon2" 
           onMouseEnter={() => slideToIndex(1)}
@@ -162,7 +341,7 @@ return (
     </div>
     <div className="icon">
         <img 
-          style={{ padding: 5, width:'200px', height:'150px',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
+          style={{ padding: 5, width:'125px', height:'125px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
           src={phoneSearch} 
           alt="icon3" 
           onMouseEnter={() => slideToIndex(2)}
@@ -193,32 +372,42 @@ return (
         autoplay={{ delay: 3000 }}
       >
         <SwiperSlide>  
-            <img 
-            style={{marginTop: -50, marginBottom:15, width: 'auto', height:'225px', border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} 
+          <>
+          <img 
+            style={{marginTop: -35, marginTop:-75, width: '325px', height:'190px', order:'1px solid rgb(0,0,0,0.3)', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} 
             src={responsive} 
-            alt="feature 1"
-            />  
-             <div style={{fontSize: 21, position:'absolute', marginLeft: '25px', marginTop: '235px',color: 'rgb(0, 62, 128)'}}>
-                Responsive design adapts to various devices and screen sizes
-              </div> 
+            alt="feature 2"
+            /> 
+              <div style={{fontSize: 16, position:'absolute', marginTop: '200px', padding: '5px', color: 'rgb(0, 62, 128)'}}>
+              Responsive design adapts to various screen sizes
+            </div>
+          </>
         </SwiperSlide>
         <SwiperSlide > 
-          <img style={{marginLeft: '30px', marginTop:10, marginBottom:15, width: 'auto', height:'275px',border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} 
+        <img 
+          style={{marginLeft: '10px', width: '200px', height:'260px', border:'1px solid rgb(0,0,0,0.3)', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} 
           src={phoneEdit} 
           alt="feature 2" />
-          <div style={{fontSize: 21, maxWidth: '250px', padding: '20px', marginLeft: '0px', marginTop: '175px', color: 'rgb(0, 62, 128)'}}>
+         <div style={{fontSize: 16, flexWrap: 'wrap', maxWidth: '150px', padding: '20px', marginLeft: '-10px', marginTop: '175px', color: 'rgb(0, 62, 128)'}}>
               &#8592; Easily update a contact's name and number.
           </div>
         </SwiperSlide>
         <SwiperSlide > 
-          <img style={{marginLeft: '30px', marginTop:10, marginBottom:15, width: 'auto', height:'300px',border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} src={phoneSearch} alt="feature 3" />
-            <div style={{fontSize: 21, marginLeft: '20px', marginTop: '-165px', color: 'rgb(0, 62, 128)'}}>
+          <img style={{marginLeft: '20px', width:'160px', border:'1px solid rgb(0,0,0,0.3)', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} 
+          src={phoneSearch} 
+          alt="feature 2" />
+         <div style={{fontSize: 16, flexWrap: 'wrap', height: '150px', padding: '20px', marginLeft: '-10px', marginTop: '-10px', color: 'rgb(0, 62, 128)'}}>
               &#8592; Quickly search for any contact.
           </div>
         </SwiperSlide>
       </Swiper>
     </Container>
   </div>
+    </>
+  )
+}
+return (
+  <div>{screen}</div>
 );
 
 };

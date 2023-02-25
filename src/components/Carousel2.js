@@ -19,40 +19,65 @@ import Arrow from '../assets/Arrow.svg';
 
 
 const Container = styled.div`
-width: 425px;
+display: flex;
+margin-bottom: 25px;
+align-items: center;
+width: 525px;
 height: 100%;
+margin-left: 50px;
+z-index: 1;
 
-@media (max-width: 70em){
-    height: 60vh;
+@media (max-width: 1200px){
+    display: flex;
+    margin-bottom: -225px;
+    justify-content: center;
+    width: 500px;
+    height: 100%;
+    margin-top: 150px;
+    margin-left: 215px;
 }
 
-@media (max-width: 64em){
-    height: 50vh;
-    width: 30vw;
-}
-@media (max-width: 48em){
-    height: 50vh;
-    width: 40vw;
-}
-@media (max-width: 30em){
-    height: 45vh;
-    width: 60vw;
+@media (max-width: 665px){
+    display: flex;
+    margin-bottom: -225px;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    margin-top: -15vh;
+    margin-left: 200px;
 }
 
 .swiper{
     width: 100%;
     height: 100%;
+    
+    @media (max-width: 1200px){
+        width: 500px;
+        height: 100%;
+        margin-left: -175px;
+    }
+    
+    @media (max-width: 665px){
+        margin-top: -50px;
+        width: 80vw;
+        height: 350px;
+        margin-bottom: 50px;
+    }
 }
 
 .swiper-slide{
     background-color:  rgb(251,249,236);
-
     border-radius: 20px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
+    @media (max-width: 665px){
+        height: 300px
+        margin-top: -25px;
+    }
+    
     img{
         display: block;
         width: 100%;
@@ -65,7 +90,8 @@ height: 100%;
     color: ${props => props.theme.text};
     right: 0;
     width: 4rem;
-    top: 60%;
+    top: 50%;
+    transform: translateY(-50%);
     
     background-image: url(${Arrow});
     background-position: center;
@@ -87,7 +113,7 @@ height: 100%;
 .swiper-button-prev{
     color: ${props => props.theme.text};
     left: 0;
-    top: 60%;
+    top: 50%;
     width: 4rem;
     transform: rotate(180deg);
     background-image: url(${Arrow});

@@ -3,25 +3,38 @@ import '../App.css';
 import { Parallax } from "react-parallax";
 import { AwesomeButton } from "react-awesome-button";
 import Icons from './NFTFeatures.jsx'
-import NavBlue from './NavBarBlue'
+import Nav from './NavBar'
 import Button from './Button'
+import Footer from './Footer'
+
 
 import nftBackground from "../assets/nft-background.png"
 
 function Page() {
+  
+  let backgroundImage;
+
+  if (window.innerWidth > 1200) {
+    backgroundImage = 710
+  } else if (window.innerWidth > 665) {
+    backgroundImage = '100vh'
+  } else {
+    backgroundImage = '100vh'
+    }
+
+
   return (
-    <div className="parallax-features">
-      <NavBlue  />
+    <div >
+      <Nav isWhite={true} />
         <div className="nft-top-container">
         <Parallax 
-          style={{marginTop:"-50px"}}
           bgImage={nftBackground} 
           blur={{ min: 3, max: 3 }}
           bgImageClassName="opaque-image" 
           strength={300} 
           >
-          <div style={{ height: 800 }}>
-            <div className="boxs header">
+          <div style={{height: backgroundImage}} >
+            <div className="boxs">
               <h1 className="title-nft">NFT Sales Tracker</h1>
               <h4 style={{ color: 'rgb(180,180,180)' }} className="title-date">November 2022</h4>
               <h4 style={{ color: 'white' }} className="introduction">
@@ -36,7 +49,7 @@ function Page() {
           </div>
         </Parallax>
         <Parallax  >
-        <div style={{height: '1500px', marginTop:-600}}>
+        <div style={{height: 1600, marginTop:-670}}>
             <div className="boxs-title">
               <h2 className="blue ">What is it?</h2>
               <div className="box-con">
@@ -45,7 +58,7 @@ function Page() {
                 </div>
               </div>
             </div>
-            <div style={{marginTop:-30}} className="boxs-title">
+            <div style={{marginTop:-50}} className="boxs-title">
               <h2 className="blue">What was it built with?</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
@@ -53,7 +66,7 @@ function Page() {
               </div>
               </div>
             </div>
-            <div style={{marginTop: 50}} className="boxs-title">
+            <div style={{marginTop: 90}} className="boxs-title">
               <h2 className="blue">What did I learn?</h2>
               <div className="box-con">
               <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop: -15}}>
@@ -90,15 +103,13 @@ function Page() {
           </div>
         </Parallax>
 
+        <Parallax >
+          <Icons />
+        </Parallax>
+      </div>
 
-      <Parallax className="nft-features">
-        <Icons />
-      </Parallax>
-
+      <Footer/>
     </div>
-    <div className="footer">Footer. This code is open source.</div>
-
-        </div>
   );
 }
 

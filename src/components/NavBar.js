@@ -1,83 +1,153 @@
-import React, { useState } from 'react';
-import '../App.css'
-import Slide from 'react-reveal/Slide';
+import React, { useState, useRef, useEffect } from 'react';
+import '../App.css';
+import { Slide } from 'react-awesome-reveal';
 
-function Nav ({ isWhite }) {
+function Nav({ isWhite }) {
   const [showNav, setShowNav] = useState(false);
+  const navRef = useRef(null);
 
-  return(
-    <nav className={`nav ${isWhite ? 'white-nav' : ''}`}>
-        <div className="home" >
-            <a className="home-button" href="/" >Home</a>
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setShowNav(false);
+      }
+    }
+    window.addEventListener('click', handleClickOutside);
+    return () => {
+      window.removeEventListener('click', handleClickOutside);
+    };
+  }, [navRef]);
+
+  function handleNavTitleClick() {
+    setShowNav(false);
+  }
+
+  return (
+
+    <nav ref={navRef} className={`nav ${isWhite ? 'white-nav' : ''}`}>
+        <div>
+            <a className="home-button" href="/">
+                Home
+            </a>
         </div>
-        
-        {window.innerWidth < 665 ? (
-            <>
-                <div className={`nav-titles ${showNav ? 'show' : 'hide'}`}>
-                    <Slide right when={showNav}>
-                        <div >
-                            <a className="navbar-title" href="/about"> 
-                                About</a>
-                        </div>
-                    </Slide>
-                    <Slide right delay={40} when={showNav} >
-                        <div >
-                            <span className="navbar-title" id="projects" onClick={() => { 
-                                window.location.replace('http://localhost:3000/#projects-section')
-                                window.scrollBy({ behavior: 'smooth' });
-                                }}>Projects</span>
-                        </div>
-                    </Slide>
-                    <Slide right delay={80} when={showNav}>
-                        <div >
-                            <a className="navbar-title" href="/art"> 
-                                Art </a>
-                        </div>
-                    </Slide>
-                    <Slide right delay={120} when={showNav}>
-                        <div >
-                            <a className="navbar-title" href="/blog"> 
-                                Blog </a>
-                        </div>
-                    </Slide>
-                    <Slide right delay={160} when={showNav}>
-                        <div >
-                            <a className="navbar-title" href="/resume"> 
-                                Resume </a>
-                        </div>
-                    </Slide>
+      {window.innerWidth < 665 ? (
+        <>
+          <div className={`nav-titles ${showNav ? 'show' : 'hide'}`}>
+            <Slide direction="right" when={showNav}>
+              <div
+                style={{
+                  backgroundColor: 'rgb(0,0,0,0.5)',
+                  height: '99vh',
+                  width: '250%',
+                  marginLeft: '-125%',
+                  borderRadius: '10px',
+                  paddingTop: '10px',
+                  marginTop:'18px',
+                }}
+                direction="right"
+              >
+                <Slide direction="right" cascade damping={0.1} when={showNav}>
+                <div style={{marginBottom: '10px', fontSize: '1.4em'}}>
+                  <a
+                    className="navbar-title"
+                    href="/about"
+                    onClick={handleNavTitleClick}
+                  >
+                    About
+                  </a>
                 </div>
-                <div className="menu-icon" onClick={() => setShowNav(!showNav)}>
-                &#9776;
+                <div style={{marginBottom: '10px', fontSize: '1.4em'}}>
+                  <a
+                    className="navbar-title"
+                    href="/projects"
+                    onClick={handleNavTitleClick}
+                  >
+                    Projects
+                  </a>
                 </div>
-            </>
-        ) : (
-            <>
-                <div className={`nav-titles ${showNav ? 'show' : 'hide'}`}>
-                    <div >
-                        <a className="navbar-title" href="/about"> 
-                            About</a>
-                    </div>
-                    <div >
-                        <span className="navbar-title" id="projects" onClick={() => { 
-                            window.location.replace('http://localhost:3000/#projects-section')
-                            window.scrollBy({ behavior: 'smooth' });
-                            }}>Projects</span>
-                    </div>
-                    <div >
-                        <a className="navbar-title" href="/art"> 
-                            Art </a>
-                    </div>
-                    <div >
-                        <a className="navbar-title" href="/blog"> 
-                            Blog </a>
-                    </div>
-                    <div >
-                        <a className="navbar-title" href="/resume"> 
-                            Resume </a>
-                    </div>
+                <div style={{marginBottom: '10px', fontSize: '1.4em'}}>
+                  <a
+                    className="navbar-title"
+                    href="/art"
+                    onClick={handleNavTitleClick}
+                  >
+                    Art
+                  </a>
                 </div>
-                <div className="menu-icon" onClick={() => setShowNav(!showNav)}>
+                <div style={{marginBottom: '10px', fontSize: '1.4em'}}>
+                  <a
+                    className="navbar-title"
+                    href="/blog"
+                    onClick={handleNavTitleClick}
+                  >
+                    Blog
+                  </a>
+                </div>
+                <div style={{marginBottom: '10px', fontSize: '1.4em'}}>
+                  <a
+                    className="navbar-title"
+                    href="/resume"
+                    onClick={handleNavTitleClick}
+                  >
+                    Resume
+                  </a>
+                </div>
+              </Slide>
+              </div>
+            </Slide>
+          </div>
+          <div className="menu-icon" onClick={() => setShowNav(!showNav)}>
+            &#9776;
+          </div>
+        </>
+      ) : (
+        <>
+          <div className={`nav-titles ${showNav ? 'show' : 'hide'}`}>
+            <div>
+              <a
+                className="navbar-title"
+                href="/about"
+                onClick={handleNavTitleClick}
+              >
+                About
+              </a>
+            </div>
+            <div>
+                <a
+                className="navbar-title"
+                href="/projects"
+                onClick={handleNavTitleClick}
+                >
+                Projects
+                </a>
+            </div>
+            <div>
+              <a
+                className="navbar-title"
+                href="/art"
+                onClick={handleNavTitleClick} >
+                Art
+              </a>
+            </div>
+            <div>
+              <a 
+                className="navbar-title"
+                href="/blog"
+                onClick={handleNavTitleClick}>
+                Blog
+              </a>
+            </div>
+            <div>
+              <a 
+                className="navbar-title"
+                href="/resume"
+                onClick={handleNavTitleClick}>
+                Resume
+              </a>
+            </div>
+          </div>
+          <div className="menu-icon" onClick={() => setShowNav(!showNav
+)}>
                 &#9776;
                 </div>
             </>

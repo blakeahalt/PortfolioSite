@@ -5,12 +5,23 @@ import { AwesomeButton } from "react-awesome-button";
 import Icons from './CountryFeatures.jsx'
 import Nav from './NavBar'
 import Button from './Button'
+import Footer from './Footer'
 
 import WorldMap from "../assets/country-background.png"
 
 function CountryPage() {
+let backgroundImage;
+
+  if (window.innerWidth > 1200) {
+    backgroundImage = 710
+  } else if (window.innerWidth > 665) {
+    backgroundImage = '100vh'
+  } else {
+    backgroundImage = '100vh'
+  }
+
   return (
-    <div className="parallax-features">
+    <div >
         <Nav isWhite={true} />
         <div className="container">
         <Parallax 
@@ -19,7 +30,7 @@ function CountryPage() {
           bgImageClassName="opaque-image" 
           strength={300} 
           >
-          <div style={{ height: 750 }}>
+          <div style={{height: backgroundImage}} >
             <div className="boxs header">
               <h1 className="title-country">Country and Weather Application</h1>
               <h4 className="title-date">August 2022</h4>
@@ -37,7 +48,7 @@ function CountryPage() {
           </div>
         </Parallax>
         <Parallax  >
-        <div style={{ height: '1200px', marginTop:-475 }}>
+        <div style={{ height: '1000px', marginTop:-400 }}>
             <div className="boxs-title">
               <h2 className="blue ">What is it?</h2>
               <div className="box-con">
@@ -54,7 +65,7 @@ function CountryPage() {
               </div>
               </div>
             </div>
-            <div style={{marginTop: -30}} className="boxs-title">
+            <div style={{marginTop: 20}} className="boxs-title">
               <h2 className="blue">What did I learn?</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
@@ -65,15 +76,13 @@ function CountryPage() {
           </div>
         </Parallax>
 
+        <Parallax>
+          <Icons />
+        </Parallax>
+      </div>
 
-      <Parallax className="country-features">
-        <Icons />
-      </Parallax>
-
+      <Footer/>
     </div>
-    <div className="footer">Footer. This code is open source.</div>
-
-        </div>
   );
 }
 

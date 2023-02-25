@@ -1,5 +1,6 @@
 import React from 'react'
 import Nav from './NavBar'
+import Footer from './Footer'
 
 import ResumePage from "../assets/Resume.pdf"
 import ResumeImage from "../assets/Resume.png"
@@ -24,13 +25,14 @@ const ResumeIframe = () => {
         <>
         <Nav />
         <div className="resume-iframe-length" >
-            <iframe src={ResumePage} width="95%" height="100%" object-fit="contain" title="Resume" ></iframe>
+            <iframe src={ResumePage} width="95%" height="auto" title="Resume" ></iframe>
         </div>
         <center style={{marginTop: 30, paddingBottom: 40}}>
             <button onClick={onButtonClick}>
                 Download PDF
             </button>
         </center>
+        <Footer/>
         </>
     )
 }
@@ -51,14 +53,16 @@ const Resume = () => {
 
     return (
         <>
+        <Nav />
         <div className="resume-length">
-            <img src={ResumeImage} width="100%" height="auto" object-fit="contain" alt="Resume"/>
+            <img src={ResumeImage} width="95%"  alt="Resume"/>
         </div>
-        <center style={{ paddingBottom: '1em'}}>
+        <center>
             <button className="resume-button" onClick={onButtonClick}>
                 Download PDF
             </button>
         </center>
+        <Footer/>
         </>
     )
 }

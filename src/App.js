@@ -5,12 +5,13 @@ import CountryPage from './components/CountryPage.js'
 import PhoneBook from './components/PhoneBookPage.js'
 import NFT from './components/NFTPage.js'
 import StockPage from './components/StockPage.js'
-import Home from './components/Home.js'
+import Home from './components/Home2.js'
 import Team from './components/ProjectCards.js'
 import Resume from './components/Resume.js'
 import About from './components/AboutPage.js'
 import Blog from './components/Devto.js'
 import ArtPage from './components/ArtPage.js'
+import ProjectsPage from './components/ProjectsPage.js'
 import ArtPageSpiro from './components/ArtPage-spiroPage.js'
 import ArtPagePortraits from './components/ArtPage-portraitPage.js'
 
@@ -22,7 +23,6 @@ function App() {
               exact
               path="/"
               element={<Home />}
-              Team={Team}
           />
           <Route
               exact
@@ -63,6 +63,11 @@ function App() {
               exact
               path="/art/portraits/"
               element={<ArtPagePortraits />}
+          />
+          <Route
+              exact
+              path="/projects"
+              element={<ProjectsPage />}
           />
           <Route
               exact

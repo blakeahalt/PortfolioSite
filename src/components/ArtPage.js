@@ -1,18 +1,20 @@
 import SpiroArt from './ArtPage-spiro-desc.js'
 import PortraitArt from './ArtPage-portrait-desc.js'
 import Nav from './NavBar'
+import Footer from './Footer'
 
 function ArtPage () {
 
     return (
-        <div className="art-container">
+        <div className='artpage' style={{backgroundColor: 'rgb(221,208,195)', height: '100%'}}>
             <Nav />
-            <div style={{marginBottom: '150px'}}>
+            <div >
                 <SpiroArt/>
             </div>
-            <div style={{marginTop:'-350px'}}>
+            <div>
                 <PortraitArt/>
             </div>
+            <Footer/>
         </div>
     )
 

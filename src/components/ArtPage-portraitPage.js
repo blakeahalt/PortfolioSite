@@ -2,16 +2,12 @@ import React, {useState} from 'react'
 
 import styled from 'styled-components';
 import Nav from './NavBar'
+import Footer from './Footer'
 
-import icon1 from "../assets/i1.png";
-import icon2 from "../assets/i2.png";
-import icon3 from "../assets/i3.png";
+
 import Human from "../assets/Art/HumanHemi.jpg"
 import Dizzy from '../assets/portraits/Dizzy_Done.png'
 import SaganTyson from '../assets/portraits/Sagan_tyson.png'
-
-import Slide from 'react-reveal/Slide';
-
 
 const Section = styled.section`
 display: flex;
@@ -21,13 +17,13 @@ box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3)
 background-color: rgb(221,208,195);
 margin-top: 15px;
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1200px){
   justify-content: center;
   flex-wrap: wrap;
+  min-height: 1200px;
 }
 @media screen and (max-width: 481px){
   justify-content: center;
-  height: auto;
 }
 `
 
@@ -39,14 +35,14 @@ padding: 20px;
 padding-top: 75px;
 margin-bottom: 50px;
 width: 2500px;
-height: 4050px;
+height: auto;
 
 box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3);
 background-color: rgb(251,249,236,0.6);
-${'' /* border: 2px solid black;
-border-radius: 0px; */}
+border: 1px solid rgb(0,0,0,0.3);
+border-radius: 0px;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1200px) {
     display: flex;
     padding: 10px;
     justify-content: center;
@@ -55,11 +51,13 @@ border-radius: 0px; */}
   }
 
 
-@media screen and (max-width: 481px) {
-flex-wrap: wrap;
-justify-content: center;
-width: 95%;
-}
+@media screen and (max-width: 665px) {
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  height auto;
+  text-align: center;
+  }
 `
 
 const ContainerTitle = styled.div`
@@ -80,79 +78,84 @@ margin: 3rem 1.5rem;
 flex-wrap: wrap;
 justify-content: center;
 width: 500px;
-height: 550px;
+height: 650px;
 backdrop-filter: blur(4px);
 margin: 10px;
 max-height: auto;
 
-border: 1px solid ${props => props.theme.text};
+border: 1px solid rgb(0,0,0,0.3);
 border-radius: 20px;
 box-shadow: 5px 5px 12px 5px rgba(0,0,0,0.3);
 background-color: rgb(204,145,29,0.1);
 
 
 
-@media screen and (max-width: 1000px) {
-  flex-basis: 50%;
-  width: 50%;
-  display: block ;
+@media screen and (max-width: 1200px) {
+  width: 350px;
+  display: flex ;
   flex-wrap: wrap;
   justify-content: center;
-  min-height: 300px;
-  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 455px;
+  margin: 10px;
+}
 }
 
-@media screen and (max-width: 481px) {
+@media screen and (max-width: 665px) {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  height: 285px;
-
+  width: 100%;
+  height: 440px;
   }
 `
 
 const ImageContainer = styled.div`
-width: 100%;
-height: 400px;
-box-shadow: 7px 7px 15px -3px rgba(0,0,0,0.3);
-background-color: rgb(255,255,255, 0.5);
-border: 1px solid ${props => props.theme.text};
-margin: 10px;
-margin-bottom: -2px;
-padding: 1.2rem;
-border-radius: 20px;
-cursor: pointer;
-align-content: center;
+  width: 500px;
+  height: 500px;
 
-img{
-  justify-content: center;
-  width: auto;
-  height: auto;
-  transition: all 0.3s ease;
-  display: block;
-  margin: 0 auto;
-}
+  box-shadow: 7px 7px 15px -3px rgba(0,0,0,0.3);
+  background-color: rgb(255,255,255, 0.5);
+  border: 1px solid rgb(0,0,0,0.3);
+  margin: 10px;
+  margin-bottom: -2px;
+  padding: .5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center; 
+  overflow: hidden;
 
-&:hover{
-  img{
-    transform: scale(1.25);
-    position: relative;
-    cursor: pointer;
-    
+  img {
+    justify-content: center;
+    width: auto;
+    height: 100%;
+    transition: all 0.3s ease;
+    display: flex;
+    margin: 0 auto;
+    border-radius: 25px;
   }
-}
 
+  &:hover{
+    img{
+      transform: scale(1.25);
+      position: relative;
+      cursor: pointer;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    margin: 7px;
+    padding: 10px;
+    height: 315px;
+    }
+  @media screen and (max-width: 665px) {
+    margin: 7px;
+    width: 300px;
+    height: 325px;
+    }
+`;
 
-@media screen and (max-width: 1000px) {
-  margin: 7px;
-  padding: 10px;
-  }
-@media screen and (max-width: 481px) {
-  margin: 7px;
-  padding: 10px;
-  width: 100%;
-  }
-`
 
 const Name = styled.h2`
 font-size: 1.5em;
@@ -162,7 +165,16 @@ align-items: center;
 justify-content: center;
 color: rgb(0, 62, 128);
 
+@media screen and (max-width: 1200px) {
+  margin: 7px;
+  width: 300px;
+}
+@media screen and (max-width: 665px) {
+  margin: 7px;
+  width: 300px;
+}
 `
+
 const Description = styled.p`
   font-size: 1.2em;
   text-align: center;
@@ -172,23 +184,20 @@ const Description = styled.p`
   margin-top: -20px;
 
 
-@media screen and (max-width: 1000px) {
-  display: flex ;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: auto;
-  height: 2em;
-  margin: 17px;
-  margin-top: -1.5em;
-  margin-bottom: 3em;
-}
-@media screen and (max-width: 481px) {
+  @media screen and (max-width: 1200px) {
+    display: flex ;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    margin: 5px;
+  }
+@media screen and (max-width: 665px) {
   display: flex ;
   flex-wrap: wrap;
   justify-content: center;
   width: auto;
   margin: 17px;
-  height: 2.5em;
+  height: 1em;
   margin-top:-10px;
   margin-bottom:10px;
 }
@@ -218,17 +227,17 @@ border-radius: 10px;
 padding: 6px;
 margin: 2px;
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   justify-content: center;
   align-items: center;
-  border: 1px solid;
+  border: 1px solid rgb(0,0,0,0.3); 
   border-radius: 10px;
   width: auto;
   margin: 2px;
 }
 @media screen and (max-width: 481px) {
   
-  border: 1px solid;
+  border: 1px solid rgb(0,0,0,0.3); 
   border-radius: 10px;
 }
 `
@@ -266,7 +275,7 @@ const MemberComponent = ({img, name='', desc='',skills=[]}) => {
             <img src={img} alt={name} style={{ maxWidth: '100%', maxHeight: '100%' }} />
           </a>
         </ImageContainer>
-        <div style={{ width: '95%', height: '75px', margin: '10px', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignContent: 'center', textAlign: 'center', border: '1px solid black', borderRadius: '15px', boxShadow: '3px 7px 15px 2px rgba(0,0,0,0.3)', backgroundColor:'rgb(255,255,255,0.6)' }}>
+        <div className='spiro-name-desc-container'>
           <Name>{name}</Name>
           <Description>{desc}</Description>
         </div>
@@ -280,12 +289,13 @@ const ProjectCards = () => {
     <Nav />
     <Section className="spiro-cards">
       <Container>
-        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom:'150px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom:'25px' }}>
           <MemberComponent img={Dizzy} name="Dizzy Gillespie" desc="pencil on paper"/>
           <MemberComponent img={SaganTyson} name="Sagan Tyson" desc="Colored pencil on paper"/>
         </div>
       </Container>
     </Section>
+    <Footer/>
     </>
   );
 };
