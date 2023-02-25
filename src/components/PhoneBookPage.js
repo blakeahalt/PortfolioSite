@@ -55,24 +55,24 @@ function PhoneBook() {
               <h2 className="blue ">What is it?</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                  A full stack app from the University of Helsinki's Full Stack Open 2022 course. This is a simple web app that implements basic CRUD (Create, Read, Update, Delete) functionality. 
+                  From the University of Helsinki's Full Stack Open 2022 course this is a simple web application that implements basic CRUD (Create, Read, Update, Delete) methods to update a phone contacts list. 
                 </div>
               </div>
             </div>
-            <div style={{marginTop:-50}} className="boxs-title">
+            <div style={{marginTop:-60}} className="boxs-title">
               <h2 className="blue">What was it built with?</h2>
               <div className="box-con">
               <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                  This app was built with a MERN stack (MongoDB, Express.js, React.js, and Node.js).sefsefsefsefsefqeqweqweqwe
+                  This app was built with a MERN stack (MongoDB, Express.js, React.js, and Node.js).
               </div>
               </div>
             </div>
-            <div style={{marginTop: 70}} className="boxs-title">
+            <div style={{marginTop: 50}} className="boxs-title">
               <h2 className="blue">What did I learn?</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                  Overall I learned how to create a simple full stack web application. Using React I created reusable components, managed component data with state and props, and worked with React's virtual DOM to render and update the UI. I also used several Express.js methods like 'get', 'post', 'put', delete', and 'use' to handle Node.js HTTP requests the contacts data stored in a database using MongoDB.
-                  Beyond the scope of the course requirements I learned how to implement responsive design with stylized CSS and how to deploy the app to a cloud-based platform, originally on Heroku and later migrated to Fly.io.
+                  I learned how to build a simple full stack web application that uses React to create reusable components and manage component data with state and props. Using Express.js methods (get, post, put, delete, and use) to handle Node.js HTTP requests, I was able to interact with the a MongoDB database to manipulate contact data.
+                  I also learned how to implement responsive design with stylized CSS and how to deploy the app to cloud-based platforms Heroku and Fly.io.
               </div>
               </div>
             </div>

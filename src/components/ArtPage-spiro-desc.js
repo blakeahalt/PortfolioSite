@@ -2,7 +2,6 @@ import React, { lazy, Suspense } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 // import Carousel from '../Carousel'
 import Button from './Button'
-import {dark} from './Themes';
 import Loading from './Loading';
 
 import Escher3 from '../assets/Escher3.png'
@@ -164,15 +163,13 @@ const About = () => {
             A collection of works that incorporate the spirograph design.
             </SubText>
             <SubText>
-            I'm drawn to the skeletal structure of spirographs. While taking inspiration from M.C. Escher and his works on mobius strips, I explore the mobius strip quality of spirographs.
+            Inspired by M.C. Escher's works on mobius strips, I try to incorporate mobius strip designs to the skeletal structure of spirographs.
             </SubText>
             <SubText>
-            In other works, I balance a spirograph's structure and negative space with color and design. Earth at night works are based on satellite imagery taken from space, while floral works highlight the visual beauty of geometry found in nature.
+            In other spirograph works, I balance both structure and negative space with color and design. Earth at night works are based on satellite imagery taken from space, while floral works highlight the visual beauty of geometry found in nature.
             </SubText>
             <ButtonContainer>
-            <ThemeProvider theme={dark}>
             <Button text="See More" link='http://localhost:3000/art/spiro' />
-            </ThemeProvider>
             </ButtonContainer>
         </Box>
       </Container>

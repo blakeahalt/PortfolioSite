@@ -55,7 +55,7 @@ function Page() {
               <h2 className="blue ">What is it?</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                  Harvard University's Introduction to Computer Science final CS50 EdX project.  This web app allows users to manage their own stock portfolio.  Registered users can buy stocks with a starting balance of $10,000 from the <a href="https://iexcloud.io/docs/api/"><i>IEX Cloud API</i></a>. A user' portfolio stores all stock searches, transactions, and balances.
+                  From Harvard University's Introduction to Computer Science CS50 EdX's final project, this web application allows users to manage their own stock portfolio.  Starting with a balance of $10,000, registered users can buy stocks using real-time financial data with the <a href="https://iexcloud.io/docs/api/"><i>IEX Cloud API</i></a>. A user' portfolio stores all stock searches, transactions, and balances.
                 </div>
               </div>
             </div>
@@ -63,15 +63,15 @@ function Page() {
               <h2 className="blue">What was it built with?</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                  This app was built with Python as the main programming language. It also uses a Flask web framework with Jinja as its default templating engine. An SQLite3 relational database is used to store and retrieve user data. All real-time financial data is supplied from the <a href="https://iexcloud.io/docs/api/"><i>IEX Cloud API</i></a>.
+                  This web application was built with Python as the main programming language. It also uses a Flask web framework with Jinja as its default templating engine. An SQLite3 relational database is used to store and retrieve user data. Real-time financial data is supplied from the <a href="https://iexcloud.io/docs/api/"><i>IEX Cloud API</i></a>.
               </div>
               </div>
             </div>
-            <div style={{marginTop: 20}} className="boxs-title">
+            <div style={{marginTop: 0}} className="boxs-title">
               <h2 className="blue">What did I learn?</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                Overall, I learned how to build a web application that interacts with a relational database and external APIs. Using a Flask web framework, I was able to create the web application, build routes, handle requests, and interact with the SQLite3 database. Jinja helped separate the logic into templates, which controlled specific things like buying or selling a stock, registering or logging in users, organizing the page layout, and displaying notifications. Lastly, the IEX Cloud API taught me how to integrate an external API to provide real-time financial data. 
+                I learned how to build a web application that interacts with a relational database and external API (<a href="https://iexcloud.io/docs/api/"><i>IEX Cloud</i></a>). Using a Flask web framework, I was able to create the web application, build routes, handle requests, and interact with a SQLite3 database. Jinja helped create templates for stock transactions, account registration, user login,  page layouts, and displaying notifications. 
               </div>
               </div>
             </div>

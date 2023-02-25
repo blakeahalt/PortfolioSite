@@ -53,23 +53,23 @@ let backgroundImage;
               <h2 className="blue ">What is it?</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                  A full stack app from the University of Helsinki's Full Stack Open 2022 course that fetches and displays information from the <a href="https://restcountries.com/" target="_blank" rel="noreferrer"><i>REST Countries</i></a> and <a href="https://openweathermap.org/" target="_blank" rel="noreferrer"><i>Open Weather Map</i></a> API's.
+                From the University of Helsinki's Full Stack Open 2022 course this web application fetches and displays country facts and weather forecast from the <a href="https://restcountries.com/" target="_blank" rel="noreferrer"><i>REST Countries</i></a> and <a href="https://openweathermap.org/" target="_blank" rel="noreferrer"><i>Open Weather Map</i></a> API's.
                 </div>
               </div>
             </div>
-            <div style={{marginTop:-50}} className="boxs-title">
+            <div style={{marginTop:-40}} className="boxs-title">
               <h2 className="blue">What was it built with?</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                  This app was built with Javascript, React, and something something.  Node.js backedn with other stuff. It also uses API's from (here and here) 
+                This web application was built with Javascript as the main programming language. It has a front-end user interface (built with React) and a back-end server (built with Node.js and Express.js) that communicates with an external API (using Axios).
               </div>
               </div>
             </div>
-            <div style={{marginTop: 20}} className="boxs-title">
+            <div style={{marginTop: -50}} className="boxs-title">
               <h2 className="blue">What did I learn?</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                  I learned how to set state variables by making axios async requests to an API. Applying a filter to the state variable 'countries' users are able to quickly search for and display country data. Beyond the scope of the course requirements I learned how to implement responsive design with stylized CSS and how to deploy the app to a cloud-based platform (i.e. Fly.io).
+                  I learned how to quickly search for and display country data by applying a filter to state variables set by async requests to an API. I also learned how to implement responsive design with stylized CSS and how to deploy the app to cloud-based platforms, Heroku and Fly.io.
               </div>
               </div>
             </div>

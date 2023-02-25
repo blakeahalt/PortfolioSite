@@ -2,23 +2,16 @@ import React from "react";
 
 import '../App.css';
 import { Parallax } from "react-parallax";
-import { AwesomeButton } from "react-awesome-button";
 import Icons from './Skills.js'
 import Nav from './NavBar'
 import Footer from './Footer'
 
 
-import image1 from "../assets/01.jpeg";
-import image3 from "../assets/03.jpeg";
-import image4 from "../assets/04.jpeg";
-import WorldMap from "../assets/country-background.png"
-import MobileMap from "../assets/MobileMap.jpg"
 import StandArt from "../assets/Stand_Art.jpg"
 import StandArt2 from "../assets/Stand_Art2.jpg"
 import StandArt3 from "../assets/Stand_Art3.jpg"
 import StandArt4 from "../assets/Stand_Art4.jpg"
 import StandArt5 from "../assets/Stand_Art5.jpg"
-import ResumePic from "../assets/ResumePic.jpg";
 
 function About() {
   let screen;
@@ -43,13 +36,13 @@ if (window.innerWidth > 1200) {
               <h2 style={{marginTop: '250px', marginBottom: '45px', color: 'rgb(0, 62, 128)' }}>About me:</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                I spent ten years teaching English at elite after school programs in Thailand and South Korea, and 4 years teaching Kindergarten at a private elementary school in Pacific Palisades, CA. While teaching in CA, I also began volunteering at several machine learning, data science, and tech conferences in the Los Angeles area exploring my greater interest in the tech world. 
+                After teaching and training English teachers for a decade in Thailand and South Korea, in 2017, I continued teaching Kindergarten in Pacific Palisades, CA. While teaching, I started learning Python and Javascript on my own and volunteered at tech conferences in the Los Angeles area to explore my greater interest in the tech world.
                 </div>
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                Because of my continued interest in technology, passion to create things that solve real problems, and growth in technical skills, in 2021, I decided to transition from teaching to pursue a software development career.
+                By 2021, I transitioned from teaching to a career in software development driven by my passion for creating things, problem-solving, the opportunity for continuous growth in technical skills, and continued interest in technology.
                 </div>
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                See the full stack applications I've built in the Projects section, which have a description of each project and its features along with links to a demo and my github. Also be sure to check out my artwork and blog posts!
+                Check out the Projects section for full-stack applications I've built, including descriptions, features, and links to demos and GitHub. Also, don't forget to explore my artwork and blog posts!
                 </div>
               </div>
             </div>

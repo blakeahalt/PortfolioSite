@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from 'styled-components'
-import "../Icons/Icon.css";
+import "../Icon.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -11,7 +11,6 @@ import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay, EffectCards } from "swiper";
 
 import Arrow from '../assets/Arrow.svg';
-import icon1 from "../assets/i1.png";
 import argon2 from '../assets/nft-argon2.png'
 import jwt from '../assets/nft-jwt.png'
 import OAuth2 from '../assets/nft-OAuth2.png'

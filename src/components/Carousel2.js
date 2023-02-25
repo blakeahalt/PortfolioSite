@@ -59,22 +59,22 @@ z-index: 1;
     }
     
     @media (max-width: 665px){
-        margin-top: -50px;
-        width: 80vw;
+        margin-top: 20px;
+        margin-left: -195px;
+        width: 90vw;
         height: 350px;
-        margin-bottom: 50px;
     }
 }
 
 .swiper-slide{
-    background-color:  rgb(251,249,236);
+    background-color: rgb(251,249,236);
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     
     @media (max-width: 665px){
-        height: 300px
+        height: 300px;
         margin-top: -25px;
     }
     
@@ -83,6 +83,7 @@ z-index: 1;
         width: 100%;
         height: auto;
         object-fit: cover;
+        align-self: center;
     }
 }
 

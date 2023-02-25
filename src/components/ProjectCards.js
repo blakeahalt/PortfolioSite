@@ -2,9 +2,6 @@ import React from 'react'
 
 import styled from 'styled-components';
 
-import icon1 from "../assets/i1.png";
-import icon2 from "../assets/i2.png";
-import icon3 from "../assets/i3.png";
 import nftImg from '../assets/nft-background.png'
 import stockImg from '../assets/stock-background.png'
 import countryImg from '../assets/country-background-home.png'
@@ -107,7 +104,7 @@ color: ${props => props.theme.body};
 margin: 3rem 1.5rem;
 flex-wrap: wrap;
 justify-content: center;
-height: 230px;
+height: 245px;
 width: 250px;
 backdrop-filter: blur(4px);
 margin: 10px;
@@ -128,13 +125,12 @@ background-color: rgb(204,145,29,0.1);
 
 @media screen and (max-width: 1200px) {
   width: 325px;
-  max-height: 325px;
+  height: 355px;
   display: flex ;
   flex-wrap: wrap;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  height: auto;
   margin: 10px;
 }
 
@@ -221,7 +217,7 @@ height: 20px;
 padding: 10px;
 margin: 10px;
 margin-top: -25px;
-margin-bottom: 25px;
+margin-bottom: 10px;
 color: rgb(0, 62, 128);
 
 
@@ -248,41 +244,75 @@ color: rgb(0, 62, 128);
 `
 
 const SkillsContainer = styled.div`
+width: 95%;
+font-size: 1.1em;
 display: flex;
 justify-content: center;
 align-items: center;
-flex-wrap: wrap;
-max-width: auto;
-margin-top: 10px;
-
-`
-
-const Skills = styled.h2`
-font-size: .8em;
-display: flex;
-align-items: center;
-justify-content: center;
-text-transform: capitalize;
-background-color: rgb(230,230,230, 0.5);
-color: rgb(0, 62, 128);
-font-weight:400;
-border: 1px solid rgb(0, 62, 128, 0.5);
-border-radius: 10px;
-padding: 6px;
+height: 100px;
+padding: 7px;
+padding-top: 10px;
 margin: 2px;
+flex-wrap: wrap;
+margin-top: 10px;
+margin-bottom: 10px;
+border-radius: 10px;
+background-color: rgb(255,255,255,0.4); 
+
 
 @media screen and (max-width: 1200px) {
+  display: flex;
   justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 100px;
   align-items: center;
-  border: 1px solid;
-  border-radius: 10px;
-  width: auto;
-  margin: 2px;
+  padding-bottom: 10px;
 }
 @media screen and (max-width: 665px) {
-  
-  border: 1px solid ;
-  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  height: 105px;
+  align-items: center;
+  padding-bottom: 10px;
+}
+`
+
+
+const Skills = styled.h2`
+display: flex;
+justify-content: center;
+height: 20px;
+text-align: center;
+align-items: center;
+background-color: rgb(240, 240, 240, 0.8);
+color: rgb(0, 62, 128);
+font-weight: 400;
+border: 1px solid rgb(0, 62, 128);
+border-radius: 10px;
+padding: 4px;
+margin: 2px;
+font-size: 0.7em;
+
+@media screen and (max-width: 1200px) {
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid rgb(0, 62, 128, 0.7);
+border-radius: 10px;
+margin: 2px;
+height:20px;
+font-size: 0.8em;
+}
+@media screen and (max-width: 665px) {
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid rgb(0, 62, 128,0.7);
+border-radius: 10px;
+font-size: 0.8em;
+margin: 1px;
+padding: 6px
 }
 `
 
@@ -320,7 +350,7 @@ const ProjectCards = () => {
       <ContainerTitle>
           Projects
       </ContainerTitle>
-      <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
+      <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
         <Slide direction='left' delay={350}>
         <a href="/nftpage" >
           <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks the top trending NFT sales using various API's." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>

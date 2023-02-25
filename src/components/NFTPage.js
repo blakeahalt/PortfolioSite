@@ -54,46 +54,38 @@ function Page() {
               <h2 className="blue ">What is it?</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                  This personal project was my first attempt to build an actual site. I originally planned to use the sales data from the OpenSea API to make an 'NFT Fantasy League'.  However, I'm (still) waiting to get an OpenSea API key, so I decided to build an NFT sales tracking application.
+                  This is a personal project and was my first attempt to build an entire full stack web application. I originally planned to implement sales data from the OpenSea API to create an 'NFT Fantasy League', but have yet to obtain an OpenSea API key. Instead, I built an NFT sales tracking application using available API data from CryptoSlam, NFTStats and RapidAPI. Then I implemented JSON web tokens and private routes for secure user registration and login.
                 </div>
               </div>
             </div>
-            <div style={{marginTop:-50}} className="boxs-title">
+            <div style={{marginTop:-80}} className="boxs-title">
               <h2 className="blue">What was it built with?</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                This web app has a front-end user interface (built with React) and a back-end server (built with Node.js and Express.js) that communicates with a database (MySQL) and external APIs (using Axios) while implementing secure authentication (OAuth2) and password hashing (Argon2).
+                This web application has a front-end user interface (built with React) and a back-end server (built with Node.js and Express.js) that communicates with a database (MySQL) and external APIs (using Axios) while implementing secure authentication (OAuth2) and password hashing (Argon2).
               </div>
               </div>
             </div>
-            <div style={{marginTop: 90}} className="boxs-title">
+            <div style={{marginTop: 50}} className="boxs-title">
               <h2 className="blue">What did I learn?</h2>
               <div className="box-con">
               <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop: -15}}>
-              By completing this project, I learned how to build the following features from scratch: 
+              By completing this project, I learned how to implement the following features: 
               <ul style={{marginLeft: -70}}>
                 <li>
-                enabling OAuth2 login capability for users to log in with their Google accounts
+                enable OAuth2 allowing users to log in with their Google accounts
                 </li>
                 <li>
-                encrypting and storing Argon2 encrypted passwords into a MySQL database  
+                store Argon2 hashed passwords into a MySQL database  
                 </li>
                 <li>
-                creating protected routes with JSON access and refresh web tokens for both registered users and Google users
+                protect routes with JSON access and refresh web tokens for both registered users and Google users
                 </li>
-                <li style={{ listStyleType: 'disclosure-open' }}>
-                mapping and filtering specific data from API responses:
-                <ul style={{ listStyleType: 'none', marginLeft: -90 }}>
-                  <li>
-                    changing ISP180 number data into '1 hour ago' string format
-                  </li>
-                  <li>
-                    removing the collection name from one url and appending it to a new one
-                  </li>
-                  <li>
-                    attaching the appropriate blockchain currency to each market
-                  </li>
-                </ul>
+                <li>
+                convert ISO 8601 date format to '1 hour ago' string format
+                </li>
+                <li>
+                loop over fetched API data capturing collection names and appending them to different urls.
                 </li>
               </ul>
             </div>

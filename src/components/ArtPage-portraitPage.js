@@ -5,7 +5,6 @@ import Nav from './NavBar'
 import Footer from './Footer'
 
 
-import Human from "../assets/Art/HumanHemi.jpg"
 import Dizzy from '../assets/portraits/Dizzy_Done.png'
 import SaganTyson from '../assets/portraits/Sagan_tyson.png'
 
@@ -78,7 +77,7 @@ margin: 3rem 1.5rem;
 flex-wrap: wrap;
 justify-content: center;
 width: 500px;
-height: 650px;
+height: 610px;
 backdrop-filter: blur(4px);
 margin: 10px;
 max-height: auto;
@@ -97,7 +96,7 @@ background-color: rgb(204,145,29,0.1);
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  height: 455px;
+  height: 475px;
   margin: 10px;
 }
 }
@@ -107,14 +106,13 @@ background-color: rgb(204,145,29,0.1);
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  height: 440px;
+  height: 445px;
   }
 `
 
 const ImageContainer = styled.div`
-  width: 500px;
-  height: 500px;
-
+  width: 100%;
+  height: 460px;
   box-shadow: 7px 7px 15px -3px rgba(0,0,0,0.3);
   background-color: rgb(255,255,255, 0.5);
   border: 1px solid rgb(0,0,0,0.3);
@@ -124,15 +122,16 @@ const ImageContainer = styled.div`
   border-radius: 20px;
   cursor: pointer;
   display: flex;
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 
-  img {
+  img{
     justify-content: center;
     width: auto;
-    height: 100%;
+    height: auto;
     transition: all 0.3s ease;
-    display: flex;
+    display: block;
     margin: 0 auto;
     border-radius: 25px;
   }
@@ -144,17 +143,20 @@ const ImageContainer = styled.div`
       cursor: pointer;
     }
   }
+
   @media screen and (max-width: 1200px) {
     margin: 7px;
     padding: 10px;
     height: 315px;
-    }
+  }
+
   @media screen and (max-width: 665px) {
     margin: 7px;
     width: 300px;
-    height: 325px;
-    }
-`;
+    height: 300px;
+  }
+`
+
 
 
 const Name = styled.h2`
@@ -287,7 +289,7 @@ const ProjectCards = () => {
   return (
     <>
     <Nav />
-    <Section className="spiro-cards">
+    <Section >
       <Container>
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom:'25px' }}>
           <MemberComponent img={Dizzy} name="Dizzy Gillespie" desc="pencil on paper"/>

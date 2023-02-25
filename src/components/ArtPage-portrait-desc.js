@@ -2,7 +2,6 @@ import React, { lazy, Suspense } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 // import Carousel from '../Carousel'
 import Button from './Button'
-import {dark} from './Themes';
 import Loading from './Loading';
 
 import Dizzy from '../assets/portraits/Dizzy_Done_transparent.png'
@@ -168,9 +167,7 @@ const About = () => {
         Traditional portrait art featuring jazz artists, kaleidoscopic backgrounds, and a glasshead series exploring the relationship between subject and mind.
         </SubText>
         <ButtonContainer>
-        <ThemeProvider theme={dark}>
         <Button text="See More" link='http://localhost:3000/art/portraits' />
-        </ThemeProvider>
         </ButtonContainer>
          </Box>
       </Container>

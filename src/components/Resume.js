@@ -68,9 +68,9 @@ const Resume = () => {
 }
 
 const DisplayResume = () => {
-    const isMinWidth1325px = window.matchMedia("(min-width: 1325px)").matches;
+    const isMinWidth880px = window.matchMedia("(min-width: 880px)").matches;
 
-    return isMinWidth1325px ? <ResumeIframe /> : <Resume />;
+    return isMinWidth880px ? <ResumeIframe /> : <Resume />;
 }
 
 export default DisplayResume;

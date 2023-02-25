@@ -4,10 +4,6 @@ import styled from 'styled-components';
 import Nav from './NavBar'
 import Footer from './Footer'
 
-
-import icon1 from "../assets/i1.png";
-import icon2 from "../assets/i2.png";
-import icon3 from "../assets/i3.png";
 import Human from "../assets/Art/HumanHemi.jpg"
 import Biggins from "../assets/Art/Biggins.png"
 import CamaraLantana from "../assets/Art/CamaraLantana.jpg"

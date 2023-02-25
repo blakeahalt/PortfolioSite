@@ -1,17 +1,9 @@
 import React, { useState, useRef } from "react";
 import styled from 'styled-components';
 
-import icon1 from "../assets/i1.png";
-import icon2 from "../assets/i2.png";
-import icon3 from "../assets/i3.png";
-import MobileMap from "../assets/MobileMap.jpg";
-import test1 from "../assets/icons8-sun.svg"
-
 import { Slide } from 'react-awesome-reveal';
 
-
-import "../Icons/Icon.css";
-
+import "../Icon.css";
 
 const SkillsContainer = styled.div`
 display: flex;

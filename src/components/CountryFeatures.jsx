@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from 'styled-components'
-import "../Icons/Icon.css";
+import "../Icon.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
