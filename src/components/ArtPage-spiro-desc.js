@@ -169,7 +169,8 @@ const About = () => {
             In other spirograph works, I balance both structure and negative space with color and design. Earth at night works are based on satellite imagery taken from space, while floral works highlight the visual beauty of geometry found in nature.
             </SubText>
             <ButtonContainer>
-            <Button text="See More" link='http://localhost:3000/art/spiro' />
+            <Button text="See More" link='/art/spiro' />
+            {/* <Button text="See More" link='http://localhost:3000/art/spiro' /> */}
             </ButtonContainer>
         </Box>
       </Container>

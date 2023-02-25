@@ -167,7 +167,8 @@ const About = () => {
         Traditional portrait art featuring jazz artists, kaleidoscopic backgrounds, and a glasshead series exploring the relationship between subject and mind.
         </SubText>
         <ButtonContainer>
-        <Button text="See More" link='http://localhost:3000/art/portraits' />
+        <Button text="See More" link='/art/portraits' />
+        {/* <Button text="See More" link='http://localhost:3000/art/portraits' /> */}
         </ButtonContainer>
          </Box>
       </Container>

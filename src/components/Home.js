@@ -372,7 +372,8 @@ if (window.innerWidth > 1200) {
                 setHover(true);
               }}
               onClick={() => { 
-                window.location.replace('http://localhost:3000/projects')
+                window.location.replace('/projects')
+                // window.location.replace('http://localhost:3000/projects')
                 window.scrollBy({ behavior: 'smooth' });
               }}
             >
@@ -384,7 +385,8 @@ if (window.innerWidth > 1200) {
                 title='Click to learn more'
               />
               <div className="dev-slide-hover2" >
-                <Button fontSize='1em' text='Go to projects &#10230;' link='http://localhost:3000/projects'></Button>
+                <Button fontSize='1em' text='Go to projects &#10230;' link='/projects'></Button>
+                {/* <Button fontSize='1em' text='Go to projects &#10230;' link='http://localhost:3000/projects'></Button> */}
               </div>
             </div>
           </Slide>
@@ -417,7 +419,8 @@ if (window.innerWidth > 1200) {
                   setHover(false);
                 }}
                 onClick={() => { 
-                  window.location.replace('http://localhost:3000/blog');
+                  window.location.replace('/blog');
+                  // window.location.replace('http://localhost:3000/blog');
                   window.scrollBy({ behavior: 'smooth' });
                 }}
               >
@@ -428,7 +431,8 @@ if (window.innerWidth > 1200) {
                   title='Click to learn more'
                 />
                 <div className="dev-slide-hover2">
-                  <Button fontSize='1em' text='Go to blog &#10230;' link='http://localhost:3000/blog'></Button>
+                  <Button fontSize='1em' text='Go to blog &#10230;' link='/blog'></Button>
+                  {/* <Button fontSize='1em' text='Go to blog &#10230;' link='http://localhost:3000/blog'></Button> */}
                 </div>
               </div>
             </Slide>
@@ -461,8 +465,9 @@ if (window.innerWidth > 1200) {
                   setHover(true);
               }}
               onClick={() => { 
-                  window.location.replace('http://localhost:3000/art');
-                  window.scrollBy({ behavior: 'smooth' });
+                window.location.replace('/art');
+                // window.location.replace('http://localhost:3000/art');
+                window.scrollBy({ behavior: 'smooth' });
                   }}
               >
               <img 
@@ -472,7 +477,8 @@ if (window.innerWidth > 1200) {
                   title='Click to learn more'
               />
               <div className="dev-slide-hover2">
-                  <Button fontSize='1em' text='Go to art &nbsp;&nbsp;&#10230;' link='http://localhost:3000/art'></Button>
+                  <Button fontSize='1em' text='Go to art &nbsp;&nbsp;&#10230;' link='/art'></Button>
+                  {/* <Button fontSize='1em' text='Go to art &nbsp;&nbsp;&#10230;' link='http://localhost:3000/art'></Button> */}
               </div>
           </div>
         </Slide>
@@ -527,7 +533,8 @@ if (window.innerWidth > 1200) {
                   setHover(true);
                 }}
                 onClick={() => { 
-                  window.location.replace('http://localhost:3000/projects')
+                  window.location.replace('/projects')
+                  // window.location.replace('http://localhost:3000/projects')
                   window.scrollBy({ behavior: 'smooth' });
                 }}
               >
@@ -538,7 +545,8 @@ if (window.innerWidth > 1200) {
                   title='Click to learn more'
                 />
                 <div className="dev-slide-hover2">
-                  <Button fontSize='1em' text='Go to projects &#10230;' link='http://localhost:3000/projects'></Button>
+                  <Button fontSize='1em' text='Go to projects &#10230;' link='/projects'></Button>
+                  {/* <Button fontSize='1em' text='Go to projects &#10230;' link='http://localhost:3000/projects'></Button> */}
                 </div>
               </div>
             </Slide>
@@ -574,7 +582,8 @@ if (window.innerWidth > 1200) {
                     setHover(false);
                   }}
                   onClick={() => { 
-                    window.location.replace('http://localhost:3000/blog');
+                    window.location.replace('/blog');
+                    // window.location.replace('http://localhost:3000/blog');
                     window.scrollBy({ behavior: 'smooth' });
                   }}
                 >
@@ -585,7 +594,8 @@ if (window.innerWidth > 1200) {
                     title='Click to learn more'
                   />
                   <div className="dev-slide-hover2">
-                    <Button fontSize='1em' text='Go to blog &#10230;' link='http://localhost:3000/blog'></Button>
+                    <Button fontSize='1em' text='Go to blog &#10230;' link='/blog'></Button>
+                    {/* <Button fontSize='1em' text='Go to blog &#10230;' link='http://localhost:3000/blog'></Button> */}
                   </div>
                 </div>
               </Slide>
@@ -624,7 +634,8 @@ if (window.innerWidth > 1200) {
                     setHover(true);
                 }}
                 onClick={() => { 
-                    window.location.replace('http://localhost:3000/art');
+                    window.location.replace('/art');
+                    // window.location.replace('http://localhost:3000/art');
                     window.scrollBy({ behavior: 'smooth' });
                     }}
                 >
@@ -635,7 +646,8 @@ if (window.innerWidth > 1200) {
                     title='Click to learn more'
                 />
               <div className="dev-slide-hover2">
-                <Button fontSize='1em' text='Go to art &nbsp;&nbsp;&#10230;' link='http://localhost:3000/art'></Button>
+                <Button fontSize='1em' text='Go to art &nbsp;&nbsp;&#10230;' link='/art'></Button>
+                {/* <Button fontSize='1em' text='Go to art &nbsp;&nbsp;&#10230;' link='http://localhost:3000/art'></Button> */}
             </div>
           </div>
         </Slide>
@@ -693,7 +705,8 @@ if (window.innerWidth > 1200) {
                       setHover(true);
                     }}
                     onClick={() => { 
-                      window.location.replace('http://localhost:3000/projects')
+                      window.location.replace('/projects')
+                      // window.location.replace('http://localhost:3000/projects')
                       window.scrollBy({ behavior: 'smooth' });
                     }}
                   >
@@ -704,7 +717,8 @@ if (window.innerWidth > 1200) {
                       title='Click to learn more'
                     />
                     <div className="dev-slide-hover2">
-                      <Button fontSize='1em' text='Go to projects &#10230;' link='http://localhost:3000/projects'></Button>
+                      <Button fontSize='1em' text='Go to projects &#10230;' link='/projects'></Button>
+                      {/* <Button fontSize='1em' text='Go to projects &#10230;' link='http://localhost:3000/projects'></Button> */}
                     </div>
                   </div>
                 </div> 
@@ -729,7 +743,8 @@ if (window.innerWidth > 1200) {
                       setHover(false);
                     }}
                     onClick={() => { 
-                      window.location.replace('http://localhost:3000/blog');
+                      window.location.replace('/blog');
+                      // window.location.replace('http://localhost:3000/blog');
                       window.scrollBy({ behavior: 'smooth' });
                     }}
                   >
@@ -740,7 +755,8 @@ if (window.innerWidth > 1200) {
                       title='Click to learn more'
                     />
                     <div className="dev-slide-hover2">
-                      <Button fontSize='1em' text='Go to blog &#10230;' link='http://localhost:3000/blog'></Button>
+                      <Button fontSize='1em' text='Go to blog &#10230;' link='/blog'></Button>
+                      {/* <Button fontSize='1em' text='Go to blog &#10230;' link='http://localhost:3000/blog'></Button> */}
                     </div>
                   </div>
 
@@ -766,7 +782,8 @@ if (window.innerWidth > 1200) {
                         setHover(true);
                     }}
                     onClick={() => { 
-                        window.location.replace('http://localhost:3000/art');
+                        window.location.replace('/art');
+                        // window.location.replace('http://localhost:3000/art');
                         window.scrollBy({ behavior: 'smooth' });
                         }}
                     >
@@ -777,7 +794,8 @@ if (window.innerWidth > 1200) {
                         title='Click to learn more'
                     />
                     <div className="dev-slide-hover2">
-                      <Button fontSize='1em' text='Go to art &nbsp;&nbsp;&#10230;' link='http://localhost:3000/art'></Button>
+                      <Button fontSize='1em' text='Go to art &nbsp;&nbsp;&#10230;' link='/art'></Button>
+                      {/* <Button fontSize='1em' text='Go to art &nbsp;&nbsp;&#10230;' link='http://localhost:3000/art'></Button> */}
                     </div>
                   </div>
 
