@@ -76,7 +76,7 @@ else if (window.innerWidth > 665) {
           </div>
         </Parallax>
         <Parallax  >
-        <div style={{height: '800px', marginTop: '-225px', marginBottom: '-50px'}}>
+        <div style={{height: '850px', marginTop: '-225px', marginBottom: '-50px'}}>
             <div className="boxs-title">
               <h2 style={{marginTop: '250px', marginBottom: '45px', color: 'rgb(0, 62, 128)' }}>About me:</h2>
               <div className="box-con">
