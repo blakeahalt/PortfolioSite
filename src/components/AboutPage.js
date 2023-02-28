@@ -36,7 +36,7 @@ if (window.innerWidth > 1200) {
               <h2 style={{marginTop: '250px', marginBottom: '45px', color: 'rgb(0, 62, 128)' }}>About me:</h2>
               <div className="box-con">
                 <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
-                  Building on nearly a decade of experience teaching and training English teachers in Thailand and South Korea, I continued my teaching journey in 2017 by teaching Kindergarten in Pacific Palisades, CA. While teaching, I developed a deep interest in the tech industry and started learning Python and Javascript. I also got involved in the field by volunteering at various tech conferences held throughout Los Angeles.
+                  Building on nearly a decade of experience teaching and training English teachers in Thailand and South Korea, I continued my teaching journey in 2017 by teaching Kindergarten in Pacific Palisades, CA. While teaching, I developed a deeper interest in the tech industry and started learning Python and Javascript. I also got involved in the field by volunteering at various tech conferences held throughout Los Angeles.
                   </div>
                   <div style={{textAlign: 'left', maxWidth: 750, color: 'black', marginTop:-15, marginBottom: '2em'}}>
                   Because of my continued interest in technology, passion to build things that solve real problems, and improving my technical skills, in 2021, I decided to transition from teaching to pursue a software development career. Although I will miss being in the classroom, I look forward to applying my teaching skills to new opportunities and challenges.
@@ -76,7 +76,7 @@ else if (window.innerWidth > 665) {
           </div>
         </Parallax>
         <Parallax  >
-        <div style={{height: '850px', marginTop: '-225px', marginBottom: '-50px'}}>
+        <div style={{height: '800px', marginTop: '-225px', marginBottom: '-50px'}}>
             <div className="boxs-title">
               <h2 style={{marginTop: '250px', marginBottom: '45px', color: 'rgb(0, 62, 128)' }}>About me:</h2>
               <div className="box-con">
