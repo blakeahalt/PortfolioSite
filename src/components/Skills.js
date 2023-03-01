@@ -18,7 +18,8 @@ padding:10px;
   margin-left:-15px;
 }
 @media screen and (max-width: 665px) {
-  width: 90%;
+  margin-left: -10px;
+  min-width: 100%;
 }
 `
 
@@ -50,7 +51,7 @@ margin: 2px;
   width: auto;
   margin: 2px;
   padding: 4px;
-  font-size: 1em;
+  font-size: 0.9em;
 }
 `
 

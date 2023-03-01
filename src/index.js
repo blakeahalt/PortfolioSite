@@ -16,6 +16,7 @@
 // // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 // reportWebVitals();
 
+// scp -r ~/Documents/GitHub/PortfolioSite/build/* root@82.180.136.248:/var/www/html
 
 import React from 'react';
 import ReactDOM from 'react-dom';

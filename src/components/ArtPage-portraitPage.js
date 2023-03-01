@@ -319,30 +319,31 @@ const MemberComponent = ({ name='', desc='', desc2='', images}) => {
     
       const settings = {
         dots: true,
-        infinite: false,     
-        speed: 500,
+        infinite: true,     
         slidesToShow: 1,
         slidesToScroll: 1,
-        touchMove: true,
         outline: false,
+        arrows: true,
       };
   
       return (
         <Item>
           <ImageContainer >
-            <a onClick={isFullScreen ? handleExitFullScreen : handleFullScreen}>
               {images.length === 1 ? (
-                <img src={images[0]} alt={name} className="ImageContainerSize" />
+                <a onClick={isFullScreen ? handleExitFullScreen : handleFullScreen}>
+                  <img src={images[0]} alt={name} className="ImageContainerSize" />
+                </a>
               ) : (
                 <Slider className="SliderSettings" {...settings}>
                   {images.map((image) => (
                     <div key={image}>
-                      <img src={image} alt={name} className="SliderContainerSize" />
+                      <a onClick={isFullScreen ? handleExitFullScreen : handleFullScreen}>
+                        <img src={image} alt={name} className="SliderContainerSize" />
+                      </a>
                     </div>
                   ))}
                 </Slider>
               )}
-            </a>
           </ImageContainer>
           <div className="portrait-name-desc-container">
             <Name>{name}</Name>

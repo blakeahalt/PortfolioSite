@@ -45,7 +45,7 @@ z-index: 1;
     width: 500px;
     height: 500px;
     margin-top: -15vh;
-    margin-left: 200px;
+    margin-left: 215px;
 }
 
 .swiper{

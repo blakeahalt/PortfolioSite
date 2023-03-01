@@ -18,7 +18,7 @@ import "swiper/css/navigation";
 
 import { Pagination, Navigation, Autoplay, EffectCards } from "swiper";
 
-import ResumePic from "../assets/ResumePic.jpg";
+import ResumePic from "../assets/ResumePic.png";
 import devImg from "../assets/devImg.png"
 import StandArt from "../assets/Stand_Art.jpg"
 import StandArt2 from "../assets/Stand_Art2.jpg"

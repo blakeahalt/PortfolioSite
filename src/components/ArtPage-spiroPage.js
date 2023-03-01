@@ -353,12 +353,11 @@ const MemberComponent = ({img, name='', desc='', desc2='', images}) => {
     
     const settings = {
       dots: true,
-      infinite: false,     
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      touchMove: true,
-      outline: false,
+        infinite: true,     
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        outline: false,
+        arrows: true,
     };
   
     return (

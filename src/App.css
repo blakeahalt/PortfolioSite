@@ -1785,9 +1785,9 @@ justify-content: center;
     max-width: 300px;
   }
   .slick-dots {
-    height: 50px;
+    height: 35px;
+    background-color: rgb(0,0,0,0.2);
     transform: scale(2);
-    flex-wrap: nowrap;
   }
 
   .spiro-outside-container{
