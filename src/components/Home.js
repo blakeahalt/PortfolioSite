@@ -780,7 +780,7 @@ if (window.innerWidth > 1200) {
                     <span> Artist </span> 
                   </AttentionSeeker> 
                   </p>
-                <h4 className="introduction hidden">
+                <h4 style={{ fontSize: '1.5em' }} className="introduction hidden">
                   I like to create beautiful things that work well
                 </h4>
               </div>
