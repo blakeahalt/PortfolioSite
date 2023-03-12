@@ -245,7 +245,6 @@ else {
               In the past year, I’ve built and deployed four full stack applications by completing Harvard’s CS50: Introduction to Computer Science course through EdX and taking courses like the University of Helsinki’s Full Stack Open, which focuses on building with React, NodeJS and MongoDB. The full stack applications I’ve built include:
             </div>
             <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
-              <ul>
                 <li>
                 A simple app that implements basic CRUD methods to manage a phonebook contacts list.
                 </li>
@@ -258,7 +257,6 @@ else {
                 <li>
                 And my own personal project that implements several APIs to track the sales of different NFT marketplaces.
                 </li>
-              </ul>
             </div>
             <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
               I’ve also built this portfolio site to showcase all of these projects. It has information about what they are, what they were built with, what I learned exactly, demos for each of the applications and access to the GitHub source code. It also shows some of the artwork I like to create and a blog with different Leet Code solutions that I walk through with visual guides that I’ve created.
