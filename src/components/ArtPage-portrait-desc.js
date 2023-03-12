@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from 'styled-components'
 // import Carousel from '../Carousel'
 import Button from './Button'
 import Loading from './Loading';
+import '../App2.css';
 
 import Dizzy from '../assets/portraits/Dizzy_Done_transparent.png'
 
@@ -10,7 +11,7 @@ import Dizzy from '../assets/portraits/Dizzy_Done_transparent.png'
 const Carousel = lazy(() => import("./Carousel2"));
 
 const Section = styled.section`
-min-height: 100vh;
+margin-bottom: 5vh;
 width: 100%;
 background-color: ${props => props.theme.text};
 display: flex;
@@ -19,13 +20,19 @@ align-items: center;
 position: relative;
 overflow: hidden;
 
-@media (max-width: 665px){
-  max-height: 300vh;
+@media screen and (max-width: 75em) {
   width: 100%;
   background-color: ${props => props.theme.text};
   display: flex;
   justify-content: center;
-  
+  height: 100%;
+
+}
+@media screen and (max-width: 42em) {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 `
 
@@ -35,52 +42,46 @@ margin: 0 auto;
 ${'' /* background-color: lightblue;  */}
 
 display: flex;
-justify-content: center;
 align-items: center;
 
-@media (max-width: 1200px){
-  width: 95%;
-  height: 1200px;
+@media screen and (max-width: 75em) {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: -25px;
-  margin-bottom: 250px;
+  height: 85rem;
 }
-@media (max-width: 665px){
-  max-height: 150vh;
-  width: 95%;
+@media screen and (max-width: 42em) {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 15px;
-  margin-top: 350px;
 }
 `
 
 const Box = styled.div`
 width: 50%;
 height: 100%;
-min-height: 60vh;
 display: flex;
 flex-direction: column;
-justify-content: center;
 
-
-@media (max-width: 1200px){
-  width: 70vw;
-  height: 600px;
+@media screen and (min-width: 1700px) {
+  width: 50vw;
   display: flex;
-  margin: 50px;
-  flex-direction: column;
+  height: 100%;
   justify-content: center;
-  margin-top: 225px;
 }
-@media (max-width: 665px){
-  margin-top: -70px;
-  margin-bottom: 50px;
-  width: 100%;
-  font-size: 0.8em
+@media screen and (max-width: 75em) {
+  width: 70vw;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+@media screen and (max-width: 42em) {
+  width: 90vw;
+  height: auto;
+  margin-bottom: 5vh;
+  font-size: 1em
 }
 `
  
@@ -92,11 +93,12 @@ const Title = styled.h2`
   align-self: flex-start;
   margin: 0 auto;
 
-@media (max-width: 64em){
+@media (max-width: 75em){
+  font-size: 1.8em;
   width: 100%;
   text-align:center;
 }
-@media (max-width: 665px){
+@media screen and (max-width: 42em) {
   width: 100%;
   text-align:center;
   margin-top: -px;
@@ -111,15 +113,15 @@ const SubText = styled.p`
   margin: 1rem auto;
 
 
-  @media (max-width: 64em){
+  @media (max-width: 75em){
     width: 100%;
     text-align:center;
-    font-size: ${(props) => props.theme.fontmd};
+    font-size: 1.5em;
 
 }
-  @media (max-width: 665px){
+  @media screen and (max-width: 42em) { 
     font-size: 1.2em;
-    width: 250px;
+    width: 95%;
     text-align: center;
     justify-content: center;
 
@@ -133,7 +135,7 @@ const ButtonContainer = styled.div`
  display: flex;
  align-self: flex-start;
 
-  @media (max-width: 64em){
+  @media (max-width: 75em){
     width: 100%;
 
   a{
@@ -141,18 +143,17 @@ const ButtonContainer = styled.div`
     }
   }
 
-  @media (max-width: 665px){
+  @media screen and (max-width: 42em) {
 
   }
 `
 
 const About = () => {
   return (
-    <div className='portrait-page-height'>
     <div className='portrait-outside-container'>
     <Section id="about">
       <Container>
-        <Box style={{marginBottom: '-50px'}}> 
+        <Box > 
         <Suspense fallback={<Loading />}>
           <Carousel /> </Suspense> </Box>
         <Box> 
@@ -173,7 +174,6 @@ const About = () => {
          </Box>
       </Container>
     </Section>
-    </div>
     </div>
   )
 }

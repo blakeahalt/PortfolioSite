@@ -17,7 +17,7 @@ box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3)
 background-color: rgb(221,208,195);
 margin-top: 15px;
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 75em){
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -41,7 +41,7 @@ box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3);
 background-color: rgb(251,249,236,0.6);
 border: 1px solid rgb(0,0,0,0.3);
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 75em) {
     display: flex;
     padding: 10px;
     justify-content: center;
@@ -50,7 +50,7 @@ border: 1px solid rgb(0,0,0,0.3);
   }
 
 
-    @media screen and (max-width: 665px) {
+    @media screen and (max-width: 42em) {
     display: flex;
     padding: 10px;
     justify-content: center;
@@ -77,8 +77,8 @@ color: ${props => props.theme.body};
 margin: 3rem 1.5rem;
 flex-wrap: wrap;
 justify-content: center;
-width: 500px;
-height: 775px;
+width: 33rem;
+height: 800px;
 backdrop-filter: blur(4px);
 margin: 10px;
 padding-bottom: 10px;
@@ -92,18 +92,18 @@ background-color: rgb(217,194,165);
 
 
 
-@media screen and (max-width: 1200px) {
-    width: 330px;
+@media screen and (max-width: 75em) {
+    max-width: 27rem;
     display: flex ;
     flex-wrap: wrap;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    height: 640px;
+    height: 690px;
     margin: 10px;
 }
 
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 42em) {
     width: 325px;
     display: flex ;
     flex-wrap: wrap;
@@ -124,7 +124,7 @@ const ImageContainer = styled.div`
   box-shadow: 7px 7px 15px -3px rgba(0,0,0,0.3);
   background-color: rgb(255,255,255);
   border: 1px solid rgb(0,0,0,0.3);
-  margin: 10px;
+  margin: 2vh;
   margin-bottom: -2px;
   padding: .5rem;
   border-radius: 20px;
@@ -133,33 +133,31 @@ const ImageContainer = styled.div`
   overflow: hidden;
   
   img{
-    width: auto;
+    width: 100%;
     height: 100%;
     transition: transform 0.3s ease-in-out;
     display: block;
     margin: 0 auto;
     border-radius: 25px;
-    object-fit: contain;
   }
   
   &:hover{
     img{
       border-radius: 25px;
-      position: absolute;
       cursor: pointer;
-      transform: scale(1.2);
+      transform: scale(1.05);
     }
   }
   
 
-  @media screen and (max-width: 1200px) {
-    margin: 7px;
+  @media screen and (max-width: 75em) {
+    margin: 1vh;
     padding: 10px;
     height: 300px;
     
   }
 
-  @media screen and (max-width: 665px) {
+  @media screen and (max-width: 42em) {
     margin: 7px;
     width: 300px;
     height: 300px;
@@ -175,22 +173,25 @@ display: flex;
 flex-wrap: wrap;
 align-items: center;
 justify-content: center;
+text-align: center;
 margin-top: 5px;
 margin-bottom: 25px;
 color: rgb(0, 62, 128);
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 75em) {
   margin: 7px;
-  width: 300px;
+  text-align: center;
+  justify-content: center;
+  margin-top: 1.5vh;
 }
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 42em) {
   margin: 7px;
   width: 300px;
 }
 
 `
 const Description = styled.p`
-  font-size: 1.2em;
+  font-size: 1em;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -198,7 +199,7 @@ const Description = styled.p`
   margin-top: -20px;
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 75em) {
     display: flex ;
     flex-wrap: wrap;
     justify-content: center;
@@ -208,7 +209,7 @@ const Description = styled.p`
     height: 70px;
     font-size: 1.2em;
 }
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 42em) {
     display: flex ;
     flex-wrap: wrap;
     justify-content: center;
@@ -217,7 +218,7 @@ const Description = styled.p`
     height: 2.5em;
     margin-top:-10px;
     margin-bottom:20px;
-    font-size: 1em;
+    font-size: 0.9em;
 }
 `
 
@@ -239,16 +240,16 @@ const SkillsContainer = styled.div`
   background-color: rgb(255,255,255,0.4); 
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 75em) {
     display: flex;
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    height: 125px;
+    height: 6em;
     align-items: center;
-    padding-bottom: 10px;
+    padding-bottom: 1.5vh;
   }
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 42em) {
     display: flex;
     justify-content: center;
     height: 105px;
@@ -272,7 +273,7 @@ const Skills = styled.h2`
     margin: 2px;
     font-size: 1.1em;
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 75em) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -282,7 +283,7 @@ const Skills = styled.h2`
     height:20px;
     font-size: 0.8em;
   }
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 42em) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -301,7 +302,7 @@ const MemberComponent = ({img, name='', desc='',skills=[]}) => {
           <ImageContainer>
             <img width={300} src={img} alt={name} />
           </ImageContainer>
-          <div style={{ width: '95%', marginTop: '10px', display: 'flex', justifyContent: 'center', flexDirection: 'column', textAlign: 'center', border: '1px solid rgb(0,0,0,0.2)', borderRadius: '15px', boxShadow: '3px 7px 15px 2px rgba(0,0,0,0.3)', backgroundColor:'rgb(255,255,255,0.6)' }}>
+          <div style={{ width: '95%', marginTop: '.5vh', display: 'flex', justifyContent: 'center', flexDirection: 'column', padding: '.5vh', textAlign: 'center', border: '1px solid rgb(0,0,0,0.2)', borderRadius: '15px', boxShadow: '3px 7px 15px 2px rgba(0,0,0,0.3)', backgroundColor:'rgb(255,255,255,0.6)' }}>
             <Name>{name}</Name>
             <Description>{desc}</Description>
           </div>
@@ -323,13 +324,13 @@ const ProjectsPage = () => {
       <Container>
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom:'25px' }}>
         <a href="/nftpage" >
-          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks the top trending NFT sales using various API's." skills={["JavaScript","React","Node.js","Express.js","JSON Web Token","MySQL","Axios","Argon2","OAuth2","Full Stack"]} /></a>
+          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that implements various APIs to track top sales from NFT marketplaces." skills={["JavaScript","React","Node.js","Express.js","JSON Web Token","MySQL","Axios","Argon2","OAuth2","Full Stack"]} /></a>
           <a href="/stockpage">
-          <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio application that stores and updates user transactions with real-time stock quotes." skills={["Python","Flask","SQL","Jinja", "Full Stack","Responsive Design"]} /></a>
+          <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio application that stores user transactions with real-time financial data." skills={["Python","Flask","SQL","Jinja", "Full Stack","Responsive Design"]} /></a>
           <a href="/countrypage">
-          <MemberComponent img={countryImg}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts using two APIs." skills={["JavaScript","React","Node.js","Express.js","Axios", "Full Stack","Responsive Design"]}  /></a>
+          <MemberComponent img={countryImg}  name="Country / Weather App" desc="A full stack React app that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","Express.js","Axios", "Full Stack","Responsive Design"]}  /></a>
           <a href="/phonebookpage">
-          <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A CRUD phonebook feature that adds contact names and numbers built using a MERN stack." skills={["JavaScript","MongoDB","Express.js","React","Node.js","Cors","Full Stack","Responsive Design"]}  /></a>
+          <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A full stack React app that implements CRUD methods to manage a phonebook contacts list." skills={["JavaScript","MongoDB","Express.js","React","Node.js","Cors","Full Stack","Responsive Design"]}  /></a>
         </div>
       </Container>
     </Section>

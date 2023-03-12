@@ -16,7 +16,7 @@ function Footer () {
     if (window.innerWidth > 1200) {
         screen = (
             <div className='footer-container' style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <div style={{textAlign: 'left', marginLeft: '20px', paddingTop: '10px', fontSize: '0.9em', lineHeight: '1.7', color: 'rgb(0, 62, 128, 0.9)' }}>
+            <div style={{textAlign: 'left', marginLeft: '50px', paddingTop: '10px', fontSize: '0.9em', lineHeight: '1.7', color: 'rgb(0, 62, 128, 0.9)' }}>
               <div>Blake Ahalt</div>
               <div>Los Angeles, CA</div>
               <div>508-299-9373</div>
@@ -36,7 +36,7 @@ function Footer () {
                 </a>
               </div>
             </div>
-            <div style={{display: 'flex', justifyContent: 'center', marginLeft: '-65px', paddingTop: '10px', fontSize: '0.9em', lineHeight: '1.4', color: 'rgb(0, 62, 128, 0.6)'}}>
+            <div style={{display: 'flex', justifyContent: 'center', marginLeft: '-4vw', paddingTop: '10px', fontSize: '0.9em', lineHeight: '1.4', color: 'rgb(0, 62, 128, 0.6)'}}>
                 <div style={{marginTop: '-10px'}}>
                     <a href="#" style={{ fontSize: '1.2em' }}>
                         <FontAwesomeIcon icon={faArrowAltCircleUp} />
@@ -130,7 +130,7 @@ function Footer () {
                 </a>
               </div>
             </div>
-            <div style={{display: 'flex', justifyContent: 'center', marginLeft: '-65px', paddingTop: '10px', fontSize: '0.9em', lineHeight: '1.4', color: 'rgb(0, 62, 128, 0.6)'}}>
+            <div style={{display: 'flex', justifyContent: 'center', marginLeft: '-15vw', paddingTop: '10px', fontSize: '0.9em', lineHeight: '1.4', color: 'rgb(0, 62, 128, 0.6)'}}>
                 <div style={{marginTop: '-10px'}}>
                     <a href="#" style={{ fontSize: '1.2em' }}>
                         <FontAwesomeIcon icon={faArrowAltCircleUp} />

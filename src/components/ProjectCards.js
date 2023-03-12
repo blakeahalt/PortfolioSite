@@ -9,312 +9,226 @@ import phoneImg from '../assets/phone-background-home.png'
 
 import { Slide } from 'react-awesome-reveal';
 import 'animate.css';
-import '../App.css'
-
-
-
-const Section = styled.section`
-display: flex;
-overflow: visible;
-justify-content: center;
-box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3)
-background-color: rgb(221,208,195);
-margin-bottom: -200px
-
-
-@media screen and (max-width: 1200px){
-  justify-content: center;
-  flex-wrap: wrap;
-  box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3)
-  background-color: rgb(221,208,195);
-  margin-top:-500px;
-  margin-bottom: 75px;
-}
-@media screen and (max-width: 665px){
-  justify-content: center;
-  flex-wrap: wrap;
-  box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3)
-  background-color: rgb(221,208,195);
-  border: 3px solid red;
-  height: 100%;
-  margin-top: 150px;
-}
-`
+import '../App2.css'
 
 const Container = styled.div`
-display: flex;
-padding: 10px;
-justify-content: center;
-flex-wrap: wrap;
-margin-left: -10px;
+  display: flex;
+  padding: clamp(0.5rem, 2%, 10px);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: -clamp(0.5rem, 2%, 10px);
+  margin-bottom: 10vh;
+  height: auto;
+  width: 100vw;
+  box-shadow: 5px 7px 15px 7px rgba(0, 0, 0, 0.3);
+  background-color: rgb(251, 249, 236, 0.6);
+  /* border: 2px solid black;
+  border-radius: 0px; */
 
-margin-bottom: 25px;
-height: 100%;
-width: 100vw;
-
-box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3);
-background-color: rgb(251,249,236,0.6);
-${'' /* border: 2px solid black;
-border-radius: 0px; */}
-
-  @media screen and (max-width: 1200px) {
+  
+  @media screen and (max-width: 75em) {
     display: flex;
-    padding: 10px;
+    padding: clamp(0.5rem, 2%, 10px);
     justify-content: center;
     flex-wrap: wrap;
     margin-left: 0px;
-    margin-bottom: 25px;
-    height: 100%;
-    width: 100vw;
-    box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3);
-    background-color: rgb(251,249,236,0.6);
-    ${'' /* border: 2px solid black;
-    border-radius: 0px; */}
-  }
-
-  @media screen and (max-width: 665px) {
-    display: flex;
-    padding: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 200px;
-    margin-bottom: 25px;
+    margin-bottom: 10vh;
     height: auto;
     width: 100vw;
-    box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3);
-    background-color: rgb(251,249,236,0.6);
-    ${'' /* border: 2px solid black;
-    border-radius: 0px; */}
+    box-shadow: 5px 7px 15px 7px rgba(0, 0, 0, 0.3);
+    background-color: rgb(251, 249, 236, 0.6);
   }
+
 `
 
 const ContainerTitle = styled.div`
-  margin-top: 10px;
-  margin-bottom: 30px;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
   font-size: 3em;
-  align-content: center;
+  justify-content: center;
+  text-align: center;
   color: rgb(0, 62, 128);
 `
-
 const Item = styled.div`
-position: relative;
-display: flex;
-padding: 1rem .7rem 15rem .7rem;
-color: ${props => props.theme.body};
-margin: 3rem 1.5rem;
-flex-wrap: wrap;
-justify-content: center;
-height: 245px;
-width: 250px;
-backdrop-filter: blur(4px);
-margin: 10px;
-justify-content: center;
-
-border: 1px solid ${props => props.theme.text};
-border-radius: 20px;
-box-shadow: 5px 5px 12px 5px rgba(0,0,0,0.3);
-background-color: rgb(204,145,29,0.1);
-
-&:hover{
-  img{
-    transform: translateY(-1rem) scale(1.2);
-    position: relative;
-
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  width: 325px;
-  height: 355px;
-  display: flex ;
-  flex-wrap: wrap;
+  position: relative;
+  display: grid;
+  padding: 1rem 0.7rem clamp(3.75vw, 15.625vw, 15vw) 0.7rem;
+  color: ${props => props.theme.body};
+  margin: 3.75vw 1.875vw;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin: 10px;
-}
+  min-height:35%;
+  max-height: 38%;
+  width: clamp(15em, 20vw, 40vw);
+  margin: 1vw;
 
-@media screen and (max-width: 665px) {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 285px;
-  min-width: 275px;
+  border: 0.0625rem solid ${props => props.theme.text};
+  border-radius: 25px;
+  box-shadow: 0.3125vw 0.3125vw 0.75vw 0.3125vw rgba(0,0,0,0.3);
+  background-color: rgb(217,194,165);
 
+  // &:hover{
+  //   img{
+  //     border-radius: 25px;
+  //     position: absolute;
+  //     cursor: pointer;
+  //     transform: scale(1.2);
+  //   }
+  // }
+
+  @media screen and (max-width: 75rem) {
+    width: 40vw;
+    height: 28rem;
+    max-height: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 1.5vw;
   }
-`
+`;
+
 
 const ImageContainer = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-width: 100%;
-height: 225px;
-box-shadow: 7px 7px 15px -3px rgba(0,0,0,0.3);
-background-color: rgb(255,255,255, 0.5);
-border: 1px solid rgb(0,0,0,0.3);
-margin-bottom: -2px;
-padding: .2rem;
-border-radius: 20px;
-cursor: pointer;
-position: relative;
-overflow: hidden;
-
-img{
-  width: 100%;
-  height: 100%;
-  transition: transform 0.3s ease-in-out;
-  display: block;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  width: clamp(15em, 20vw, 40vw);
+  max-width: 350px;
+  height: 15em;
+  box-shadow: 0.4375vw 0.4375vw 0.9375vw -0.1875vw rgba(0,0,0,0.3);
+  background-color: rgba(255,255,255, 0.5);
+  border: 0.0625rem solid rgba(0,0,0,0.3);
+  margin-top: -0.5vw;
+  margin-bottom: -0.125vw;
+  padding: 0.225rem;
   border-radius: 25px;
-  object-fit: contain;
-}
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 
-&:hover{
-  img{
+  img {
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+    display: block;
+    margin: 0 auto;
     border-radius: 25px;
-    position: absolute;
-    cursor: pointer;
-    transform: scale(1.2);
+    padding: 0;
   }
-}
 
-@media screen and (max-width: 1200px) {
-  margin: 7px;
-  padding: 10px;
-  height: 300px;
-  
-}
+  &:hover {
+    img {
+      margin-right:0.1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+  }
 
-@media screen and (max-width: 665px) {
-  margin: 7px;
-  width: 300px;
-  height: 300px;
-}
-`
+  @media screen and (max-width: 75em) {
+    height: 19rem;
+    width: clamp(30em, 20vw, 40vw);
+    margin-bottom: .5vw;
+    justify-content: center;
+
+  }
+`;
 
 const Name = styled.h2`
-font-size: 1.1em;
-padding: 4px;
-display: flex;
-flex-wrap: wrap;
-align-items: center;
-justify-content: center;
-margin-top: 0px;
-color: rgb(0, 62, 128);
-width: 100%;
-min-height: 4.5vh;
+  font-size: 1.3vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 62, 128);
+  width: 100%;
 
-`
+  @media screen and (max-width: 75em) {
+    margin-top: 0vh;
+    font-size: 2.3vw;
+    width: auto;
+  }
+`;
+
 const Description = styled.p`
-font-size: .85em;
-text-align: center;
-display: flex;
-justify-content: center;
-align-items: center;
-width: 85%;
-height: 20px;
-padding: 10px;
-margin: 10px;
-margin-top: -25px;
-margin-bottom: 10px;
-color: rgb(0, 62, 128);
-
-
-@media screen and (max-width: 1200px) {
-  display: flex ;
-  flex-wrap: wrap;
+  font-size: 1vw;
+  text-align: center;
+  display: flex;
   justify-content: center;
+  align-items: center;
   width: auto;
-  height: 2em;
-  margin: 17px;
-  margin-top: -3em;
-  margin-bottom: 2em;
-}
-@media screen and (max-width: 665px) {
-  display: flex ;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: auto;
-  margin: 17px;
-  height: 2.5em;
-  margin-top:-10px;
-  margin-bottom:10px;
-}
-`
+  min-width: 80%;
+  height: 100%;
+  padding: .5em;
+  margin-top: -1em;
+  margin-bottom: 1vh;
+  color: rgb(0, 62, 128);
+
+  @media screen and (max-width: 75em) {
+    font-size: 1.8vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    height: 2em;
+    margin: .5em;
+    margin-top: -1.5em;
+    margin-bottom: 1vh;
+  }
+`;
 
 const SkillsContainer = styled.div`
-width: 95%;
-font-size: 1.1em;
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100px;
-padding: 7px;
-padding-top: 10px;
-margin: 2px;
-flex-wrap: wrap;
-margin-top: 10px;
-margin-bottom: 10px;
-border-radius: 10px;
-background-color: rgb(255,255,255,0.4); 
-
-
-@media screen and (max-width: 1200px) {
+  width: 90%;
+  height: 3.5em;
+  font-size: 2vw;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  height: 100px;
-  align-items: center;
-  padding-bottom: 10px;
-}
-@media screen and (max-width: 665px) {
-  display: flex;
-  justify-content: center;
-  height: 105px;
-  align-items: center;
-  padding-bottom: 10px;
-}
-`
+  align-content: center;
+  margin: 0.25em;
+  padding: 0.25em;
+  flex-wrap: wrap;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  border-radius: 25px;
+  background-color: rgb(255, 255, 255, 0.4);
+  box-shadow: 0.4375vw 0.4375vw 0.9375vw -0.1875vw rgba(0,0,0,0.3);
+
+
+  @media screen and (max-width: 75em) {
+    display: flex;
+    width: 95%;
+    height: 6.5em;
+    max-height: 325px;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: .5em;
+    align-items: center;
+    padding: .5em;
+  }
+`;
 
 
 const Skills = styled.h2`
-display: flex;
-justify-content: center;
-height: 20px;
-text-align: center;
-align-items: center;
-background-color: rgb(240, 240, 240, 0.8);
-color: rgb(0, 62, 128);
-font-weight: 400;
-border: 1px solid rgb(0, 62, 128);
-border-radius: 10px;
-padding: 4px;
-margin: 2px;
-font-size: 0.7em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(240, 240, 240, 0.8);
+  color: rgb(0, 62, 128);
+  font-weight: 400;
+  border: 1px solid rgb(0, 62, 128);
+  border-radius: 10px;
+  padding: .7vw;
+  margin: .15vw;
+  font-size: .9vw;
+  line-height: 0.1;
+  
+  @media screen and (max-width: 75em) {
+    padding: 1.4vw;
+    margin: .25vw;
+    font-size: 1.5vw; /* change to percentage value */
+  }
+`;
 
-@media screen and (max-width: 1200px) {
-display: flex;
-align-items: center;
-justify-content: center;
-border: 1px solid rgb(0, 62, 128, 0.7);
-border-radius: 10px;
-margin: 2px;
-height:20px;
-font-size: 0.8em;
-}
-@media screen and (max-width: 665px) {
-display: flex;
-align-items: center;
-justify-content: center;
-border: 1px solid rgb(0, 62, 128,0.7);
-border-radius: 10px;
-font-size: 0.8em;
-margin: 1px;
-padding: 6px
-}
-`
 
 const MemberComponent = ({img, name=" ", desc='',skills=[]}) => {
   return(
@@ -344,71 +258,66 @@ const ProjectCards = () => {
   if (window.innerWidth > 1200) {
     screen = (
       <>
-       <Section id="ProjectCards">
       <Container>
       <div>
       <ContainerTitle>
           Projects
       </ContainerTitle>
-      <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-        <Slide direction='left' delay={350}>
+      <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
+        <Slide triggerOnce direction='left' delay={350}>
         <a href="/nftpage" >
-          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks the top trending NFT sales using various API's." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
+          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks top sales from several NFT marketplaces" skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
           </Slide>
-        <Slide direction='left' delay={150}>
+        <Slide triggerOnce direction='left' delay={150}>
         <a href="/stockpage">
-          <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio that stores and updates user transactions with real-time stock quotes." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
+          <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio application that stores user transactions with real-time financial data." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
           </Slide>
-        <Slide direction='right' delay={150}>
+        <Slide triggerOnce direction='right' delay={150}>
         <a href="/countrypage">
-          <MemberComponent img={countryImg}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts using two APIs." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
+          <MemberComponent img={countryImg}  name="Country / Weather App" desc="A full stack React app that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
         </Slide>
-        <Slide direction='right' delay={350}>
+        <Slide triggerOnce direction='right' delay={350}>
         <a href="/phonebookpage">
-          <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A CRUD phonebook feature that adds contact names and numbers built using a MERN stack." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
+          <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A full stack React app that implements CRUD methods to manage a phonebook contacts list." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
         </Slide>
         </div>
       </div>
       </Container>
-    </Section>
     </>
     )
   } else if (window.innerWidth > 665) {
 screen =(
   <>
-  <Section id="ProjectCards">
       <Container>
       <div>
       <ContainerTitle>
           Projects
       </ContainerTitle>
       <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
-        <Slide direction='left' delay={150}>
+        <Slide triggerOnce direction='left' delay={150}>
         <a href="/nftpage" >
-          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks the top trending NFT sales using various API's." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
+          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks the top sales of various NFT marketplaces." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
           </Slide>
-        <Slide direction='right' delay={150}>
+        <Slide triggerOnce direction='right' delay={150}>
         <a href="/stockpage">
-          <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio that stores and updates user transactions with real-time stock quotes." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
+          <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio that stores user transactions with real-time stock quotes." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
           </Slide>
-        <Slide direction='left' delay={150}>
+        <Slide triggerOnce direction='left' delay={150}>
         <a href="/countrypage">
-          <MemberComponent img={countryImg}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts using two APIs." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
+          <MemberComponent img={countryImg}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
         </Slide>
-        <Slide direction='right' delay={150}>
+        <Slide triggerOnce direction='right' delay={150}>
         <a href="/phonebookpage">
-          <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A CRUD phonebook feature that adds contact names and numbers built using a MERN stack." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
+          <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A CRUD phonebook feature that manages a contact list." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
         </Slide>
         </div>
       </div>
       </Container>
-    </Section>
   </>
 )
   } else {
   screen = (
     <>
-    <Section id="ProjectCards">
       <Container>
       <div>
       <ContainerTitle>
@@ -417,24 +326,23 @@ screen =(
       <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
         <Slide direction='left' delay={350}>
         <a href="/nftpage" >
-          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks the top trending NFT sales using various API's." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
+          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks the top sales of various NFT marketplaces." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
           </Slide>
         <Slide direction='left' delay={150}>
         <a href="/stockpage">
-          <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio that stores and updates user transactions with real-time stock quotes." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
+          <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio that stores user transactions with real-time stock quotes." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
           </Slide>
         <Slide direction='right' delay={150}>
         <a href="/countrypage">
-          <MemberComponent img={countryImg}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts using two APIs." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
+          <MemberComponent img={countryImg}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
         </Slide>
         <Slide direction='right' delay={350}>
         <a href="/phonebookpage">
-          <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A CRUD phonebook feature that adds contact names and numbers built using a MERN stack." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
+          <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A CRUD phonebook feature that manages a contact list" skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
         </Slide>
         </div>
       </div>
       </Container>
-    </Section>
     </>
   )
   }

@@ -1,11 +1,16 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import ImageGallery from 'react-image-gallery'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 import styled from 'styled-components';
 import Nav from './NavBar'
 import Footer from './Footer'
 
-import Human from "../assets/Art/HumanHemi.jpg"
+import Human from "../assets/Art/HumanHemi.png"
 import Biggins from "../assets/Art/Biggins.png"
+import BigginsBase from "../assets/Art/BigginsBase.png"
 import CamaraLantana from "../assets/Art/CamaraLantana.jpg"
 import Chrysanthemum from "../assets/Art/Chrysanthemum.jpg"
 import Hydrangea from "../assets/Art/Hydrangea.jpg"
@@ -17,7 +22,13 @@ import GlobeThistle from "../assets/Art/GlobeThistle.png"
 import BlackEyedSusan from "../assets/Art/BlackEyedSusan.png"
 import Misc1 from "../assets/Art/Misc1.png"
 import Misc2 from "../assets/Art/Misc2.png"
-import Neon from "../assets/Art/NeonSpiro.png"
+import Misc21 from "../assets/Art/Misc2.1.png"
+import Neon1 from "../assets/Art/NeonSpiro1.png"
+import Neon2 from "../assets/Art/NeonSpiro2.png"
+import Neon3 from "../assets/Art/NeonBase.png"
+import Spiro3 from "../assets/Art/Spiro3.png"
+import Spiro3Base from "../assets/Art/Spiro3Base.png"
+
 
 const Section = styled.section`
 display: flex;
@@ -28,11 +39,12 @@ background-color: rgb(221,208,195);
 margin-top: 15px;
 z-index: 0;
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 75em) {
   justify-content: center;
   flex-wrap: wrap;
 }
-@media screen and (max-width: 481px){
+@media screen and (max-width: 42em) {
+
   justify-content: center;
   height: auto;
 }
@@ -48,12 +60,10 @@ margin-bottom: 50px;
 width: 2500px;
 height: auto;
 z-index: 0;
-
 box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3);
 background-color: rgb(251,249,236,0.6);
-border: 1px solid rgb(0,0,0,0.3);
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 75em) {
     display: flex;
     padding: 10px;
     justify-content: center;
@@ -62,12 +72,37 @@ border: 1px solid rgb(0,0,0,0.3);
   }
 
 
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 42em) {
 flex-wrap: wrap;
 justify-content: center;
 width: 100%;
 height auto;
 text-align: center;
+}
+`
+
+const Box = styled.div`
+width: 50%;
+height: 100%;
+min-height: 60vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+@media screen and (max-width: 75em) {
+  width: 70vw;
+  height: 600px;
+  display: flex;
+  margin: 50px;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 225px;
+}
+@media screen and (max-width: 42em) {
+  margin-top: -100px;
+  margin-bottom: 50px;
+  width: 100%;
+  font-size: 0.8em
 }
 `
 
@@ -101,8 +136,8 @@ background-color: rgb(204,145,29,0.1);
 
 
 
-@media screen and (max-width: 1200px) {
-  width: 350px;
+@media screen and (max-width: 75em) {
+  max-width: 350px;
   display: flex ;
   flex-wrap: wrap;
   justify-content: center;
@@ -112,7 +147,7 @@ background-color: rgb(204,145,29,0.1);
   margin: 10px;
 }
 
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 42em) {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -124,7 +159,6 @@ background-color: rgb(204,145,29,0.1);
 const ImageContainer = styled.div`
 width: 100%;
 height: 460px;
-
 box-shadow: 7px 7px 15px -3px rgba(0,0,0,0.3);
 background-color: rgb(255,255,255, 0.5);
 border: 1px solid rgb(0,0,0,0.3);
@@ -133,7 +167,10 @@ margin-bottom: -2px;
 padding: .5rem;
 border-radius: 20px;
 cursor: pointer;
-align-content: center;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
 
 img{
   justify-content: center;
@@ -145,26 +182,27 @@ img{
   border-radius: 25px;
 }
 
-&:hover{
-  img{
-    transform: scale(1.25);
-    position: relative;
-    cursor: pointer;
-    
-  }
-}
+// &:hover{
+//   img{
+//     transform: scale(1.25);
+//     position: relative;
+//     cursor: pointer;
+//   }
+// }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 75em) {
   margin: 7px;
   padding: 10px;
   height: 315px;
-  }
-@media screen and (max-width: 665px) {
+}
+
+@media screen and (max-width: 42em) {
   margin: 7px;
   width: 300px;
   height: 300px;
-  }
+}
 `
+
 
 const Name = styled.h2`
 font-size: 1.5em;
@@ -174,13 +212,19 @@ align-items: center;
 justify-content: center;
 color: rgb(0, 62, 128);
 
-@media screen and (max-width: 1200px) {
-  margin: 7px;
+@media screen and (max-width: 75em) {
+  padding-top: 15px;
+  font-size: 1.2em;
+  margin: 5px;
   width: 300px;
 }
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 42em) {
+  font-size: 1.2em;
   margin: 7px;
   width: 300px;
+  text-align: center;
+  justify-content: center;
+  margin-top: -10px;
 }
 
 `
@@ -193,14 +237,15 @@ const Description = styled.p`
   margin-top: -20px;
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 75em) {
   display: flex ;
   flex-wrap: wrap;
   justify-content: center;
   width: auto;
-  margin: 5px;
+  margin-top: 0px;
+  font-size: 1.1em;
 }
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 42em) {
   display: flex ;
   flex-wrap: wrap;
   justify-content: center;
@@ -209,7 +254,7 @@ const Description = styled.p`
   height: 1em;
   margin-top:0px;
   margin-bottom:10px;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 `
 const Description2 = styled.p`
@@ -222,14 +267,14 @@ const Description2 = styled.p`
   opacity: 0.7;
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 75em) {
   display: flex ;
   flex-wrap: wrap;
   justify-content: center;
   width: auto;
   margin: 5px;
 }
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 42em) {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -265,30 +310,31 @@ border-radius: 10px;
 padding: 6px;
 margin: 2px;
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 75em) {
   justify-content: center;
   align-items: center;
   border: 1px solid rgb(0,0,0,0.3);  border-radius: 10px;
   width: auto;
   margin: 2px;
 }
-@media screen and (max-width: 481px) {
+@media screen and (max-width: 42em) {
   
   border: 1px solid rgb(0,0,0,0.3);  border-radius: 10px;
 }
 `
 
-const MemberComponent = ({img, name='', desc='', desc2='',skills=[]}) => {
+const MemberComponent = ({img, name='', desc='', desc2='', images}) => {
 
     const [isFullScreen, setIsFullScreen] = useState(false);
 
     const handleFullScreen = (e) => {
       const imageElement = e.target;
-      if (imageElement.requestFullscreen) {
+      if (imageElement.requestFullscreen && !imageElement.classList.contains('slick-next') || !imageElement.classList.contains('slick-prev') ) {
         imageElement.requestFullscreen();
         setIsFullScreen(true);
         document.addEventListener("fullscreenchange", handleFullScreenChange);
       }
+      e.preventDefault();
     };
 
     const handleFullScreenChange = () => {
@@ -304,21 +350,42 @@ const MemberComponent = ({img, name='', desc='', desc2='',skills=[]}) => {
       }
     };
     
-    return(
+    const settings = {
+      dots: true,
+      infinite: false,     
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      outline: false,
+    };
+  
+    return (
       <Item>
-        <ImageContainer style={{ maxWidth: 'auto' }}>
-          <a onClick={isFullScreen ? handleExitFullScreen : handleFullScreen} >
-            <img src={img} alt={name} style={{ maxWidth: '100%', maxHeight: 'auto' }} />
-          </a>
+        <ImageContainer >
+          {images.length === 1 ? (
+            <a onClick={isFullScreen ? handleExitFullScreen : handleFullScreen}>
+              <img src={images[0]} alt={name} className="ImageContainerSize" />
+            </a>
+          ) : (
+            <Slider className="SliderSettings" {...settings}>
+              {images.map((image) => (
+                <div key={image}>
+                  <a onClick={isFullScreen ? handleExitFullScreen : handleFullScreen}>
+                    <img src={image} alt={name} className="SliderContainerSize" />
+                    </a>
+                </div>
+              ))}
+            </Slider>
+          )}
         </ImageContainer>
-        <div className='spiro-name-desc-container'>
+        <div className="spiro-name-desc-container">
           <Name>{name}</Name>
           <Description>{desc}</Description>
           <Description2>{desc2}</Description2>
         </div>
       </Item>
-    )
-  }
+    );
+  };
+  
 
 const ProjectCards = () => {
   return (
@@ -327,20 +394,21 @@ const ProjectCards = () => {
     <Section>
       <Container>
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom:'25px', width: 'auto', height: 'auto' }}>
-          <MemberComponent img={Human} name="World Map" desc="Human Hemisphere at night" />
-          <MemberComponent img={NorthAmerica} name="North America" desc="North American Hemisphere at night"/>
-          <MemberComponent img={Korea} name="Korea" desc="Korean Peninsula at night"/>
-          <MemberComponent img={Biggins} name="Biggins" desc="Biggly"/>
-          <MemberComponent img={Hydrangea} name="Hydrangea" desc="Hydrangea Spirograph"/>
-          <MemberComponent img={Chrysanthemum} name="Chrysanthemum" desc="Chrysanthemum Spirograph"/>
-          <MemberComponent img={RoseOfSharon} name="Rose of Sharon" desc="Rose of Sharon Spirograph"/>
-          <MemberComponent img={Tulips} name="Tulips" desc="Tulips Spirograph"/>
-          <MemberComponent img={CamaraLantana} name="Camara Lantana" desc="Camara Lantana Spirograph"/>
-          <MemberComponent img={BlackEyedSusan} name="Black Eyed Susan" desc="Black Eyed Susan Spirograph"/>
-          <MemberComponent img={GlobeThistle} name="Globe Thistle" desc="Globe Thistle Spirograph"/>
-          <MemberComponent img={Misc1} name="Misc Spirograph" desc="Miscellaneous Spirograph"/>
-          <MemberComponent img={Misc2} name="Misc Spirograph" desc="Miscellaneous Spirograph"/>
-          <MemberComponent img={Neon} name="Neon Spirograph" desc="Neon Spirograph"/>
+          <MemberComponent images={[Human]} name="Human Hempisphere at Night" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited" />
+          <MemberComponent images={[NorthAmerica]} name="North America at Night" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited"/>
+          <MemberComponent images={[Korea]} name="Korea at Night" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited"/>
+          <MemberComponent images={[Biggins, BigginsBase]} name="Biggins" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited"/>
+          <MemberComponent images={[Hydrangea]} name="Hydrangea" desc="Mixed Media: Colored pencil on paper, and Digitally Edited"/>
+          <MemberComponent images={[Chrysanthemum]} name="Chrysanthemum" desc="Mixed Media: Colored pencil on paper, and Digitally Edited"/>
+          <MemberComponent images={[RoseOfSharon]} name="Rose of Sharon" desc="Mixed Media: Colored pencil on paper, and Digitally Edited"/>
+          <MemberComponent images={[Tulips]} name="Tulips" desc="Mixed Media: Colored pencil on paper, and Digitally Edited"/>
+          <MemberComponent images={[CamaraLantana]} name="Camara Lantana" desc="Mixed Media: Colored pencil on paper, and Digitally Edited"/>
+          <MemberComponent images={[BlackEyedSusan]} name="Black Eyed Susan" desc="Mixed Media: Colored pencil on paper, and Digitally Edited"/>
+          <MemberComponent images={[GlobeThistle]} name="Globe Thistle" desc="Mixed Media: Colored pencil on paper, and Digitally Edited"/>
+          <MemberComponent images={[Misc1]} name="Misc Spirograph 1" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited"/>
+          <MemberComponent images={[Misc2, Misc21]} name="Misc Spirograph 2" desc="iPad: Procreate"/>
+          <MemberComponent images={[Neon1, Neon3]} name="Neon Spirograph" desc="iPad: Procreate"/>
+          <MemberComponent images={[Spiro3, Spiro3Base]} name="Misc Spirograph WIP" desc="iPad: Procreate"/>
         </div>
       </Container>
     </Section>
