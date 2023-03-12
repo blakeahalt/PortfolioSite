@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import '../App.css';
-import { Slide } from 'react-awesome-reveal';
+import '../App2.css';
 
 function Nav({ isWhite }) {
   const [showNav, setShowNav] = useState(false);
@@ -32,19 +31,24 @@ function Nav({ isWhite }) {
         </div>
       {window.innerWidth < 665 ? (
         <>
-          <div className={`nav-titles ${showNav ? 'show' : 'hide'}`}>
-              <div
-                style={{
-                  backgroundColor: 'rgb(0,0,0,0.5)',
-                  height: '99vh',
-                  width: '250%',
-                  marginLeft: '-150%',
-                  borderRadius: '10px',
-                  paddingTop: '10px',
-                  marginTop:'18px',
-                }}
-                direction="right"
-              >
+          <div
+            className={`nav-titles ${showNav ? 'show' : 'hide'}`}
+            style={{
+              backgroundColor: 'rgb(0,0,0,0.7)',
+              height: '100vh',
+              width: '65%',
+              borderRadius: '25px 0 0 25px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              paddingTop: '3vh',
+              marginTop: '60px',
+              top: 0,
+              transition: 'right 0.5s ease-in-out',
+              zIndex: 1,
+              transform: showNav ? 'translateX(80%)' : 'translateX(0)',
+            }}
+          >
                 <div style={{marginBottom: '10px', fontSize: '1.4em'}}>
                   <a
                     className="navbar-title"
@@ -91,7 +95,7 @@ function Nav({ isWhite }) {
                   </a>
                 </div>
               </div>
-          </div>
+          {/* </div> */}
           <div className="menu-icon" onClick={() => setShowNav(!showNav)}>
             &#9776;
           </div>

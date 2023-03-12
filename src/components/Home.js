@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import '../App.css';
+import '../App2.css';
 import { Parallax } from "react-parallax";
 import styled from 'styled-components';
 import Projects from './ProjectCards.js'
@@ -31,303 +31,315 @@ import countryImg from '../assets/country-background-home.png'
 import phoneImg from '../assets/phone-background-home.png'
 
 const Container = styled.div`
-display: flex;
-justify-content: center;
-margin-left: auto;
-margin-right: auto;
-width: 350px;
-height: 500px;
-padding: 5px;
-
-
-.swiper{
-    width: 100%;
-    height: 550px;
-    margin-top: 15px;
-}
-.swiper-pagination{
-  text-align: right;
-  opacity: 0.5;
-  margin-left: -10px;
-}
-.swiper-slide{
-    background-color: rgb(248,243,233);
-    border: 1px solid rgb(0,0,0,0.3);
-    border-radius: 20px;
-    box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100vw;
+  height: 75vh; 
+  padding: 5px;
+  align-items: center;
   
+  .swiper {
+    align-items: center;
+    width: 90%;
+    height: 90%;
+    display: flex;
+  }
+
+  .swiper-pagination {
+    text-align: right;
+    opacity: 0.5;
+    margin-left: -10px;
+    font-size: 1.2em;
+    margin-bottom: -5vh;
+  }
+
+  .swiper-slide {
+    background-color: rgb(217, 194, 165);
+    border: 1px solid rgb(0, 0, 0, 0.3);
+    border-radius: 25px;
+    box-shadow: 5px 7px 15px 7px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
-
-    img{
-        display: block;
-        width: 100%;
-        height: auto;
-        object-fit: cover;
+    
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
-}
+  }
 
-.swiper-button-next{
-    color: ${props => props.theme.text};
+  .swiper-button-next {
+    color: ${(props) => props.theme.text};
     right: 0;
-    width: 4rem;
+    width: clamp(5vw, 4rem, 8rem); /* Use clamp to limit the width based on viewport */
     top: 60%;
-    right: -100px;
+    right: clamp(-25vw, -20vw, -10vw); /* Use clamp to limit the position based on viewport */
     background-image: url(${Arrow});
     background-position: center;
     background-size: cover;
 
-    &:after{
-        display: none;
+    &:after {
+      display: none;
     }
 
-    @media (max-width: 64em){
-    width: 3rem;
-
+    @media (max-width: 75em) {
+      width: clamp(3vw, 3rem, 6rem); /* Use clamp to limit the width based on viewport */
+      right: clamp(-20vw, -15vw, -5vw); /* Use clamp to limit the position based on viewport */
     }
-    @media (max-width: 30em){
-    width: 2rem;
-
+    @media (max-width: 42em) {
+      width: clamp(2vw, 2rem, 4rem); /* Use clamp to limit the width based on viewport */
+      right: clamp(-15vw, -10vw, 0); /* Use clamp to limit the position based on viewport */
     }
-}
-.swiper-button-prev{
-    color: ${props => props.theme.text};
-    left: -100px;
+  }
+
+  .swiper-button-prev {
+    color: ${(props) => props.theme.text};
+    left: clamp(-25vw, -20vw, -10vw); /* Use clamp to limit the position based on viewport */
     top: 60%;
-    width: 4rem;
+    width: clamp(5vw, 4rem, 8rem); /* Use clamp to limit the width based on viewport */
     transform: rotate(180deg);
     background-image: url(${Arrow});
     background-position: center;
     background-size: cover;
 
-    &:after{
-        display: none;
+    &:after {
+      display: none;
     }
-    @media (max-width: 64em){
-    width: 3rem;
 
+    @media (max-width: 75em) {
+      width: clamp(3vw, 3rem, 6rem); /* Use clamp to limit the width based on viewport */
+      left: clamp(-20vw, -15vw, -5vw); /* Use clamp to limit the position based on viewport */
     }
-    @media (max-width: 30em){
-    width: 2rem;
+    @media (max-width: 42em) {
+      width: clamp(2vw, 2rem, 4rem)
+    }
+  }
+  `
 
-    }
-}
-`
 const ContainerTitle = styled.div`
-  margin-top: -10px;
-  margin-bottom: 30px;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
   font-size: 3em;
   justify-content: center;
+  text-align: center;
   align-content: center;
   color: rgb(0, 62, 128);
 `
 const Item = styled.div`
-position: relative;
 display: flex;
-padding: 1rem .7rem 15rem .7rem;
 color: ${props => props.theme.body};
-margin: 3rem 1.5rem;
-flex-wrap: nowrap;
+flex-wrap: wrap;
 justify-content: center;
-height: 265px;
 backdrop-filter: blur(4px);
-margin: 10px;
-justify-content: center;
-max-width: 325px;
-height: 200px;
-
+border: 1px solid rgba(0,0,0,0.3);
 border-radius: 20px;
 box-shadow: 5px 5px 12px 5px rgba(0,0,0,0.3);
-background-color: rgb(204,145,29,0.1);
+background-color: rgb(217,194,165);
 
-&:hover{
-  img{
-    transform: translateY(-1rem) scale(1.2);
-    position: relative;
-
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  width: 325px;
-  display: flex ;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
-  margin: 10px;
-}
-
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 75em) {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  height: 285px;
-  min-width: 275px;
-  margin: 5px;
+  align-content: center;
+  align-items: center;
+  width: 95%;
+  margin: 1vh;
+  height: auto;
+  }
+
+@media screen and (max-width: 42em) {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 95%;
+  margin: 1vh;
+  height: 65vh;
   }
 `
 
 const ImageContainer = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-width: 350px;
-height: 300px;
-box-shadow: 7px 7px 15px -3px rgba(0,0,0,0.3);
-background-color: rgb(255,255,255, 0.5);
-border: 1px solid rgb(0,0,0,0.2);
-margin:5px;
-border-radius: 20px;
-cursor: pointer;
-z-index:1;
-
-img{
-  margin-bottom: -5px;
-  width: auto;
-  height: auto;
-  border-radius: 20px;
-  ${'' /* border: 1px solid ${props => props.theme.text}; */}
-
-  transition: all 0.3s ease;
-}
-
-@media screen and (max-width: 1200px) {
-  margin: 7px;
-  padding: 10px;
-  }
-
-@media screen and (max-width: 665px) {
-  margin: 5px;
-  margin-top: -5px;
-  padding: 10px;
-  width: 100%;
-  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 7px 7px 15px -3px rgba(0,0,0,0.3);
+  background-color: rgb(255,255,255);
+  border: 1px solid rgba(0,0,0,0.3);
+  margin-bottom: -2px;
+  border-radius: 25px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 
   img{
-    margin-bottom: -5px;
-    width: auto;
-    max-height: 300px;
-    border-radius: 20px;
-    ${'' /* border: 1px solid ${props => props.theme.text}; */}
-  
-    transition: all 0.3s ease;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 25px;
+    object-fit: contain;
   }
-  
+
+  @media screen and (max-width: 75em) {
+    margin: .5vh;
+    padding: 0vh;
+    height: 100%;
+
   }
-`
+
+  @media screen and (max-width: 42em) {
+    width: 95%;
+    height: 29vh;
+    margin-top: 0vh;
+    margin-bottom: 1vh;
+  }
+`;
+
 
 const Name = styled.h2`
-font-size: 1.1em;
-padding: 4px;
-display: flex;
-flex-wrap: wrap;
-align-items: center;
-justify-content: center;
-margin-top: 0px;
-color: rgb(0, 62, 128);
-width: 100%;
-min-height: 4.5vh;
+  font-size: clamp(1.2em, 5vw, 1.5em);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  color: rgb(0, 62, 128);
 
-`
+  @media screen and (max-width: 75em) {
+    margin: 1vh;
+    width: 300px;
+  }
+  @media screen and (max-width: 42em) {
+    width: auto;
+    margin-top: 2vh;
+  }
+`;
+
 const Description = styled.p`
-font-size: .8em;
+  font-size: 2vw
   text-align: center;
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 80%;
-  height: 40px;
-  padding: 10px;
-  margin: 10px;
-  margin-top: -25px;
-  margin-bottom: 10px;
   color: rgb(0, 62, 128);
-
-
-@media screen and (max-width: 1200px) {
-  display: flex ;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: auto;
-  height: 2em;
-  margin: 17px;
-  margin-top: -1.5em;
-  margin-bottom: 3em;
-}
-@media screen and (max-width: 481px) {
-  display: flex ;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: auto;
-  margin: 17px;
-  height: 2.5em;
-  margin-top:-20px;
-  margin-bottom:10px;
-}
-`
+  margin-top: -20px;
+  
+  @media screen and (max-width: 75em) {
+    font-size: 1.2vw
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    margin: 5px;
+    padding: 5px;
+    height: 70px;
+  }
+  @media screen and (max-width: 42em) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    margin: 3vw;
+    margin-top: -1vh;
+    margin-bottom: em;
+    font-size: 0.85em;
+  }
+`;
 
 const SkillsContainer = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-flex-wrap: wrap;
-max-width: auto;
-margin-top: 10px;
-
-`
-
-const Skills = styled.h2`
-font-size: .7em;
-display: flex;
-align-items: center;
-justify-content: center;
-text-transform: capitalize;
-background-color: rgb(230,230,230, 0.5);
-color: rgb(0, 62, 128);
-font-weight:400;
-border: 1px solid rgb(0, 62, 128);
-border-radius: 10px;
-padding: 6px;
-margin: 2px;
-
-@media screen and (max-width: 1200px) {
+  width: 95%;
+  font-size: clamp(0.9em, 3vw, 1.2em);
+  display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid;
-  border-radius: 10px;
-  width: auto;
+  height: 145px;
+  padding: 7px;
+  padding-top: 10px;
   margin: 2px;
-}
-@media screen and (max-width: 481px) {
-  
-  border: 1px solid;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 5px;
   border-radius: 10px;
-}
-`
+  box-shadow: 3px 7px 15px 2px rgba(0, 0, 0, 0.3);
+  background-color: rgb(255, 255, 255, 0.4);
 
-const MemberComponent = ({img, name=" ", desc='',skills=[]}) => {
+  @media screen and (max-width: 75em) {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 125px;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  @media screen and (max-width: 42em) {
+    display: flex;
+    justify-content: center;
+    height: 20%;
+    width: 90%;
+    margin-bottom: '3vh';
+    align-content: center;
+  }
+`;
+
+const Skills = styled.h2`
+  display: flex;
+  justify-content: center;
+  height: clamp(2rem, 5vw, 2.5rem);
+  text-align: center;
+  align-items: center;
+  background-color: rgb(240, 240, 240, 0.8);
+  color: rgb(0, 62, 128);
+  font-weight: 400;
+  border: 1px solid rgb(0, 62, 128);
+  border-radius: 10px;
+  padding: clamp(0.5rem, 2vw, 1rem);
+  margin: clamp(0.25rem, 1vw, 0.5rem);
+  font-size: clamp(0.9rem, 1vw, 1.1rem);
+
+  @media screen and (max-width: 75em) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(0, 62, 128, 0.7);
+    border-radius: 10px;
+    margin: clamp(0.25rem, 1vw, 0.5rem);
+    height: clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(0.7rem, 0.8vw, 0.9rem);
+  }
+
+  @media screen and (max-width: 42em) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(0, 62, 128, 0.7);
+    border-radius: 10px;
+    margin: 0.1rem;
+    font-size: 0.8rem;
+    height: 1.8vh;
+  }
+`;
+
+const MemberComponent = ({img, name='', desc='',skills=[]}) => {
   return(
 
-    <Item>
-      <ImageContainer>
-        <img width={500} src={img} alt={name} />
-      </ImageContainer>
-        <div style={{ width: '95%', marginTop: '10px', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignContent: 'center', textAlign: 'center', border: '1px solid rgb(0,0,0,0.5)', borderRadius: '15px', boxShadow: '3px 7px 15px 2px rgba(0,0,0,0.3)', backgroundColor:'rgb(255,255,255,0.6)' }}>
+      <Item>
+        <ImageContainer>
+          <img src={img} alt={name} />
+        </ImageContainer>
+        <div style={{ width: '95%', height: '13vh', display: 'flex', justifyContent: 'center', flexDirection: 'column', textAlign: 'center', border: '1px solid rgb(0,0,0,0.2)', borderRadius: '25px', boxShadow: '3px 7px 15px 2px rgba(0,0,0,0.3)', backgroundColor:'rgb(255,255,255,0.6)', alignContent: 'center' }}>
           <Name>{name}</Name>
           <Description>{desc}</Description>
         </div>
-      <SkillsContainer>
-        {skills.map((skill, index) => (
-          <Skills key={index}>{skill}</Skills>
-        ))}
-      </SkillsContainer>
-    </Item>
-
-  )
-}
+        <SkillsContainer>
+          {skills.map((skill, index) => (
+            <Skills key={index}>{skill}</Skills>
+          ))}
+        </SkillsContainer>
+      </Item>
+  
+    )
+  };
 
 
 
@@ -341,28 +353,67 @@ function Home() {
 if (window.innerWidth > 1200) {
   screen = (
     <>
-    
+    <div >
+    <Nav />
+      <div className="container">
+        <Parallax
+          blur={{ min: -5, max: 5 }}
+          bgImageClassName="opaque-image" 
+          strength={300} 
+          >
+          <div style={{ height: '100%' }}>
+            <div className="boxs-header">
+              <Bounce >
+              <img src={ResumePic} width='35%' alt='Resume Pic' style={{ borderRadius: '275px', marginTop: '5vh', maxWidth: '350px' }} onLoad={() => {
+                const hiddenDivs = document.querySelectorAll('.hidden');
+                hiddenDivs.forEach((div) => {
+                  div.classList.remove('hidden');
+                });
+              }} />
+              </Bounce>
+              <div className="header-title hidden">
+                Hi, I'm Blake!</div>
+                <p className="header-title2 hidden">
+                <AttentionSeeker cascade left damping={.05}> 
+                  <span>Full Stack Developer </span> <span>&nbsp; | &nbsp;</span> 
+                  <span> Educator</span> <span>&nbsp; | &nbsp;</span> 
+                  <span> Artist </span> 
+                </AttentionSeeker> 
+                </p>
+              <h4 className="introduction hidden">
+                I like to create beautiful things that work well
+              </h4>
+            </div>
+          </div>
+        </Parallax>
+      </div>
+  </div>
     <Parallax>
-      <div style={{ height: 800 }}>
+      <div >
       <div className='about-outside-container2'>
         <div className='about-dev-container2'>
-          <Slide  triggerOnce direction='down' delay={150} >
+          <Slide triggerOnce direction='down' delay={150} >
             <div className='dev-text-border2'>
               <div className='about-text2'>
                 <Slide direction='down' delay={200} >
                   <h4 className="dev-introduction1-2">
-                    As a full stack developer, I bring ideas to life
+                    As a full stack developer,
                   </h4>
                 </Slide>
                 <Slide direction='up' delay={200} >
                   <h4 className="dev-introduction2-2">
+                  I bring ideas to life
+                  </h4>
+                </Slide>
+                <Slide direction='up' delay={250} >
+                  <h4 className="dev-introduction3-2">
                     with clean, intuitive, and thoughtful design.
                   </h4>
                 </Slide>
               </div>
             </div>
           </Slide>
-          <Slide direction='down' delay={150}>
+          <Slide triggerOnce direction='down' delay={150}>
             <div 
               className="devImg2"
               onMouseEnter={() => {
@@ -398,10 +449,15 @@ if (window.innerWidth > 1200) {
               <div className='about-text2' >
                 <Slide direction='down' delay={400}>
                   <h4 className="dev-introduction1-2">
-                    As a former educator, I convey information 
+                    As a former educator, 
                   </h4>
                 </Slide>
                 <Slide direction='up' delay={400}>
+                  <h4 className="dev-introduction2-2">
+                  I convey information 
+                  </h4>
+                </Slide>
+                <Slide direction='up' delay={450}>
                   <h4 className="dev-introduction2-2">
                     using clear and concise methods.
                   </h4>
@@ -409,7 +465,7 @@ if (window.innerWidth > 1200) {
               </div>
             </div>
           </Slide>
-          <Slide direction='down' delay={350}>
+          <Slide triggerOnce direction='down' delay={350}>
               <div 
                 className="devImg2"
                 onMouseEnter={() => {
@@ -439,15 +495,20 @@ if (window.innerWidth > 1200) {
         </div>
       
       <div className='about-dev-container2'>
-        <Slide triggerOnce direction='down' delay={550}>
+        <Slide triggerOnce direction='down' delay={450}>
             <div className='dev-text-border2'>
               <div className='about-text2'>
-                <Slide direction='down' delay={600}>
+                <Slide direction='down' delay={500}>
                   <h4 className="dev-introduction1-2">
-                  As an artist, I explore visual narratives
+                  As an artist, 
                   </h4>
                 </Slide>
-                <Slide direction='up' delay={600}>
+                <Slide direction='up' delay={550}>
+                  <h4 className="dev-introduction2-2">
+                  I explore visual narratives
+                  </h4>
+                </Slide>
+                <Slide direction='up' delay={500}>
                   <h4 className="dev-introduction2-2">
                   within the aesthetic of mathematics.
                   </h4>
@@ -455,7 +516,7 @@ if (window.innerWidth > 1200) {
               </div>
             </div>
           </Slide>
-          <Slide direction='down' delay={550}>
+          <Slide triggerOnce direction='down' delay={450}>
           <div 
               className="devImg2"
               onMouseEnter={() => {
@@ -496,369 +557,7 @@ if (window.innerWidth > 1200) {
   );
 } else if (window.innerWidth > 665) {
   screen = (
-    <>
-    <Parallax>
-      <div  style={{ height: 800 }}>
-        <div className='about-outside-container2'>
-          <div className='about-dev-container2'>
-            <Slide  triggerOnce direction='down' delay={150} >
-              <div className='dev-text-border2 '>
-                <div className='about-text2 '>
-                <Slide direction='down' delay={200}>
-                    <h4 className="dev-introduction1-2 hidden" >
-                      As a full stack developer, 
-                    </h4>
-                  </Slide>
-                  <Slide cascade direction='up' damping={0.35}>
-                    <h4 className="dev-introduction1-2 hidden" style={{ marginTop: '-20px'}}>
-                    I bring ideas to life with 
-                    </h4>
-                    <h4 className="dev-introduction1-2 hidden" style={{ marginTop: '-30px'}}>
-                    clean, intuitive, and
-                    </h4>
-                    <h4 className="dev-introduction1-2 hidden" style={{ marginTop: '-30px'}}>
-                    thoughtful design.
-                    </h4>
-                  </Slide>
-                </div>
-              </div>
-            </Slide>
-            <Slide  direction='down' delay={150}>
-              <div
-                className="devImg2"
-                onMouseEnter={() => {
-                  setHover(false);
-                }}
-                onMouseLeave={() => {
-                  setHover(true);
-                }}
-                onClick={() => { 
-                  window.location.replace('/projects')
-                  // window.location.replace('http://localhost:3000/projects')
-                  window.scrollBy({ behavior: 'smooth' });
-                }}
-              >
-                <img 
-                  className="img-hover"
-                  src={devImg} 
-                  alt="dev pic" 
-                  title='Click to learn more'
-                />
-                <div className="dev-slide-hover2">
-                  <Button fontSize='1em' text='Go to projects &#10230;' link='/projects'></Button>
-                  {/* <Button fontSize='1em' text='Go to projects &#10230;' link='http://localhost:3000/projects'></Button> */}
-                </div>
-              </div>
-            </Slide>
-        </div>
-            
-            <div className='about-dev-container2'>
-             <Slide triggerOnce direction='down' delay={350}>
-              <div className='dev-text-border2'>
-                <div className='about-text2' >
-                  <Slide direction='down' delay={400}>
-                    <h4 className="dev-introduction1-2 hidden">
-                      As a former educator, 
-                    </h4>
-                  </Slide>
-                  <Slide cascade direction='up' damping={0.35}>
-                    <h4 className="dev-introduction1-2 hidden" style={{ marginTop: '-20px'}}>
-                      I convey information using 
-                    </h4>
-                    <h4 className="dev-introduction1-2 hidden" style={{ marginTop: '-30px'}}>
-                      clear and concise methods.
-                    </h4>
-                  </Slide>
-                </div>
-              </div>
-            </Slide>
-            <Slide direction='down' delay={350}>
-                <div 
-                  className="devImg2"
-                  onMouseEnter={() => {
-                    setHover(true);
-                  }}
-                  onMouseLeave={() => {
-                    setHover(false);
-                  }}
-                  onClick={() => { 
-                    window.location.replace('/blog');
-                    // window.location.replace('http://localhost:3000/blog');
-                    window.scrollBy({ behavior: 'smooth' });
-                  }}
-                >
-                  <img
-                    className="img-hover"
-                    src={blogPic1} 
-                    alt="blog pic" 
-                    title='Click to learn more'
-                  />
-                  <div className="dev-slide-hover2">
-                    <Button fontSize='1em' text='Go to blog &#10230;' link='/blog'></Button>
-                    {/* <Button fontSize='1em' text='Go to blog &#10230;' link='http://localhost:3000/blog'></Button> */}
-                  </div>
-                </div>
-              </Slide>
-          </div>
-        
-        <div className='about-dev-container2'>
-         <Slide triggerOnce direction='down' delay={550}>
-            <div className='dev-text-border2'>
-                <div className='about-text2'>
-                <Slide direction='down' delay={400}>
-                    <h4 className="dev-introduction1-2 hidden" >
-                      As an artist, 
-                    </h4>
-                  </Slide>
-                  <Slide cascade direction='up' damping={0.35}>
-                    <h4 className="dev-introduction1-2 hidden" style={{ marginTop: '-20px'}}>
-                    I explore visual narratives 
-                    </h4>
-                    <h4 className="dev-introduction1-2 hidden" style={{ marginTop: '-30px'}}>
-                    within the aesthetic of
-                    </h4>
-                    <h4 className="dev-introduction1-2 hidden" style={{ marginTop: '-30px'}}>
-                    mathematics.
-                    </h4>
-                  </Slide>
-                </div>
-              </div>
-          </Slide>
-          <Slide direction='down' delay={550}>
-            <div 
-                className="devImg2"
-                onMouseEnter={() => {
-                    setHover(false);
-                }}
-                onMouseLeave={() => {
-                    setHover(true);
-                }}
-                onClick={() => { 
-                    window.location.replace('/art');
-                    // window.location.replace('http://localhost:3000/art');
-                    window.scrollBy({ behavior: 'smooth' });
-                    }}
-                >
-                <img 
-                    className="img-hover"
-                    src={StandArt3} 
-                    alt="stand art" 
-                    title='Click to learn more'
-                />
-              <div className="dev-slide-hover2">
-                <Button fontSize='1em' text='Go to art &nbsp;&nbsp;&#10230;' link='/art'></Button>
-                {/* <Button fontSize='1em' text='Go to art &nbsp;&nbsp;&#10230;' link='http://localhost:3000/art'></Button> */}
-            </div>
-          </div>
-        </Slide>
-       </div>
-      </div>
-    </div>
-  </Parallax>
-
-  <div  >
-    <Projects />
-  </div>
-</>
-  );
-} else {
-  screen = (
-    <>
-    <Parallax>
-      <div  style={{ height: '700px' }}>
-        <div className='about-outside-container2'>
-          <Container>
-            <Swiper
-              effect="cards"
-              spaceBetween={20}
-              slidesPerView={1}
-              pagination={{
-                className: 'paginationStyle',
-                clickable: true,
-                type: 'fraction',
-                paginationClickable: true,
-              }}
-              scrollbar={{ draggable: true }}
-              modules={[EffectCards,Pagination, Navigation, Autoplay]}
-              navigation={true}
-              grabCursor={true}
-              loop={false}
-              centeredSlides={true}
-              autoplay={{ delay: 3000 }}
-            >
-              <SwiperSlide>  
-                <div className='about-dev-container2'>
-                  <div className='dev-text-border2 '>
-                    <div className='about-text2 '>
-                      <h4 className="dev-introduction1-2 hidden">
-                        As a full stack developer, I bring ideas to life with clean, intuitive, and thoughtful design.
-                      </h4>
-                    </div>
-                  </div>
-                  
-                  <div
-                    className="devImg2"
-                    onMouseEnter={() => {
-                      setHover(false);
-                    }}
-                    onMouseLeave={() => {
-                      setHover(true);
-                    }}
-                    onClick={() => { 
-                      window.location.replace('/projects')
-                      // window.location.replace('http://localhost:3000/projects')
-                      window.scrollBy({ behavior: 'smooth' });
-                    }}
-                  >
-                    <img 
-                      className="img-hover"
-                      src={devImg} 
-                      alt="dev pic" 
-                      title='Click to learn more'
-                    />
-                    <div className="dev-slide-hover2">
-                      <Button fontSize='1em' text='Go to projects &#10230;' link='/projects'></Button>
-                      {/* <Button fontSize='1em' text='Go to projects &#10230;' link='http://localhost:3000/projects'></Button> */}
-                    </div>
-                  </div>
-                </div> 
-              </SwiperSlide>
-              <SwiperSlide> 
-                <div className='about-dev-container2'>
-                  
-                  <div className='dev-text-border2'>
-                    <div className='about-text2' >
-                        <h4 className="dev-introduction1-2 hidden">
-                          As a former educator, I convey information using clear and concise methods.
-                        </h4>
-                    </div>
-                  </div>
-                    
-                  <div 
-                    className="devImg2"
-                    onMouseEnter={() => {
-                      setHover(true);
-                    }}
-                    onMouseLeave={() => {
-                      setHover(false);
-                    }}
-                    onClick={() => { 
-                      window.location.replace('/blog');
-                      // window.location.replace('http://localhost:3000/blog');
-                      window.scrollBy({ behavior: 'smooth' });
-                    }}
-                  >
-                    <img
-                      className="img-hover"
-                      src={blogPic1} 
-                      alt="blog pic" 
-                      title='Click to learn more'
-                    />
-                    <div className="dev-slide-hover2">
-                      <Button fontSize='1em' text='Go to blog &#10230;' link='/blog'></Button>
-                      {/* <Button fontSize='1em' text='Go to blog &#10230;' link='http://localhost:3000/blog'></Button> */}
-                    </div>
-                  </div>
-
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>  
-                <div className='about-dev-container2'>
-                  
-                  <div className='dev-text-border2'>
-                    <div className='about-text2'>
-                      <h4 className="dev-introduction1-2">
-                          As an artist, I explore visual narratives within the aesthetic of mathematics.
-                      </h4>
-                    </div>
-                  </div>
-                  
-                  <div 
-                    className="devImg2"
-                    onMouseEnter={() => {
-                        setHover(false);
-                    }}
-                    onMouseLeave={() => {
-                        setHover(true);
-                    }}
-                    onClick={() => { 
-                        window.location.replace('/art');
-                        // window.location.replace('http://localhost:3000/art');
-                        window.scrollBy({ behavior: 'smooth' });
-                        }}
-                    >
-                    <img 
-                        className="img-hover"
-                        src={StandArt} 
-                        alt="stand art" 
-                        title='Click to learn more'
-                    />
-                    <div className="dev-slide-hover2">
-                      <Button fontSize='1em' text='Go to art &nbsp;&nbsp;&#10230;' link='/art'></Button>
-                      {/* <Button fontSize='1em' text='Go to art &nbsp;&nbsp;&#10230;' link='http://localhost:3000/art'></Button> */}
-                    </div>
-                  </div>
-
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </Container>
-      </div>
-    </div>
-  </Parallax>
-  <Parallax  style={{ marginTop: '-300px', height: '1075px' }}>
-  <div className='projects-outside-container2' >
-    <ContainerTitle>
-      Projects
-    </ContainerTitle> 
-    <Container >
-      <Swiper
-        effect="cards"
-        spaceBetween={20}
-        slidesPerView={1}
-        pagination={{
-          className: 'paginationStyle',
-          clickable: true,
-          type: 'fraction',
-          paginationClickable: true,
-        }}
-        scrollbar={{ draggable: true }}
-        modules={[EffectCards,Pagination, Navigation, Autoplay]}
-        navigation={true}
-        grabCursor={true}
-        loop={false}
-        centeredSlides={true}
-        autoplay={{ delay: 3000 }}
-        id='swiper-projects'
-      >
-          
-        <SwiperSlide> 
-          <a href="/nftpage" >
-            <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks the top trending NFT sales using various API's." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
-        </SwiperSlide>
-        <SwiperSlide>  
-          <a href="/stockpage">
-            <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio that stores and updates user transactions with real-time stock quotes." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
-        </SwiperSlide>
-        <SwiperSlide>  
-          <a href="/countrypage">
-            <MemberComponent img={countryImg}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts using two APIs." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
-        </SwiperSlide>
-        <SwiperSlide>  
-          <a href="/phonebookpage">
-            <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A CRUD phonebook feature that adds contact names and numbers built using a MERN stack." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
-        </SwiperSlide>
-      </Swiper>
-    </Container>
-    </div>
-  </Parallax>
-</>
-  );
-}
-
-
-  return (
-    <div className='home-height' >
+    <div >
     <Nav />
       <div className="container">
         <Parallax
@@ -866,10 +565,10 @@ if (window.innerWidth > 1200) {
           bgImageClassName="opaque-image" 
           strength={300} 
           >
-          <div style={{ height: window.innerWidth < 665 ? '94vh' : '700px' }}>
+          <div >
             <div className="boxs-header">
               <Bounce >
-              <img src={ResumePic} width='250px' alt='Resume Pic' style={{ borderRadius: '150px', margin: '5px', marginTop: '100px' }} onLoad={() => {
+              <img src={ResumePic} width='40%' alt='Resume Pic' style={{ borderRadius: '200px', marginTop: '10vh', maxWidth: '350px' }} onLoad={() => {
                 const hiddenDivs = document.querySelectorAll('.hidden');
                 hiddenDivs.forEach((div) => {
                   div.classList.remove('hidden');
@@ -890,12 +589,389 @@ if (window.innerWidth > 1200) {
               </h4>
             </div>
           </div>
-        </Parallax>
+      </Parallax>
+    </div>
+    <Parallax>
+        <div className='about-outside-container2'>
+          <div className='about-dev-container2'>
+          <Slide triggerOnce direction='down' delay={150} >
+            <div className='dev-text-border2'>
+              <div className='about-text2'>
+                <Slide direction='down' delay={200} >
+                  <h4 className="dev-introduction1-2">
+                    As a full stack developer,
+                  </h4>
+                </Slide>
+                <Slide direction='up' delay={200} >
+                  <h4 className="dev-introduction2-2">
+                  I bring ideas to life
+                  </h4>
+                </Slide>
+                <Slide direction='up' delay={250} >
+                  <h4 className="dev-introduction3-2">
+                    with clean, intuitive, and thoughtful design.
+                  </h4>
+                </Slide>
+              </div>
+            </div>
+          </Slide>
+            <Slide triggerOnce direction='down' delay={150}>
+              <div
+                className="devImg2"
+                onMouseEnter={() => {
+                  setHover(false);
+                }}
+                onMouseLeave={() => {
+                  setHover(true);
+                }}
+                onClick={() => { 
+                  window.location.replace('/projects')
+                  // window.location.replace('http://localhost:3000/projects')
+                  window.scrollBy({ behavior: 'smooth' });
+                }}
+              >
+                <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <div>
+                    <Button fontSize='.6em' text='Go to projects &#10230;' link='/projects'></Button>
+                  </div>
+                </div>
 
+                <img 
+                  src={devImg} 
+                  alt="dev pic" 
+                  title='Click to learn more'
+                />
+              </div>
+            </Slide>
+        </div>
+            
+            <div className='about-dev-container2'>
+            <Slide triggerOnce direction='down' delay={350}>
+            <div className='dev-text-border2'>
+              <div className='about-text2' >
+                <Slide direction='down' delay={400}>
+                  <h4 className="dev-introduction1-2">
+                    As a former educator, 
+                  </h4>
+                </Slide>
+                <Slide direction='up' delay={400}>
+                  <h4 className="dev-introduction2-2">
+                  I convey information 
+                  </h4>
+                </Slide>
+                <Slide direction='up' delay={450}>
+                  <h4 className="dev-introduction2-2">
+                    using clear and concise methods.
+                  </h4>
+                </Slide>
+              </div>
+            </div>
+          </Slide>
+            <Slide triggerOnce direction='down' delay={350}>
+                <div 
+                  className="devImg2"
+                  onMouseEnter={() => {
+                    setHover(true);
+                  }}
+                  onMouseLeave={() => {
+                    setHover(false);
+                  }}
+                  onClick={() => { 
+                    window.location.replace('/blog');
+                    // window.location.replace('http://localhost:3000/blog');
+                    window.scrollBy({ behavior: 'smooth' });
+                  }}
+                >
+                  <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div>
+                          <Button fontSize='.6em' text='Go to blog &#10230;' link='/blog'></Button>
+                        </div>
+                      </div>
+                      <img
+                        src={blogPic1} 
+                        alt="blog pic" 
+                        title='Click to learn more'
+                      />
+                </div>
+              </Slide>
+          </div>
+        
+        <div className='about-dev-container2'>
+        <Slide triggerOnce direction='down' delay={450}>
+            <div className='dev-text-border2'>
+              <div className='about-text2'>
+                <Slide direction='down' delay={500}>
+                  <h4 className="dev-introduction1-2">
+                  As an artist, 
+                  </h4>
+                </Slide>
+                <Slide direction='up' delay={500}>
+                  <h4 className="dev-introduction2-2">
+                  I explore visual narratives
+                  </h4>
+                </Slide>
+                <Slide direction='up' delay={550}>
+                  <h4 className="dev-introduction2-2">
+                  within the aesthetic of mathematics.
+                  </h4>
+                </Slide>
+              </div>
+            </div>
+          </Slide>
+          <Slide triggerOnce direction='down' delay={450}>
+            <div 
+                className="devImg2"
+                onMouseEnter={() => {
+                    setHover(false);
+                }}
+                onMouseLeave={() => {
+                    setHover(true);
+                }}
+                onClick={() => { 
+                    window.location.replace('/art');
+                    // window.location.replace('http://localhost:3000/art');
+                    window.scrollBy({ behavior: 'smooth' });
+                    }}
+                >
+                  <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div>
+                      <Button fontSize='.6em' text='Go to art &#10230;' link='/art'></Button>
+                    </div>
+                  </div>
+                  <img 
+                      src={StandArt} 
+                      alt="stand art" 
+                      title='Click to learn more'
+                  />
+              </div>
+            </Slide>
+          </div>
+          </div>
+      </Parallax>
+      <Projects/>
+    </div>
+  );
+} else {
+  screen = (
+    <div >
+      <Nav />
+        <div className="container">
+          <Parallax
+            blur={{ min: -5, max: 5 }}
+            bgImageClassName="opaque-image" 
+            strength={300} 
+            >
+            <div >
+              <div className="boxs-header">
+                <Bounce >
+                <img src={ResumePic} width='60%' alt='Resume Pic' style={{ borderRadius: '175px', marginTop: '10vh' }} onLoad={() => {
+                  const hiddenDivs = document.querySelectorAll('.hidden');
+                  hiddenDivs.forEach((div) => {
+                    div.classList.remove('hidden');
+                  });
+                }} />
+                </Bounce>
+                <div className="header-title hidden">
+                  Hi, I'm Blake!</div>
+                  <p className="header-title2 hidden">
+                  <AttentionSeeker cascade left damping={.05}> 
+                    <span>Full Stack Developer </span> <span>&nbsp; | &nbsp;</span> 
+                    <span> Educator</span> <span>&nbsp; | &nbsp;</span> 
+                    <span> Artist </span> 
+                  </AttentionSeeker> 
+                  </p>
+                <h4 className="introduction hidden">
+                  I like to create beautiful things that work well
+                </h4>
+              </div>
+            </div>
+          </Parallax>
+        </div>
+      <Parallax style={{ marginTop: '0vh' }}>
+          <div className='about-outside-container2'>
+            <Container>
+              <Swiper 
+                effect="cards"
+                spaceBetween={20}
+                slidesPerView={1}
+                pagination={{
+                  className: 'paginationStyle',
+                  clickable: true,
+                  type: 'fraction',
+                  paginationClickable: true,
+                }}
+                scrollbar={{ draggable: true }}
+                modules={[EffectCards,Pagination, Navigation, Autoplay]}
+                navigation={true}
+                grabCursor={true}
+                loop={false}
+                centeredSlides={true}
+                autoplay={{ delay: 3000 }}
+              >
+                <SwiperSlide>  
+                  <div className='about-dev-container2'>
+                    <div className='dev-text-border2'>
+                      <h4 className="dev-introduction1-2 hidden">
+                        As a full stack developer, I bring ideas to life with clean, intuitive, and thoughtful design.
+                      </h4>
+                    </div>  
+                    
+                    <div
+                      className="devImg2"
+                      onMouseEnter={() => {
+                        setHover(false);
+                      }}
+                      onMouseLeave={() => {
+                        setHover(true);
+                      }}
+                      onClick={() => { 
+                        window.location.replace('/projects')
+                        // window.location.replace('http://localhost:3000/projects')
+                        window.scrollBy({ behavior: 'smooth' });
+                      }}
+                    >
+                      <div style={{ position: 'fixed', top: '30%', bottom: 0, left: 0, right: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div>
+                          <Button fontSize='1.2em' text='Go to projects &#10230;' link='/projects'></Button>
+                        </div>
+                      </div>
+
+                      <img 
+                        src={devImg} 
+                        alt="dev pic" 
+                        title='Click to learn more'
+                      />
+                    </div>
+                  </div> 
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className='about-dev-container2'>
+                    <div className='dev-text-border2'>
+                      <h4 className="dev-introduction1-2 hidden">
+                        As a former educator, I convey information using clear and concise methods.
+                      </h4>
+                    </div>
+                      
+                    <div 
+                      className="devImg2"
+                      onMouseEnter={() => {
+                        setHover(true);
+                      }}
+                      onMouseLeave={() => {
+                        setHover(false);
+                      }}
+                      onClick={() => { 
+                        window.location.replace('/blog');
+                        // window.location.replace('http://localhost:3000/blog');
+                        window.scrollBy({ behavior: 'smooth' });
+                      }}
+                    >
+                      <div style={{ position: 'fixed', top: '30%', bottom: 0, left: 0, right: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div>
+                          <Button fontSize='1.2em' text='Go to blog &#10230;' link='/blog'></Button>
+                        </div>
+                      </div>
+                      <img
+                        src={blogPic1} 
+                        alt="blog pic" 
+                        title='Click to learn more'
+                      />
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>  
+                  <div className='about-dev-container2'>
+                    <div className='dev-text-border2'>
+                    <h4 className="dev-introduction1-2 hidden">
+                          As an artist, I explore visual narratives within the aesthetic of mathematics.
+                      </h4>
+                    </div>
+                    <div 
+                      className="devImg2"
+                      onMouseEnter={() => {
+                          setHover(false);
+                      }}
+                      onMouseLeave={() => {
+                          setHover(true);
+                      }}
+                      onClick={() => { 
+                          window.location.replace('/art');
+                          // window.location.replace('http://localhost:3000/art');
+                          window.scrollBy({ behavior: 'smooth' });
+                          }}
+                      >
+                      <div style={{ position: 'fixed', top: '30%', bottom: 0, left: 0, right: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div>
+                          <Button fontSize='1.2em' text='Go to art &#10230;' link='/art'></Button>
+                        </div>
+                      </div>
+                      <img 
+                          src={StandArt} 
+                          alt="stand art" 
+                          title='Click to learn more'
+                      />
+                    </div>
+
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </Container>
+        </div>
+    </Parallax>
+    <Parallax  >
+    <div className='projects-outside-container2' >
+      <ContainerTitle>
+        Projects
+      </ContainerTitle> 
+      <Container >
+        <Swiper
+          effect="cards"
+          spaceBetween={20}
+          slidesPerView={1}
+          pagination={{
+            className: 'paginationStyle',
+            clickable: true,
+            type: 'fraction',
+            paginationClickable: true,
+          }}
+          scrollbar={{ draggable: true }}
+          modules={[EffectCards,Pagination, Navigation, Autoplay]}
+          navigation={true}
+          grabCursor={true}
+          loop={false}
+          centeredSlides={true}
+          autoplay={{ delay: 3000 }}
+          id='swiper-projects'
+        >
+            
+          <SwiperSlide > 
+            <a href="/nftpage" >
+              <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks the top sales of various NFT marketplaces." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
+          </SwiperSlide>
+          <SwiperSlide>  
+            <a href="/stockpage">
+              <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio that stores user transactions with real-time stock quotes." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
+          </SwiperSlide>
+          <SwiperSlide>  
+            <a href="/countrypage">
+              <MemberComponent img={countryImg}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
+          </SwiperSlide>
+          <SwiperSlide>  
+            <a href="/phonebookpage">
+              <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A CRUD phonebook feature that manages a contact list." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
+          </SwiperSlide>
+        </Swiper>
+      </Container>
+      </div>
+    </Parallax>
+  </div>
+  )
+  }
+  return (
+    <div >
        <div>{screen}</div>
       <Footer/>
-      </div>
-  </div>
+    </div>
   );
 }
 

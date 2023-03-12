@@ -35,8 +35,13 @@ position: relative;
 }
 
 
-@media (max-width: 48em) {
-font-size: ${props => props.fontSize};
+
+@media (max-width: 75em) {
+  font-size: 2em
+}
+
+@media (max-width: 42em) {
+font-size: 1em
 
 }
 `

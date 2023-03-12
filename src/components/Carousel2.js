@@ -10,80 +10,76 @@ import "swiper/css/navigation";
 
 import { Pagination, Navigation, Autoplay, EffectCards } from "swiper";
 
-import Human from "../assets/Art/HumanHemi.jpg"
-import Biggins from "../assets/Art/Biggins.png"
+
 import Dizzy from '../assets/portraits/Dizzy_Done.png'
+import MilesDavis from '../assets/portraits/MilesDavis.png'
+import Thelonius from '../assets/portraits/Thelonius.png'
+import Mingus from '../assets/portraits/Mingus.png'
 import SaganTyson from '../assets/portraits/Sagan_tyson.png'
+import Ajumma from '../assets/portraits/Ajumma.png'
+import Ajussi from '../assets/portraits/Ajussi.png'
 
 import Arrow from '../assets/Arrow.svg';
 
-
 const Container = styled.div`
 display: flex;
-margin-bottom: 25px;
+padding: 1vh;
 align-items: center;
-width: 525px;
+width: auto;
 height: 100%;
-margin-left: 50px;
 z-index: 1;
+margin: 2vh;
 
-@media (max-width: 1200px){
+@media screen and (max-width: 75em) {
     display: flex;
-    margin-bottom: -225px;
     justify-content: center;
-    width: 500px;
-    height: 100%;
-    margin-top: 150px;
-    margin-left: 215px;
 }
 
-@media (max-width: 665px){
+@media screen and (max-width: 42em) {
     display: flex;
-    margin-bottom: -225px;
-    align-items: center;
     justify-content: center;
-    width: 500px;
-    height: 500px;
-    margin-top: -15vh;
-    margin-left: 215px;
+    height: auto;
+    margin-top: 10vh;
 }
 
 .swiper{
     width: 100%;
     height: 100%;
     
-    @media (max-width: 1200px){
-        width: 500px;
+    @media screen and (max-width: 75em) {
+        width: 100%;
         height: 100%;
-        margin-left: -175px;
     }
     
-    @media (max-width: 665px){
-        margin-top: 20px;
-        margin-left: -195px;
-        width: 90vw;
-        height: 350px;
+    @media screen and (max-width: 42em) {
+        width: 100%;
+        height: auto;
+        margin-top: -10vh;
+    }
+    @media screen and (max-width: 25em) {
+        width: 100%;
+        height: auto;
+        margin-top: 5vh;
     }
 }
 
 .swiper-slide{
-    background-color: rgb(251,249,236);
+    background-color:  rgb(251,249,236);
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     
-    @media (max-width: 665px){
-        height: 300px;
+    @media screen and (max-width: 42em) {
+        height: 300px
         margin-top: -25px;
     }
-    
+
     img{
         display: block;
         width: 100%;
         height: auto;
         object-fit: cover;
-        align-self: center;
     }
 }
 
@@ -91,8 +87,7 @@ z-index: 1;
     color: ${props => props.theme.text};
     right: 0;
     width: 4rem;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 60%;
     
     background-image: url(${Arrow});
     background-position: center;
@@ -114,7 +109,7 @@ z-index: 1;
 .swiper-button-prev{
     color: ${props => props.theme.text};
     left: 0;
-    top: 50%;
+    top: 60%;
     width: 4rem;
     transform: rotate(180deg);
     background-image: url(${Arrow});
@@ -137,7 +132,6 @@ z-index: 1;
 }
 
 `
-
 const Carousel = () => {
   return (
     <Container>
@@ -160,7 +154,12 @@ const Carousel = () => {
         className="mySwiper"
       >
         <SwiperSlide>  <img width={500} height={400}  src={Dizzy} alt="pic1" />   </SwiperSlide>
-        <SwiperSlide>  <img width={500} height={400}  src={SaganTyson} alt="pic2" />   </SwiperSlide>
+        <SwiperSlide>  <img width={500} height={400}  src={MilesDavis} alt="pic2" />   </SwiperSlide>
+        <SwiperSlide>  <img width={500} height={400}  src={Thelonius} alt="pic3" />   </SwiperSlide>
+        <SwiperSlide>  <img width={500} height={400}  src={Mingus} alt="pic4" />   </SwiperSlide>
+        <SwiperSlide>  <img width={500} height={400}  src={Ajumma} alt="pic5" />   </SwiperSlide>
+        <SwiperSlide>  <img width={500} height={400}  src={Ajussi} alt="pic6" />   </SwiperSlide>
+        <SwiperSlide>  <img width={500} height={400}  src={SaganTyson} alt="pic7" />   </SwiperSlide>
 
       </Swiper>
     </Container>

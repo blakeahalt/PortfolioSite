@@ -39,11 +39,12 @@ background-color: rgb(221,208,195);
 margin-top: 15px;
 z-index: 0;
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 75em) {
   justify-content: center;
   flex-wrap: wrap;
 }
-@media screen and (max-width: 481px){
+@media screen and (max-width: 42em) {
+
   justify-content: center;
   height: auto;
 }
@@ -59,12 +60,10 @@ margin-bottom: 50px;
 width: 2500px;
 height: auto;
 z-index: 0;
-
 box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3);
 background-color: rgb(251,249,236,0.6);
-border: 1px solid rgb(0,0,0,0.3);
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 75em) {
     display: flex;
     padding: 10px;
     justify-content: center;
@@ -73,7 +72,7 @@ border: 1px solid rgb(0,0,0,0.3);
   }
 
 
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 42em) {
 flex-wrap: wrap;
 justify-content: center;
 width: 100%;
@@ -90,8 +89,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 
-
-@media (max-width: 1200px){
+@media screen and (max-width: 75em) {
   width: 70vw;
   height: 600px;
   display: flex;
@@ -100,7 +98,7 @@ justify-content: center;
   justify-content: center;
   margin-top: 225px;
 }
-@media (max-width: 665px){
+@media screen and (max-width: 42em) {
   margin-top: -100px;
   margin-bottom: 50px;
   width: 100%;
@@ -138,7 +136,7 @@ background-color: rgb(204,145,29,0.1);
 
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 75em) {
   max-width: 350px;
   display: flex ;
   flex-wrap: wrap;
@@ -149,7 +147,7 @@ background-color: rgb(204,145,29,0.1);
   margin: 10px;
 }
 
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 42em) {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -192,13 +190,13 @@ img{
 //   }
 // }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 75em) {
   margin: 7px;
   padding: 10px;
   height: 315px;
 }
 
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 42em) {
   margin: 7px;
   width: 300px;
   height: 300px;
@@ -214,13 +212,13 @@ align-items: center;
 justify-content: center;
 color: rgb(0, 62, 128);
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 75em) {
   padding-top: 15px;
-  font-size: 1.4em;
+  font-size: 1.2em;
   margin: 5px;
   width: 300px;
 }
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 42em) {
   font-size: 1.2em;
   margin: 7px;
   width: 300px;
@@ -239,14 +237,15 @@ const Description = styled.p`
   margin-top: -20px;
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 75em) {
   display: flex ;
   flex-wrap: wrap;
   justify-content: center;
   width: auto;
   margin-top: 0px;
+  font-size: 1.1em;
 }
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 42em) {
   display: flex ;
   flex-wrap: wrap;
   justify-content: center;
@@ -268,14 +267,14 @@ const Description2 = styled.p`
   opacity: 0.7;
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 75em) {
   display: flex ;
   flex-wrap: wrap;
   justify-content: center;
   width: auto;
   margin: 5px;
 }
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 42em) {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -311,14 +310,14 @@ border-radius: 10px;
 padding: 6px;
 margin: 2px;
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 75em) {
   justify-content: center;
   align-items: center;
   border: 1px solid rgb(0,0,0,0.3);  border-radius: 10px;
   width: auto;
   margin: 2px;
 }
-@media screen and (max-width: 481px) {
+@media screen and (max-width: 42em) {
   
   border: 1px solid rgb(0,0,0,0.3);  border-radius: 10px;
 }
@@ -353,29 +352,30 @@ const MemberComponent = ({img, name='', desc='', desc2='', images}) => {
     
     const settings = {
       dots: true,
-        infinite: true,     
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        outline: false,
-        arrows: true,
+      infinite: false,     
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      outline: false,
     };
   
     return (
       <Item>
         <ImageContainer >
-          <a onClick={isFullScreen ? handleExitFullScreen : handleFullScreen}>
-            {images.length === 1 ? (
+          {images.length === 1 ? (
+            <a onClick={isFullScreen ? handleExitFullScreen : handleFullScreen}>
               <img src={images[0]} alt={name} className="ImageContainerSize" />
-            ) : (
-              <Slider className="SliderSettings" {...settings}>
-                {images.map((image) => (
-                  <div key={image}>
+            </a>
+          ) : (
+            <Slider className="SliderSettings" {...settings}>
+              {images.map((image) => (
+                <div key={image}>
+                  <a onClick={isFullScreen ? handleExitFullScreen : handleFullScreen}>
                     <img src={image} alt={name} className="SliderContainerSize" />
-                  </div>
-                ))}
-              </Slider>
-            )}
-          </a>
+                    </a>
+                </div>
+              ))}
+            </Slider>
+          )}
         </ImageContainer>
         <div className="spiro-name-desc-container">
           <Name>{name}</Name>

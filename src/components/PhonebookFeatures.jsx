@@ -21,16 +21,18 @@ display: flex;
 justify-content: center;
 margin-left: auto;
 margin-right: auto;
-margin-bottom: 25px;
+margin-bottom: 15vh;
 width: 625px;
 height: 300px;
 padding: 15px;
 
-@media (max-width: 1200px){
-  height: 60vh;
+@media screen and (max-width: 75em) {
+  height: auto;
+  margin-bottom: 20vh;
+
 }
 
-@media (max-width: 665px){
+@media screen and (max-width: 42em) {
     height: 315px;
     width: 30vw;
 }
@@ -39,7 +41,10 @@ padding: 15px;
     width: 100%;
     height: 350px;
 
-    @media (max-width: 665px){
+  @media screen and (max-width: 75em) {
+      margin-top: 0px;
+  }
+  @media screen and (max-width: 42em) {
       margin-top: 0px;
       height: 95%;
       width: 95vw;
@@ -80,11 +85,12 @@ padding: 15px;
         display: none;
     }
 
-    @media (max-width: 1200px){
+    @media screen and (max-width: 75em) {
     width: 3rem;
     right: -75px;
     }
-    @media (max-width: 665px){
+    @media screen and (max-width: 42em) {
+
     width: 2rem;
     right: 10px;
     margin-top: 160px;
@@ -103,11 +109,12 @@ padding: 15px;
     &:after{
         display: none;
     }
-    @media (max-width: 1200px){
+    @media screen and (max-width: 75em) {
     width: 3rem;
     left: -75px;
   }
-  @media (max-width: 665px){
+     @media screen and (max-width: 42em) {
+
     width: 2rem;
     left: 10px;
     margin-top: 160px
@@ -140,12 +147,12 @@ let screen;
   if (window.innerWidth > 1200) {
     screen = (
       <>
-      <div className="phonebook-features">
+      <div >
           <h1 className="features-title">Features</h1>
           <div className="icons">
             <div className="icon">
               <img 
-                style={{ padding: 5, maxWidth:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                style={{ padding: 5, maxWidth:'25vh', height:'25vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={responsive} 
                 alt="icon1" 
                 onMouseEnter={() => slideToIndex(0)}
@@ -155,7 +162,7 @@ let screen;
           </div>
           <div className="icon">
               <img 
-                style={{ padding: 5, width:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                style={{ padding: 5, width:'25vh', height:'25vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={phoneEdit} 
                 alt="icon2" 
                 onMouseEnter={() => slideToIndex(1)}
@@ -165,7 +172,7 @@ let screen;
           </div>
           <div className="icon">
               <img 
-                style={{ padding: 5, width:'200px', height:'150px',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
+                style={{ padding: 5, width:'25vh', height:'25vh',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={phoneSearch} 
                 alt="icon3" 
                 onMouseEnter={() => slideToIndex(2)}
@@ -227,12 +234,12 @@ let screen;
 } else if (window.innerWidth > 665) {
   screen =(
      <>
-      <div className="phonebook-features">
+      <div style={{ marginBottom: '-10vh' }} >
         <h1 className="features-title">Features</h1>
-        <div className="icons">
+        <div style={{ marginBottom: '5vh' }} className="icons">
           <div className="icon">
             <img 
-              style={{ padding: 5, maxWidth:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+              style={{ padding: 5, maxWidth:'20vh', height:'20vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
               src={responsive} 
               alt="icon1" 
               onMouseEnter={() => slideToIndex(0)}
@@ -242,7 +249,7 @@ let screen;
         </div>
         <div className="icon">
             <img 
-              style={{ padding: 5, width:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+              style={{ padding: 5, width:'20vh', height:'20vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
               src={phoneEdit} 
               alt="icon2" 
               onMouseEnter={() => slideToIndex(1)}
@@ -250,9 +257,9 @@ let screen;
             />
             <div className="icon-title">Edit Contacts</div>
         </div>
-        <div className="icon">
+        <div style={{ marginTop: '5vh' }} className="icon">
             <img 
-              style={{ padding: 5, width:'200px', height:'150px',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
+              style={{ padding: 5, width:'20vh', height:'20vh',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
               src={phoneSearch} 
               alt="icon3" 
               onMouseEnter={() => slideToIndex(2)}

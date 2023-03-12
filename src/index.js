@@ -31,3 +31,7 @@ ReactDOM.render(
       </React.StrictMode>,
   document.getElementById('root')
 );
+
+// scp -r /Users/blakeahalt/Documents/PortfolioSite/build root@82.180.136.248:/var/www/blakeahalt.com
+// scp -r ~/Documents/PortfolioSite/build root@82.180.136.248:/var/www/blakeahalt.com
+

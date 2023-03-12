@@ -25,11 +25,12 @@ width: 625px;
 height: 300px;
 padding: 15px;
 
-@media (max-width: 1200px){
-  height: 60vh;
+@media screen and (max-width: 75em) {
+  height: auto;
+  margin-bottom: 10vh;
 }
 
-@media (max-width: 665px){
+ @media screen and (max-width: 42em) {
     height: 315px;
     width: 30vw;
 }
@@ -38,7 +39,9 @@ padding: 15px;
     width: 100%;
     height: 350px;
 
-    @media (max-width: 665px){
+    @media screen and (max-width: 75em) {
+  }
+    @media screen and (max-width: 42em) {
       margin-top: 0px;
       height: 95%;
       width: 95vw;
@@ -79,11 +82,11 @@ padding: 15px;
         display: none;
     }
 
-    @media (max-width: 1200px){
+    @media screen and (max-width: 75em) {
     width: 3rem;
     right: -75px;
     }
-    @media (max-width: 665px){
+     @media screen and (max-width: 42em) {
     width: 2rem;
     right: 10px;
     margin-top: 160px;
@@ -102,11 +105,11 @@ padding: 15px;
     &:after{
         display: none;
     }
-    @media (max-width: 1200px){
+    @media screen and (max-width: 75em) {
     width: 3rem;
     left: -75px;
   }
-  @media (max-width: 665px){
+   @media screen and (max-width: 42em) {
     width: 2rem;
     left: 10px;
     margin-top: 160px
@@ -141,11 +144,11 @@ const slideToIndex = (index) => {
     screen = (
       <>
         <div className="stock-features">
-          <h1 className="features-title">Features</h1>
+          <h1 style={{ marginBottom: '-3vh' }} className="features-title">Features</h1>
           <div className="icons">
             <div className="icon">
               <img 
-                style={{ padding: 5, width:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                style={{ padding: 5, width:'25vh', height:'25vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={quotes} 
                 alt="icon1" 
                 onMouseEnter={() => slideToIndex(0)}
@@ -157,7 +160,7 @@ const slideToIndex = (index) => {
           </div>
           <div className="icon">
               <img 
-                style={{ padding: 5, width:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                style={{ padding: 5, width:'25vh', height:'25vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={transactions} 
                 alt="icon2" 
                 onMouseEnter={() => slideToIndex(1)}
@@ -169,7 +172,7 @@ const slideToIndex = (index) => {
           </div>
           <div className="icon">
           <img 
-                style={{ padding: 5, maxWidth:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                style={{ padding: 5, maxWidth:'25vh', height:'25vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={buysell} 
                 alt="icon4" 
                 onMouseEnter={() => slideToIndex(2)}
@@ -238,12 +241,12 @@ const slideToIndex = (index) => {
     } else if (window.innerWidth > 665) {
       screen =(
          <>
-          <div className="stock-features">
+          <div style={{ marginBottom: '5vh'}}>
             <h1 className="features-title">Features</h1>
-            <div className="icons">
+            <div style={{ marginBottom: '5vh' }} className="icons">
               <div className="icon">
                 <img 
-                  style={{ padding: 5, width:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                  style={{ padding: 5, width:'20vh', height:'20vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                   src={quotes} 
                   alt="icon1" 
                   onMouseEnter={() => slideToIndex(0)}
@@ -255,7 +258,7 @@ const slideToIndex = (index) => {
             </div>
             <div className="icon">
                 <img 
-                  style={{ padding: 5, width:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                  style={{ padding: 5, width:'20vh', height:'20vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                   src={transactions} 
                   alt="icon2" 
                   onMouseEnter={() => slideToIndex(1)}
@@ -267,7 +270,7 @@ const slideToIndex = (index) => {
             </div>
             <div className="icon">
             <img 
-                  style={{ padding: 5, maxWidth:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                  style={{ padding: 5, maxWidth:'20vh', marginTop: '5vh',  height:'20vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                   src={buysell} 
                   alt="icon4" 
                   onMouseEnter={() => slideToIndex(2)}
@@ -396,7 +399,7 @@ const slideToIndex = (index) => {
                 style={{margin: '10px', marginTop: '10px', width: '200px', height:'auto', border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)'}} 
                 src={quotes} 
                 alt="feature 1" />
-                <div style={{fontSize: 16, marginLeft: '-10px', color: 'rgb(0, 62, 128)'}}>
+                <div style={{fontSize: 16, marginLeft: '10px', color: 'rgb(0, 62, 128)'}}>
                   Store your entire search history
                 </div> 
               </SwiperSlide>

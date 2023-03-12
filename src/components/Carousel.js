@@ -7,7 +7,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 
-
 import { Pagination, Navigation, Autoplay, EffectCards } from "swiper";
 
 import Human from "../assets/Art/HumanHemi.jpg"
@@ -29,49 +28,44 @@ import Arrow from '../assets/Arrow.svg';
 
 const Container = styled.div`
 display: flex;
-margin-bottom: 25px;
+padding: 1vh;
 align-items: center;
-width: 525px;
+width: auto;
 height: 100%;
-margin-left: 50px;
-z-index: 1;
+z-index: 0;
+margin: 2vh;
 
-@media (max-width: 1200px){
+@media screen and (max-width: 75em) {
     display: flex;
-    margin-bottom: -225px;
     justify-content: center;
-    width: 500px;
-    height: 100%;
-    margin-top: 150px;
-    margin-left: 215px;
 }
 
-@media (max-width: 665px){
+@media screen and (max-width: 42em) {
     display: flex;
-    margin-bottom: -225px;
-    align-items: center;
     justify-content: center;
-    width: 500px;
-    height: 500px;
-    margin-top: -15vh;
-    margin-left: 215px;
+    height: auto;
+    margin-top: 10vh;
 }
 
 .swiper{
     width: 100%;
     height: 100%;
     
-    @media (max-width: 1200px){
-        width: 500px;
+    @media screen and (max-width: 75em) {
+        width: 100%;
         height: 100%;
-        margin-left: -175px;
     }
     
-    @media (max-width: 665px){
-        margin-top: -50px;
-        width: 80vw;
-        height: 350px;
-        margin-bottom: 50px;
+    @media screen and (max-width: 42em) {
+        width: 100%;
+        height: auto;
+        margin-top: -10vh;
+    }
+    @media screen and (max-width: 25em) {
+        width: 100%;
+        height: auto;
+        margin-top: 5vh;
+        z-index: 0
     }
 }
 
@@ -82,7 +76,7 @@ z-index: 1;
     justify-content: center;
     align-items: center;
     
-    @media (max-width: 665px){
+    @media screen and (max-width: 42em) {
         height: 300px
         margin-top: -25px;
     }

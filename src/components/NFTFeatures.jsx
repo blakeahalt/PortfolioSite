@@ -21,13 +21,14 @@ display: flex;
 justify-content: center;
 margin-left: auto;
 margin-right: auto;
-margin-bottom: 25px;
-width: 625px;
-height: 300px;
+margin-bottom: 15vh;
+width: 45vw;
+height: auto;
 padding: 15px;
 
-@media (max-width: 1200px){
-    height: 60vh;
+@media screen and (max-width: 75em) {
+  height: auto;
+  margin-bottom: 10vh;
 }
 
 @media (max-width: 665px){
@@ -41,7 +42,8 @@ padding: 15px;
     width: 100%;
     height: 350px;
 
-    @media (max-width: 665px){
+      @media screen and (max-width: 42em) {
+
       margin-top: 0px;
       height: 95%;
       width: 95vw;
@@ -82,11 +84,12 @@ padding: 15px;
         display: none;
     }
 
-    @media (max-width: 1200px){
+   @media screen and (max-width: 75em) {
     width: 3rem;
     right: -75px;
     }
-    @media (max-width: 665px){
+      @media screen and (max-width: 42em) {
+
     width: 2rem;
     right: 10px;
     margin-top: 160px;
@@ -105,11 +108,12 @@ padding: 15px;
     &:after{
         display: none;
     }
-    @media (max-width: 1200px){
+   @media screen and (max-width: 75em) {
     width: 3rem;
     left: -75px;
   }
-  @media (max-width: 665px){
+    @media screen and (max-width: 42em) {
+
     width: 2rem;
     left: 10px;
     margin-top: 160px
@@ -143,12 +147,12 @@ const slideToIndex = (index) => {
   if (window.innerWidth > 1200) {
     screen = (
       <>
-      <div className="nft-features">
-        <h1 className="features-title">Features</h1>
+      <div>
+        <h1 style={{ marginBottom: '-2vh' }}className="features-title">Features</h1>
         <div className="icons">
           <div className="icon">
             <img 
-              style={{ padding: 5, width:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+              style={{ padding: 5, width:'25vh', height:'25vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
               src={OAuth2} 
               alt="icon1" 
               onMouseEnter={() => slideToIndex(0)}
@@ -158,7 +162,7 @@ const slideToIndex = (index) => {
         </div>
         <div className="icon">
           <img 
-              style={{ padding: 5, width:'200px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+              style={{ padding: 5, width:'25vh', height:'25vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
               src={argon2} 
               alt="icon2" 
               onMouseEnter={() => slideToIndex(1)}
@@ -168,7 +172,7 @@ const slideToIndex = (index) => {
         </div>
         <div className="icon">
           <img 
-              style={{ padding: 5, width:'200px', height:'150px',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
+              style={{ padding: 5, width:'25vh', height:'25vh',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
               src={jwt} 
               alt="icon3" 
               onMouseEnter={() => slideToIndex(2)}
@@ -178,13 +182,13 @@ const slideToIndex = (index) => {
         </div>
         <div style={{display:'flex', justifyContent: 'center', flexWrap: 'wrap', maxWidth: 220}} className="icon">
           <img 
-              style={{ padding: 5, marginLeft: '20px', marginTop: '15px', width:'200px', height:'150px',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
+              style={{ padding: 5, marginLeft: '20px', marginTop: '15px', width:'25vh', height:'25vh',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
               src={sales} 
               alt="icon4" 
               onMouseEnter={() => slideToIndex(3)}
               onMouseLeave={() => slideToIndex(activeSlideIndex)}
             />
-            <div className="icon-title" >Daily/Weekly/Monthly Sales</div>
+            <div style={{ textAlign: 'center' }} className="icon-title" >Daily/Weekly/Monthly Sales</div>
           </div>
         </div>
         <Container>
@@ -251,12 +255,12 @@ const slideToIndex = (index) => {
   } else if (window.innerWidth > 665) {
 screen =(
   <>
- <div className="nft-features">
+ <div style={{ marginBottom: '5vh'}}>
     <h1 className="features-title">Features</h1>
-    <div className="icons">
+    <div  className="icons">
       <div className="icon">
         <img 
-          style={{ padding: 5, width:'150px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+          style={{ padding: 5, width:'225px', height:'225px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
           src={OAuth2} 
           alt="icon1" 
           onMouseEnter={() => slideToIndex(0)}
@@ -266,7 +270,7 @@ screen =(
     </div>
     <div className="icon">
       <img 
-          style={{ padding: 5, width:'150px', height:'150px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+          style={{ padding: 5, width:'225px', height:'225px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
           src={argon2} 
           alt="icon2" 
           onMouseEnter={() => slideToIndex(1)}
@@ -274,9 +278,11 @@ screen =(
         />
         <div className="icon-title">Secure Passwords</div>
     </div>
+    </div>
+    <div style={{ marginBottom: '5vh' }} className="icons">
     <div className="icon">
       <img 
-          style={{ padding: 5, width:'150px', height:'150px',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
+          style={{ padding: 5, width:'225px', height:'225px',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
           src={jwt} 
           alt="icon3" 
           onMouseEnter={() => slideToIndex(2)}
@@ -284,15 +290,15 @@ screen =(
         />
         <div className="icon-title">Protected Routes</div>
     </div>
-    <div style={{display:'flex', justifyContent: 'center', flexWrap: 'wrap', maxWidth: 220}} className="icon">
+    <div className="icon">
       <img 
-          style={{ padding: 5, marginTop: '15px', width:'150px', height:'150px',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
+          style={{ padding: 5, marginTop: '15px', width:'225px', height:'225px',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
           src={sales} 
           alt="icon4" 
           onMouseEnter={() => slideToIndex(3)}
           onMouseLeave={() => slideToIndex(activeSlideIndex)}
         />
-        <div className="icon-title" >Daily/Weekly/Monthly Sales</div>
+        <div style={{ textAlign: 'center' }}className="icon-title" >Daily/Weekly/Monthly Sales</div>
       </div>
     </div>
     <Container>
@@ -369,7 +375,7 @@ screen =(
           onMouseEnter={() => slideToIndex(0)}
           onMouseLeave={() => slideToIndex(activeSlideIndex)}
         />
-        <div className="icon-title">Google Login</div>
+        <div className="icon-title">OAuth</div>
       </div>
       <div className="icon">
         <img 
@@ -382,7 +388,7 @@ screen =(
           <div className="icon-title">Secure Passwords</div>
       </div>
     </div>
-    <div className="icons">
+    <div style={{ marginTop: '-5vh' }}className="icons">
       <div className="icon">
         <img 
             style={{ padding: 5, width:'150px', height:'125px',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
@@ -401,7 +407,7 @@ screen =(
             onMouseEnter={() => slideToIndex(3)}
             onMouseLeave={() => slideToIndex(activeSlideIndex)}
           />
-          <div className="icon-title" >Daily/Weekly/Monthly Sales</div>
+          <div style={{ textAlign:'center' }}className="icon-title" >Sales by Day/Week/Month</div>
         </div>
     </div>
     <Container>
@@ -426,17 +432,17 @@ screen =(
         autoplay={{ delay: 3000 }}
       >
         <SwiperSlide>  
-        <img style={{marginLeft: '10px', marginTop:10, marginBottom:15, width: '175px', height:'275px',border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} 
+        <img style={{marginLeft: '10px', marginTop:10, marginBottom:15, width: '160px', height:'260px',border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} 
           src={OAuth2} 
           alt="feature 2" />
-          <div style={{fontSize: 16, marginLeft: '-10px', marginTop: '-15px', color: 'rgb(0, 62, 128)'}}>
-              Log in with your Google account.
+          <div style={{fontSize: 15, marginTop: '-15px', marginLeft: '3vw', color: 'rgb(0, 62, 128)'}}>
+              OAuth enables users to log in with their Google accounts.
           </div>
         </SwiperSlide>
         <SwiperSlide > 
         <>
         <img 
-          style={{margin: '5px', marginTop: '10px', marginLeft: '10px', width: '175px', height:'275px', borderRadius: '25px', border:'1px solid black', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)'}} 
+          style={{margin: '5px', marginTop: '10px', marginLeft: '10px', width: '175px', height:'260px', borderRadius: '25px', border:'1px solid black', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)'}} 
           src={argon2} 
           alt="feature 1" />
           <div style={{fontSize: 16, textAlign: 'left', marginLeft: '10px', color: 'rgb(0, 62, 128)'}}>
@@ -445,7 +451,7 @@ screen =(
           </>
         </SwiperSlide>
         <SwiperSlide > 
-        <img style={{margin: '5px', marginTop: '5px', width: '175px', height:'275px', borderRadius: '25px', border:'1px solid black', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} src={jwt} alt="feature 3" />
+        <img style={{margin: '5px', marginTop: '5px', width: '170px', height:'260px', borderRadius: '25px', border:'1px solid black', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} src={jwt} alt="feature 3" />
         <div style={{fontSize: 16, textAlign: 'left', marginRight: '30px', marginLeft: '20px', color: 'rgb(0, 62, 128)'}}>
               JSON web tokens protect private routes and provide quick access to users already logged in. 
           </div>
@@ -456,7 +462,7 @@ screen =(
           src={sales} 
           alt="feature 3"
           /> 
-            <div style={{fontSize: 16, position:'absolute', marginTop: '200px',color: 'rgb(0, 62, 128)'}}>
+            <div style={{fontSize: 16, position:'absolute', marginTop: '200px', textAlign: 'center', color: 'rgb(0, 62, 128)'}}>
               Track individual sales and collections by day/week/month
           </div>
         </SwiperSlide>

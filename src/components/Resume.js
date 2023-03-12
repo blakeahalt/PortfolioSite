@@ -5,7 +5,7 @@ import Footer from './Footer'
 import ResumePage from "../assets/Resume.pdf"
 import ResumeImage from "../assets/Resume.png"
 import ResumePDF from "../assets/Resume.pdf"
-import '../App.css';
+import '../App2.css';
 
 
 const ResumeIframe = () => {
@@ -27,8 +27,8 @@ const ResumeIframe = () => {
         <div className="resume-iframe-length" >
             <iframe src={ResumePage} width="95%" height="auto" title="Resume" ></iframe>
         </div>
-        <center style={{marginTop: 30, paddingBottom: 40}}>
-            <button onClick={onButtonClick}>
+        <center >
+            <button style={{ marginTop: '3vh', marginBottom: '3vh', height: '3em', borderRadius: '25px', padding: '1vh' }} onClick={onButtonClick}>
                 Download PDF
             </button>
         </center>
@@ -58,7 +58,7 @@ const Resume = () => {
             <img src={ResumeImage} width="95%"  alt="Resume"/>
         </div>
         <center>
-            <button className="resume-button" onClick={onButtonClick}>
+            <button className='resume-button' onClick={onButtonClick}>
                 Download PDF
             </button>
         </center>
