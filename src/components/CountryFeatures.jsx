@@ -28,7 +28,6 @@ padding: 15px;
 @media screen and (max-width: 75em) {
   height: auto;
   margin-bottom: 10vh;
-  border: 3px solid red;
 }
 
 @media screen and (max-width: 42em) {
