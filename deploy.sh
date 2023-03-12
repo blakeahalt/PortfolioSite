@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "Switching to branch main"
+echo "Switching to branch nginx"
 git checkout nginx
 
 echo "Building app"

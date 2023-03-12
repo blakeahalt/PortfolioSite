@@ -575,9 +575,9 @@ if (window.innerWidth > 1200) {
                 });
               }} />
               </Bounce>
-              <div className="header-title hidden">
+              <div style={{ fontSize: '1.5em' }} className="header-title hidden">
                 Hi, I'm Blake!</div>
-                <p className="header-title2 hidden">
+                <p style={{ fontSize: '1em' }} className="header-title2 hidden">
                 <AttentionSeeker cascade left damping={.05}> 
                   <span>Full Stack Developer </span> <span>&nbsp; | &nbsp;</span> 
                   <span> Educator</span> <span>&nbsp; | &nbsp;</span> 

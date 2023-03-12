@@ -148,7 +148,7 @@ nav {
   
   .header-title{
     margin: 1em;
-    font-size: 1.5rem;
+    font-size: clamp(3rem, 2vh, 4rem);
     font-weight: 600;
     color: rgb(0,0,0,0.8);
     
@@ -159,7 +159,7 @@ nav {
     justify-content: center;
     margin: 1.5vw;
     margin-top: 1.5vh;
-    font-size: 1.2rem;
+    font-size: clamp(2rem, 2vh, 3rem);
     font-weight: 500;
     color: rgb(0,0,0,0.6);
     }
