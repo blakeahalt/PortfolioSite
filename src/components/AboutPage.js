@@ -45,7 +45,7 @@ if (window.innerWidth > 1700) {
             <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
               In the past year, I’ve built and deployed four full stack applications by completing Harvard’s CS50: Introduction to Computer Science course through EdX and taking courses like the University of Helsinki’s Full Stack Open, which focuses on building with React, NodeJS and MongoDB. The full stack applications I’ve built include:
             </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
+            <div style={{textAlign: 'left', maxWidth: '70vw', marginLeft: '-5vw', color: 'black', margin: '2vh' }}>
                 <li>
                 A simple app that implements basic CRUD methods to manage a phonebook contacts list.
                 </li>
@@ -109,7 +109,7 @@ else if (window.innerWidth > 1200) {
             <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
               In the past year, I’ve built and deployed four full stack applications by completing Harvard’s CS50: Introduction to Computer Science course through EdX and taking courses like the University of Helsinki’s Full Stack Open, which focuses on building with React, NodeJS and MongoDB. The full stack applications I’ve built include:
             </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
+            <div style={{textAlign: 'left', maxWidth: '70vw', marginLeft: '-5vw', color: 'black', margin: '2vh' }}>
                 <li>
                 A simple app that implements basic CRUD methods to manage a phonebook contacts list.
                 </li>
@@ -173,7 +173,7 @@ else if (window.innerWidth > 665) {
             <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
               In the past year, I’ve built and deployed four full stack applications by completing Harvard’s CS50: Introduction to Computer Science course through EdX and taking courses like the University of Helsinki’s Full Stack Open, which focuses on building with React, NodeJS and MongoDB. The full stack applications I’ve built include:
             </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
+            <div style={{textAlign: 'left', maxWidth: '70vw', marginLeft: '-5vw', color: 'black', margin: '2vh' }}>
                 <li>
                 A simple app that implements basic CRUD methods to manage a phonebook contacts list.
                 </li>
@@ -238,7 +238,7 @@ else {
             <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
               In the past year, I’ve built and deployed four full stack applications by completing Harvard’s CS50: Introduction to Computer Science course through EdX and taking courses like the University of Helsinki’s Full Stack Open, which focuses on building with React, NodeJS and MongoDB. The full stack applications I’ve built include:
             </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
+            <div style={{textAlign: 'left', maxWidth: '70vw', marginLeft: '-5vw', color: 'black', margin: '2vh' }}>
                 <li>
                 A simple app that implements basic CRUD methods to manage a phonebook contacts list.
                 </li>
