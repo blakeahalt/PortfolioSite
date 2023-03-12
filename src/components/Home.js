@@ -771,7 +771,7 @@ if (window.innerWidth > 1200) {
                   });
                 }} />
                 </Bounce>
-                <div style={{ fontSize: '1.5em' }} className="header-title hidden">
+                <div style={{ fontSize: '2em' }} className="header-title hidden">
                 Hi, I'm Blake!</div>
                 <p style={{ fontSize: '1em' }} className="header-title2 hidden">
                   <AttentionSeeker cascade left damping={.05}> 
@@ -780,7 +780,7 @@ if (window.innerWidth > 1200) {
                     <span> Artist </span> 
                   </AttentionSeeker> 
                   </p>
-                <h4 style={{ fontSize: '1.5em' }} className="introduction hidden">
+                <h4 style={{ fontSize: '1.5em', margin: '1vw' }} className="introduction hidden">
                   I like to create beautiful things that work well
                 </h4>
               </div>
