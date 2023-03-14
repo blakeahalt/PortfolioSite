@@ -33,15 +33,16 @@ import phoneImg from '../assets/phone-background-home.png'
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100vw;
+  max-width: 100%;
   height: 75vh; 
-  padding: 5px;
   align-items: center;
-  
+
   .swiper {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin: 0 auto;
     width: 90%;
     height: 90%;
     display: flex;
@@ -50,7 +51,6 @@ const Container = styled.div`
   .swiper-pagination {
     text-align: right;
     opacity: 0.5;
-    margin-left: -10px;
     font-size: 1.2em;
     margin-bottom: -5vh;
   }
@@ -65,9 +65,10 @@ const Container = styled.div`
     align-items: center;
     
     img {
-      display: block;
-      width: 100%;
-      height: auto;
+      display: relative;
+      object-fit: cover;
+      height: 100%;
+
     }
   }
 
@@ -128,37 +129,7 @@ const ContainerTitle = styled.div`
   align-content: center;
   color: rgb(0, 62, 128);
 `
-const Item = styled.div`
-display: flex;
-color: ${props => props.theme.body};
-flex-wrap: wrap;
-justify-content: center;
-backdrop-filter: blur(4px);
-border: 1px solid rgba(0,0,0,0.3);
-border-radius: 20px;
-box-shadow: 5px 5px 12px 5px rgba(0,0,0,0.3);
-background-color: rgb(217,194,165);
 
-@media screen and (max-width: 75em) {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  width: 95%;
-  margin: 1vh;
-  height: auto;
-  }
-
-@media screen and (max-width: 42em) {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  width: 95%;
-  margin: 1vh;
-  height: 65vh;
-  }
-`
 
 const ImageContainer = styled.div`
   display: flex;
@@ -171,6 +142,7 @@ const ImageContainer = styled.div`
   border-radius: 25px;
   cursor: pointer;
   position: relative;
+  top: 1vh;
   overflow: hidden;
 
   img{
@@ -184,15 +156,24 @@ const ImageContainer = styled.div`
   @media screen and (max-width: 75em) {
     margin: .5vh;
     padding: 0vh;
-    height: 100%;
+    height: auto;
 
   }
 
   @media screen and (max-width: 42em) {
-    width: 95%;
-    height: 29vh;
-    margin-top: 0vh;
-    margin-bottom: 1vh;
+    height: auto;
+    max-height: 25vh;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+    img{
+      width: 100%;
+      transition: transform 0.3s ease-in-out;
+      border-radius: 25px;
+      object-fit: contain;
+    }
+
   }
 `;
 
@@ -276,8 +257,10 @@ const SkillsContainer = styled.div`
     display: flex;
     justify-content: center;
     height: 20%;
-    width: 90%;
-    margin-bottom: '3vh';
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
     align-content: center;
   }
 `;
@@ -323,11 +306,11 @@ const Skills = styled.h2`
 const MemberComponent = ({img, name='', desc='',skills=[]}) => {
   return(
 
-      <Item>
+      <div className='projects-container-mobile'>
         <ImageContainer>
           <img src={img} alt={name} />
         </ImageContainer>
-        <div style={{ width: '95%', height: '13vh', display: 'flex', justifyContent: 'center', flexDirection: 'column', textAlign: 'center', border: '1px solid rgb(0,0,0,0.2)', borderRadius: '25px', boxShadow: '3px 7px 15px 2px rgba(0,0,0,0.3)', backgroundColor:'rgb(255,255,255,0.6)', alignContent: 'center' }}>
+        <div className='projectcard-name-desc-container'>
           <Name>{name}</Name>
           <Description>{desc}</Description>
         </div>
@@ -336,7 +319,7 @@ const MemberComponent = ({img, name='', desc='',skills=[]}) => {
             <Skills key={index}>{skill}</Skills>
           ))}
         </SkillsContainer>
-      </Item>
+      </div>
   
     )
   };
@@ -361,10 +344,9 @@ if (window.innerWidth > 1200) {
           bgImageClassName="opaque-image" 
           strength={300} 
           >
-          <div style={{ height: '100%' }}>
-            <div className="boxs-header">
+            <div >
               <Bounce >
-              <img src={ResumePic} width='35%' alt='Resume Pic' style={{ borderRadius: '275px', marginTop: '5vh', maxWidth: '350px' }} onLoad={() => {
+              <img src={ResumePic} width='17%' alt='Resume Pic' style={{ borderRadius: '275px', marginTop: '5vh', maxWidth: '350px' }} onLoad={() => {
                 const hiddenDivs = document.querySelectorAll('.hidden');
                 hiddenDivs.forEach((div) => {
                   div.classList.remove('hidden');
@@ -384,7 +366,6 @@ if (window.innerWidth > 1200) {
                 I like to create beautiful things that work well
               </h4>
             </div>
-          </div>
         </Parallax>
       </div>
   </div>
@@ -557,6 +538,7 @@ if (window.innerWidth > 1200) {
   );
 } else if (window.innerWidth > 665) {
   screen = (
+    <>
     <div >
     <Nav />
       <div className="container">
@@ -566,9 +548,8 @@ if (window.innerWidth > 1200) {
           strength={300} 
           >
           <div >
-            <div className="boxs-header">
               <Bounce >
-              <img src={ResumePic} width='40%' alt='Resume Pic' style={{ borderRadius: '200px', marginTop: '10vh', maxWidth: '350px' }} onLoad={() => {
+              <img src={ResumePic} width='17%' alt='Resume Pic' style={{ borderRadius: '275px', marginTop: '5vh', maxWidth: '350px' }} onLoad={() => {
                 const hiddenDivs = document.querySelectorAll('.hidden');
                 hiddenDivs.forEach((div) => {
                   div.classList.remove('hidden');
@@ -588,8 +569,8 @@ if (window.innerWidth > 1200) {
                 I like to create beautiful things that work well
               </h4>
             </div>
-          </div>
       </Parallax>
+    </div>
     </div>
     <Parallax>
         <div className='about-outside-container2'>
@@ -749,7 +730,7 @@ if (window.innerWidth > 1200) {
           </div>
       </Parallax>
       <Projects/>
-    </div>
+    </>
   );
 } else {
   screen = (
@@ -764,30 +745,30 @@ if (window.innerWidth > 1200) {
             <div >
               <div className="boxs-header">
                 <Bounce >
-                <img src={ResumePic} width='60%' alt='Resume Pic' style={{ borderRadius: '175px', marginTop: '10vh' }} onLoad={() => {
+                <img src={ResumePic} width='40%' alt='Resume Pic' style={{ borderRadius: '200px', marginTop: '4vh' }} onLoad={() => {
                   const hiddenDivs = document.querySelectorAll('.hidden');
                   hiddenDivs.forEach((div) => {
                     div.classList.remove('hidden');
                   });
                 }} />
                 </Bounce>
-                <div style={{ fontSize: '2em' }} className="header-title hidden">
+                <div className="header-title hidden">
                 Hi, I'm Blake!</div>
-                <p style={{ fontSize: '1em' }} className="header-title2 hidden">
+                <p className="header-title2 hidden">
                   <AttentionSeeker cascade left damping={.05}> 
                     <span>Full Stack Developer </span> <span>&nbsp; | &nbsp;</span> 
                     <span> Educator</span> <span>&nbsp; | &nbsp;</span> 
                     <span> Artist </span> 
                   </AttentionSeeker> 
                   </p>
-                <h4 style={{ fontSize: '1.5em', margin: '3vw' }} className="introduction hidden">
+                <h4 className="introduction hidden">
                   I like to create beautiful things that work well
                 </h4>
               </div>
             </div>
           </Parallax>
         </div>
-      <Parallax style={{ marginTop: '0vh' }}>
+      <Parallax >
           <div className='about-outside-container2'>
             <Container>
               <Swiper 
@@ -919,49 +900,50 @@ if (window.innerWidth > 1200) {
         </div>
     </Parallax>
     <Parallax  >
-    <div className='projects-outside-container2' >
-      <ContainerTitle>
-        Projects
-      </ContainerTitle> 
-      <Container >
-        <Swiper
-          effect="cards"
-          spaceBetween={20}
-          slidesPerView={1}
-          pagination={{
-            className: 'paginationStyle',
-            clickable: true,
-            type: 'fraction',
-            paginationClickable: true,
-          }}
-          scrollbar={{ draggable: true }}
-          modules={[EffectCards,Pagination, Navigation, Autoplay]}
-          navigation={true}
-          grabCursor={true}
-          loop={false}
-          centeredSlides={true}
-          autoplay={{ delay: 3000 }}
-          id='swiper-projects'
-        >
-            
-          <SwiperSlide > 
-            <a href="/nftpage" >
-              <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks the top sales of various NFT marketplaces." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
-          </SwiperSlide>
-          <SwiperSlide>  
-            <a href="/stockpage">
-              <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio that stores user transactions with real-time stock quotes." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
-          </SwiperSlide>
-          <SwiperSlide>  
-            <a href="/countrypage">
-              <MemberComponent img={countryImg}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
-          </SwiperSlide>
-          <SwiperSlide>  
-            <a href="/phonebookpage">
-              <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A CRUD phonebook feature that manages a contact list." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
-          </SwiperSlide>
-        </Swiper>
-      </Container>
+      <div>
+        <div className='projects-outside-container2' >
+          <ContainerTitle>
+            Projects
+          </ContainerTitle> 
+          <Container >
+            <Swiper
+              effect="cards"
+              spaceBetween={20}
+              slidesPerView={1}
+              pagination={{
+                className: 'paginationStyle',
+                clickable: true,
+                type: 'fraction',
+                paginationClickable: true,
+              }}
+              scrollbar={{ draggable: true }}
+              modules={[EffectCards,Pagination, Navigation, Autoplay]}
+              navigation={true}
+              grabCursor={true}
+              loop={false}
+              centeredSlides={true}
+              autoplay={{ delay: 3000 }}
+            >
+                
+              <SwiperSlide > 
+                <a href="/nftpage" >
+                  <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks the top sales of various NFT marketplaces." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
+              </SwiperSlide>
+              <SwiperSlide>  
+                <a href="/stockpage">
+                  <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio that stores user transactions with real-time stock quotes." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
+              </SwiperSlide>
+              <SwiperSlide>  
+                <a href="/countrypage">
+                  <MemberComponent img={countryImg}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
+              </SwiperSlide>
+              <SwiperSlide>  
+                <a href="/phonebookpage">
+                  <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A CRUD phonebook feature that manages a contact list." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
+              </SwiperSlide>
+            </Swiper>
+          </Container>
+          </div>
       </div>
     </Parallax>
   </div>

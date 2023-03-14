@@ -13,28 +13,30 @@ import '../App2.css'
 
 const Container = styled.div`
   display: flex;
-  padding: clamp(0.5rem, 2%, 10px);
+  min-height: 20vh;
   justify-content: center;
   flex-wrap: wrap;
-  margin-left: -clamp(0.5rem, 2%, 10px);
   margin-bottom: 10vh;
-  height: auto;
-  width: 100vw;
+  align-items: center;
   box-shadow: 5px 7px 15px 7px rgba(0, 0, 0, 0.3);
   background-color: rgb(251, 249, 236, 0.6);
-  /* border: 2px solid black;
-  border-radius: 0px; */
 
   
   @media screen and (max-width: 75em) {
     display: flex;
-    padding: clamp(0.5rem, 2%, 10px);
+    min-height: 40vh;
     justify-content: center;
     flex-wrap: wrap;
-    margin-left: 0px;
     margin-bottom: 10vh;
-    height: auto;
-    width: 100vw;
+    box-shadow: 5px 7px 15px 7px rgba(0, 0, 0, 0.3);
+    background-color: rgb(251, 249, 236, 0.6);
+  }
+  @media screen and (max-width: 43em) {
+    display: flex;
+    min-height: 40vh;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10vh;
     box-shadow: 5px 7px 15px 7px rgba(0, 0, 0, 0.3);
     background-color: rgb(251, 249, 236, 0.6);
   }
@@ -42,49 +44,36 @@ const Container = styled.div`
 `
 
 const ContainerTitle = styled.div`
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  font-size: 3em;
+  margin: 2vh;
+  font-size: 2.5em;
   justify-content: center;
   text-align: center;
   color: rgb(0, 62, 128);
 `
 const Item = styled.div`
   position: relative;
-  display: grid;
-  padding: 1rem 0.7rem clamp(3.75vw, 15.625vw, 15vw) 0.7rem;
+  padding: 1em;
   color: ${props => props.theme.body};
-  margin: 3.75vw 1.875vw;
   justify-content: center;
-  min-height:35%;
-  max-height: 38%;
-  width: clamp(15em, 20vw, 40vw);
-  margin: 1vw;
+  min-height: 30vh;
+  width: 19vw;
+  margin: 1vh;
+  margin-top: 1vw;
+  margin-bottom: 3vw;
 
   border: 0.0625rem solid ${props => props.theme.text};
   border-radius: 25px;
   box-shadow: 0.3125vw 0.3125vw 0.75vw 0.3125vw rgba(0,0,0,0.3);
   background-color: rgb(217,194,165);
 
-  // &:hover{
-  //   img{
-  //     border-radius: 25px;
-  //     position: absolute;
-  //     cursor: pointer;
-  //     transform: scale(1.2);
-  //   }
-  // }
-
   @media screen and (max-width: 75rem) {
+    padding: 1em;
+    min-height: 30vh;
     width: 40vw;
-    height: 28rem;
-    max-height: 700px;
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
     margin: 1.5vw;
+    margin-bottom: 3vw;
   }
 `;
 
@@ -92,28 +81,28 @@ const Item = styled.div`
 const ImageContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-self: center;
-  width: clamp(15em, 20vw, 40vw);
-  max-width: 350px;
-  height: 15em;
+  justify-content: center;
+  text-align: center;
+  width: auto;
+  height: 18vh;
   box-shadow: 0.4375vw 0.4375vw 0.9375vw -0.1875vw rgba(0,0,0,0.3);
   background-color: rgba(255,255,255, 0.5);
   border: 0.0625rem solid rgba(0,0,0,0.3);
-  margin-top: -0.5vw;
   margin-bottom: -0.125vw;
-  padding: 0.225rem;
   border-radius: 25px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
 
   img {
-    height: 100%;
+    text-align: center;
     transition: transform 0.3s ease-in-out;
     display: block;
     margin: 0 auto;
-    border-radius: 25px;
-    padding: 0;
+    border-radius: 10px;
+    width: 100%; 
+    min-height: 16vh;
+    height: auto;
   }
 
   &:hover {
@@ -126,16 +115,25 @@ const ImageContainer = styled.div`
   }
 
   @media screen and (max-width: 75em) {
-    height: 19rem;
-    width: clamp(30em, 20vw, 40vw);
-    margin-bottom: .5vw;
+    height: 15rem;
+    width: auto;
+    margin-bottom: 1vh;
     justify-content: center;
 
+    img {
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      display: block;
+      margin: 0 auto;
+      border-radius: 10px;
+      width: 100%; 
+      height: auto;
+    }
   }
 `;
 
 const Name = styled.h2`
-  font-size: 1.3vw;
+  font-size: 1.2em;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -143,15 +141,10 @@ const Name = styled.h2`
   color: rgb(0, 62, 128);
   width: 100%;
 
-  @media screen and (max-width: 75em) {
-    margin-top: 0vh;
-    font-size: 2.3vw;
-    width: auto;
-  }
 `;
 
 const Description = styled.p`
-  font-size: 1vw;
+  font-size: 1em;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -165,7 +158,7 @@ const Description = styled.p`
   color: rgb(0, 62, 128);
 
   @media screen and (max-width: 75em) {
-    font-size: 1.8vw;
+    font-size: 1em;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -178,32 +171,32 @@ const Description = styled.p`
 `;
 
 const SkillsContainer = styled.div`
-  width: 90%;
-  height: 3.5em;
+  width: 100%;
+  height: 7.5vw;
   font-size: 2vw;
   display: flex;
   justify-content: center;
   align-content: center;
-  margin: 0.25em;
-  padding: 0.25em;
   flex-wrap: wrap;
   margin-top: 1vh;
-  margin-bottom: 1vh;
   border-radius: 25px;
   background-color: rgb(255, 255, 255, 0.4);
   box-shadow: 0.4375vw 0.4375vw 0.9375vw -0.1875vw rgba(0,0,0,0.3);
 
 
   @media screen and (max-width: 75em) {
+    width: auto;
+    height: 11vw;
+    font-size: 1em;
+    padding: .5vh;
     display: flex;
-    width: 95%;
-    height: 6.5em;
-    max-height: 325px;
     justify-content: center;
-    margin-top: 1em;
-    margin-bottom: .5em;
-    align-items: center;
-    padding: .5em;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-top: 1vh;
+    border-radius: 25px;
+    background-color: rgb(255, 255, 255, 0.4);
+    box-shadow: 0.4375vw 0.4375vw 0.9375vw -0.1875vw rgba(0,0,0,0.3);
   }
 `;
 
@@ -263,7 +256,7 @@ const ProjectCards = () => {
       <ContainerTitle>
           Projects
       </ContainerTitle>
-      <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
+      <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
         <Slide triggerOnce direction='left' delay={350}>
         <a href="/nftpage" >
           <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks top sales from several NFT marketplaces" skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
@@ -315,7 +308,8 @@ screen =(
       </Container>
   </>
 )
-  } else {
+  } 
+  else {
   screen = (
     <>
       <Container>

@@ -35,8 +35,8 @@ function Nav({ isWhite }) {
             className={`nav-titles ${showNav ? 'show' : 'hide'}`}
             style={{
               backgroundColor: 'rgb(0,0,0,0.7)',
-              height: '100vh',
-              width: '65%',
+              height: '50vh',
+              width: '75%',
               borderRadius: '25px 0 0 25px',
               display: 'flex',
               flexDirection: 'column',
