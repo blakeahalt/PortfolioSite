@@ -8,6 +8,12 @@
 	max-height: 800px;
 	margin-bottom: 100px;
 }
+.phonebook-title{
+	text-align: center;
+	font-size: 3em;
+	color: black;
+	margin-top: 1vh;
+}
 .nft-features{
 	height: 700px;
 	margin-bottom: 100px;
@@ -16,6 +22,12 @@
 	margin-top: 50px;
 	max-height: 855px;
 	margin-bottom: 100px;
+}
+.stock-title{
+	text-align: center;
+	font-size: 3em;
+	color: black;
+	margin-top: 1vh;
 }
 .skills-features{
 	justify-content: center;
@@ -35,7 +47,6 @@
 	flex-direction: column;
 	justify-content: center;
 	padding: 2vh;
-	margin: .5vh;
 	width: auto;
 	border: 2px solid rgb(0, 62, 128, 0.8);
 	border-radius: 25px;
@@ -58,7 +69,6 @@
 	padding: .5em;
 	margin: .5em;
 	width: 70%;
-	height: 5vh;
 	max-height: 24vh;
 	border: 1px solid rgb(0,0,0,0.4); 
 	background-color: rgb(204, 145, 29, 0.2);
@@ -90,11 +100,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-	justify-content: center;
-	margin-top: 5vh;
-	margin-bottom: 2vh;	
-	margin: 0 auto;
-	width: 85%;
+	justify-content: space-evenly;
 }
 .features-title{
 	text-align: center;
@@ -102,14 +108,13 @@
 
 }
 .icon{
-	display: flex;
-	flex-direction: column;
 	justify-content: center;
-	margin: 5vw auto;
+	margin: 0 auto;
+	margin: 1vh;
 }
 .icon-title{
-	margin: 0 auto;
-	font-size: 1.7em;
+	text-align: center;
+	font-size: 1.3em;
 	margin-top: 2vh;
 	color: rgb(0, 62, 128);
 }
@@ -126,9 +131,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row;
-		justify-content: center;
-		margin-top: 5vh;
-		margin-bottom: 2vh;
+		justify-content: space-evenly;
+		
 		
 	}
 	.features-title{
@@ -136,14 +140,11 @@
 		font-size: 2.5rem;
 	}
 	.icon{
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		width: 45%;
+		margin-bottom: 2vh;
 	}
 	.icon-title{
-		margin: 0 auto;
-		font-size: 1.7em;
+		text-align: center;
+		font-size: 1.3em;
 		margin-top: 2vh;
 		color: rgb(0, 62, 128);
 	}
@@ -191,21 +192,12 @@
 }
 
 @media screen and (max-width: 42em) {
-	.icon img {
-		max-width: 125px;
-		height: auto;
-		margin: 0 auto;
-	}
 	.icons {
 		display: flex;
-		flex-wrap: wrap;
 		flex-direction: row;
-		justify-content: center;
-		margin-top: 5vh;
-		margin-bottom: 2vh;
-		
-		/* border: 2px solid black;
-		border-radius: 0px; */
+		flex-wrap: wrap;
+		margin-top: -2vh;
+		margin-bottom: 4vh;
 	}
 	.replaceFeature {
 		margin-top: 20px;
@@ -217,20 +209,21 @@
 	}
 	.icon{
 		display: flex;
-		flex-direction: column;
+		flex-wrap: wrap;
 		justify-content: center;
-		width: 45%;
 		margin-bottom: 3vh;
+		margin: .9vh;
 	}
 	
 	.icon-title{
 		color: rgb(0, 62, 128);
-		font-size: 1.1em;
-		margin: 0 auto;
-		margin-top: .5vh;
+		font-size: 1em;
+		text-align: center;
+		margin-top: 1vh;
+		line-height: 1.2;
 	}
 	.country-features{
-		height: 925px;
+		height: 800px;
 		width: 100%;
 	}
 	.nft-features{
@@ -244,6 +237,12 @@
 	.stock-features{
 		position: relative;
 		height: auto;
+	}
+	.stock-title{
+		text-align: center;
+		font-size: 3em;
+		color: black;
+		margin-top: 1vh;
 	}
 }	
 

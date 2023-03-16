@@ -32,40 +32,37 @@ padding: 1vh;
 align-items: center;
 width: auto;
 height: 100%;
-z-index: 0;
-margin: 2vh;
+z-index: 1;
 
 @media screen and (max-width: 75em) {
     display: flex;
     justify-content: center;
+    margin-top: 3vh;
 }
 
 @media screen and (max-width: 42em) {
-    display: flex;
     justify-content: center;
-    height: auto;
-    border: 3px solid red;
+    margin-bottom: 5vh;
 }
 
 .swiper{
-    width: 100%;
+    width: 35rem;
     height: 100%;
     
     @media screen and (max-width: 75em) {
-        width: 100%;
-        height: 100%;
+        width: 25rem;
+        height: auto;
+        position: relative;
     }
     
     @media screen and (max-width: 42em) {
-        width: 100%;
+        width: 20rem;
         height: auto;
-        margin-top: -10vh;
-        border: 3px solid green;
     }
     @media screen and (max-width: 25em) {
         width: 100%;
         height: auto;
-        margin-top: 5vh;
+        margin-top: 3vh;
         z-index: 0
     }
 }

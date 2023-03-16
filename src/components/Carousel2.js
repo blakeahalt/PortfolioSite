@@ -33,28 +33,28 @@ margin: 2vh;
 @media screen and (max-width: 75em) {
     display: flex;
     justify-content: center;
+    margin-top: 3vh;
 }
 
 @media screen and (max-width: 42em) {
-    display: flex;
     justify-content: center;
-    height: auto;
-    margin-top: 10vh;
+    margin-bottom: 5vh;
 }
 
 .swiper{
-    width: 100%;
+    width: 35rem;
     height: 100%;
     
     @media screen and (max-width: 75em) {
-        width: 100%;
-        height: 100%;
+        width: 25rem;
+        height: auto;
+        position: relative;
     }
     
     @media screen and (max-width: 42em) {
-        width: 100%;
+        width: 20rem;
         height: auto;
-        margin-top: -10vh;
+        
     }
     @media screen and (max-width: 25em) {
         width: 100%;

@@ -36,7 +36,7 @@ function Nav({ isWhite }) {
             style={{
               fontSize: '2em',
               backgroundColor: 'rgb(0,0,0,0.7)',
-              height: '50vh',
+              height: '65vh',
               width: '70%',
               borderRadius: '25px 0 0 25px',
               display: 'flex',

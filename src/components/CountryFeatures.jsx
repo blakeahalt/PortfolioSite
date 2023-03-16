@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, {useState, useEffect} from 'react'
+import WebFont from 'webfontloader';
 import styled from 'styled-components'
 import "../Icon.css";
 
@@ -20,20 +21,24 @@ display: flex;
 justify-content: center;
 margin-left: auto;
 margin-right: auto;
-margin-bottom: 25px;
-width: 625px;
-height: 300px;
-padding: 15px;
+margin-top: 3vh;
+margin-bottom: 5vh;
+width: 50vw;
+height: auto;
+padding: 3vh;
 
 @media screen and (max-width: 75em) {
   height: auto;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
+  width: 80vw;
 }
 
 @media screen and (max-width: 42em) {
 
     height: 315px;
     width: 30vw;
+    margin-top: -3vh;
+    margin-bottom: 7vh;
 }
 
 .swiper{
@@ -139,17 +144,24 @@ const slideToIndex = (index) => {
   }
 };
 
+useEffect(() => {
+  WebFont.load({
+    google: {
+      families: ['Poppins']
+    }
+  });
+ }, []);
+
 let screen;
 
   if (window.innerWidth > 1200) {
     screen = (
-      <>
-        <div className="country-features">
+      <div className='font-load' >
           <h1 className="features-title">Features</h1>
           <div className="icons">
             <div className="icon">
               <img 
-                style={{ padding: 5, width:'25vh', height:'25vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                style={{ padding: 5, width:'20vh', height:'20vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={responsive} 
                 alt="icon1" 
                 onMouseEnter={() => slideToIndex(0)}
@@ -161,7 +173,7 @@ let screen;
           </div>
           <div className="icon">
               <img 
-                style={{ padding: 5, width:'25vh', height:'25vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                style={{ padding: 5, width:'20vh', height:'20vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={countryFacts} 
                 alt="icon2" 
                 onMouseEnter={() => slideToIndex(1)}
@@ -173,7 +185,7 @@ let screen;
           </div>
           <div className="icon">
           <img 
-                style={{ padding: 5, maxWidth:'25vh', height:'25vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                style={{ padding: 5, maxWidth:'20vh', height:'20vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={weatherFacts} 
                 alt="icon4" 
                 onMouseEnter={() => slideToIndex(2)}
@@ -210,7 +222,7 @@ let screen;
                 src={responsive} 
                 alt="feature 2"
                 /> 
-                  <div style={{fontSize: 21, position:'absolute', marginTop: '230px', padding: '5px', color: 'rgb(0, 62, 128)'}}>
+                  <div style={{ textAlign: 'center', fontSize: '1.3em', position:'absolute', marginTop: '230px', padding: '5px', color: 'rgb(0, 62, 128)'}}>
                   Responsive design adapts to various screen sizes
                 </div>
                 </>
@@ -221,10 +233,10 @@ let screen;
                 src={countryFacts} 
                 alt="feature 2"
                 /> 
-                 <div style={{fontSize: 21, flexWrap: 'wrap', maxWidth: '250px', padding: '20px', marginLeft: '0px', marginTop: '-25px', color: 'rgb(0, 62, 128)'}}>
+                 <div style={{ textAlign: 'center', fontSize: '1.3em', flexWrap: 'wrap', maxWidth: '250px', padding: '20px', marginLeft: '0px', marginTop: '-25px', color: 'rgb(0, 62, 128)'}}>
                 &#8592; See each country's flag & coat of arms
                 </div>  
-                <div style={{fontSize: 21, marginLeft: '-265px', marginTop: '125px', color: 'rgb(0, 62, 128)'}}>
+                <div style={{fontSize: '1.3em', marginLeft: '-270px', marginTop: '125px', color: 'rgb(0, 62, 128)'}}>
                     &#8592; with basic country facts
                 </div>
               </SwiperSlide>
@@ -234,24 +246,22 @@ let screen;
                 src={weatherFacts} 
                 alt="feature 3"
                 /> 
-                  <div style={{fontSize: 21, position:'absolute', marginTop: '245px',color: 'rgb(0, 62, 128)'}}>
+                  <div style={{ textAlign: 'center', fontSize: '1.3em', position:'absolute', marginTop: '245px',color: 'rgb(0, 62, 128)'}}>
                   Get a 3-day weather forecast of the capital city
                 </div>
               </SwiperSlide>
             </Swiper>
           </Container>
-        </div>
-      </>
+      </div>
       )
     } else if (window.innerWidth > 665) {
       screen =(
-         <>
-          <div >
-            <h1 style={{ marginTop: '10vh' }} className="features-title">Features</h1>
-            <div style={{ marginBottom: '5vh' }} className="icons">
+        <div className='font-load' >
+            <h1 className="features-title">Features</h1>
+            <div className="icons">
               <div className="icon">
                 <img 
-                  style={{ padding: 5, width:'20vh', height:'20vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                  style={{ padding: 5, width:'14vh', height:'14vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                   src={responsive} 
                   alt="icon1" 
                   onMouseEnter={() => slideToIndex(0)}
@@ -261,9 +271,9 @@ let screen;
                 <div>
               </div>
             </div>
-            <div className="icon">
+            <div className="icon" style={{ marginLeft: '-1vh'}}>
                 <img 
-                  style={{ padding: 5, width:'20vh', height:'20vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                  style={{ padding: 5, width:'14vh', height:'14vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                   src={countryFacts} 
                   alt="icon2" 
                   onMouseEnter={() => slideToIndex(1)}
@@ -275,7 +285,7 @@ let screen;
             </div>
             <div className="icon">
             <img 
-                  style={{ padding: 5, maxWidth:'20vh', marginTop: '5vh',height:'20vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                  style={{ padding: 5, maxWidth:'14vh', height:'14vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                   src={weatherFacts} 
                   alt="icon4" 
                   onMouseEnter={() => slideToIndex(2)}
@@ -283,7 +293,7 @@ let screen;
                 />
                 <div className="icon-title" >Weather Facts</div>
             </div>
-            </div>
+          </div>
             <Container>
               <Swiper
                 effect="cards"
@@ -312,7 +322,7 @@ let screen;
                 src={responsive} 
                 alt="feature 2"
                 /> 
-                  <div style={{fontSize: 21, position:'absolute', marginTop: '230px', padding: '5px', color: 'rgb(0, 62, 128)'}}>
+                  <div style={{ textAlign: 'center', fontSize: '1.4em', position:'absolute', marginTop: '230px', padding: '5px', color: 'rgb(0, 62, 128)'}}>
                   Responsive design adapts to various screen sizes
                 </div>
                 </>
@@ -323,10 +333,10 @@ let screen;
                   src={countryFacts} 
                   alt="feature 2"
                   /> 
-                    <div style={{fontSize: 21, flexWrap: 'wrap', maxWidth: '250px', padding: '20px', marginLeft: '0px', marginTop: '-25px', color: 'rgb(0, 62, 128)'}}>
+                    <div style={{ textAlign: 'center', fontSize: '1.4em', flexWrap: 'wrap', maxWidth: '250px', padding: '20px', marginLeft: '0px', marginTop: '-25px', color: 'rgb(0, 62, 128)'}}>
                     &#8592; See each country's flag & coat of arms
                     </div>  
-                    <div style={{fontSize: 21, marginLeft: '-265px', marginTop: '125px', color: 'rgb(0, 62, 128)'}}>
+                    <div style={{fontSize: '1.4em', marginLeft: '-270px', marginTop: '125px', color: 'rgb(0, 62, 128)'}}>
                         &#8592; with basic country facts
                     </div>
                 </SwiperSlide>
@@ -336,24 +346,22 @@ let screen;
                   src={weatherFacts} 
                   alt="feature 3"
                   /> 
-                    <div style={{fontSize: 21, position:'absolute', marginTop: '245px',color: 'rgb(0, 62, 128)'}}>
+                    <div style={{ textAlign: 'center', fontSize: 21, position:'absolute', marginTop: '245px',color: 'rgb(0, 62, 128)'}}>
                       Get a 3-day weather forecast of the capital city
                     </div>
                 </SwiperSlide>
               </Swiper>
             </Container>
-        </div>
-      </>
+    </div>
       )
   } else {
   screen = (
-    <>
-     <div className="country-features">
+    <div className='font-load' >
         <h1 className="features-title">Features</h1>
           <div className="icons">
             <div className="icon">
               <img 
-                style={{ padding: 5, width:'125px', height:'125px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                style={{ padding: 5, width:'15vh', height:'15vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={responsive} 
                 alt="icon1" 
                 onMouseEnter={() => slideToIndex(0)}
@@ -363,7 +371,7 @@ let screen;
           </div>
           <div className="icon">
               <img 
-                style={{ padding: 5, width:'125px', height:'125px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                style={{ padding: 5, width:'15vh', height:'15vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={countryFacts} 
                 alt="icon2" 
                 onMouseEnter={() => slideToIndex(1)}
@@ -373,7 +381,7 @@ let screen;
           </div>
           <div className="icon">
           <img 
-                style={{ padding: 5, maxWidth:'125px', height:'125px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                style={{ padding: 5, maxWidth:'15vh', height:'15vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={weatherFacts} 
                 alt="icon4" 
                 onMouseEnter={() => slideToIndex(2)}
@@ -410,7 +418,7 @@ let screen;
                 src={responsive} 
                 alt="feature 2"
                 /> 
-                  <div style={{fontSize: 16, position:'absolute', marginTop: '200px', padding: '5px', color: 'rgb(0, 62, 128)'}}>
+                  <div style={{fontSize: '.9em', position:'absolute', marginTop: '200px', textAlign: 'center', padding: '5px', color: 'rgb(0, 62, 128)'}}>
                   Responsive design adapts to various screen sizes
                 </div>
                 </>
@@ -421,10 +429,10 @@ let screen;
                 src={countryFacts} 
                 alt="feature 2"
                 /> 
-                  <div style={{fontSize: 16, flexWrap: 'wrap', maxWidth: '125px', padding: '20px', marginLeft: '-20px', marginTop: '-20px', color: 'rgb(0, 62, 128)'}}>
+                  <div style={{fontSize: '.9em', flexWrap: 'wrap', maxWidth: '125px', padding: '20px',  marginTop: '-20px', color: 'rgb(0, 62, 128)'}}>
                     &#8592; See each country's flag & coat of arms
                     </div>  
-                    <div style={{fontSize: 16, marginLeft: '-140px', maxWidth: '125px', marginTop: '140px', color: 'rgb(0, 62, 128)'}}>
+                    <div style={{fontSize: '.9em', marginLeft: '-145px', maxWidth: '125px', marginTop: '140px', color: 'rgb(0, 62, 128)'}}>
                         &#8592; with basic country facts
                     </div>
               </SwiperSlide>
@@ -434,14 +442,13 @@ let screen;
                 src={weatherFacts} 
                 alt="feature 3"
                 /> 
-                  <div style={{fontSize: 16, position:'absolute', marginTop: '215px',color: 'rgb(0, 62, 128)'}}>
+                  <div style={{fontSize: '.9em', position:'absolute', marginTop: '215px',color: 'rgb(0, 62, 128)'}}>
                     Get a 3-day weather forecast of the capital city
                   </div>
               </SwiperSlide>
             </Swiper>
           </Container>
-        </div>
-      </>
+      </div>
    )
   }
 

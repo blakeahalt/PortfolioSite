@@ -38,14 +38,14 @@ margin: 0 auto;
 margin-bottom: 5vh;
 padding: .5vh;
 height: auto;
-width: 80%;
+width: 90%;
 border-radius: 25px;
 border: 1px solid rgb(0,0,0,0.3);
 background-color: rgb(217,194,165);
 box-shadow: 0.3vw 0.7vw 1.5vw 0.2vw rgba(0,0,0,0.2);
 
 media screen and (max-width: 75em){
-  width: auto;
+  width: 90%;
   height: auto;
 }
 @media screen and (max-width: 42em){
@@ -80,9 +80,10 @@ box-shadow: 0.3vw 0.7vw 1.5vw 0.2vw rgba(0,0,0,0.2);
 `
 
 const Skills = styled.h2`
-font-size: 1.5em;
+font-size: 1.2em;
 display: flex;
 justify-content: center;
+align-items: center;
 background-color: rgb(240,240,240, 0.8);
 color: rgb(0, 62, 128);
 font-weight:400;
@@ -94,7 +95,7 @@ margin: .5vh;
 @media screen and (max-width: 75em){
   align-items: center;
   border-radius: 10px;
-  font-size: 1.4em;
+  font-size: 1.1em;
 }
 @media screen and (max-width: 42em){
   align-items: center;

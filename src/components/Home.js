@@ -234,10 +234,10 @@ function Home() {
 
 if (window.innerWidth > 1200) {
   screen = (
-    <>
+    <div className="container font-load">
     <div >
     <Nav />
-      <div className="container font-load">
+      <div >
         <Parallax
           blur={{ min: -5, max: 5 }}
           bgImageClassName="opaque-image" 
@@ -282,12 +282,12 @@ if (window.innerWidth > 1200) {
                 </Slide>
                 <Slide direction='up' delay={200} >
                   <h4 className="dev-introduction2-2">
-                  I bring ideas to life
+                  I bring ideas to life with clean, 
                   </h4>
                 </Slide>
-                <Slide direction='up' delay={250} >
+                <Slide direction='up' delay={300} >
                   <h4 className="dev-introduction3-2">
-                    with clean, intuitive, and thoughtful design.
+                    intuitive, and thoughtful design.
                   </h4>
                 </Slide>
               </div>
@@ -433,7 +433,7 @@ if (window.innerWidth > 1200) {
     <Projects />
   </Parallax>
 
-</>
+</div>
   );
 } else if (window.innerWidth > 665) {
   screen = (

@@ -32,9 +32,9 @@ const Container = styled.div`
 display: flex;
 flex-wrap: nowrap;
 justify-content: center;
-padding-top: 75px;
+padding-top: 3vh;
+padding-bottom: 2vh;
 margin-bottom: 50px;
-width: 2500px;
 height: auto;
 
 box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3);
@@ -99,7 +99,7 @@ background-color: rgb(217,194,165);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  height: 60vh;
+  height: auto;
 }
 
 @media screen and (max-width: 42em) {
@@ -150,6 +150,7 @@ const ImageContainer = styled.div`
   @media screen and (max-width: 75em) {
     padding: 0vh;
     height: 26vh;
+    margin-bottom: 1vh;
   }
 
   @media screen and (max-width: 42em) {
@@ -176,7 +177,7 @@ color: rgb(0, 62, 128);
   margin: 7px;
   text-align: center;
   justify-content: center;
-  margin-top: 0vh;
+  font-size: 1.4em;
 }
 @media screen and (max-width: 42em) {
   margin: 7px;
@@ -198,9 +199,7 @@ const Description = styled.p`
     flex-wrap: wrap;
     justify-content: center;
     width: auto;
-    margin: 5px;
-    padding: 5px;
-    height: 70px;
+    margin-top: 1vh;
     font-size: 1em;
 }
 @media screen and (max-width: 42em) {
@@ -211,7 +210,6 @@ const Description = styled.p`
     margin: 17px;
     height: 2.5em;
     margin-top:-1vh;
-    margin-bottom:4vh;
     font-size: 0.9em;
 }
 `
@@ -224,7 +222,8 @@ const SkillsContainer = styled.div`
   align-content: center;
   height: 145px;
   padding: 7px;
-  padding-top: 10px;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
   margin: 2px;
   flex-wrap: wrap;
   margin-top: 10px;
@@ -237,12 +236,9 @@ const SkillsContainer = styled.div`
 @media screen and (max-width: 75em) {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
-    margin-bottom: -1vh;
-    height: 6em;
+    width: 90%;
     align-items: center;
-    padding-top: 1.5vh;
-    padding-bottom: 1.5vh;
+    height: 22vw;
   }
 @media screen and (max-width: 42em) {
     display: flex;
@@ -250,6 +246,7 @@ const SkillsContainer = styled.div`
     height: auto;
     align-content: center;
     margin-bottom: 1vh;
+    width: 90%;
   }
 `
 
@@ -334,7 +331,7 @@ const ProjectsPage = () => {
           <a href="/countrypage">
           <MemberComponent img={countryImg}  name="Country / Weather App" desc="A full stack React app that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","Express.js","Axios", "Full Stack","Responsive Design"]}  /></a>
           <a href="/phonebookpage">
-          <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A full stack React app that implements CRUD methods to manage a phonebook contacts list." skills={["JavaScript","MongoDB","Express.js","React","Node.js","Cors","Full Stack","Responsive Design"]}  /></a>
+          <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A full stack React app that implements CRUD methods to manage a contacts list." skills={["JavaScript","MongoDB","Express.js","React","Node.js","Cors","Full Stack","Responsive Design"]}  /></a>
         </div>
       </Container>
     </Section>

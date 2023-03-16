@@ -11,31 +11,31 @@ import Dizzy from '../assets/portraits/Dizzy_Done_transparent.png'
 
 const Carousel = lazy(() => import("./Carousel2"));
 
-const Section = styled.section`
-margin-bottom: 5vh;
-width: 100%;
-background-color: ${props => props.theme.text};
-display: flex;
-justify-content: center;
-align-items: center;
-position: relative;
-overflow: hidden;
+// const Section = styled.section`
+// margin-bottom: 5vh;
+// width: 100%;
+// background-color: ${props => props.theme.text};
+// display: flex;
+// justify-content: center;
+// align-items: center;
+// position: relative;
+// overflow: hidden;
 
-@media screen and (max-width: 75em) {
-  width: 100%;
-  background-color: ${props => props.theme.text};
-  display: flex;
-  justify-content: center;
-  height: 100%;
+// @media screen and (max-width: 75em) {
+//   width: 100%;
+//   background-color: ${props => props.theme.text};
+//   display: flex;
+//   justify-content: center;
+//   height: 100%;
 
-}
-@media screen and (max-width: 42em) {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-`
+// }
+// @media screen and (max-width: 42em) {
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+// }
+// `
 
 const Container = styled.div`
 width: 90%;
@@ -47,16 +47,19 @@ align-items: center;
 
 @media screen and (max-width: 75em) {
   width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 85rem;
+  
 }
 @media screen and (max-width: 42em) {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
 }
 `
 
@@ -77,11 +80,11 @@ flex-direction: column;
   display: flex;
   height: 100%;
   justify-content: center;
+  
 }
 @media screen and (max-width: 42em) {
   width: 90vw;
   height: auto;
-  margin-bottom: 5vh;
   font-size: 1em
 }
 `
@@ -93,6 +96,7 @@ const Title = styled.h2`
   width: 80%;
   align-self: flex-start;
   margin: 0 auto;
+  text-align:center;
 
 @media (max-width: 75em){
   font-size: 1.8em;
@@ -100,9 +104,10 @@ const Title = styled.h2`
   text-align:center;
 }
 @media screen and (max-width: 42em) {
+  font-size: 1.5em;
   width: 100%;
   text-align:center;
-  margin-top: -px;
+  margin-top: 0px;
 }
 `
 const SubText = styled.p`
@@ -112,6 +117,7 @@ const SubText = styled.p`
   width: 80%;
   align-self: flex-start;
   margin: 1rem auto;
+  text-align:center;
 
 
   @media (max-width: 75em){
@@ -121,11 +127,10 @@ const SubText = styled.p`
 
 }
   @media screen and (max-width: 42em) { 
-    font-size: 1.2em;
+    font-size: 1em;
     width: 95%;
     text-align: center;
     justify-content: center;
-
 }
 
 `
@@ -135,9 +140,10 @@ const ButtonContainer = styled.div`
  margin: 1rem auto;
  display: flex;
  align-self: flex-start;
+ justify-content: center;
 
   @media (max-width: 75em){
-    width: 100%;
+    margin-bottom: 5vh;
 
   a{
     margin: 0 auto;
@@ -145,7 +151,6 @@ const ButtonContainer = styled.div`
   }
 
   @media screen and (max-width: 42em) {
-
   }
 `
 
@@ -161,29 +166,28 @@ const About = () => {
 
   return (
     <div className='portrait-outside-container font-load'>
-    <Section id="about">
-      <Container>
+      <Container className='portrait-bg'>
         <Box > 
         <Suspense fallback={<Loading />}>
           <Carousel /> </Suspense> </Box>
         <Box> 
-        <img className='portrait-desc-img'src={Dizzy}/>
-        <Title>
-        Portrait Art
-        </Title>
-        <SubText>
-        A collection of portrait art.
-        </SubText>
-        <SubText>
-        Traditional portrait art featuring jazz artists, kaleidoscopic backgrounds, and a glasshead series exploring the relationship between subject and mind.
-        </SubText>
-        <ButtonContainer>
-        <Button text="See More" link='/art/portraits' />
-        {/* <Button text="See More" link='http://localhost:3000/art/portraits' /> */}
+        <div className='portrait-desc-container' >
+          <Title>
+          Portrait Art
+          </Title>
+          <SubText>
+          A collection of portrait art.
+          </SubText>
+          <SubText>
+          Traditional portrait art featuring jazz artists, kaleidoscopic backgrounds, and a glasshead series exploring the relationship between subject and mind.
+          </SubText>
+        </div>
+          <ButtonContainer>
+          <Button text="See More" link='/art/portraits' />
+          {/* <Button text="See More" link='http://localhost:3000/art/portraits' /> */}
         </ButtonContainer>
          </Box>
       </Container>
-    </Section>
     </div>
   )
 }

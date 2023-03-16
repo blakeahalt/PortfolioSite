@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, {useState, useEffect} from 'react'
+import WebFont from 'webfontloader';
 import styled from 'styled-components'
 import "../Icon.css";
 
@@ -21,20 +22,24 @@ display: flex;
 justify-content: center;
 margin-left: auto;
 margin-right: auto;
-margin-bottom: 15vh;
-width: 625px;
-height: 300px;
-padding: 15px;
+margin-top: 3vh;
+margin-bottom: 5vh;
+width: 50vw;
+height: auto;
+padding: 3vh;
+
 
 @media screen and (max-width: 75em) {
   height: auto;
-  margin-bottom: 20vh;
-
+  margin-bottom: 5vh;
+  width: 80vw;
 }
 
 @media screen and (max-width: 42em) {
-    height: 315px;
-    width: 30vw;
+  height: 315px;
+  width: 30vw;
+  margin-top: -3vh;
+  margin-bottom: 7vh;
 }
 
 .swiper{
@@ -142,17 +147,24 @@ const slideToIndex = (index) => {
   }
 };
 
+useEffect(() => {
+  WebFont.load({
+    google: {
+      families: ['Poppins']
+    }
+  });
+ }, []);
+
 let screen;
 
   if (window.innerWidth > 1200) {
     screen = (
-      <>
-      <div >
+      <div className='font-load' >
           <h1 className="features-title">Features</h1>
           <div className="icons">
             <div className="icon">
               <img 
-                style={{ padding: 5, maxWidth:'25vh', height:'25vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                style={{ padding: 5, maxWidth:'20vh', height:'20vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={responsive} 
                 alt="icon1" 
                 onMouseEnter={() => slideToIndex(0)}
@@ -162,7 +174,7 @@ let screen;
           </div>
           <div className="icon">
               <img 
-                style={{ padding: 5, width:'25vh', height:'25vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                style={{ padding: 5, width:'20vh', height:'20vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={phoneEdit} 
                 alt="icon2" 
                 onMouseEnter={() => slideToIndex(1)}
@@ -172,7 +184,7 @@ let screen;
           </div>
           <div className="icon">
               <img 
-                style={{ padding: 5, width:'25vh', height:'25vh',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
+                style={{ padding: 5, width:'20vh', height:'20vh',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={phoneSearch} 
                 alt="icon3" 
                 onMouseEnter={() => slideToIndex(2)}
@@ -208,7 +220,7 @@ let screen;
                   src={responsive} 
                   alt="feature 1"
                   />  
-                  <div style={{fontSize: 21, position:'absolute', marginLeft: '25px', marginTop: '235px',color: 'rgb(0, 62, 128)'}}>
+                  <div style={{ textAlign: 'center', fontSize: 21, position:'absolute', marginLeft: '25px', marginTop: '235px',color: 'rgb(0, 62, 128)'}}>
                       Responsive design adapts to various devices and screen sizes
                     </div> 
               </SwiperSlide>
@@ -216,40 +228,38 @@ let screen;
                 <img style={{marginLeft: '30px', marginTop:10, marginBottom:15, width: 'auto', height:'275px',border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} 
                 src={phoneEdit} 
                 alt="feature 2" />
-                <div style={{fontSize: 21, maxWidth: '250px', padding: '20px', marginLeft: '0px', marginTop: '175px', color: 'rgb(0, 62, 128)'}}>
+                <div style={{ textAlign: 'center', fontSize: 21, maxWidth: '250px', padding: '20px', marginLeft: '0px', marginTop: '175px', color: 'rgb(0, 62, 128)'}}>
                     &#8592; Easily update a contact's name and number.
                 </div>
               </SwiperSlide>
               <SwiperSlide > 
                 <img style={{marginLeft: '30px', marginTop:10, marginBottom:15, width: 'auto', height:'300px',border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} src={phoneSearch} alt="feature 3" />
-                  <div style={{fontSize: 21, marginLeft: '20px', marginTop: '-165px', color: 'rgb(0, 62, 128)'}}>
+                  <div style={{ textAlign: 'center', fontSize: 21, marginLeft: '20px', marginTop: '-165px', color: 'rgb(0, 62, 128)'}}>
                     &#8592; Quickly search for any contact.
                 </div>
               </SwiperSlide>
             </Swiper>
           </Container>
         </div>
-      </>
  )
 } else if (window.innerWidth > 665) {
   screen =(
-     <>
-      <div style={{ marginBottom: '-10vh' }} >
-        <h1 className="features-title">Features</h1>
-        <div style={{ marginBottom: '5vh' }} className="icons">
+    <div className='font-load' >
+      <h1 className="features-title">Features</h1>
+        <div className="icons">
           <div className="icon">
             <img 
-              style={{ padding: 5, maxWidth:'20vh', height:'20vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
-              src={responsive} 
-              alt="icon1" 
-              onMouseEnter={() => slideToIndex(0)}
-              onMouseLeave={() => slideToIndex(activeSlideIndex)}
+             style={{ display: 'flex', padding: 5, width:'14vh', height:'14vh', border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
+             src={responsive} 
+             alt="icon1" 
+             onMouseEnter={() => slideToIndex(0)}
+             onMouseLeave={() => slideToIndex(activeSlideIndex)}
             />
-            <div className="icon-title">Responsive Design</div>
+          <div className="icon-title">Responsive Design</div>
         </div>
-        <div className="icon">
+        <div className="icon" style={{ marginLeft: '0vh' }}>
             <img 
-              style={{ padding: 5, width:'20vh', height:'20vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+              style={{ display: 'flex', padding: 5, width:'14vh', height:'14vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
               src={phoneEdit} 
               alt="icon2" 
               onMouseEnter={() => slideToIndex(1)}
@@ -257,9 +267,9 @@ let screen;
             />
             <div className="icon-title">Edit Contacts</div>
         </div>
-        <div style={{ marginTop: '5vh' }} className="icon">
+        <div className="icon">
             <img 
-              style={{ padding: 5, width:'20vh', height:'20vh',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
+              style={{ display: 'flex', padding: 5, width:'14vh', height:'14vh',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
               src={phoneSearch} 
               alt="icon3" 
               onMouseEnter={() => slideToIndex(2)}
@@ -296,7 +306,7 @@ let screen;
                 src={responsive} 
                 alt="feature 2"
                 /> 
-                  <div style={{fontSize: 21, position:'absolute', marginTop: '230px', padding: '5px', color: 'rgb(0, 62, 128)'}}>
+                  <div style={{ textAlign: 'center', fontSize: '1.3em', position:'absolute', marginTop: '230px', padding: '5px', color: 'rgb(0, 62, 128)'}}>
                   Responsive design adapts to various screen sizes
                 </div>
                 </>
@@ -305,30 +315,28 @@ let screen;
               <img style={{marginLeft: '30px', marginTop:10, marginBottom:15, width: 'auto', height:'275px',border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} 
               src={phoneEdit} 
               alt="feature 2" />
-              <div style={{fontSize: 21, maxWidth: '250px', padding: '20px', marginLeft: '0px', marginTop: '175px', color: 'rgb(0, 62, 128)'}}>
+              <div style={{ textAlign: 'center', fontSize: '1.3em', maxWidth: '250px', padding: '20px', marginLeft: '0px', marginTop: '175px', color: 'rgb(0, 62, 128)'}}>
                   &#8592; Easily update a contact's name and number.
               </div>
             </SwiperSlide>
             <SwiperSlide > 
               <img style={{marginLeft: '30px', marginTop:10, marginBottom:15, width: 'auto', height:'300px',border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} src={phoneSearch} alt="feature 3" />
-                <div style={{fontSize: 21, marginLeft: '20px', marginTop: '-165px', color: 'rgb(0, 62, 128)'}}>
+                <div style={{ textAlign: 'center', fontSize: '1.3em', marginLeft: '20px', marginTop: '-165px', color: 'rgb(0, 62, 128)'}}>
                   &#8592; Quickly search for any contact.
               </div>
             </SwiperSlide>
           </Swiper>
         </Container>
       </div>
-     </>
     )
   } else {
   screen = (
-    <>
-      <div className="phonebook-features">
+    <div className='font-load' >
     <h1 className="features-title">Features</h1>
     <div className="icons">
       <div className="icon">
         <img 
-          style={{ padding: 5, width:'125px', height:'125px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+          style={{ padding: 5, width:'15vh', height:'15vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
           src={responsive} 
           alt="icon1" 
           onMouseEnter={() => slideToIndex(0)}
@@ -338,7 +346,7 @@ let screen;
     </div>
     <div className="icon">
         <img 
-          style={{ padding: 5, width:'125px', height:'125px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+          style={{ padding: 5, width:'15vh', height:'15vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
           src={phoneEdit} 
           alt="icon2" 
           onMouseEnter={() => slideToIndex(1)}
@@ -348,7 +356,7 @@ let screen;
     </div>
     <div className="icon">
         <img 
-          style={{ padding: 5, width:'125px', height:'125px', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+          style={{ padding: 5, width:'15vh', height:'15vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
           src={phoneSearch} 
           alt="icon3" 
           onMouseEnter={() => slideToIndex(2)}
@@ -385,7 +393,7 @@ let screen;
             src={responsive} 
             alt="feature 2"
             /> 
-              <div style={{fontSize: 16, position:'absolute', marginTop: '200px', padding: '5px', color: 'rgb(0, 62, 128)'}}>
+              <div style={{fontSize: '.9em', position:'absolute', marginTop: '200px', padding: '5px', color: 'rgb(0, 62, 128)'}}>
               Responsive design adapts to various screen sizes
             </div>
           </>
@@ -395,22 +403,27 @@ let screen;
           style={{marginLeft: '10px', width: '200px', height:'260px', border:'1px solid rgb(0,0,0,0.3)', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} 
           src={phoneEdit} 
           alt="feature 2" />
-         <div style={{fontSize: 16, flexWrap: 'wrap', maxWidth: '150px', padding: '20px', marginLeft: '-10px', marginTop: '175px', color: 'rgb(0, 62, 128)'}}>
-              &#8592; Easily update a contact's name and number.
+          <div style={{ dispplay: 'flex', flexDirection:'column' }}>
+            <div style={{fontSize: '.9em', flexWrap: 'wrap', maxWidth: '150px', padding: '20px', marginLeft: '0vh', marginTop: '10vh', color: 'rgb(0, 62, 128)'}}>
+                Easily update a contact's name and number.
+              </div>
+            <div style={{fontSize: '.9em', flexWrap: 'wrap', maxWidth: '150px', padding: '20px', marginLeft: '-1vh', marginTop: '-5vh', color: 'rgb(0, 62, 128)'}}>
+                &#8592;
+              </div>
           </div>
+          
         </SwiperSlide>
         <SwiperSlide > 
           <img style={{marginLeft: '20px', width:'160px', border:'1px solid rgb(0,0,0,0.3)', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} 
           src={phoneSearch} 
           alt="feature 2" />
-         <div style={{fontSize: 16, flexWrap: 'wrap', height: '150px', padding: '20px', marginLeft: '-10px', marginTop: '-10px', color: 'rgb(0, 62, 128)'}}>
+         <div style={{fontSize: '.9em', flexWrap: 'wrap', height: '150px', padding: '20px', marginLeft: '-10px', marginTop: '-10px', color: 'rgb(0, 62, 128)'}}>
               &#8592; Quickly search for any contact.
           </div>
         </SwiperSlide>
       </Swiper>
     </Container>
   </div>
-    </>
   )
 }
 return (

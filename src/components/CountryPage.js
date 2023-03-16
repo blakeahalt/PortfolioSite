@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState, useEffect} from 'react'
+import WebFont from 'webfontloader';
 import '../App.css';
 import { Parallax } from "react-parallax";
 import Icons from './CountryFeatures.jsx'
@@ -10,13 +11,21 @@ import WorldMap from "../assets/country-background.png"
 
 function CountryPage() {
 
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Poppins']
+      }
+    });
+   }, []);
+  
   let backgroundImage;
   let screen; 
 
   if (window.innerWidth > 1200) {
     backgroundImage = 710
     screen = (
-      <>
+      <div className='font-load'>
        <Nav isWhite={true} />
         <div>
         <Parallax 
@@ -43,42 +52,30 @@ function CountryPage() {
           </div>
         </Parallax>
         <Parallax  >
-        <div style={{ marginTop: '20vh' }}>
-            <div className="boxs-title">
-              <h2 className="blue ">What is it?</h2>
-              <div className="box-con">
-                <div style={{textAlign: 'left', fontSize: '1em', lineHeight: 1.3, color: 'black', marginBottom: '-5vh' }}>
+          <div style={{ marginTop: '5vh'}}>
+            <h2 className="blue ">What is it?</h2>
+              <div className='project-desc'>
                 From the University of Helsinki's Full Stack Open 2022 course this web application fetches and displays country facts and weather forecast from the <a href="https://restcountries.com/" target="_blank" rel="noreferrer"><i>REST Countries</i></a> and <a href="https://openweathermap.org/" target="_blank" rel="noreferrer"><i>Open Weather Map</i></a> API's.
                 </div>
-              </div>
-            </div>
-            <div className="boxs-title">
-              <h2 className="blue">What was it built with?</h2>
-              <div className="box-con">
-              <div style={{textAlign: 'left', fontSize: '1em', lineHeight: 1.3, color: 'black', marginBottom: '-5vh' }}>
+            <h2 className="blue ">What was it built with?</h2>
+              <div className='project-desc'>
                 This web application was built with Javascript as the main programming language. It has a front-end user interface (built with React) and a back-end server (built with Node.js and Express.js) that communicates with an external API (using Axios).
-              </div>
-              </div>
-            </div>
-            <div className="boxs-title">
-              <h2 className="blue">What did I learn?</h2>
-              <div className="box-con">
-                <div style={{textAlign: 'left', fontSize: '1em', lineHeight: 1.3, color: 'black', marginBottom: '-5vh' }}>
-                  I learned how to quickly search for and display country data by applying a filter to state variables set by async requests to an API. I also learned how to implement responsive design with stylized CSS and how to deploy the app to cloud-based platforms, Heroku and Fly.io.
-              </div>
+                </div>
+            <h2 className="blue ">What did I learn?</h2>
+              <div className='project-desc'>
+                I learned how to quickly search for and display country data by applying a filter to state variables set by async requests to an API. I also learned how to implement responsive design with stylized CSS and how to deploy the app to cloud-based platforms, Heroku and Fly.io.
               </div>
             </div>
-          </div>
-        </Parallax>
+          </Parallax>
+        </div>
       </div>
-      </>
     )
   } else if (window.innerWidth > 665) {
     backgroundImage = '100vh'
     screen = (
-      <>
+      <div className='font-load'>
        <Nav isWhite={true} />
-        <div className="container">
+        <div >
         <Parallax 
           bgImage={WorldMap} 
           blur={{ min: -5, max: 5 }}
@@ -103,40 +100,28 @@ function CountryPage() {
           </div>
         </Parallax>
         <Parallax  >
-        <div style={{marginTop:'20vh'}}>
-            <div className="boxs-title">
-              <h2 className="blue ">What is it?</h2>
-              <div className="box-con">
-                <div style={{textAlign: 'left', maxWidth: 750, fontSize: '1.8em', lineHeight: 1.3, color: 'black', marginBottom: '1em' }}>
-                From the University of Helsinki's Full Stack Open 2022 course this web application fetches and displays country facts and weather forecast from the <a href="https://restcountries.com/" target="_blank" rel="noreferrer"><i>REST Countries</i></a> and <a href="https://openweathermap.org/" target="_blank" rel="noreferrer"><i>Open Weather Map</i></a> API's.
-                </div>
+        <div style={{ marginTop: '5vh'}}>
+          <h2 className="blue ">What is it?</h2>
+            <div className='project-desc'>
+              From the University of Helsinki's Full Stack Open 2022 course this web application fetches and displays country facts and weather forecast from the <a href="https://restcountries.com/" target="_blank" rel="noreferrer"><i>REST Countries</i></a> and <a href="https://openweathermap.org/" target="_blank" rel="noreferrer"><i>Open Weather Map</i></a> API's.
               </div>
-            </div>
-            <div className="boxs-title">
-            <h2 className="blue">What was it built with?</h2>
-              <div className="box-con">
-                <div style={{textAlign: 'left', maxWidth: 750, color: 'black',fontSize: '1.8em', lineHeight: 1.3, marginTop:-15, marginBottom: '1em'}}>
-                This web application was built with Javascript as the main programming language. It has a front-end user interface (built with React) and a back-end server (built with Node.js and Express.js) that communicates with an external API (using Axios).
+          <h2 className="blue ">What was it built with?</h2>
+            <div className='project-desc'>
+              This web application was built with Javascript as the main programming language. It has a front-end user interface (built with React) and a back-end server (built with Node.js and Express.js) that communicates with an external API (using Axios).
               </div>
-              </div>
-            </div>
-            <div className="boxs-title">
-              <h2 className="blue">What did I learn?</h2>
-                <div className="box-con">
-                <div style={{textAlign: 'left', fontSize: '1.8em', lineHeight: 1.3, maxWidth: 750, color: 'black' }}>
-                  I learned how to quickly search for and display country data by applying a filter to state variables set by async requests to an API. I also learned how to implement responsive design with stylized CSS and how to deploy the app to cloud-based platforms, Heroku and Fly.io.
-              </div>
-              </div>
+          <h2 className="blue ">What did I learn?</h2>
+            <div className='project-desc'>
+              I learned how to quickly search for and display country data by applying a filter to state variables set by async requests to an API. I also learned how to implement responsive design with stylized CSS and how to deploy the app to cloud-based platforms, Heroku and Fly.io.
             </div>
           </div>
         </Parallax>
         </div>
-      </>
+      </div>
     )
   } else {
     backgroundImage = '100vh'
     screen = (
-      <>
+      <div className='font-load'>
        <Nav isWhite={true} />
         <div >
         <Parallax 
@@ -163,35 +148,23 @@ function CountryPage() {
           </div>
         </Parallax>
         <Parallax  >
-        <div style={{ marginTop: '15vh' }}>
-            <div className="boxs-title">
-              <h2 className="blue ">What is it?</h2>
-              <div className="box-con">
-                <div style={{fontSize: '1.8em', lineHeight: 1.5, textAlign: 'left', maxWidth: 750, color: 'black', marginBottom: '-1vh' }}>
-                From the University of Helsinki's Full Stack Open 2022 course this web application fetches and displays country facts and weather forecast from the <a href="https://restcountries.com/" target="_blank" rel="noreferrer"><i>REST Countries</i></a> and <a href="https://openweathermap.org/" target="_blank" rel="noreferrer"><i>Open Weather Map</i></a> API's.
-                </div>
+        <div style={{ marginTop: '5vh'}}>
+          <h2 className="blue ">What is it?</h2>
+            <div className='project-desc'>
+              From the University of Helsinki's Full Stack Open 2022 course this web application fetches and displays country facts and weather forecast from the <a href="https://restcountries.com/" target="_blank" rel="noreferrer"><i>REST Countries</i></a> and <a href="https://openweathermap.org/" target="_blank" rel="noreferrer"><i>Open Weather Map</i></a> API's.
               </div>
-            </div>
-            <div className="boxs-title">
-              <h2 className="blue">What was it built with?</h2>
-              <div className="box-con">
-                <div style={{fontSize: '1.8em', lineHeight: 1.5, textAlign: 'left', maxWidth: 750, color: 'black', marginBottom: '-1vh' }}>
-                This web application was built with Javascript as the main programming language. It has a front-end user interface (built with React) and a back-end server (built with Node.js and Express.js) that communicates with an external API (using Axios).
+          <h2 className="blue ">What was it built with?</h2>
+            <div className='project-desc'>
+              This web application was built with Javascript as the main programming language. It has a front-end user interface (built with React) and a back-end server (built with Node.js and Express.js) that communicates with an external API (using Axios).
               </div>
-              </div>
-            </div>
-            <div className="boxs-title">
-              <h2 className="blue">What did I learn?</h2>
-              <div className="box-con">
-                <div style={{fontSize: '1.8em', lineHeight: 1.5, textAlign: 'left', maxWidth: 750, color: 'black', marginBottom: '-3vh' }}>
-                  I learned how to quickly search for and display country data by applying a filter to state variables set by async requests to an API. I also learned how to implement responsive design with stylized CSS and how to deploy the app to cloud-based platforms, Heroku and Fly.io.
-              </div>
-              </div>
+          <h2 className="blue ">What is it?</h2>
+            <div className='project-desc'>
+              I learned how to quickly search for and display country data by applying a filter to state variables set by async requests to an API. I also learned how to implement responsive design with stylized CSS and how to deploy the app to cloud-based platforms, Heroku and Fly.io.
             </div>
           </div>
         </Parallax>
       </div>
-      </>
+    </div>
     )
   }
 

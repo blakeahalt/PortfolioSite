@@ -10,30 +10,28 @@ import Escher3 from '../assets/Escher3.png'
 
 const Carousel = lazy(() => import("./Carousel"));
 
-const Section = styled.section`
-width: 100%;
-background-color: ${props => props.theme.text};
-display: flex;
-justify-content: center;
-align-items: center;
-position: relative;
-overflow: hidden;
+// const Section = styled.section`
+// width: 100%;
+// background-color: ${props => props.theme.text};
+// display: flex;
+// justify-content: center;
+// align-items: center;
+// position: relative;
+// overflow: hidden;
 
-@media screen and (max-width: 75em) {
-  width: 100%;
-  background-color: ${props => props.theme.text};
-  display: flex;
-  justify-content: center;
-  min-height: 85rem;
-
-}
-@media screen and (max-width: 42em) {
-  width: auto;
-  height: auto;
-  background-color: ${props => props.theme.text};
-  border: 4px solid black;
-}
-`
+// @media screen and (max-width: 75em) {
+//   width: 100%;
+//   background-color: ${props => props.theme.text};
+//   display: flex;
+//   justify-content: center;
+//   min-height: 85rem;
+  
+// }
+// @media screen and (max-width: 42em) {
+//   height: 25rem;
+//   border: 4px solid black;
+// }
+// `
 
 const Container = styled.div`
 width: 90%;
@@ -45,10 +43,10 @@ align-items: center;
 
 @media screen and (max-width: 75em) {
   width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 85rem;
 }
 @media screen and (max-width: 42em) {
   width: 100%;
@@ -56,14 +54,13 @@ align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: -15vh;
   border: 3px solid pink;
 }
 `
 
 const Box = styled.div`
 width: 50%;
-height: 100%;
+height: auto;
 display: flex;
 flex-direction: column;
 
@@ -71,13 +68,13 @@ flex-direction: column;
 @media screen and (min-width: 1700px) {
   width: 50vw;
   display: flex;
-  height: 100%;
+  height: auto;
   justify-content: center;
 }
   @media screen and (max-width: 75em) {
   width: 70vw;
   display: flex;
-  height: 100%;
+  height: auto;
   justify-content: center;
   
 }
@@ -94,14 +91,16 @@ const Title = styled.h2`
   color: ${(props) => props.theme.body};
   width: 80%;
   align-self: flex-start;
+  text-align:center;
   margin: 0 auto;
 
 @media screen and (max-width: 75em) {
-  font-size: 1.8em;
+  font-size: 1.7em;
   width: 100%;
   text-align:center;
 }
 @media screen and (max-width: 42em) {
+  font-size: 1.5em;
   width: 100%;
   text-align:center;
   margin-top: 0px;
@@ -113,17 +112,18 @@ const SubText = styled.p`
   font-weight:400;
   width: 80%;
   align-self: flex-start;
+  text-align:center;
   margin: 1rem auto;
 
 
   @media screen and (max-width: 75em) {
     width: 100%;
     text-align:center;
-    font-size: 1.5em;
+    font-size: 1em;
 
 }
   @media screen and (max-width: 42em) { 
-    font-size: 1.2em;
+    font-size: 1em;
     width: 95%;
     text-align: center;
     justify-content: center;
@@ -137,9 +137,10 @@ const ButtonContainer = styled.div`
  margin: 1rem auto;
  display: flex;
  align-self: flex-start;
+ justify-content: center;
 
  @media screen and (max-width: 75em) {
-    width: 100%;
+    margin-bottom: 5vh;
 
   a{
     margin: 0 auto;
@@ -147,7 +148,7 @@ const ButtonContainer = styled.div`
   }
 
   @media screen and (max-width: 42em) {
-
+    
   }
 `
 
@@ -163,15 +164,13 @@ const About = () => {
 
   return (
     <div className='spiro-outside-container font-load'>
-    <Section>
-      <Container >
+      <Container className='spiro-bg' >
         <Box> 
             <Suspense fallback={<Loading />}>
             <Carousel /> </Suspense> 
         </Box>
         <Box > 
           <div className='spiro-desc-container' >
-            <img className='spiro-desc-img' src={Escher3}/>
               <Title>
               Spirograph Art
               </Title>
@@ -184,14 +183,13 @@ const About = () => {
               <SubText>
               In other spirograph works, I balance both structure and negative space with color and design. Earth at night works are based on satellite imagery taken from space, while floral works highlight the visual beauty of geometry found in nature.
               </SubText>
+          </div>
               <ButtonContainer>
               <Button text="See More" link='/art/spiro' />
               {/* <Button text="See More" link='http://localhost:3000/art/spiro' /> */}
               </ButtonContainer>
-          </div>
         </Box>
       </Container>
-    </Section>
     </div>
   )
 }

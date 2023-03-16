@@ -38,7 +38,7 @@ position: relative;
 
 
 @media (max-width: 75em) {
-  font-size: 2em
+  font-size: 1.5em
 }
 
 @media (max-width: 42em) {
