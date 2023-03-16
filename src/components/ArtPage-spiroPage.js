@@ -391,11 +391,11 @@ const ProjectCards = () => {
    }, []);
 
   return (
-    <>
+    <div className='font-load'>
     <Nav />
     <Section>
       <Container>
-        <div className='font-load' style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom:'25px', width: 'auto', height: 'auto' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom:'25px', width: 'auto', height: 'auto' }}>
           <MemberComponent images={[Human]} name="Human Hempisphere at Night" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited" />
           <MemberComponent images={[NorthAmerica]} name="North America at Night" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited"/>
           <MemberComponent images={[Korea]} name="Korea at Night" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited"/>
@@ -415,7 +415,7 @@ const ProjectCards = () => {
       </Container>
     </Section>
     <Footer/>
-    </>
+    </div>
   );
 };
 
