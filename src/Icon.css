@@ -210,14 +210,14 @@
 	.icon{
 		display: flex;
 		flex-wrap: wrap;
+		flex-direction: column;
 		justify-content: center;
 		margin-bottom: 3vh;
-		margin: .9vh;
 	}
 	
 	.icon-title{
 		color: rgb(0, 62, 128);
-		font-size: 1em;
+		font-size: .7em;
 		text-align: center;
 		margin-top: 1vh;
 		line-height: 1.2;

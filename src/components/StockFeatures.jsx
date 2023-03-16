@@ -352,7 +352,7 @@ useEffect(() => {
           <div className="icons">
             <div className="icon">
               <img 
-                style={{ padding: 5, width:'15vh', height:'15vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                style={{ display: 'flex', padding: 5, width:'15vh', height:'15vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={quotes} 
                 alt="icon1" 
                 onMouseEnter={() => slideToIndex(0)}
@@ -362,7 +362,7 @@ useEffect(() => {
           </div>
           <div className="icon">
               <img 
-                style={{ padding: 5, width:'15vh', height:'15vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                style={{ display: 'flex', padding: 5, width:'15vh', height:'15vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={transactions} 
                 alt="icon2" 
                 onMouseEnter={() => slideToIndex(1)}
@@ -372,7 +372,7 @@ useEffect(() => {
           </div>
           <div className="icon">
           <img 
-                style={{ padding: 5, width:'15vh', height:'15vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                style={{ display: 'flex', padding: 5, width:'15vh', height:'15vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={buysell} 
                 alt="icon4" 
                 onMouseEnter={() => slideToIndex(2)}

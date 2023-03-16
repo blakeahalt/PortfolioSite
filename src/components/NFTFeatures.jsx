@@ -392,10 +392,10 @@ screen =(
           <div className="icon-title">Secure Passwords</div>
       </div>
     </div>
-    <div style={{ marginTop: '-5vh' }}className="icons">
-      <div className="icon">
+    <div style={{ marginTop: '-5vh' }} className="icons">
+      <div className="icon" style={{ marginLeft: '3vh' }}>
         <img 
-            style={{ padding: 5, width:'15vh', height:'15vh',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
+            style={{ padding: 5, width:'15vh', height:'15vh', marginTop: '2.5vh', marginLeft: '0vh', border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
             src={jwt} 
             alt="icon3" 
             onMouseEnter={() => slideToIndex(2)}
