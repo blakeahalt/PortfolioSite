@@ -65,7 +65,7 @@ const Resume = () => {
         <div className='font-load'>
         <Nav />
         <div className="resume-length">
-            <img src={ResumeImage} width="95%"  alt="Resume"/>
+            <img src={ResumeImage} width="95%"  alt="Resume" style={{ margin: 0 }}/>
         </div>
         <center>
             <button className='resume-button' onClick={onButtonClick}>

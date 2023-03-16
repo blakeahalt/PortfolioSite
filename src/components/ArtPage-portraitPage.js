@@ -240,8 +240,8 @@ const Description = styled.p`
   flex-wrap: wrap;
   justify-content: center;
   width: auto;
-  padding: 1vh;
-  margin-bottom:10px;
+  padding-left: 1vh;
+  padding-right: 1vh;
   font-size: 1em;
 }
 `
@@ -294,20 +294,20 @@ background-color: rgb(230,230,230, 0.5);
 color: rgb(0, 62, 128);
 font-weight:400;
 border: 1px solid rgb(0, 62, 128);
-border-radius: 10px;
+border-radius: 25px;
 padding: 6px;
 margin: 2px;
 
 @media screen and (max-width: 75em) {
   justify-content: center;
   align-items: center;
-  border: 1px solid rgb(0,0,0,0.3);  border-radius: 10px;
+  border: 1px solid rgb(0,0,0,0.3);  border-radius: 25px;
   width: auto;
   margin: 2px;
 }
 @media screen and (max-width: 42em) {
   
-  border: 1px solid rgb(0,0,0,0.3);  border-radius: 10px;
+  border: 1px solid rgb(0,0,0,0.3);  border-radius: 25px;
 }
 `
 const MemberComponent = ({ name='', desc='', desc2='', images}) => {

@@ -327,6 +327,8 @@ li {
   }
 .font-load{
   font-family: 'Poppins';
+  position: relative;
+  z-index: 2;
 }
 .footer-container {
   position: relative;
@@ -846,6 +848,7 @@ h4.introduction a {
   color: rgb(0, 62, 128);
   font-size: 1.5em;
   justify-content: center;
+  text-align: center;
   }
 .artpage {
   height: auto;
@@ -1196,6 +1199,7 @@ h4.introduction a {
   color: rgb(0, 62, 128);
   font-size: 1.5em;
   text-align: left;
+  margin: 0 auto;
   }
 .blue {
   color: rgb(0, 62, 128);
@@ -1285,6 +1289,9 @@ h4.introduction a {
   font-weight: 500;
   color: rgb(0,0,0,0.6);
   }
+.home-button{
+  z-index: 2;
+  }
 .introduction{
   margin-left: 3vh;
   margin-right: 3vh;
@@ -1303,6 +1310,9 @@ h4.introduction a {
   color: rgb(0, 62, 128);
   visibility: visible;
   }
+.nav{
+  z-index: 2;
+}
 .nav-titles {
   display: flex;
   flex-direction: column;
@@ -1339,6 +1349,8 @@ h4.introduction a {
 }
 .portrait-name-desc-container{
   height: auto;
+  padding: .5vh;
+  border-radius: 25px;
   }
 .portrait-outside-container{
   display: flex;
@@ -1395,10 +1407,12 @@ h4.introduction a {
 }
 
 .resume-length{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
+  padding: 0;
+  margin: 0;
+  max-height: 90vh;
+  margin-top: -13vh;
+  margin-bottom: -10vh;
+  z-index: -1;
   }
 .resume-button{
   margin-top: -4vh;
