@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import WebFont from 'webfontloader';
 
 
 
@@ -12,7 +13,7 @@ border: 1px solid rgb(0, 62, 128,0.4);
 box-shadow: 5px 7px 15px 2px rgba(0,0,0,0.3);
 
 font-size: ${props => props.fontSize};
-padding: 0.9rem 2.3rem;
+padding: 1rem 1.5rem;
 border-radius: 50px;
 cursor: pointer;
 transition: all 0.2s ease;
@@ -47,10 +48,19 @@ font-size: 1em
 `
 
 const Button = ({text, link, fontSize}) => {
+
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Poppins']
+      }
+    });
+   }, []);
+
   return (
     
 <a href={link} aria-label={text} rel="noreferrer" style={{fontSize: fontSize}}>
-<Btn fontSize={fontSize}>
+<Btn fontSize={fontSize} className='font-load'>
 {text}
 </Btn>
 </a>

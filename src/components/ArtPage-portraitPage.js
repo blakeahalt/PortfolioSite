@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
+import WebFont from 'webfontloader';
 import ImageGallery from 'react-image-gallery'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css';
@@ -378,12 +379,21 @@ const MemberComponent = ({ name='', desc='', desc2='', images}) => {
     
 
 const ProjectCards = () => {
+
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Poppins']
+      }
+    });
+   }, []);
+
   return (
     <>
     <Nav />
     <Section >
       <Container>
-        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom:'25px' }}>
+        <div className='font-load' style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom:'25px' }}>
           <MemberComponent images={[MilesDavis]} name="Miles Davis" desc="Mixed Media: Pencil on Paper, Digitally Edited."/>
           <MemberComponent images={[Thelonius]} name="Thelonius Monk" desc="Mixed Media: Pencil on Paper, Digitally Edited."/>
           <MemberComponent images={[Mingus]} name="Charles Mingus" desc="Mixed Media: Pencil on Paper, Digitally Edited."/>

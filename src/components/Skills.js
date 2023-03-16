@@ -124,7 +124,7 @@ const Icons = () => {
   if (window.innerWidth > 1200) {
     screen = (
        <SkillsFeatures>
-        <h1 style={{ fontSize: '3em', color: 'rgb(0, 62, 128)' }} >Skills</h1>
+        <h1 style={{ fontSize: '2em', color: 'rgb(0, 62, 128)' }} >Skills</h1>
           <SkillsItem>
             <div className="skills-title">Frontend Development</div>
                 <MemberComponent skills={["Javascript","React","HTML5","CSS","Bootstrap","React Router","Styled Components"]} />

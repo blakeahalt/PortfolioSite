@@ -34,60 +34,55 @@ function Nav({ isWhite }) {
           <div
             className={`nav-titles ${showNav ? 'show' : 'hide'}`}
             style={{
+              fontSize: '2em',
               backgroundColor: 'rgb(0,0,0,0.7)',
               height: '50vh',
-              width: '75%',
+              width: '70%',
               borderRadius: '25px 0 0 25px',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'flex-start',
-              paddingTop: '3vh',
               marginTop: '60px',
               top: 0,
               transition: 'right 0.5s ease-in-out',
-              zIndex: 1,
+              zIndex: 2,
               transform: showNav ? 'translateX(80%)' : 'translateX(0)',
             }}
           >
-                <div style={{marginBottom: '10px', fontSize: '1.4em'}}>
+                <div className="navbar-title">
                   <a
-                    className="navbar-title"
                     href="/about"
                     onClick={handleNavTitleClick}
                   >
                     About
                   </a>
                 </div>
-                <div style={{marginBottom: '10px', fontSize: '1.4em'}}>
+                <div className="navbar-title">
                   <a
-                    className="navbar-title"
                     href="/projects"
                     onClick={handleNavTitleClick}
                   >
                     Projects
                   </a>
                 </div>
-                <div style={{marginBottom: '10px', fontSize: '1.4em'}}>
+                <div className="navbar-title">
                   <a
-                    className="navbar-title"
                     href="/art"
                     onClick={handleNavTitleClick}
                   >
                     Art
                   </a>
                 </div>
-                <div style={{marginBottom: '10px', fontSize: '1.4em'}}>
+                <div className="navbar-title">
                   <a
-                    className="navbar-title"
                     href="/blog"
                     onClick={handleNavTitleClick}
                   >
                     Blog
                   </a>
                 </div>
-                <div style={{marginBottom: '10px', fontSize: '1.4em'}}>
+                <div className="navbar-title">
                   <a
-                    className="navbar-title"
                     href="/resume"
                     onClick={handleNavTitleClick}
                   >

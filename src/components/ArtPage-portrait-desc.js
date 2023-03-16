@@ -1,4 +1,5 @@
-import React, { lazy, Suspense } from 'react'
+import React, { lazy, Suspense, useEffect } from 'react'
+import WebFont from 'webfontloader';
 import styled, { ThemeProvider } from 'styled-components'
 // import Carousel from '../Carousel'
 import Button from './Button'
@@ -149,8 +150,17 @@ const ButtonContainer = styled.div`
 `
 
 const About = () => {
+
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Poppins']
+      }
+    });
+   }, []);
+
   return (
-    <div className='portrait-outside-container'>
+    <div className='portrait-outside-container font-load'>
     <Section id="about">
       <Container>
         <Box > 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import WebFont from 'webfontloader';
 import '../App2.css';
 import { Parallax } from "react-parallax";
 import styled from 'styled-components';
@@ -33,8 +34,8 @@ import phoneImg from '../assets/phone-background-home.png'
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  max-width: 100%;
-  height: 75vh; 
+  width: 100%;
+  height: 80vh; 
   align-items: center;
 
   .swiper {
@@ -52,7 +53,7 @@ const Container = styled.div`
     text-align: right;
     opacity: 0.5;
     font-size: 1.2em;
-    margin-bottom: -5vh;
+    margin-bottom: -6vh;
   }
 
   .swiper-slide {
@@ -71,54 +72,42 @@ const Container = styled.div`
 
     }
   }
-
-  .swiper-button-next {
-    color: ${(props) => props.theme.text};
-    right: 0;
-    width: clamp(5vw, 4rem, 8rem); /* Use clamp to limit the width based on viewport */
-    top: 60%;
-    right: clamp(-25vw, -20vw, -10vw); /* Use clamp to limit the position based on viewport */
-    background-image: url(${Arrow});
-    background-position: center;
-    background-size: cover;
-
-    &:after {
-      display: none;
-    }
-
-    @media (max-width: 75em) {
-      width: clamp(3vw, 3rem, 6rem); /* Use clamp to limit the width based on viewport */
-      right: clamp(-20vw, -15vw, -5vw); /* Use clamp to limit the position based on viewport */
-    }
-    @media (max-width: 42em) {
-      width: clamp(2vw, 2rem, 4rem); /* Use clamp to limit the width based on viewport */
-      right: clamp(-15vw, -10vw, 0); /* Use clamp to limit the position based on viewport */
-    }
-  }
-
   .swiper-button-prev {
-    color: ${(props) => props.theme.text};
-    left: clamp(-25vw, -20vw, -10vw); /* Use clamp to limit the position based on viewport */
-    top: 60%;
-    width: clamp(5vw, 4rem, 8rem); /* Use clamp to limit the width based on viewport */
-    transform: rotate(180deg);
-    background-image: url(${Arrow});
-    background-position: center;
-    background-size: cover;
-
-    &:after {
-      display: none;
-    }
-
-    @media (max-width: 75em) {
-      width: clamp(3vw, 3rem, 6rem); /* Use clamp to limit the width based on viewport */
-      left: clamp(-20vw, -15vw, -5vw); /* Use clamp to limit the position based on viewport */
-    }
-    @media (max-width: 42em) {
-      width: clamp(2vw, 2rem, 4rem)
-    }
+    display: none;
   }
-  `
+  .swiper-button-next {
+    display: none;
+  }
+
+  // .swiper-button-next {
+  //   color: ${(props) => props.theme.text};
+  //   right: 0;
+  //   width: clamp(5vw, 4rem, 8rem); 
+  //   top: 65%;
+  //   right: -1vh;
+  //   background-image: url(${Arrow});
+  //   background-position: center;
+  //   background-size: cover;
+
+  //   &:after {
+  //     display: none;
+  //   }
+  // }
+
+  // .swiper-button-prev {
+  //   color: ${(props) => props.theme.text};
+  //   left: -3vh;
+  //   top: 65%;
+  //   width: clamp(5vw, 4rem, 8rem); 
+  //   transform: rotate(180deg);
+  //   background-image: url(${Arrow});
+  //   background-position: center;
+  //   background-size: cover;
+
+  //   &:after {
+  //     display: none;
+  //   }
+`
 
 const ContainerTitle = styled.div`
   margin-top: 3vh;
@@ -133,17 +122,16 @@ const ContainerTitle = styled.div`
 
 const ImageContainer = styled.div`
   display: flex;
-  align-items: center;
+  height: 30vh;
+  width: 90%;
   justify-content: center;
+  margin-top: -1vh;
+  overflow: hidden;
   box-shadow: 7px 7px 15px -3px rgba(0,0,0,0.3);
   background-color: rgb(255,255,255);
-  border: 1px solid rgba(0,0,0,0.3);
-  margin-bottom: -2px;
+  border: 1px solid rgba(0,0,0);
   border-radius: 25px;
   cursor: pointer;
-  position: relative;
-  top: 1vh;
-  overflow: hidden;
 
   img{
     width: 100%;
@@ -152,117 +140,40 @@ const ImageContainer = styled.div`
     border-radius: 25px;
     object-fit: contain;
   }
-
-  @media screen and (max-width: 75em) {
-    margin: .5vh;
-    padding: 0vh;
-    height: auto;
-
-  }
-
-  @media screen and (max-width: 42em) {
-    height: auto;
-    max-height: 25vh;
-    width: 90%;
-    margin: 0 auto;
-  }
-
-    img{
-      width: 100%;
-      transition: transform 0.3s ease-in-out;
-      border-radius: 25px;
-      object-fit: contain;
-    }
-
-  }
 `;
 
 
 const Name = styled.h2`
-  font-size: clamp(1.2em, 5vw, 1.5em);
+  font-size: 1.3em;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
-  margin-bottom: 25px;
   color: rgb(0, 62, 128);
-
-  @media screen and (max-width: 75em) {
-    margin: 1vh;
-    width: 300px;
-  }
-  @media screen and (max-width: 42em) {
-    width: auto;
-    margin-top: 2vh;
-  }
+  margin-bottom: -2vh;
 `;
 
 const Description = styled.p`
-  font-size: 2vw
+  font-size: .9em;
   text-align: center;
   display: flex;
   justify-content: center;
   color: rgb(0, 62, 128);
-  margin-top: -20px;
-  
-  @media screen and (max-width: 75em) {
-    font-size: 1.2vw
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: auto;
-    margin: 5px;
-    padding: 5px;
-    height: 70px;
-  }
-  @media screen and (max-width: 42em) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: auto;
-    margin: 3vw;
-    margin-top: -1vh;
-    margin-bottom: em;
-    font-size: 0.85em;
-  }
+  margin: 2vh;
 `;
 
 const SkillsContainer = styled.div`
-  width: 95%;
-  font-size: clamp(0.9em, 3vw, 1.2em);
+  width: 85%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 145px;
-  padding: 7px;
-  padding-top: 10px;
-  margin: 2px;
+  height: auto;
+  padding: 1vh;
   flex-wrap: wrap;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  border-radius: 10px;
+  margin-top: 1vh;
+  margin-bottom: -1vh;
+  border-radius: 25px;
   box-shadow: 3px 7px 15px 2px rgba(0, 0, 0, 0.3);
   background-color: rgb(255, 255, 255, 0.4);
-
-  @media screen and (max-width: 75em) {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 125px;
-    align-items: center;
-    padding-bottom: 10px;
-  }
-  @media screen and (max-width: 42em) {
-    display: flex;
-    justify-content: center;
-    height: 20%;
-    width: 85%;
-    margin: 0 auto;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    align-content: center;
-  }
 `;
 
 const Skills = styled.h2`
@@ -276,31 +187,11 @@ const Skills = styled.h2`
   font-weight: 400;
   border: 1px solid rgb(0, 62, 128);
   border-radius: 10px;
-  padding: clamp(0.5rem, 2vw, 1rem);
-  margin: clamp(0.25rem, 1vw, 0.5rem);
-  font-size: clamp(0.9rem, 1vw, 1.1rem);
-
-  @media screen and (max-width: 75em) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgb(0, 62, 128, 0.7);
-    border-radius: 10px;
-    margin: clamp(0.25rem, 1vw, 0.5rem);
-    height: clamp(1.5rem, 4vw, 2rem);
-    font-size: clamp(0.7rem, 0.8vw, 0.9rem);
-  }
-
-  @media screen and (max-width: 42em) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgb(0, 62, 128, 0.7);
-    border-radius: 10px;
-    margin: 0.1rem;
-    font-size: 0.8rem;
-    height: 1.8vh;
-  }
+  margin: .2vh;
+  padding: 1vh;
+  padding-top: .2vh;
+  padding-bottom: .2vh;
+  font-size: .9em;
 `;
 
 const MemberComponent = ({img, name='', desc='',skills=[]}) => {
@@ -331,6 +222,14 @@ function Home() {
   const [currentRow, setCurrentRow] = useState(0);
   const [hover, setHover] = useState(false);
 
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Poppins']
+      }
+    });
+   }, []);
+
   let screen;
 
 if (window.innerWidth > 1200) {
@@ -338,13 +237,13 @@ if (window.innerWidth > 1200) {
     <>
     <div >
     <Nav />
-      <div className="container">
+      <div className="container font-load">
         <Parallax
           blur={{ min: -5, max: 5 }}
           bgImageClassName="opaque-image" 
           strength={300} 
           >
-            <div >
+            <div className="boxs-header">
               <Bounce >
               <img src={ResumePic} width='17%' alt='Resume Pic' style={{ borderRadius: '275px', marginTop: '5vh', maxWidth: '350px' }} onLoad={() => {
                 const hiddenDivs = document.querySelectorAll('.hidden');
@@ -539,7 +438,7 @@ if (window.innerWidth > 1200) {
 } else if (window.innerWidth > 665) {
   screen = (
     <>
-    <div >
+    <div className='font-load'>
     <Nav />
       <div className="container">
         <Parallax
@@ -547,9 +446,9 @@ if (window.innerWidth > 1200) {
           bgImageClassName="opaque-image" 
           strength={300} 
           >
-          <div >
+            <div className="boxs-header">
               <Bounce >
-              <img src={ResumePic} width='17%' alt='Resume Pic' style={{ borderRadius: '275px', marginTop: '5vh', maxWidth: '350px' }} onLoad={() => {
+              <img src={ResumePic} width='30%' alt='Resume Pic' style={{ borderRadius: '275px', marginTop: '5vh' }} onLoad={() => {
                 const hiddenDivs = document.querySelectorAll('.hidden');
                 hiddenDivs.forEach((div) => {
                   div.classList.remove('hidden');
@@ -572,7 +471,7 @@ if (window.innerWidth > 1200) {
       </Parallax>
     </div>
     </div>
-    <Parallax>
+    <Parallax className='font-load'>
         <div className='about-outside-container2'>
           <div className='about-dev-container2'>
           <Slide triggerOnce direction='down' delay={150} >
@@ -585,12 +484,17 @@ if (window.innerWidth > 1200) {
                 </Slide>
                 <Slide direction='up' delay={200} >
                   <h4 className="dev-introduction2-2">
-                  I bring ideas to life
+                  I bring ideas to life with
                   </h4>
                 </Slide>
-                <Slide direction='up' delay={250} >
+                <Slide direction='up' delay={300} >
                   <h4 className="dev-introduction3-2">
-                    with clean, intuitive, and thoughtful design.
+                    clean, intuitive, and
+                  </h4>
+                </Slide>
+                <Slide direction='up' delay={350} >
+                  <h4 className="dev-introduction3-2">
+                    thoughtful design.
                   </h4>
                 </Slide>
               </div>
@@ -640,9 +544,14 @@ if (window.innerWidth > 1200) {
                   I convey information 
                   </h4>
                 </Slide>
-                <Slide direction='up' delay={450}>
+                <Slide direction='up' delay={500}>
                   <h4 className="dev-introduction2-2">
-                    using clear and concise methods.
+                    using clear and concise 
+                  </h4>
+                </Slide>
+                <Slide direction='up' delay={550}>
+                  <h4 className="dev-introduction2-2">
+                    methods.
                   </h4>
                 </Slide>
               </div>
@@ -691,9 +600,14 @@ if (window.innerWidth > 1200) {
                   I explore visual narratives
                   </h4>
                 </Slide>
-                <Slide direction='up' delay={550}>
+                <Slide direction='up' delay={600}>
                   <h4 className="dev-introduction2-2">
-                  within the aesthetic of mathematics.
+                  within the aesthetic of
+                  </h4>
+                </Slide>
+                <Slide direction='up' delay={650}>
+                  <h4 className="dev-introduction2-2">
+                  mathematics.
                   </h4>
                 </Slide>
               </div>
@@ -734,7 +648,7 @@ if (window.innerWidth > 1200) {
   );
 } else {
   screen = (
-    <div >
+    <div className='font-load'>
       <Nav />
         <div className="container">
           <Parallax
@@ -745,7 +659,7 @@ if (window.innerWidth > 1200) {
             <div >
               <div className="boxs-header">
                 <Bounce >
-                <img src={ResumePic} width='40%' alt='Resume Pic' style={{ borderRadius: '200px', marginTop: '4vh' }} onLoad={() => {
+                <img src={ResumePic} width='45%' alt='Resume Pic' style={{ borderRadius: '200px', marginTop: '4vh' }} onLoad={() => {
                   const hiddenDivs = document.querySelectorAll('.hidden');
                   hiddenDivs.forEach((div) => {
                     div.classList.remove('hidden');
@@ -903,7 +817,7 @@ if (window.innerWidth > 1200) {
       <div>
         <div className='projects-outside-container2' >
           <ContainerTitle>
-            Projects
+            PROJECTS
           </ContainerTitle> 
           <Container >
             <Swiper
@@ -927,19 +841,19 @@ if (window.innerWidth > 1200) {
                 
               <SwiperSlide > 
                 <a href="/nftpage" >
-                  <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks the top sales of various NFT marketplaces." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
+                  <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that implements various APIs to track top sales from NFT marketplaces." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2"]} /></a>
               </SwiperSlide>
               <SwiperSlide>  
                 <a href="/stockpage">
-                  <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio that stores user transactions with real-time stock quotes." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
+                  <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio application that stores user transactions with real-time financial data." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
               </SwiperSlide>
               <SwiperSlide>  
                 <a href="/countrypage">
-                  <MemberComponent img={countryImg}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
+                  <MemberComponent img={countryImg}  name="Country / Weather App" desc="A full stack React app that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
               </SwiperSlide>
               <SwiperSlide>  
                 <a href="/phonebookpage">
-                  <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A CRUD phonebook feature that manages a contact list." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
+                  <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A full stack React app that implements CRUD methods to manage a phonebook contacts list." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
               </SwiperSlide>
             </Swiper>
           </Container>

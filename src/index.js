@@ -18,10 +18,11 @@
 
 // scp -r ~/Documents/GitHub/PortfolioSite/build/* root@82.180.136.248:/var/www/html
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+
 
 ReactDOM.render(
     <React.StrictMode>

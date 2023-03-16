@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import WebFont from 'webfontloader';
 import ImageGallery from 'react-image-gallery'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css';
@@ -142,6 +143,7 @@ background-color: rgb(204,145,29,0.1);
   flex-wrap: wrap;
   justify-content: center;
   margin-left: auto;
+  align-items: center;
   margin-right: auto;
   height: 475px;
   margin: 10px;
@@ -152,7 +154,7 @@ background-color: rgb(204,145,29,0.1);
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  height: 445px;
+  height: auto;
   }
 `
 
@@ -197,7 +199,7 @@ img{
 }
 
 @media screen and (max-width: 42em) {
-  margin: 7px;
+  margin-top: 2vh;
   width: 300px;
   height: 300px;
 }
@@ -220,11 +222,8 @@ color: rgb(0, 62, 128);
 }
 @media screen and (max-width: 42em) {
   font-size: 1.2em;
-  margin: 7px;
-  width: 300px;
   text-align: center;
   justify-content: center;
-  margin-top: -10px;
 }
 
 `
@@ -249,11 +248,6 @@ const Description = styled.p`
   display: flex ;
   flex-wrap: wrap;
   justify-content: center;
-  width: auto;
-  margin: 17px;
-  height: 1em;
-  margin-top:0px;
-  margin-bottom:10px;
   font-size: 1em;
 }
 `
@@ -388,12 +382,21 @@ const MemberComponent = ({img, name='', desc='', desc2='', images}) => {
   
 
 const ProjectCards = () => {
+
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Poppins']
+      }
+    });
+   }, []);
+
   return (
     <>
     <Nav />
     <Section>
       <Container>
-        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom:'25px', width: 'auto', height: 'auto' }}>
+        <div className='font-load' style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom:'25px', width: 'auto', height: 'auto' }}>
           <MemberComponent images={[Human]} name="Human Hempisphere at Night" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited" />
           <MemberComponent images={[NorthAmerica]} name="North America at Night" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited"/>
           <MemberComponent images={[Korea]} name="Korea at Night" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited"/>

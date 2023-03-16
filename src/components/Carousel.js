@@ -44,7 +44,7 @@ margin: 2vh;
     display: flex;
     justify-content: center;
     height: auto;
-    margin-top: 10vh;
+    border: 3px solid red;
 }
 
 .swiper{
@@ -60,6 +60,7 @@ margin: 2vh;
         width: 100%;
         height: auto;
         margin-top: -10vh;
+        border: 3px solid green;
     }
     @media screen and (max-width: 25em) {
         width: 100%;

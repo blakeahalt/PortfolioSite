@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 
+import WebFont from 'webfontloader';
 import '../App2.css';
 import { Parallax } from "react-parallax";
 import Icons from './Skills.js'
@@ -15,6 +16,14 @@ import StandArt5 from "../assets/Stand_Art5.jpg"
 
 function About() {
   let screen;
+  
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Poppins']
+      }
+    });
+   }, []);
 
 if (window.innerWidth > 1700) {
   screen = (
@@ -83,7 +92,7 @@ if (window.innerWidth > 1700) {
 }
 else if (window.innerWidth > 1200) {
   screen = (
-<div className='about-page-height'>
+<div className='about-page-height font-load'>
   <Nav />
   <div>
     <Parallax 
@@ -91,25 +100,25 @@ else if (window.innerWidth > 1200) {
       blur={{ min: -10, max: 10 }}
       bgImageClassName="opaque-image"
       strength={300} 
-      style={{ height: '47rem', marginBottom: '5rem' }}
+      style={{ height: '30rem', marginBottom: '1rem' }}
     >
       <div></div>
     </Parallax>
     <Parallax >
-      <div style={{ fontSize: '1em', margin: '2vw' }}>
-              <h2 style={{ marginBottom: '5vh', marginLeft: '5vw', color: 'rgb(0, 62, 128)', fontSize: '2em' }}>About me:</h2>
-              <div className="box-con">
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
+      <div >
+        <h2 style={{ marginBottom: '1rem', fontSize: '1.5em', marginLeft: '3vh' }}>About me:</h2>
+          <div className="about-me-container">
+             <div className="about-me-div">
               I developed a deeper interest in the tech industry and started learning Python and Javascript when I returned to the United States in 2017.  I initially got involved by volunteering at various tech conferences held throughout Los Angeles like the International Conference for Machine Learning (ICML), Research Methods and Data Science (RMDS), and DataConLA.
             </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
+            <div className="about-me-div">
               Returning to the United States in 2017, I taught Kindergarten at a private school in Pacific Palisades, continuing a teaching career of nearly a decade where I taught English and trained teachers in Thailand and South Korea. In addition to all of the skills I gained from teaching, I also gained leadership and management experience where I was responsible for new teacher training, ongoing teacher development, leading team meetings, and building year long curriculums.
 
             </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
+            <div className="about-me-div">
               In the past year, I’ve built and deployed four full stack applications by completing Harvard’s CS50: Introduction to Computer Science course through EdX and taking courses like the University of Helsinki’s Full Stack Open, which focuses on building with React, NodeJS and MongoDB. The full stack applications I’ve built include:
             </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', marginLeft: '-5vw', color: 'black', margin: '2vh' }}>
+            <div style={{marginLeft: '-12vh', marginRight: '2vh', marginBottom: '1vh', fontSize: '.9em' }}>
                 <li>
                 A simple app that implements basic CRUD methods to manage a phonebook contacts list.
                 </li>
@@ -123,13 +132,13 @@ else if (window.innerWidth > 1200) {
                 And my own personal project that implements several APIs to track the sales of different NFT marketplaces.
                 </li>
             </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
+            <div className="about-me-div">
               I’ve also built this portfolio site to showcase all of these projects. It has information about what they are, what they were built with, what I learned exactly, demos for each of the applications and access to the GitHub source code. It also shows some of the artwork I like to create and a blog with different Leet Code solutions that I walk through with visual guides that I’ve created.
             </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
+            <div className="about-me-div">
               I enjoy the process of learning, the challenges of building and solving problems for both the frontend and backend, and finding positive and impactful ways to contribute to a team. In my free time, I also like to make art and play golf.
             </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
+            <div className="about-me-div">
               Be sure to see the full stack applications I've built in the Projects section and check out my artwork and blog posts!
             </div>
           </div>
@@ -147,7 +156,7 @@ else if (window.innerWidth > 1200) {
 
 else if (window.innerWidth > 665) {
   screen = (
-<div className='about-page-height'>
+<div className='about-page-height font-load'>
       <Nav />
         <div  >
         <Parallax 
@@ -155,25 +164,23 @@ else if (window.innerWidth > 665) {
           blur={{ min: -10, max: 10 }}
           bgImageClassName="opaque-image"
           strength={300} 
-          style={{ height: '45rem' }}
+          style={{ height: '40rem', marginBottom: '1rem' }}
           >
         </Parallax>
         <Parallax >
-          <div style={{ fontSize: '1em', margin: '2vw' }}>
-              <h2 style={{ marginBottom: '5vh', color: 'rgb(0, 62, 128)', fontSize: '2em' }}>About me:</h2>
-          </div>
-          <div className="box-con">
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
+          <h2 style={{ marginBottom: '1rem', fontSize: '1.5em', marginLeft: '3vh' }}>About me:</h2>
+            <div className="about-me-container">
+             <div className="about-me-div">
               I developed a deeper interest in the tech industry and started learning Python and Javascript when I returned to the United States in 2017.  I initially got involved by volunteering at various tech conferences held throughout Los Angeles like the International Conference for Machine Learning (ICML), Research Methods and Data Science (RMDS), and DataConLA.
             </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
+             <div className="about-me-div">
               Returning to the United States in 2017, I taught Kindergarten at a private school in Pacific Palisades, continuing a teaching career of nearly a decade where I taught English and trained teachers in Thailand and South Korea. In addition to all of the skills I gained from teaching, I also gained leadership and management experience where I was responsible for new teacher training, ongoing teacher development, leading team meetings, and building year long curriculums.
 
             </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
+             <div className="about-me-div">
               In the past year, I’ve built and deployed four full stack applications by completing Harvard’s CS50: Introduction to Computer Science course through EdX and taking courses like the University of Helsinki’s Full Stack Open, which focuses on building with React, NodeJS and MongoDB. The full stack applications I’ve built include:
             </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', marginLeft: '-5vw', color: 'black', margin: '2vh' }}>
+            <div style={{marginLeft: '-4vh', marginRight: '2vh', fontSize: '.9em' }}>
                 <li>
                 A simple app that implements basic CRUD methods to manage a phonebook contacts list.
                 </li>
@@ -187,13 +194,13 @@ else if (window.innerWidth > 665) {
                 And my own personal project that implements several APIs to track the sales of different NFT marketplaces.
                 </li>
             </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
+             <div className="about-me-div">
               I’ve also built this portfolio site to showcase all of these projects. It has information about what they are, what they were built with, what I learned exactly, demos for each of the applications and access to the GitHub source code. It also shows some of the artwork I like to create and a blog with different Leet Code solutions that I walk through with visual guides that I’ve created.
             </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
+             <div className="about-me-div">
               I enjoy the process of learning, the challenges of building and solving problems for both the frontend and backend, and finding positive and impactful ways to contribute to a team. In my free time, I also like to make art and play golf.
             </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
+             <div className="about-me-div">
               Be sure to see the full stack applications I've built in the Projects section and check out my artwork and blog posts!
             </div>
           </div>
@@ -213,7 +220,7 @@ else if (window.innerWidth > 665) {
 
 else {
   screen = (
-  <div className='about-page-height'>
+  <div className='about-page-height font-load'>
       <Nav />
         <div >
         <Parallax 
@@ -221,46 +228,46 @@ else {
           blur={{ min: -10, max: 10 }}
           bgImageClassName="opaque-image"
           strength={300}
-          style={{ height: '47rem', marginBottom: '7rem' }}
+          style={{ height: '20rem', marginBottom: '1rem' }}
           >
         </Parallax>
         <Parallax  >
-        <div style={{ fontSize: '1em', margin: '2vw' }}>
-              <h2 style={{ marginBottom: '5vh', color: 'rgb(0, 62, 128)', fontSize: '1.3em' }}>About me:</h2>
-              <div className="box-con">
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
-              I developed a deeper interest in the tech industry and started learning Python and Javascript when I returned to the United States in 2017.  I initially got involved by volunteering at various tech conferences held throughout Los Angeles like the International Conference for Machine Learning (ICML), Research Methods and Data Science (RMDS), and DataConLA.
-            </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
-              Returning to the United States in 2017, I taught Kindergarten at a private school in Pacific Palisades, continuing a teaching career of nearly a decade where I taught English and trained teachers in Thailand and South Korea. In addition to all of the skills I gained from teaching, I also gained leadership and management experience where I was responsible for new teacher training, ongoing teacher development, leading team meetings, and building year long curriculums.
+        <div >
+          <h2 style={{ marginBottom: '1rem', fontSize: '1.3em', marginLeft: '3vh' }}>About me:</h2>
+            <div className="about-me-container">
+              <div className="about-me-div">
+                I developed a deeper interest in the tech industry and started learning Python and Javascript when I returned to the United States in 2017.  I initially got involved by volunteering at various tech conferences held throughout Los Angeles like the International Conference for Machine Learning (ICML), Research Methods and Data Science (RMDS), and DataConLA.
+              </div>
+              <div className="about-me-div">
+                Returning to the United States in 2017, I taught Kindergarten at a private school in Pacific Palisades, continuing a teaching career of nearly a decade where I taught English and trained teachers in Thailand and South Korea. In addition to all of the skills I gained from teaching, I also gained leadership and management experience where I was responsible for new teacher training, ongoing teacher development, leading team meetings, and building year long curriculums.
 
-            </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
-              In the past year, I’ve built and deployed four full stack applications by completing Harvard’s CS50: Introduction to Computer Science course through EdX and taking courses like the University of Helsinki’s Full Stack Open, which focuses on building with React, NodeJS and MongoDB. The full stack applications I’ve built include:
-            </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', marginLeft: '-5vw', color: 'black', margin: '2vh' }}>
-                <li>
-                A simple app that implements basic CRUD methods to manage a phonebook contacts list.
-                </li>
-                <li>
-                Another simple app that implements two different APIs to display country facts and a 3-day weather forecast.
-                </li>
-                <li>
-                Harvard CS50’s final project was a stock portfolio manager that was built with Python and flask.
-                </li>
-                <li>
-                And my own personal project that implements several APIs to track the sales of different NFT marketplaces.
-                </li>
-            </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
-              I’ve also built this portfolio site to showcase all of these projects. It has information about what they are, what they were built with, what I learned exactly, demos for each of the applications and access to the GitHub source code. It also shows some of the artwork I like to create and a blog with different Leet Code solutions that I walk through with visual guides that I’ve created.
-            </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
-              I enjoy the process of learning, the challenges of building and solving problems for both the frontend and backend, and finding positive and impactful ways to contribute to a team. In my free time, I also like to make art and play golf.
-            </div>
-            <div style={{textAlign: 'left', maxWidth: '70vw', color: 'black', margin: '2vh' }}>
-              Be sure to see the full stack applications I've built in the Projects section and check out my artwork and blog posts!
-            </div>
+              </div>
+              <div className="about-me-div">
+                In the past year, I’ve built and deployed four full stack applications by completing Harvard’s CS50: Introduction to Computer Science course through EdX and taking courses like the University of Helsinki’s Full Stack Open, which focuses on building with React, NodeJS and MongoDB. The full stack applications I’ve built include:
+              </div>
+              <div className="about-me-div" style={{ marginLeft: '-2vh', fontSize: '.9em' }}>
+                  <li>
+                  A simple app that implements basic CRUD methods to manage a phonebook contacts list.
+                  </li>
+                  <li>
+                  Another simple app that implements two different APIs to display country facts and a 3-day weather forecast.
+                  </li>
+                  <li>
+                  Harvard CS50’s final project was a stock portfolio manager that was built with Python and flask.
+                  </li>
+                  <li>
+                  And my own personal project that implements several APIs to track the sales of different NFT marketplaces.
+                  </li>
+              </div>
+              <div className="about-me-div">
+                I’ve also built this portfolio site to showcase all of these projects. It has information about what they are, what they were built with, what I learned exactly, demos for each of the applications and access to the GitHub source code. It also shows some of the artwork I like to create and a blog with different Leet Code solutions that I walk through with visual guides that I’ve created.
+              </div>
+              <div className="about-me-div">
+                I enjoy the process of learning, the challenges of building and solving problems for both the frontend and backend, and finding positive and impactful ways to contribute to a team. In my free time, I also like to make art and play golf.
+              </div>
+              <div className="about-me-div">
+                Be sure to see the full stack applications I've built in the Projects section and check out my artwork and blog posts!
+              </div>
           </div>
           </div>
         </Parallax>

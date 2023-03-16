@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
+import WebFont from 'webfontloader';
 import styled from 'styled-components';
 
 import nftImg from '../assets/nft-background.png'
@@ -56,6 +56,7 @@ const Item = styled.div`
   color: ${props => props.theme.body};
   justify-content: center;
   min-height: 30vh;
+  height auto;
   width: 19vw;
   margin: 1vh;
   margin-top: 1vw;
@@ -84,7 +85,7 @@ const ImageContainer = styled.div`
   justify-content: center;
   text-align: center;
   width: auto;
-  height: 18vh;
+  height: 25vh;
   box-shadow: 0.4375vw 0.4375vw 0.9375vw -0.1875vw rgba(0,0,0,0.3);
   background-color: rgba(255,255,255, 0.5);
   border: 0.0625rem solid rgba(0,0,0,0.3);
@@ -133,24 +134,22 @@ const ImageContainer = styled.div`
 `;
 
 const Name = styled.h2`
-  font-size: 1.2em;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  font-size: 1.1em;
   justify-content: center;
   color: rgb(0, 62, 128);
-  width: 100%;
+  
+  @media screen and (max-width: 75em) {
+    margin-top: -2vh;
+  }
 
 `;
 
 const Description = styled.p`
-  font-size: 1em;
+  font-size: .85em;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: auto;
-  min-width: 80%;
   height: 100%;
   padding: .5em;
   margin-top: -1em;
@@ -158,14 +157,12 @@ const Description = styled.p`
   color: rgb(0, 62, 128);
 
   @media screen and (max-width: 75em) {
-    font-size: 1em;
+    font-size: .9em;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: auto;
     height: 2em;
-    margin: .5em;
-    margin-top: -1.5em;
     margin-bottom: 1vh;
   }
 `;
@@ -175,6 +172,8 @@ const SkillsContainer = styled.div`
   height: 7.5vw;
   font-size: 2vw;
   display: flex;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
@@ -188,7 +187,7 @@ const SkillsContainer = styled.div`
     width: auto;
     height: 11vw;
     font-size: 1em;
-    padding: .5vh;
+    padding: 2vh;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -218,7 +217,7 @@ const Skills = styled.h2`
   @media screen and (max-width: 75em) {
     padding: 1.4vw;
     margin: .25vw;
-    font-size: 1.5vw; /* change to percentage value */
+    font-size: .9em;
   }
 `;
 
@@ -246,6 +245,15 @@ const MemberComponent = ({img, name=" ", desc='',skills=[]}) => {
 
 
 const ProjectCards = () => {
+
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Poppins']
+      }
+    });
+   }, []);
+   
   let screen;
 
   if (window.innerWidth > 1200) {
@@ -254,7 +262,7 @@ const ProjectCards = () => {
       <Container>
       <div>
       <ContainerTitle>
-          Projects
+          PROJECTS
       </ContainerTitle>
       <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
         <Slide triggerOnce direction='left' delay={350}>
@@ -271,7 +279,7 @@ const ProjectCards = () => {
         </Slide>
         <Slide triggerOnce direction='right' delay={350}>
         <a href="/phonebookpage">
-          <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A full stack React app that implements CRUD methods to manage a phonebook contacts list." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
+          <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A full stack React app that implements CRUD methods to manage a contacts list." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
         </Slide>
         </div>
       </div>
@@ -284,7 +292,7 @@ screen =(
       <Container>
       <div>
       <ContainerTitle>
-          Projects
+          PROJECTS
       </ContainerTitle>
       <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
         <Slide triggerOnce direction='left' delay={150}>
@@ -315,24 +323,24 @@ screen =(
       <Container>
       <div>
       <ContainerTitle>
-          Projects
+        PROJECTS
       </ContainerTitle>
       <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
         <Slide direction='left' delay={350}>
         <a href="/nftpage" >
-          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks the top sales of various NFT marketplaces." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
+          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that implements various APIs to track top sales from NFT marketplaces." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
           </Slide>
         <Slide direction='left' delay={150}>
         <a href="/stockpage">
-          <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio that stores user transactions with real-time stock quotes." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
+          <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio application that stores user transactions with real-time financial data." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
           </Slide>
         <Slide direction='right' delay={150}>
         <a href="/countrypage">
-          <MemberComponent img={countryImg}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
+          <MemberComponent img={countryImg}  name="Country / Weather App" desc="A full stack React app that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
         </Slide>
         <Slide direction='right' delay={350}>
         <a href="/phonebookpage">
-          <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A CRUD phonebook feature that manages a contact list" skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
+          <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A full stack React app that implements CRUD methods to manage a phonebook contacts list." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
         </Slide>
         </div>
       </div>
@@ -346,7 +354,7 @@ screen =(
 
 
   return (
-    <div>{screen}</div>
+    <div className='font-load'>{screen}</div>
   )
 }
 

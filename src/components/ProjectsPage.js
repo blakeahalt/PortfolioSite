@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-
+import React, {useState, useEffect} from 'react'
+import WebFont from 'webfontloader';
 import styled from 'styled-components';
 import Nav from './NavBar'
 import Footer from './Footer'
@@ -7,6 +7,7 @@ import nftImg from '../assets/nft-background.png'
 import stockImg from '../assets/stock-background.png'
 import countryImg from '../assets/country-background-home.png'
 import phoneImg from '../assets/phone-background-home.png'
+import '../App2.css'
 
 
 const Section = styled.section`
@@ -31,7 +32,6 @@ const Container = styled.div`
 display: flex;
 flex-wrap: nowrap;
 justify-content: center;
-padding: 20px;
 padding-top: 75px;
 margin-bottom: 50px;
 width: 2500px;
@@ -43,7 +43,7 @@ border: 1px solid rgb(0,0,0,0.3);
 
   @media screen and (max-width: 75em) {
     display: flex;
-    padding: 10px;
+    flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
     height: auto;
@@ -93,25 +93,24 @@ background-color: rgb(217,194,165);
 
 
 @media screen and (max-width: 75em) {
-    max-width: 27rem;
-    display: flex ;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    height: 690px;
-    margin: 10px;
+  position: relative;  
+  width: 30vh;
+  margin: 1vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 60vh;
 }
 
 @media screen and (max-width: 42em) {
-    width: 325px;
+    width: auto;
     display: flex ;
     flex-wrap: wrap;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
     margin: 10px;
-    height: 585px;
+    height: auto;
   }
 `
 
@@ -123,10 +122,9 @@ const ImageContainer = styled.div`
   height: 460px;
   box-shadow: 7px 7px 15px -3px rgba(0,0,0,0.3);
   background-color: rgb(255,255,255);
-  border: 1px solid rgb(0,0,0,0.3);
-  margin: 2vh;
+  border: 1px solid rgb(0,0,0,0.7);
+  margin: 1vh;
   margin-bottom: -2px;
-  padding: .5rem;
   border-radius: 20px;
   cursor: pointer;
   position: relative;
@@ -138,7 +136,6 @@ const ImageContainer = styled.div`
     transition: transform 0.3s ease-in-out;
     display: block;
     margin: 0 auto;
-    border-radius: 25px;
   }
   
   &:hover{
@@ -151,16 +148,13 @@ const ImageContainer = styled.div`
   
 
   @media screen and (max-width: 75em) {
-    margin: 1vh;
-    padding: 10px;
-    height: 300px;
-    
+    padding: 0vh;
+    height: 26vh;
   }
 
   @media screen and (max-width: 42em) {
-    margin: 7px;
-    width: 300px;
-    height: 300px;
+    width: 95%;
+    height: 26vh;
   }
 `
 
@@ -182,7 +176,7 @@ color: rgb(0, 62, 128);
   margin: 7px;
   text-align: center;
   justify-content: center;
-  margin-top: 1.5vh;
+  margin-top: 0vh;
 }
 @media screen and (max-width: 42em) {
   margin: 7px;
@@ -207,7 +201,7 @@ const Description = styled.p`
     margin: 5px;
     padding: 5px;
     height: 70px;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 @media screen and (max-width: 42em) {
     display: flex ;
@@ -216,8 +210,8 @@ const Description = styled.p`
     width: auto;
     margin: 17px;
     height: 2.5em;
-    margin-top:-10px;
-    margin-bottom:20px;
+    margin-top:-1vh;
+    margin-bottom:4vh;
     font-size: 0.9em;
 }
 `
@@ -227,7 +221,7 @@ const SkillsContainer = styled.div`
   font-size: 1.2em;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-content: center;
   height: 145px;
   padding: 7px;
   padding-top: 10px;
@@ -235,7 +229,7 @@ const SkillsContainer = styled.div`
   flex-wrap: wrap;
   margin-top: 10px;
   margin-bottom: 5px;
-  border-radius: 10px;
+  border-radius: 25px;
   box-shadow: 3px 7px 15px 2px rgba(0,0,0,0.3); 
   background-color: rgb(255,255,255,0.4); 
 
@@ -244,17 +238,18 @@ const SkillsContainer = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: -1vh;
     height: 6em;
     align-items: center;
+    padding-top: 1.5vh;
     padding-bottom: 1.5vh;
   }
 @media screen and (max-width: 42em) {
     display: flex;
     justify-content: center;
-    height: 105px;
-    align-items: center;
-    padding-bottom: 10px;
+    height: auto;
+    align-content: center;
+    margin-bottom: 1vh;
   }
 `
 
@@ -271,7 +266,7 @@ const Skills = styled.h2`
     border-radius: 10px;
     padding: 8px;
     margin: 2px;
-    font-size: 1.1em;
+    font-size: 1em;
 
 @media screen and (max-width: 75em) {
     display: flex;
@@ -302,7 +297,7 @@ const MemberComponent = ({img, name='', desc='',skills=[]}) => {
           <ImageContainer>
             <img width={300} src={img} alt={name} />
           </ImageContainer>
-          <div style={{ width: '95%', marginTop: '.5vh', display: 'flex', justifyContent: 'center', flexDirection: 'column', padding: '.5vh', textAlign: 'center', border: '1px solid rgb(0,0,0,0.2)', borderRadius: '15px', boxShadow: '3px 7px 15px 2px rgba(0,0,0,0.3)', backgroundColor:'rgb(255,255,255,0.6)' }}>
+          <div className="projectcard-name-desc-container">
             <Name>{name}</Name>
             <Description>{desc}</Description>
           </div>
@@ -317,10 +312,19 @@ const MemberComponent = ({img, name='', desc='',skills=[]}) => {
     };
 
 const ProjectsPage = () => {
+  
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Poppins']
+      }
+    });
+   }, []);
+
   return (
-    <>
+    <div className='font-load'>
     <Nav />
-    <Section className="projectpage-cards">
+    <Section >
       <Container>
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom:'25px' }}>
         <a href="/nftpage" >
@@ -335,7 +339,7 @@ const ProjectsPage = () => {
       </Container>
     </Section>
     <Footer/>
-    </>
+    </div>
   );
 };
 

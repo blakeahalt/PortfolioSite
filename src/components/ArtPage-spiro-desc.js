@@ -1,4 +1,5 @@
-import React, { lazy, Suspense } from 'react'
+import React, { lazy, Suspense, useEffect } from 'react'
+import WebFont from 'webfontloader';
 import styled, { ThemeProvider } from 'styled-components'
 // import Carousel from '../Carousel'
 import Button from './Button'
@@ -10,7 +11,6 @@ import Escher3 from '../assets/Escher3.png'
 const Carousel = lazy(() => import("./Carousel"));
 
 const Section = styled.section`
-margin-bottom: 5vh;
 width: 100%;
 background-color: ${props => props.theme.text};
 display: flex;
@@ -29,7 +29,9 @@ overflow: hidden;
 }
 @media screen and (max-width: 42em) {
   width: auto;
+  height: auto;
   background-color: ${props => props.theme.text};
+  border: 4px solid black;
 }
 `
 
@@ -50,9 +52,12 @@ align-items: center;
 }
 @media screen and (max-width: 42em) {
   width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: -15vh;
+  border: 3px solid pink;
 }
 `
 
@@ -74,11 +79,11 @@ flex-direction: column;
   display: flex;
   height: 100%;
   justify-content: center;
+  
 }
 @media screen and (max-width: 42em) {
   width: 90vw;
   height: auto;
-  margin-bottom: 5vh;
   font-size: 1em
 }
 `
@@ -147,9 +152,18 @@ const ButtonContainer = styled.div`
 `
 
 const About = () => {
+
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ['Poppins']
+      }
+    });
+   }, []);
+
   return (
-    <div className='portrait-outside-container'>
-    <Section id="about">
+    <div className='spiro-outside-container font-load'>
+    <Section>
       <Container >
         <Box> 
             <Suspense fallback={<Loading />}>
