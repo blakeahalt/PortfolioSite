@@ -261,7 +261,7 @@ let screen;
             <div className="icons">
               <div className="icon">
                 <img 
-                  style={{ padding: 5, width:'14vh', height:'14vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                  style={{ display: 'flex', padding: 5, width:'14vh', height:'14vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                   src={responsive} 
                   alt="icon1" 
                   onMouseEnter={() => slideToIndex(0)}
@@ -271,9 +271,9 @@ let screen;
                 <div>
               </div>
             </div>
-            <div className="icon" style={{ marginLeft: '-1vh'}}>
+            <div className="icon" style={{ marginLeft: '0vh'}}>
                 <img 
-                  style={{ padding: 5, width:'14vh', height:'14vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                  style={{ display: 'flex', padding: 5, width:'14vh', height:'14vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                   src={countryFacts} 
                   alt="icon2" 
                   onMouseEnter={() => slideToIndex(1)}
@@ -285,7 +285,7 @@ let screen;
             </div>
             <div className="icon">
             <img 
-                  style={{ padding: 5, maxWidth:'14vh', height:'14vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
+                  style={{ display: 'flex', padding: 5, maxWidth:'14vh', height:'14vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                   src={weatherFacts} 
                   alt="icon4" 
                   onMouseEnter={() => slideToIndex(2)}
