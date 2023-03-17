@@ -84,7 +84,7 @@ backdrop-filter: blur(4px);
 margin: 10px;
 padding-bottom: 10px;
 padding: 10px;
-max-height: auto;
+height: auto;
 
 border: 1px solid rgb(0,0,0,0.3);
 border-radius: 20px;
@@ -220,18 +220,18 @@ const Description = styled.p`
 
 const SkillsContainer = styled.div`
   width: 95%;
+  height: 100%
   font-size: 1.2em;
   display: flex;
   justify-content: center;
   align-content: center;
-  height: auto;
   padding: 7px;
   padding-top: 1vh;
   padding-bottom: 1vh;
   margin: 2px;
   flex-wrap: wrap;
   margin-top: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 1vh;
   border-radius: 25px;
   box-shadow: 3px 7px 15px 2px rgba(0,0,0,0.3); 
   background-color: rgb(255,255,255,0.4); 
