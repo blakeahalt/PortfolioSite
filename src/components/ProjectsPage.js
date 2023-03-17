@@ -95,8 +95,8 @@ background-color: rgb(217,194,165);
 
 @media screen and (max-width: 75em) {
   position: relative;  
-  min-width: 30vh;
-  max-width: 45vh;
+  min-width: 40vh;
+  max-width: 50vh;
   margin: 1vh;
   display: flex;
   flex-wrap: wrap;
