@@ -393,7 +393,7 @@ screen =(
       </div>
     </div>
     <div style={{ marginTop: '-5vh' }} className="icons">
-      <div className="icon" style={{ marginLeft: '3vh' }}>
+      <div className="icon" style={{ marginLeft: '5vh' }}>
         <img 
             style={{ padding: 5, width:'15vh', height:'15vh', marginTop: '2.5vh', marginLeft: '0vh', border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
             src={jwt} 
@@ -411,7 +411,7 @@ screen =(
             onMouseEnter={() => slideToIndex(3)}
             onMouseLeave={() => slideToIndex(activeSlideIndex)}
           />
-          <div style={{ textAlign:'center' }}className="icon-title" >Sales by Day/Week/Month</div>
+          <div style={{ textAlign:'center', flexWrap: 'wrap' }}className="icon-title" >Sales by Day/Week/Month</div>
         </div>
     </div>
     <Container>
