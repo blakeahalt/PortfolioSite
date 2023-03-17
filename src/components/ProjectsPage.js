@@ -105,15 +105,15 @@ background-color: rgb(217,194,165);
 }
 
 @media screen and (max-width: 42em) {
-    width: auto;
-    display: flex ;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin: 10px;
-    height: auto;
-  }
+  position: relative;
+  min-width: 25vw;
+  max-width: 40vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+  height: auto;
+}
 `
 
 const ImageContainer = styled.div`
@@ -176,10 +176,11 @@ margin-bottom: 25px;
 color: rgb(0, 62, 128);
 
 @media screen and (max-width: 75em) {
-  margin: 7px;
+  margin-top: 1vh;
   text-align: center;
   justify-content: center;
-  font-size: 1.4em;
+  font-size: 1.2em;
+
 }
 @media screen and (max-width: 42em) {
   margin: 7px;
@@ -201,7 +202,7 @@ const Description = styled.p`
     flex-wrap: wrap;
     justify-content: center;
     width: auto;
-    margin-top: 1vh;
+    margin-top: -2vh;
     font-size: 1em;
 }
 @media screen and (max-width: 42em) {
@@ -210,8 +211,9 @@ const Description = styled.p`
     justify-content: center;
     width: auto;
     margin: 17px;
-    height: 2.5em;
+    height: auto;
     margin-top:-1vh;
+    margin-bottom:-1vh;
     font-size: 0.9em;
 }
 `
@@ -240,7 +242,8 @@ const SkillsContainer = styled.div`
     justify-content: center;
     width: 90%;
     align-items: center;
-    min-height: 22vw;
+    max-height: 23vw;
+    min-height: 20vh;
   }
 @media screen and (max-width: 42em) {
     display: flex;
@@ -327,7 +330,7 @@ const ProjectsPage = () => {
       <Container>
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom:'25px' }}>
         <a href="/nftpage" >
-          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that implements various APIs to track top sales from NFT marketplaces." skills={["JavaScript","React","Node.js","Express.js","JSON Web Token","MySQL","Axios","Argon2","OAuth2","Full Stack"]} /></a>
+          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that implements various APIs to track top sales from NFT marketplaces." skills={["JavaScript","React","Node.js","Express.js","JSON Web Token","MySQL","Axios","Argon2","OAuth2"]} /></a>
           <a href="/stockpage">
           <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio application that stores user transactions with real-time financial data." skills={["Python","Flask","SQL","Jinja", "Full Stack","Responsive Design"]} /></a>
           <a href="/countrypage">
