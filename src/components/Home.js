@@ -44,7 +44,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    width: 90%;
+    width: 60vw;
     height: auto;
     display: flex;
   }
@@ -124,7 +124,7 @@ const ContainerTitle = styled.div`
 
 const ImageContainer = styled.div`
   display: flex;
-  height: auto;
+  min-height: 25vh;
   width: 90%;
   margin-top: 1vh;
   justify-content: center;
@@ -151,6 +151,7 @@ const Name = styled.h2`
   flex-wrap: wrap;
   justify-content: center;
   color: rgb(0, 62, 128);
+  margin-top: 1vh;
   margin-bottom: -2vh;
 `;
 
@@ -190,10 +191,10 @@ const Skills = styled.h2`
   border: 1px solid rgb(0, 62, 128);
   border-radius: 10px;
   margin: .2vh;
-  padding: 1vh;
+  padding: .5vh;
   padding-top: .2vh;
   padding-bottom: .2vh;
-  font-size: .9em;
+  font-size: .8em;
 `;
 
 const MemberComponent = ({img, name='', desc='',skills=[]}) => {
@@ -843,19 +844,19 @@ if (window.innerWidth > 1200) {
                 
               <SwiperSlide > 
                 <a href="/nftpage" >
-                  <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that implements various APIs to track top sales from NFT marketplaces." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2"]} /></a>
+                  <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project tracks top sales from NFT marketplaces." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2"]} /></a>
               </SwiperSlide>
               <SwiperSlide>  
                 <a href="/stockpage">
-                  <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio application that stores user transactions with real-time financial data." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
+                  <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio application stores user transactions with real-time financial data." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
               </SwiperSlide>
               <SwiperSlide>  
                 <a href="/countrypage">
-                  <MemberComponent img={countryImg}  name="Country / Weather App" desc="A full stack React app that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
+                  <MemberComponent img={countryImg}  name="Country / Weather App" desc="A full stack React app displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
               </SwiperSlide>
               <SwiperSlide>  
                 <a href="/phonebookpage">
-                  <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A full stack React app that implements CRUD methods to manage a phonebook contacts list." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
+                  <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A full stack React app implements CRUD methods to manage a contacts list." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
               </SwiperSlide>
             </Swiper>
           </Container>

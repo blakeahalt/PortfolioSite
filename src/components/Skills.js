@@ -132,11 +132,11 @@ const Icons = () => {
           </SkillsItem>
           <SkillsItem >
             <div className="skills-title">Backend Development</div>
-            <MemberComponent skills={["Node.js","Express.js","Python","Flask","Jinja","SQL","MySQL","SQLite","MongoDB"]} />
+            <MemberComponent skills={["Node.js","Express.js","Python","Flask","Jinja","SQL","MySQL","SQLite","MongoDB","Nginx"]} />
           </SkillsItem>
           <SkillsItem >
             <div className="skills-title" >Testing and Deployment</div>
-            <MemberComponent  skills={["Jest","Cypress","Heroku","Styled Components"]} />
+            <MemberComponent  skills={["Jest","Cypress","Ubuntu","Linux","Virtual Private Server","Hostinger","Heroku","Fly.io"]} />
           </SkillsItem>
           <SkillsItem >
             <div className="skills-title" >Other Technologies</div>

@@ -60,11 +60,11 @@ function PhoneBook() {
                     </div>
                   <h2 className="blue ">What was it built with?</h2>
                     <div className='project-desc'>
-                        This app was built with a MERN stack (MongoDB, Express.js, React.js, and Node.js).
+                      This app was built with a MERN stack (MongoDB, Express.js, React.js, and Node.js).
                     </div>
                   <h2 className="blue ">What did I learn?</h2>
                     <div className='project-desc'>
-                      I learned how to build a simple full stack web application that uses React to create reusable components and manage component data with state and props. Using Express.js methods (get, post, put, delete, and use) to handle Node.js HTTP requests, I was able to interact with the a MongoDB database to manipulate contact data.
+                      I learned how to build a simple full stack web application with React to create reusable components and manage component data using state and props. I was able to manipulate contact data by interacting with a MongoDB database and implementing Express.js methods (get, post, put, delete, and use) to handle Node.js HTTP requests.
                       I also learned how to implement responsive design with stylized CSS and how to deploy the app to cloud-based platforms Heroku and Fly.io.
                     </div>
                   </div>
@@ -107,11 +107,11 @@ function PhoneBook() {
                 </div>
               <h2 className="blue ">What was it built with?</h2>
                 <div className='project-desc'>
-                    This app was built with a MERN stack (MongoDB, Express.js, React.js, and Node.js).
+                  This app was built with a MERN stack (MongoDB, Express.js, React.js, and Node.js).
                 </div>
               <h2 className="blue ">What did I learn?</h2>
                 <div className='project-desc'>
-                  I learned how to build a simple full stack web application that uses React to create reusable components and manage component data with state and props. Using Express.js methods (get, post, put, delete, and use) to handle Node.js HTTP requests, I was able to interact with the a MongoDB database to manipulate contact data.
+                  I learned how to build a simple full stack web application with React to create reusable components and manage component data using state and props. I was able to manipulate contact data by interacting with a MongoDB database and implementing Express.js methods (get, post, put, delete, and use) to handle Node.js HTTP requests.
                   I also learned how to implement responsive design with stylized CSS and how to deploy the app to cloud-based platforms Heroku and Fly.io.
                 </div>
               </div>
@@ -154,11 +154,11 @@ function PhoneBook() {
               </div>
             <h2 className="blue ">What was it built with?</h2>
               <div className='project-desc'>
-                  This app was built with a MERN stack (MongoDB, Express.js, React.js, and Node.js).
+                This app was built with a MERN stack (MongoDB, Express.js, React.js, and Node.js).
               </div>
             <h2 className="blue ">What did I learn?</h2>
               <div className='project-desc'>
-                I learned how to build a simple full stack web application that uses React to create reusable components and manage component data with state and props. Using Express.js methods (get, post, put, delete, and use) to handle Node.js HTTP requests, I was able to interact with the a MongoDB database to manipulate contact data.
+                I learned how to build a simple full stack web application with React to create reusable components and manage component data using state and props. I was able to manipulate contact data by interacting with a MongoDB database and implementing Express.js methods (get, post, put, delete, and use) to handle Node.js HTTP requests.
                 I also learned how to implement responsive design with stylized CSS and how to deploy the app to cloud-based platforms Heroku and Fly.io.
               </div>
             </div>

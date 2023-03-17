@@ -85,7 +85,7 @@ const ImageContainer = styled.div`
   justify-content: center;
   text-align: center;
   width: auto;
-  height: 25vh;
+  height: 15vw;
   box-shadow: 0.4375vw 0.4375vw 0.9375vw -0.1875vw rgba(0,0,0,0.3);
   background-color: rgba(255,255,255, 0.5);
   border: 0.0625rem solid rgba(0,0,0,0.3);
@@ -185,7 +185,7 @@ const SkillsContainer = styled.div`
 
   @media screen and (max-width: 75em) {
     width: auto;
-    height: 14vw;
+    height: 12vw;
     font-size: 1em;
     padding: 2vh;
     display: flex;
@@ -328,19 +328,19 @@ screen =(
       <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
         <Slide direction='left' delay={350}>
         <a href="/nftpage" >
-          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that implements various APIs to track top sales from NFT marketplaces." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
+          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks the top sales of various NFT marketplaces." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
           </Slide>
         <Slide direction='left' delay={150}>
         <a href="/stockpage">
-          <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio application that stores user transactions with real-time financial data." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
+          <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio that stores user transactions with real-time stock quotes." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
           </Slide>
         <Slide direction='right' delay={150}>
         <a href="/countrypage">
-          <MemberComponent img={countryImg}  name="Country / Weather App" desc="A full stack React app that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
+          <MemberComponent img={countryImg}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
         </Slide>
         <Slide direction='right' delay={350}>
         <a href="/phonebookpage">
-          <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A full stack React app that implements CRUD methods to manage a phonebook contacts list." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
+          <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A CRUD phonebook feature that manages a contact list." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
         </Slide>
         </div>
       </div>

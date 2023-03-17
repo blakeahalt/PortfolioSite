@@ -242,7 +242,7 @@ const SkillsContainer = styled.div`
     justify-content: center;
     width: 90%;
     align-items: center;
-    height: auto;
+    height: 18vh;
     padding-top: 3vh;
     padding-bottom: 3vh;
   }
@@ -335,7 +335,7 @@ const ProjectsPage = () => {
       <Container>
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom:'25px' }}>
         <a href="/nftpage" >
-          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that implements various APIs to track top sales from NFT marketplaces." skills={["JavaScript","React","Node.js","Express.js","JSON Web Token","MySQL","Axios","Argon2","OAuth2"]} /></a>
+          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that implements various APIs to track top sales from NFT marketplaces." skills={["JavaScript","React","Node.js","Express.js","JSON Web Token","MySQL","Axios","Argon2","OAuth2","Full Stack"]} /></a>
           <a href="/stockpage">
           <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio application that stores user transactions with real-time financial data." skills={["Python","Flask","SQL","Jinja", "Full Stack","Responsive Design"]} /></a>
           <a href="/countrypage">
