@@ -185,7 +185,7 @@ const SkillsContainer = styled.div`
 
   @media screen and (max-width: 75em) {
     width: auto;
-    height: 13vw;
+    height: 14vw;
     font-size: 1em;
     padding: 2vh;
     display: flex;
