@@ -202,7 +202,7 @@ const Description = styled.p`
     flex-wrap: wrap;
     justify-content: center;
     width: auto;
-    margin-top: -2vh;
+    margin-top: -1vh;
     font-size: 1em;
 }
 @media screen and (max-width: 42em) {
@@ -212,7 +212,7 @@ const Description = styled.p`
     width: auto;
     margin: 17px;
     height: auto;
-    margin-top:-1vh;
+    margin-top: 1vh;
     margin-bottom:-1vh;
     font-size: 0.9em;
 }
@@ -224,7 +224,7 @@ const SkillsContainer = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
-  height: 145px;
+  height: auto;
   padding: 7px;
   padding-top: 1vh;
   padding-bottom: 1vh;
@@ -242,16 +242,19 @@ const SkillsContainer = styled.div`
     justify-content: center;
     width: 90%;
     align-items: center;
-    max-height: 25vw;
-    min-height: 24vh;
+    height: auto;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
   }
 @media screen and (max-width: 42em) {
     display: flex;
     justify-content: center;
-    height: auto;
     align-content: center;
     margin-bottom: 1vh;
     width: 90%;
+    height: auto;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
   }
 `
 
@@ -290,7 +293,7 @@ const Skills = styled.h2`
     border-radius: 10px;
     font-size: 0.8em;
     margin: 1px;
-    padding: 6px
+    height: auto;
   }
 `
 
