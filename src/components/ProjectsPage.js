@@ -21,6 +21,7 @@ margin-top: 15px;
 @media screen and (max-width: 75em){
   justify-content: center;
   flex-wrap: wrap;
+  width: auto;
 }
 @media screen and (max-width: 481px){
   justify-content: center;
@@ -36,10 +37,9 @@ padding-top: 3vh;
 padding-bottom: 2vh;
 margin-bottom: 50px;
 height: auto;
-
+width: 100%;
 box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3);
 background-color: rgb(251,249,236,0.6);
-border: 1px solid rgb(0,0,0,0.3);
 
   @media screen and (max-width: 75em) {
     display: flex;
@@ -47,6 +47,7 @@ border: 1px solid rgb(0,0,0,0.3);
     justify-content: center;
     flex-wrap: wrap;
     height: auto;
+    width: 100%;
   }
 
 
@@ -94,7 +95,8 @@ background-color: rgb(217,194,165);
 
 @media screen and (max-width: 75em) {
   position: relative;  
-  width: 30vh;
+  min-width: 25vh;
+  max-width: 32vh;
   margin: 1vh;
   display: flex;
   flex-wrap: wrap;
@@ -238,7 +240,7 @@ const SkillsContainer = styled.div`
     justify-content: center;
     width: 90%;
     align-items: center;
-    height: 22vw;
+    min-height: 22vw;
   }
 @media screen and (max-width: 42em) {
     display: flex;
