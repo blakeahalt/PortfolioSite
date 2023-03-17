@@ -324,16 +324,27 @@ const MemberComponent = ({ name='', desc='', desc2='', images}) => {
     e.preventDefault();
   };
 
+  // const handleFullScreenChange = () => {
+  //   if (document.fullscreenElement === null) {
+  //     setIsFullScreen(false);
+  //     setFullScreenMessage('Tap or click to exit full screen');
+  //     document.removeEventListener("fullscreenchange", handleFullScreenChange);
+  //   } else {
+  //     setFullScreenMessage('Click the back button to exit full screen');
+  //   }
+  // };
+
   const handleFullScreenChange = () => {
     if (document.fullscreenElement === null) {
       setIsFullScreen(false);
       setFullScreenMessage('Tap or click to exit full screen');
       document.removeEventListener("fullscreenchange", handleFullScreenChange);
     } else {
-      setFullScreenMessage('Click the back button to exit full screen');
+      setFullScreenMessage('Tap or click to exit full screen');
     }
+    console.log(fullScreenMessage);
   };
-
+  
   const handleExitFullScreen = () => {
     if (isFullScreen) {
       document.exitFullscreen();
