@@ -132,8 +132,7 @@
 		flex-wrap: wrap;
 		flex-direction: row;
 		justify-content: space-evenly;
-		
-		
+		margin: 0 auto;		
 	}
 	.features-title{
 		text-align: center;
