@@ -30,7 +30,7 @@ padding: 3vh;
 @media screen and (max-width: 75em) {
   height: auto;
   margin-bottom: 5vh;
-  width: 60vw;
+  width: 80vw;
 }
 
  @media screen and (max-width: 42em) {
@@ -170,7 +170,7 @@ useEffect(() => {
               <div>
             </div>
           </div>
-          <div className="icon">
+          <div className="icon" style={{ marginLeft: '0vh' }}>
               <img 
                 style={{ padding: 5, width:'20vh', height:'20vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={transactions} 
