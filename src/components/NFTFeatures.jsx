@@ -393,7 +393,7 @@ screen =(
       </div>
     </div>
     <div style={{ marginTop: '-5vh' }} className="icons">
-      <div className="icon" style={{ marginLeft: '5.5vh' }}>
+      <div className="icon" style={{ marginLeft: '5vh' }}>
         <img 
             style={{ padding: 5, width:'15vh', height:'15vh', marginTop: '2.5vh', marginLeft: '0vh', border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
             src={jwt} 
@@ -403,7 +403,7 @@ screen =(
           />
           <div className="icon-title">Protected Routes</div>
       </div>
-      <div style={{display:'flex', marginRight: '1vh', maxWidth: 220}} className="icon">
+      <div style={{display:'flex', marginRight: '.5vh', maxWidth: 220}} className="icon">
         <img 
             style={{ padding: 5, marginTop: '15px', width:'15vh', height:'15vh',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
             src={sales} 
