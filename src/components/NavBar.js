@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../App2.css';
+import '../App2.css';
 
 function Nav({ isWhite }) {
   const [showNav, setShowNav] = useState(false);
@@ -80,6 +81,7 @@ function Nav({ isWhite }) {
                   </a>
                 </div>
               </div>
+          {/* </div> */}
           {/* </div> */}
           <div className="menu-icon" onClick={() => setShowNav(!showNav)}>
             &#9776;

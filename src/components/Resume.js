@@ -7,6 +7,7 @@ import ResumePage from "../assets/Resume.pdf"
 import ResumeImage from "../assets/Resume.png"
 import ResumePDF from "../assets/Resume.pdf"
 import '../App2.css';
+import '../App2.css';
 
 
 // const ResumeIframe = () => {
@@ -68,6 +69,7 @@ const Resume = () => {
             <img src={ResumeImage} width="95%"  alt="Resume" style={{ margin: 0 }}/>
         </div>
         <center>
+            <button className='resume-button' onClick={onButtonClick}>
             <button className='resume-button' onClick={onButtonClick}>
                 Download PDF
             </button>

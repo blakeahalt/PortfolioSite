@@ -50,6 +50,10 @@ padding: 3vh;
       margin-top: 0px;
   }
   @media screen and (max-width: 42em) {
+  @media screen and (max-width: 75em) {
+      margin-top: 0px;
+  }
+  @media screen and (max-width: 42em) {
       margin-top: 0px;
       height: 95%;
       width: 95vw;
@@ -91,9 +95,12 @@ padding: 3vh;
     }
 
     @media screen and (max-width: 75em) {
+    @media screen and (max-width: 75em) {
     width: 3rem;
     right: -75px;
     }
+    @media screen and (max-width: 42em) {
+
     @media screen and (max-width: 42em) {
 
     width: 2rem;
@@ -115,9 +122,12 @@ padding: 3vh;
         display: none;
     }
     @media screen and (max-width: 75em) {
+    @media screen and (max-width: 75em) {
     width: 3rem;
     left: -75px;
   }
+     @media screen and (max-width: 42em) {
+
      @media screen and (max-width: 42em) {
 
     width: 2rem;
@@ -267,7 +277,7 @@ let screen;
             />
             <div className="icon-title">Edit Contacts</div>
         </div>
-        <div className="icon">
+        <div style={{ marginTop: '5vh' }} className="icon">
             <img 
               style={{ display: 'flex', padding: 5, width:'14vh', height:'14vh',border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
               src={phoneSearch} 

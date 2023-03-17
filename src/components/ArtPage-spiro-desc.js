@@ -5,6 +5,7 @@ import styled, { ThemeProvider } from 'styled-components'
 import Button from './Button'
 import Loading from './Loading';
 import '../App2.css';
+import '../App2.css';
 
 import Escher3 from '../assets/Escher3.png'
 
@@ -115,6 +116,7 @@ const SubText = styled.p`
   margin: 1rem auto;
 
 
+  @media screen and (max-width: 75em) {
   @media screen and (max-width: 75em) {
     width: 100%;
     text-align:center;

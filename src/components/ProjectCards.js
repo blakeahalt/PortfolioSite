@@ -10,6 +10,7 @@ import phoneImg from '../assets/phone-background-home.png'
 import { Slide } from 'react-awesome-reveal';
 import 'animate.css';
 import '../App2.css'
+import '../App2.css'
 
 const Container = styled.div`
   display: flex;
@@ -40,6 +41,7 @@ const Container = styled.div`
     box-shadow: 5px 7px 15px 7px rgba(0, 0, 0, 0.3);
     background-color: rgb(251, 249, 236, 0.6);
   }
+
 
 `
 
@@ -78,6 +80,8 @@ const Item = styled.div`
   }
 `;
 
+`;
+
 
 const ImageContainer = styled.div`
   display: flex;
@@ -106,6 +110,14 @@ const ImageContainer = styled.div`
     height: auto;
   }
 
+  &:hover {
+    img {
+      margin-right:0.1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+  }
   &:hover {
     img {
       margin-right:0.1rem;
@@ -268,15 +280,21 @@ const ProjectCards = () => {
         <Slide triggerOnce direction='left' delay={350}>
         <a href="/nftpage" >
           <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks top sales from several NFT marketplaces" skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
+          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks top sales from several NFT marketplaces" skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
           </Slide>
+        <Slide triggerOnce direction='left' delay={150}>
         <Slide triggerOnce direction='left' delay={150}>
         <a href="/stockpage">
           <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio application that stores user transactions with real-time financial data." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
+          <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio application that stores user transactions with real-time financial data." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
           </Slide>
+        <Slide triggerOnce direction='right' delay={150}>
         <Slide triggerOnce direction='right' delay={150}>
         <a href="/countrypage">
           <MemberComponent img={countryImg}  name="Country / Weather App" desc="A full stack React app that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
+          <MemberComponent img={countryImg}  name="Country / Weather App" desc="A full stack React app that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
         </Slide>
+        <Slide triggerOnce direction='right' delay={350}>
         <Slide triggerOnce direction='right' delay={350}>
         <a href="/phonebookpage">
           <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A full stack React app that implements CRUD methods to manage a contacts list." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
@@ -296,19 +314,27 @@ screen =(
       </ContainerTitle>
       <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
         <Slide triggerOnce direction='left' delay={150}>
+        <Slide triggerOnce direction='left' delay={150}>
         <a href="/nftpage" >
+          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks the top sales of various NFT marketplaces." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
           <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that tracks the top sales of various NFT marketplaces." skills={["JavaScript","React","Node.js","express.js","JSON Web Token","MySQL","axios","argon2","OAuth2","full stack"]} /></a>
           </Slide>
         <Slide triggerOnce direction='right' delay={150}>
+        <Slide triggerOnce direction='right' delay={150}>
         <a href="/stockpage">
+          <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio that stores user transactions with real-time stock quotes." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
           <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio that stores user transactions with real-time stock quotes." skills={["Python","flask","SQL","jinja", "full stack","responsive design"]} /></a>
           </Slide>
         <Slide triggerOnce direction='left' delay={150}>
+        <Slide triggerOnce direction='left' delay={150}>
         <a href="/countrypage">
+          <MemberComponent img={countryImg}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
           <MemberComponent img={countryImg}  name="Country / Weather App" desc="A React application that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","express.js","axios", "full stack","responsive design"]}  /></a>
         </Slide>
         <Slide triggerOnce direction='right' delay={150}>
+        <Slide triggerOnce direction='right' delay={150}>
         <a href="/phonebookpage">
+          <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A CRUD phonebook feature that manages a contact list." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
           <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A CRUD phonebook feature that manages a contact list." skills={["JavaScript","MongoDB","express.js","React","Node.js","cors","full stack","responsive design"]}  /></a>
         </Slide>
         </div>

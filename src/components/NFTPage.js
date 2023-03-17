@@ -23,12 +23,14 @@ function Page() {
   
   let backgroundImage;
   let screen;
+  let screen;
 
   if (window.innerWidth > 1200) {
     backgroundImage = 710
     screen = (
       <div className='font-load'>
       <Nav isWhite={true} />
+        <div >
         <div >
         <Parallax 
           bgImage={nftBackground} 
@@ -39,10 +41,13 @@ function Page() {
           <div style={{height: backgroundImage}} >
             <div className="boxs">
               <h1 style={{textAlign: 'center' }} className="title-nft">NFT Sales Tracker</h1>
+              <h1 style={{textAlign: 'center' }} className="title-nft">NFT Sales Tracker</h1>
               <h4 style={{ color: 'rgb(180,180,180)' }} className="title-date">November 2022</h4>
               <h4 style={{ color: 'white' }} className="introduction">
               A full stack application that tracks top sales from NFT marketplaces
+              A full stack application that tracks top sales from NFT marketplaces
               </h4>
+              <div style={{textAlign: 'center' }}>
               <div style={{textAlign: 'center' }}>
               <Button style={{backgroundColor: 'white'}} text="See Demo" link='https://nftleague2.herokuapp.com/' />
                 <div className="space"></div>

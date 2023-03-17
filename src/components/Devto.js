@@ -35,6 +35,7 @@ function Devto() {
                 return (
                     <div key={article.id} className="article">
                         <div >
+                        <div >
                             <a href={article.url} className="article-title">
                                 {article.title}
                             

@@ -14,7 +14,15 @@ import Dizzy from '../assets/portraits/Dizzy_Done.png'
 import MilesDavis from '../assets/portraits/MilesDavis.png'
 import Thelonius from '../assets/portraits/Thelonius.png'
 import Mingus from '../assets/portraits/Mingus.png'
+import MilesDavis from '../assets/portraits/MilesDavis.png'
+import Thelonius from '../assets/portraits/Thelonius.png'
+import Mingus from '../assets/portraits/Mingus.png'
 import SaganTyson from '../assets/portraits/Sagan_tyson.png'
+import Ajumma from '../assets/portraits/Ajumma.png'
+import AjummaBase from '../assets/portraits/AjummaBase.png'
+import Ajussi from '../assets/portraits/Ajussi.png'
+import AjussiBase from '../assets/portraits/AjussiBase.png'
+import Glass1 from '../assets/portraits/Glass1.pdf'
 import Ajumma from '../assets/portraits/Ajumma.png'
 import AjummaBase from '../assets/portraits/AjummaBase.png'
 import Ajussi from '../assets/portraits/Ajussi.png'
@@ -30,14 +38,20 @@ background-color: rgb(221,208,195);
 margin-top: 15px;
 z-index: 0;
 
+z-index: 0;
 
+
+@media screen and (max-width: 75em) {
 @media screen and (max-width: 75em) {
   justify-content: center;
   flex-wrap: wrap;
 }
 
 @media screen and (max-width: 42em) {
+
+@media screen and (max-width: 42em) {
   justify-content: center;
+  height: auto;
   height: auto;
 }
 `
@@ -51,6 +65,7 @@ padding-top: 75px;
 margin-bottom: 50px;
 width: 2500px;
 height: auto;
+z-index: 0;
 z-index: 0;
 
 box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3);
@@ -66,12 +81,49 @@ border: 1px solid rgb(0,0,0,0.3);
   height: auto;
 }
 
+ 
+@media screen and (max-width: 75em) {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+@media screen and (max-width: 42em) {
 @media screen and (max-width: 42em) {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
   height auto;
   text-align: center;
+}
+}
+`
+
+const Box = styled.div`
+width: 50%;
+height: 100%;
+min-height: 60vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+
+@media screen and (max-width: 75em) {
+  width: 70vw;
+  height: 600px;
+  display: flex;
+  margin: 50px;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 225px;
+}
+@media screen and (max-width: 42em) {
+  margin-top: -100px;
+  margin-bottom: 50px;
+  width: 100%;
+  font-size: 0.8em
 }
 `
 
@@ -133,6 +185,8 @@ background-color: rgb(204,145,29,0.1);
 
 @media screen and (max-width: 75em) {
   max-width: 350px;
+@media screen and (max-width: 75em) {
+  max-width: 350px;
   display: flex ;
   flex-wrap: wrap;
   justify-content: center;
@@ -142,6 +196,7 @@ background-color: rgb(204,145,29,0.1);
   margin: 10px;
 }
 
+@media screen and (max-width: 42em) {
 @media screen and (max-width: 42em) {
   display: flex;
   flex-wrap: wrap;
@@ -166,7 +221,30 @@ display: flex;
 justify-content: center;
 align-items: center;
 overflow: hidden;
+width: 100%;
+height: 460px;
+box-shadow: 7px 7px 15px -3px rgba(0,0,0,0.3);
+background-color: rgb(255,255,255, 0.5);
+border: 1px solid rgb(0,0,0,0.3);
+margin: 10px;
+margin-bottom: -2px;
+padding: .5rem;
+border-radius: 20px;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
 
+img{
+  justify-content: center;
+  width: auto;
+  height: auto;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 0 auto;
+  border-radius: 25px;
+}
 img{
   justify-content: center;
   width: auto;
@@ -184,7 +262,19 @@ img{
 //     cursor: pointer;
 //   }
 // }
+// &:hover{
+//   img{
+//     transform: scale(1.25);
+//     position: relative;
+//     cursor: pointer;
+//   }
+// }
 
+@media screen and (max-width: 75em) {
+  margin: 7px;
+  padding: 10px;
+  height: 315px;
+}
 @media screen and (max-width: 75em) {
   margin: 7px;
   padding: 10px;
@@ -196,10 +286,16 @@ img{
   width: 300px;
   height: 310px;
 }
+@media screen and (max-width: 42em) {
+  margin: 7px;
+  width: 300px;
+  height: 310px;
+}
 `
 
 
 const Name = styled.h2`
+font-size: 1.3em;
 font-size: 1.3em;
 display: flex;
 flex-wrap: wrap;
@@ -211,11 +307,16 @@ color: rgb(0, 62, 128);
   padding-top: 15px;
   font-size: 1.2em;
   margin: 5px;
+@media screen and (max-width: 75em) {
+  padding-top: 15px;
+  font-size: 1.2em;
+  margin: 5px;
   width: 300px;
 }
 @media screen and (max-width: 42em) {
   font-size: 1.1em;
 }
+
 
 `
 const Description = styled.p`
@@ -253,8 +354,19 @@ const Description2 = styled.p`
   color: rgb(0, 62, 128);
   margin-top: -15px;
   opacity: 0.7;
+  margin-top: -15px;
+  opacity: 0.7;
 
 
+@media screen and (max-width: 75em) {
+  display: flex ;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: auto;
+  margin: 5px;
+}
+@media screen and (max-width: 42em) {
+  display: flex;
 @media screen and (max-width: 75em) {
   display: flex ;
   flex-wrap: wrap;
@@ -299,12 +411,14 @@ padding: 6px;
 margin: 2px;
 
 @media screen and (max-width: 75em) {
+@media screen and (max-width: 75em) {
   justify-content: center;
   align-items: center;
   border: 1px solid rgb(0,0,0,0.3);  border-radius: 25px;
   width: auto;
   margin: 2px;
 }
+@media screen and (max-width: 42em) {
 @media screen and (max-width: 42em) {
   
   border: 1px solid rgb(0,0,0,0.3);  border-radius: 25px;
@@ -404,6 +518,14 @@ const ProjectCards = () => {
     <Section >
       <Container>
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom:'25px' }}>
+          <MemberComponent images={[MilesDavis]} name="Miles Davis" desc="Mixed Media: Pencil on Paper, Digitally Edited."/>
+          <MemberComponent images={[Thelonius]} name="Thelonius Monk" desc="Mixed Media: Pencil on Paper, Digitally Edited."/>
+          <MemberComponent images={[Mingus]} name="Charles Mingus" desc="Mixed Media: Pencil on Paper, Digitally Edited."/>
+          <MemberComponent images={[Dizzy]} name="Dizzy Gillespie" desc="Mixed Media: Pencil on Paper, Digitally Edited."/>
+          <MemberComponent images={[Ajumma, AjummaBase]} name="Ajumma: Korean woman" desc="Mixed Media: Colored pencil, pencil on paper, and Digitally Edited"/>
+          <MemberComponent images={[Ajussi, AjussiBase]} name="Ajussi: Korean man" desc="Mixed Media: Colored pencil, pencil on paper, and Digitally Edited"/>
+          <MemberComponent style={{fontSize: '0.7em'}} images={[SaganTyson]} name="Cosmic Web: Seed of Life, Flower of Life, Metatron's Cube" desc="Mixed Media: Colored pencil, pencil on paper, and Digitally Edited"/>
+          {/* <MemberComponent img={Glass1} name="Glass Head 1" desc="pencil on paper"/> */}
           <MemberComponent images={[MilesDavis]} name="Miles Davis" desc="Mixed Media: Pencil on Paper, Digitally Edited."/>
           <MemberComponent images={[Thelonius]} name="Thelonius Monk" desc="Mixed Media: Pencil on Paper, Digitally Edited."/>
           <MemberComponent images={[Mingus]} name="Charles Mingus" desc="Mixed Media: Pencil on Paper, Digitally Edited."/>

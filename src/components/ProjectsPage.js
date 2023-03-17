@@ -19,6 +19,7 @@ background-color: rgb(221,208,195);
 margin-top: 15px;
 
 @media screen and (max-width: 75em){
+@media screen and (max-width: 75em){
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -42,6 +43,7 @@ background-color: rgb(251,249,236,0.6);
 border: 1px solid rgb(0,0,0,0.3);
 
   @media screen and (max-width: 75em) {
+  @media screen and (max-width: 75em) {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -50,6 +52,7 @@ border: 1px solid rgb(0,0,0,0.3);
   }
 
 
+    @media screen and (max-width: 42em) {
     @media screen and (max-width: 42em) {
     display: flex;
     padding: 10px;
@@ -77,6 +80,8 @@ color: ${props => props.theme.body};
 margin: 3rem 1.5rem;
 flex-wrap: wrap;
 justify-content: center;
+width: 33rem;
+height: 800px;
 width: 33rem;
 height: 800px;
 backdrop-filter: blur(4px);
@@ -132,6 +137,7 @@ const ImageContainer = styled.div`
   
   img{
     width: 100%;
+    width: 100%;
     height: 100%;
     transition: transform 0.3s ease-in-out;
     display: block;
@@ -142,6 +148,7 @@ const ImageContainer = styled.div`
     img{
       border-radius: 25px;
       cursor: pointer;
+      transform: scale(1.05);
       transform: scale(1.05);
     }
   }
@@ -169,10 +176,12 @@ flex-wrap: wrap;
 align-items: center;
 justify-content: center;
 text-align: center;
+text-align: center;
 margin-top: 5px;
 margin-bottom: 25px;
 color: rgb(0, 62, 128);
 
+@media screen and (max-width: 75em) {
 @media screen and (max-width: 75em) {
   margin: 7px;
   text-align: center;
@@ -180,12 +189,14 @@ color: rgb(0, 62, 128);
   font-size: 1.4em;
 }
 @media screen and (max-width: 42em) {
+@media screen and (max-width: 42em) {
   margin: 7px;
   width: 300px;
 }
 
 `
 const Description = styled.p`
+  font-size: 1em;
   font-size: 1em;
   text-align: center;
   display: flex;
@@ -195,6 +206,7 @@ const Description = styled.p`
 
 
 @media screen and (max-width: 75em) {
+@media screen and (max-width: 75em) {
     display: flex ;
     flex-wrap: wrap;
     justify-content: center;
@@ -202,6 +214,7 @@ const Description = styled.p`
     margin-top: 1vh;
     font-size: 1em;
 }
+@media screen and (max-width: 42em) {
 @media screen and (max-width: 42em) {
     display: flex ;
     flex-wrap: wrap;
@@ -234,12 +247,14 @@ const SkillsContainer = styled.div`
 
 
 @media screen and (max-width: 75em) {
+@media screen and (max-width: 75em) {
     display: flex;
     justify-content: center;
     width: 90%;
     align-items: center;
     height: 22vw;
   }
+@media screen and (max-width: 42em) {
 @media screen and (max-width: 42em) {
     display: flex;
     justify-content: center;
@@ -266,6 +281,7 @@ const Skills = styled.h2`
     font-size: 1em;
 
 @media screen and (max-width: 75em) {
+@media screen and (max-width: 75em) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -275,6 +291,7 @@ const Skills = styled.h2`
     height:20px;
     font-size: 0.8em;
   }
+@media screen and (max-width: 42em) {
 @media screen and (max-width: 42em) {
     display: flex;
     align-items: center;
@@ -326,9 +343,12 @@ const ProjectsPage = () => {
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom:'25px' }}>
         <a href="/nftpage" >
           <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that implements various APIs to track top sales from NFT marketplaces." skills={["JavaScript","React","Node.js","Express.js","JSON Web Token","MySQL","Axios","Argon2","OAuth2","Full Stack"]} /></a>
+          <MemberComponent img={nftImg} dir="up" name="NFT Sales Tracker" desc="A personal project that implements various APIs to track top sales from NFT marketplaces." skills={["JavaScript","React","Node.js","Express.js","JSON Web Token","MySQL","Axios","Argon2","OAuth2","Full Stack"]} /></a>
           <a href="/stockpage">
           <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio application that stores user transactions with real-time financial data." skills={["Python","Flask","SQL","Jinja", "Full Stack","Responsive Design"]} /></a>
+          <MemberComponent img={stockImg} dir="right" name="Stock Trading App" desc="A stock portfolio application that stores user transactions with real-time financial data." skills={["Python","Flask","SQL","Jinja", "Full Stack","Responsive Design"]} /></a>
           <a href="/countrypage">
+          <MemberComponent img={countryImg}  name="Country / Weather App" desc="A full stack React app that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","Express.js","Axios", "Full Stack","Responsive Design"]}  /></a>
           <MemberComponent img={countryImg}  name="Country / Weather App" desc="A full stack React app that displays country facts and weather forecasts." skills={["JavaScript","React","Node.js","Express.js","Axios", "Full Stack","Responsive Design"]}  /></a>
           <a href="/phonebookpage">
           <MemberComponent img={phoneImg}  name="Phonebook Feature" desc="A full stack React app that implements CRUD methods to manage a contacts list." skills={["JavaScript","MongoDB","Express.js","React","Node.js","Cors","Full Stack","Responsive Design"]}  /></a>

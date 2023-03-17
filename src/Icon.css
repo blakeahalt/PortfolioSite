@@ -37,8 +37,14 @@
 .features-title{
 	color: rgb(0, 62, 128);
 	font-size: 2.5em;
+	border: 3px solid purple;
+}
+.features-title{
+	color: rgb(0, 62, 128);
+	font-size: 2.5em;
 }
 .skills-title{
+	font-size: 1.7em;
 	font-size: 1.7em;
 	color: rgb(0, 62, 128);
 	box-shadow: 3px 7px 15px 2px rgba(0,0,0,0.2);
@@ -47,6 +53,7 @@
 	flex-direction: column;
 	justify-content: center;
 	padding: 2vh;
+	margin: .5vh;
 	width: auto;
 	border: 2px solid rgb(0, 62, 128, 0.8);
 	border-radius: 25px;
@@ -69,6 +76,7 @@
 	padding: .5em;
 	margin: .5em;
 	width: 70%;
+	height: 5vh;
 	max-height: 24vh;
 	border: 1px solid rgb(0,0,0,0.4); 
 	background-color: rgb(204, 145, 29, 0.2);
@@ -100,7 +108,11 @@
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: center;
+	margin-top: 5vh;
+	margin-bottom: 2vh;	
+	margin: 0 auto;
+	width: 85%;
 }
 .features-title{
 	text-align: center;
@@ -108,13 +120,14 @@
 
 }
 .icon{
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	margin: 0 auto;
-	margin: 1vh;
+	margin: 5vw auto;
 }
 .icon-title{
-	text-align: center;
-	font-size: 1.3em;
+	margin: 0 auto;
+	font-size: 1.7em;
 	margin-top: 2vh;
 	color: rgb(0, 62, 128);
 }
@@ -131,8 +144,9 @@
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row;
-		justify-content: space-evenly;
-		
+		justify-content: center;
+		margin-top: 5vh;
+		margin-bottom: 2vh;
 		
 	}
 	.features-title{
@@ -140,11 +154,14 @@
 		font-size: 2.5rem;
 	}
 	.icon{
-		margin-bottom: 2vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 45%;
 	}
 	.icon-title{
-		text-align: center;
-		font-size: 1.3em;
+		margin: 0 auto;
+		font-size: 1.7em;
 		margin-top: 2vh;
 		color: rgb(0, 62, 128);
 	}
@@ -192,12 +209,20 @@
 }
 
 @media screen and (max-width: 42em) {
+	.icon img {
+		max-width: 125px;
+		height: auto;
+		margin: 0 auto;
+	}
 	.icons {
 		display: flex;
 		flex-direction: row;
-		flex-wrap: wrap;
-		margin-top: -2vh;
-		margin-bottom: 4vh;
+		justify-content: center;
+		margin-top: 5vh;
+		margin-bottom: 2vh;
+		
+		/* border: 2px solid black;
+		border-radius: 0px; */
 	}
 	.replaceFeature {
 		margin-top: 20px;
@@ -209,18 +234,17 @@
 	}
 	.icon{
 		display: flex;
-		flex-wrap: wrap;
 		flex-direction: column;
 		justify-content: center;
+		width: 45%;
 		margin-bottom: 3vh;
 	}
 	
 	.icon-title{
 		color: rgb(0, 62, 128);
-		font-size: 1em;
-		text-align: center;
-		margin-top: 1vh;
-		line-height: 1.2;
+		font-size: 1.1em;
+		margin: 0 auto;
+		margin-top: .5vh;
 	}
 	.country-features{
 		height: 800px;
@@ -237,12 +261,6 @@
 	.stock-features{
 		position: relative;
 		height: auto;
-	}
-	.stock-title{
-		text-align: center;
-		font-size: 3em;
-		color: black;
-		margin-top: 1vh;
 	}
 }	
 

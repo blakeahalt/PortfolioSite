@@ -23,6 +23,7 @@ function Page() {
 
     let backgroundImage;
     let screen;
+    let screen;
   
     if (window.innerWidth > 1200) {
       backgroundImage = 710
@@ -41,7 +42,7 @@ function Page() {
             <div className="boxs header">
               <h1 className="stock-title">Stock Trading App</h1>
               <h4 className="title-date">November 2022</h4>
-              <h4 className="introduction">
+              <h4 style={{ marginTop: '3vh' }} className="introduction">
                 Manage your stock portfolio with real-time financial data.
               </h4>
               <div style={{textAlign: 'center' }} >

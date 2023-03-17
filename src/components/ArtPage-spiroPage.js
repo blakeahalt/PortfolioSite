@@ -10,7 +10,9 @@ import Nav from './NavBar'
 import Footer from './Footer'
 
 import Human from "../assets/Art/HumanHemi.png"
+import Human from "../assets/Art/HumanHemi.png"
 import Biggins from "../assets/Art/Biggins.png"
+import BigginsBase from "../assets/Art/BigginsBase.png"
 import BigginsBase from "../assets/Art/BigginsBase.png"
 import CamaraLantana from "../assets/Art/CamaraLantana.jpg"
 import Chrysanthemum from "../assets/Art/Chrysanthemum.jpg"
@@ -30,6 +32,13 @@ import Neon3 from "../assets/Art/NeonBase.png"
 import Spiro3 from "../assets/Art/Spiro3.png"
 import Spiro3Base from "../assets/Art/Spiro3Base.png"
 
+import Misc21 from "../assets/Art/Misc2.1.png"
+import Neon1 from "../assets/Art/NeonSpiro1.png"
+import Neon2 from "../assets/Art/NeonSpiro2.png"
+import Neon3 from "../assets/Art/NeonBase.png"
+import Spiro3 from "../assets/Art/Spiro3.png"
+import Spiro3Base from "../assets/Art/Spiro3Base.png"
+
 
 const Section = styled.section`
 display: flex;
@@ -41,9 +50,12 @@ margin-top: 15px;
 z-index: 0;
 
 @media screen and (max-width: 75em) {
+@media screen and (max-width: 75em) {
   justify-content: center;
   flex-wrap: wrap;
 }
+@media screen and (max-width: 42em) {
+
 @media screen and (max-width: 42em) {
 
   justify-content: center;
@@ -65,6 +77,7 @@ box-shadow: 5px 7px 15px 7px rgba(0,0,0,0.3);
 background-color: rgb(251,249,236,0.6);
 
   @media screen and (max-width: 75em) {
+  @media screen and (max-width: 75em) {
     display: flex;
     padding: 10px;
     justify-content: center;
@@ -74,11 +87,37 @@ background-color: rgb(251,249,236,0.6);
 
 
 @media screen and (max-width: 42em) {
+@media screen and (max-width: 42em) {
 flex-wrap: wrap;
 justify-content: center;
 width: 100%;
 height auto;
 text-align: center;
+}
+`
+
+const Box = styled.div`
+width: 50%;
+height: 100%;
+min-height: 60vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+@media screen and (max-width: 75em) {
+  width: 70vw;
+  height: 600px;
+  display: flex;
+  margin: 50px;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 225px;
+}
+@media screen and (max-width: 42em) {
+  margin-top: -100px;
+  margin-bottom: 50px;
+  width: 100%;
+  font-size: 0.8em
 }
 `
 
@@ -139,6 +178,8 @@ background-color: rgb(204,145,29,0.1);
 
 @media screen and (max-width: 75em) {
   max-width: 350px;
+@media screen and (max-width: 75em) {
+  max-width: 350px;
   display: flex ;
   flex-wrap: wrap;
   justify-content: center;
@@ -149,6 +190,7 @@ background-color: rgb(204,145,29,0.1);
   margin: 10px;
 }
 
+@media screen and (max-width: 42em) {
 @media screen and (max-width: 42em) {
   display: flex;
   flex-wrap: wrap;
@@ -168,6 +210,10 @@ margin: 10px;
 padding: .5rem;
 border-radius: 20px;
 cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -192,6 +238,15 @@ img{
 // }
 
 @media screen and (max-width: 75em) {
+// &:hover{
+//   img{
+//     transform: scale(1.25);
+//     position: relative;
+//     cursor: pointer;
+//   }
+// }
+
+@media screen and (max-width: 75em) {
   margin: 7px;
   padding: 10px;
   height: 315px;
@@ -202,7 +257,9 @@ img{
   width: 300px;
   height: 300px;
 }
+}
 `
+
 
 
 const Name = styled.h2`
@@ -213,6 +270,10 @@ align-items: center;
 justify-content: center;
 color: rgb(0, 62, 128);
 
+@media screen and (max-width: 75em) {
+  padding-top: 15px;
+  font-size: 1.2em;
+  margin: 5px;
 @media screen and (max-width: 75em) {
   padding-top: 15px;
   font-size: 1.2em;
@@ -236,13 +297,17 @@ const Description = styled.p`
 
 
 @media screen and (max-width: 75em) {
+@media screen and (max-width: 75em) {
   display: flex ;
   flex-wrap: wrap;
   justify-content: center;
   width: auto;
   margin-top: 0px;
   font-size: 1.1em;
+  margin-top: 0px;
+  font-size: 1.1em;
 }
+@media screen and (max-width: 42em) {
 @media screen and (max-width: 42em) {
   display: flex ;
   flex-wrap: wrap;
@@ -261,12 +326,14 @@ const Description2 = styled.p`
 
 
 @media screen and (max-width: 75em) {
+@media screen and (max-width: 75em) {
   display: flex ;
   flex-wrap: wrap;
   justify-content: center;
   width: auto;
   margin: 5px;
 }
+@media screen and (max-width: 42em) {
 @media screen and (max-width: 42em) {
   display: flex;
   flex-wrap: wrap;
@@ -304,6 +371,7 @@ padding: 6px;
 margin: 2px;
 
 @media screen and (max-width: 75em) {
+@media screen and (max-width: 75em) {
   justify-content: center;
   align-items: center;
   border: 1px solid rgb(0,0,0,0.3);  border-radius: 10px;
@@ -311,11 +379,13 @@ margin: 2px;
   margin: 2px;
 }
 @media screen and (max-width: 42em) {
+@media screen and (max-width: 42em) {
   
   border: 1px solid rgb(0,0,0,0.3);  border-radius: 10px;
 }
 `
 
+const MemberComponent = ({img, name='', desc='', desc2='', images}) => {
 const MemberComponent = ({img, name='', desc='', desc2='', images}) => {
 
     const [isFullScreen, setIsFullScreen] = useState(false);
@@ -323,10 +393,12 @@ const MemberComponent = ({img, name='', desc='', desc2='', images}) => {
     const handleFullScreen = (e) => {
       const imageElement = e.target;
       if (imageElement.requestFullscreen && !imageElement.classList.contains('slick-next') || !imageElement.classList.contains('slick-prev') ) {
+      if (imageElement.requestFullscreen && !imageElement.classList.contains('slick-next') || !imageElement.classList.contains('slick-prev') ) {
         imageElement.requestFullscreen();
         setIsFullScreen(true);
         document.addEventListener("fullscreenchange", handleFullScreenChange);
       }
+      e.preventDefault();
       e.preventDefault();
     };
 
@@ -343,6 +415,15 @@ const MemberComponent = ({img, name='', desc='', desc2='', images}) => {
       }
     };
     
+    const settings = {
+      dots: true,
+      infinite: false,     
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      outline: false,
+    };
+  
+    return (
     const settings = {
       dots: true,
       infinite: false,     
@@ -369,13 +450,33 @@ const MemberComponent = ({img, name='', desc='', desc2='', images}) => {
               ))}
             </Slider>
           )}
+        <ImageContainer >
+          {images.length === 1 ? (
+            <a onClick={isFullScreen ? handleExitFullScreen : handleFullScreen}>
+              <img src={images[0]} alt={name} className="ImageContainerSize" />
+            </a>
+          ) : (
+            <Slider className="SliderSettings" {...settings}>
+              {images.map((image) => (
+                <div key={image}>
+                  <a onClick={isFullScreen ? handleExitFullScreen : handleFullScreen}>
+                    <img src={image} alt={name} className="SliderContainerSize" />
+                    </a>
+                </div>
+              ))}
+            </Slider>
+          )}
         </ImageContainer>
+        <div className="spiro-name-desc-container">
         <div className="spiro-name-desc-container">
           <Name>{name}</Name>
           <Description>{desc}</Description>
           <Description2>{desc2}</Description2>
         </div>
       </Item>
+    );
+  };
+  
     );
   };
   
@@ -396,6 +497,21 @@ const ProjectCards = () => {
     <Section>
       <Container>
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom:'25px', width: 'auto', height: 'auto' }}>
+          <MemberComponent images={[Human]} name="Human Hempisphere at Night" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited" />
+          <MemberComponent images={[NorthAmerica]} name="North America at Night" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited"/>
+          <MemberComponent images={[Korea]} name="Korea at Night" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited"/>
+          <MemberComponent images={[Biggins, BigginsBase]} name="Biggins" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited"/>
+          <MemberComponent images={[Hydrangea]} name="Hydrangea" desc="Mixed Media: Colored pencil on paper, and Digitally Edited"/>
+          <MemberComponent images={[Chrysanthemum]} name="Chrysanthemum" desc="Mixed Media: Colored pencil on paper, and Digitally Edited"/>
+          <MemberComponent images={[RoseOfSharon]} name="Rose of Sharon" desc="Mixed Media: Colored pencil on paper, and Digitally Edited"/>
+          <MemberComponent images={[Tulips]} name="Tulips" desc="Mixed Media: Colored pencil on paper, and Digitally Edited"/>
+          <MemberComponent images={[CamaraLantana]} name="Camara Lantana" desc="Mixed Media: Colored pencil on paper, and Digitally Edited"/>
+          <MemberComponent images={[BlackEyedSusan]} name="Black Eyed Susan" desc="Mixed Media: Colored pencil on paper, and Digitally Edited"/>
+          <MemberComponent images={[GlobeThistle]} name="Globe Thistle" desc="Mixed Media: Colored pencil on paper, and Digitally Edited"/>
+          <MemberComponent images={[Misc1]} name="Misc Spirograph 1" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited"/>
+          <MemberComponent images={[Misc2, Misc21]} name="Misc Spirograph 2" desc="iPad: Procreate"/>
+          <MemberComponent images={[Neon1, Neon3]} name="Neon Spirograph" desc="iPad: Procreate"/>
+          <MemberComponent images={[Spiro3, Spiro3Base]} name="Misc Spirograph WIP" desc="iPad: Procreate"/>
           <MemberComponent images={[Human]} name="Human Hempisphere at Night" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited" />
           <MemberComponent images={[NorthAmerica]} name="North America at Night" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited"/>
           <MemberComponent images={[Korea]} name="Korea at Night" desc="Mixed Media: acrylic & paint marker on paper, Digitally Edited"/>

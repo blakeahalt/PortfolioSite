@@ -206,15 +206,45 @@ else if (window.innerWidth > 665) {
           </div>
         </Parallax>
 
+  )
+}
+else if (window.innerWidth > 1200) {
+  screen = (
+<div className='about-page-height'>
+  <Nav />
+  <div>
+    <Parallax 
+      bgImage={StandArt} 
+      blur={{ min: -10, max: 10 }}
+      bgImageClassName="opaque-image"
+      strength={300} 
+      style={{ height: '47rem', marginBottom: '5rem' }}
+    >
+      <div></div>
+    </Parallax>
+    <Parallax >
+      <div style={{ fontSize: '1em', margin: '2vw' }}>
+              <h2 style={{ marginBottom: '5vh', marginLeft: '5vw', color: 'rgb(0, 62, 128)', fontSize: '2em' }}>About me:</h2>
+          <div className="box-con">
+            <div style={{fontSize: '1em', textAlign: 'left', maxWidth: '90%', color: 'black', marginBottom: '2em' }}>
+              Building on nearly a decade of experience teaching and training English teachers in Thailand and South Korea, I continued my teaching journey in 2017 by teaching Kindergarten in Pacific Palisades, CA. While teaching, I developed a deeper interest in the tech industry and started learning Python and Javascript. I also got involved in the field by volunteering at various tech conferences held throughout Los Angeles.
+            </div>
+              <div style={{fontSize: '1em', textAlign: 'left', maxWidth: '90%', color: 'black', marginBottom: '2em' }}>
+              Because of my continued interest in technology, passion to build things that solve real problems, and improving my technical skills, in 2021, I decided to transition from teaching to pursue a software development career. Although I will miss being in the classroom, I look forward to applying my teaching skills to new opportunities and challenges.
+            </div>
+              <div style={{fontSize: '1em', textAlign: 'left', maxWidth: '90%', color: 'black', marginBottom: '2em' }}>
+              See the full stack applications I've built in the Projects section, which have a description of each project and its features along with links to a demo and my github. Also be sure to check out my artwork and blog posts!
+            </div>
+          </div>
+        </div>
+    </Parallax>
+    <Parallax>
+      <Icons />
+    </Parallax>
+  </div>
+  <Footer/>
+</div>
 
-      <Parallax  >
-        <Icons />
-      </Parallax>
-
-      </div>
-      <Footer/>
-
-    </div>
   )
 }
 
@@ -222,6 +252,7 @@ else {
   screen = (
   <div className='about-page-height font-load'>
       <Nav />
+        <div >
         <div >
         <Parallax 
           bgImage={StandArt5} 
@@ -273,6 +304,7 @@ else {
         </Parallax>
 
 
+      <Parallax style={{position: 'relative' }} >
       <Parallax style={{position: 'relative' }} >
         <Icons />
       </Parallax>

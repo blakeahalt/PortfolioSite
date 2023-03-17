@@ -35,6 +35,8 @@ padding: 3vh;
 
 @media screen and (max-width: 42em) {
 
+@media screen and (max-width: 42em) {
+
     height: 315px;
     width: 30vw;
     margin-top: -3vh;
@@ -44,6 +46,8 @@ padding: 3vh;
 .swiper{
     width: 100%;
     height: 350px;
+
+    @media screen and (max-width: 42em) {
 
     @media screen and (max-width: 42em) {
 
@@ -88,9 +92,12 @@ padding: 3vh;
     }
 
     @media screen and (max-width: 75em) {
+    @media screen and (max-width: 75em) {
     width: 3rem;
     right: -75px;
     }
+    @media screen and (max-width: 42em) {
+
     @media screen and (max-width: 42em) {
 
     width: 2rem;
@@ -112,9 +119,12 @@ padding: 3vh;
         display: none;
     }
     @media screen and (max-width: 75em) {
+    @media screen and (max-width: 75em) {
     width: 3rem;
     left: -75px;
   }
+  @media screen and (max-width: 42em) {
+
   @media screen and (max-width: 42em) {
 
     width: 2rem;

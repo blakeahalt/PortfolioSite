@@ -29,11 +29,14 @@ import Arrow from '../assets/Arrow.svg';
 const Container = styled.div`
 display: flex;
 padding: 1vh;
+padding: 1vh;
 align-items: center;
+width: auto;
 width: auto;
 height: 100%;
 z-index: -1;
 
+@media screen and (max-width: 75em) {
 @media screen and (max-width: 75em) {
     display: flex;
     justify-content: center;
@@ -74,6 +77,7 @@ z-index: -1;
     justify-content: center;
     align-items: center;
     
+    @media screen and (max-width: 42em) {
     @media screen and (max-width: 42em) {
         height: 300px
         margin-top: -25px;

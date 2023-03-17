@@ -46,6 +46,8 @@ padding: 3vh;
 
       @media screen and (max-width: 42em) {
 
+      @media screen and (max-width: 42em) {
+
       margin-top: 0px;
       height: 95%;
       width: 95vw;
@@ -87,9 +89,12 @@ padding: 3vh;
     }
 
    @media screen and (max-width: 75em) {
+   @media screen and (max-width: 75em) {
     width: 3rem;
     right: -75px;
     }
+      @media screen and (max-width: 42em) {
+
       @media screen and (max-width: 42em) {
 
     width: 2rem;
@@ -111,9 +116,12 @@ padding: 3vh;
         display: none;
     }
    @media screen and (max-width: 75em) {
+   @media screen and (max-width: 75em) {
     width: 3rem;
     left: -75px;
   }
+    @media screen and (max-width: 42em) {
+
     @media screen and (max-width: 42em) {
 
     width: 2rem;
@@ -197,6 +205,7 @@ useEffect(() => {
               onMouseEnter={() => slideToIndex(3)}
               onMouseLeave={() => slideToIndex(activeSlideIndex)}
             />
+            <div style={{ textAlign: 'center' }} className="icon-title" >Daily/Weekly/Monthly Sales</div>
             <div style={{ textAlign: 'center' }} className="icon-title" >Daily/Weekly/Monthly Sales</div>
           </div>
         </div>
@@ -296,6 +305,7 @@ screen =(
         <div className="icon-title">Protected Routes</div>
     </div>
     <div className="icon">
+    <div className="icon">
       <img 
           style={{ display: 'flex', padding: 5, width:'16vh', height:'16vh', border: '1px solid black', borderRadius: '125px', filter: 'blur(1px)' }} 
           src={sales} 
@@ -303,7 +313,7 @@ screen =(
           onMouseEnter={() => slideToIndex(3)}
           onMouseLeave={() => slideToIndex(activeSlideIndex)}
         />
-        <div className="icon-title" >Daily/Weekly/Monthly Sales</div>
+        <div style={{ textAlign: 'center' }}className="icon-title" >Daily/Weekly/Monthly Sales</div>
       </div>
     </div>
     <Container>
@@ -380,6 +390,7 @@ screen =(
           onMouseLeave={() => slideToIndex(activeSlideIndex)}
         />
         <div className="icon-title">OAuth</div>
+        <div className="icon-title">OAuth</div>
       </div>
       <div className="icon">
         <img 
@@ -412,6 +423,7 @@ screen =(
             onMouseLeave={() => slideToIndex(activeSlideIndex)}
           />
           <div style={{ textAlign:'center' }}className="icon-title" >Sales by Day/Week/Month</div>
+          <div style={{ textAlign:'center' }}className="icon-title" >Sales by Day/Week/Month</div>
         </div>
     </div>
     <Container>
@@ -437,6 +449,7 @@ screen =(
       >
         <SwiperSlide>  
         <img style={{marginLeft: '10px', marginTop:10, marginBottom:15, width: '160px', height:'260px',border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} 
+        <img style={{marginLeft: '10px', marginTop:10, marginBottom:15, width: '160px', height:'260px',border:'1px solid black', borderRadius: '25px', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)' }} 
           src={OAuth2} 
           alt="feature 2" />
           <div style={{fontSize: '.9em', marginTop: '-15px', marginLeft: '3vw', color: 'rgb(0, 62, 128)'}}>
@@ -446,6 +459,7 @@ screen =(
         <SwiperSlide > 
         <>
         <img 
+          style={{margin: '5px', marginTop: '10px', marginLeft: '10px', width: '175px', height:'260px', borderRadius: '25px', border:'1px solid black', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)'}} 
           style={{margin: '5px', marginTop: '10px', marginLeft: '10px', width: '175px', height:'260px', borderRadius: '25px', border:'1px solid black', boxShadow: '5px 7px 15px 7px rgba(0,0,0,0.3)'}} 
           src={argon2} 
           alt="feature 1" />

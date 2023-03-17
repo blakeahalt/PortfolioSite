@@ -5,6 +5,7 @@ import styled, { ThemeProvider } from 'styled-components'
 import Button from './Button'
 import Loading from './Loading';
 import '../App2.css';
+import '../App2.css';
 
 import Dizzy from '../assets/portraits/Dizzy_Done_transparent.png'
 
@@ -76,8 +77,17 @@ flex-direction: column;
   justify-content: center;
 }
 @media screen and (max-width: 75em) {
+
+@media screen and (min-width: 1700px) {
+  width: 50vw;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+@media screen and (max-width: 75em) {
   width: 70vw;
   display: flex;
+  height: 100%;
   height: 100%;
   justify-content: center;
   
@@ -98,6 +108,8 @@ const Title = styled.h2`
   margin: 0 auto;
   text-align:center;
 
+@media (max-width: 75em){
+  font-size: 1.8em;
 @media (max-width: 75em){
   font-size: 1.8em;
   width: 100%;
@@ -121,8 +133,10 @@ const SubText = styled.p`
 
 
   @media (max-width: 75em){
+  @media (max-width: 75em){
     width: 100%;
     text-align:center;
+    font-size: 1.5em;
     font-size: 1.5em;
 
 }

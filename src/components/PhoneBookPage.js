@@ -21,6 +21,7 @@ function PhoneBook() {
   
   let backgroundImage;
   let screen;
+  let screen;
   
     if (window.innerWidth > 1200) {
       backgroundImage = 710

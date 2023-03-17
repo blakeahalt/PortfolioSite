@@ -20,6 +20,7 @@ import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay, EffectCards } from "swiper";
 
 import ResumePic from "../assets/ResumePic.png";
+import ResumePic from "../assets/ResumePic.png";
 import devImg from "../assets/devImg.png"
 import StandArt from "../assets/Stand_Art.jpg"
 import StandArt2 from "../assets/Stand_Art2.jpg"
@@ -114,8 +115,11 @@ const Container = styled.div`
 const ContainerTitle = styled.div`
   margin-top: 3vh;
   margin-bottom: 3vh;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
   font-size: 3em;
   justify-content: center;
+  text-align: center;
   text-align: center;
   align-content: center;
   color: rgb(0, 62, 128);
@@ -272,13 +276,16 @@ if (window.innerWidth > 1200) {
   </div>
     <Parallax>
       <div >
+      <div >
       <div className='about-outside-container2'>
         <div className='about-dev-container2'>
+          <Slide triggerOnce direction='down' delay={150} >
           <Slide triggerOnce direction='down' delay={150} >
             <div className='dev-text-border2'>
               <div className='about-text2'>
                 <Slide direction='down' delay={200} >
                   <h4 className="dev-introduction1-2">
+                    As a full stack developer,
                     As a full stack developer,
                   </h4>
                 </Slide>
@@ -295,6 +302,7 @@ if (window.innerWidth > 1200) {
               </div>
             </div>
           </Slide>
+          <Slide triggerOnce direction='down' delay={150}>
           <Slide triggerOnce direction='down' delay={150}>
             <div 
               className="devImg2"
@@ -332,9 +340,15 @@ if (window.innerWidth > 1200) {
                 <Slide direction='down' delay={400}>
                   <h4 className="dev-introduction1-2">
                     As a former educator, 
+                    As a former educator, 
                   </h4>
                 </Slide>
                 <Slide direction='up' delay={400}>
+                  <h4 className="dev-introduction2-2">
+                  I convey information 
+                  </h4>
+                </Slide>
+                <Slide direction='up' delay={450}>
                   <h4 className="dev-introduction2-2">
                   I convey information 
                   </h4>
@@ -347,6 +361,7 @@ if (window.innerWidth > 1200) {
               </div>
             </div>
           </Slide>
+          <Slide triggerOnce direction='down' delay={350}>
           <Slide triggerOnce direction='down' delay={350}>
               <div 
                 className="devImg2"
@@ -378,13 +393,22 @@ if (window.innerWidth > 1200) {
       
       <div className='about-dev-container2'>
         <Slide triggerOnce direction='down' delay={450}>
+        <Slide triggerOnce direction='down' delay={450}>
             <div className='dev-text-border2'>
               <div className='about-text2'>
                 <Slide direction='down' delay={500}>
+                <Slide direction='down' delay={500}>
                   <h4 className="dev-introduction1-2">
+                  As an artist, 
                   As an artist, 
                   </h4>
                 </Slide>
+                <Slide direction='up' delay={550}>
+                  <h4 className="dev-introduction2-2">
+                  I explore visual narratives
+                  </h4>
+                </Slide>
+                <Slide direction='up' delay={500}>
                 <Slide direction='up' delay={550}>
                   <h4 className="dev-introduction2-2">
                   I explore visual narratives
@@ -398,6 +422,7 @@ if (window.innerWidth > 1200) {
               </div>
             </div>
           </Slide>
+          <Slide triggerOnce direction='down' delay={450}>
           <Slide triggerOnce direction='down' delay={450}>
           <div 
               className="devImg2"
@@ -523,11 +548,18 @@ if (window.innerWidth > 1200) {
                   </div>
                 </div>
 
+                <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <div>
+                    <Button fontSize='.6em' text='Go to projects &#10230;' link='/projects'></Button>
+                  </div>
+                </div>
+
                 <img 
                   src={devImg} 
                   alt="dev pic" 
                   title='Click to learn more'
                 />
+              </div>
               </div>
             </Slide>
         </div>
@@ -585,10 +617,22 @@ if (window.innerWidth > 1200) {
                         title='Click to learn more'
                       />
                 </div>
+                  <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div>
+                          <Button fontSize='.6em' text='Go to blog &#10230;' link='/blog'></Button>
+                        </div>
+                      </div>
+                      <img
+                        src={blogPic1} 
+                        alt="blog pic" 
+                        title='Click to learn more'
+                      />
+                </div>
               </Slide>
           </div>
         
         <div className='about-dev-container2'>
+        <Slide triggerOnce direction='down' delay={450}>
         <Slide triggerOnce direction='down' delay={450}>
             <div className='dev-text-border2'>
               <div className='about-text2'>
@@ -615,6 +659,7 @@ if (window.innerWidth > 1200) {
               </div>
             </div>
           </Slide>
+          <Slide triggerOnce direction='down' delay={450}>
           <Slide triggerOnce direction='down' delay={450}>
             <div 
                 className="devImg2"
@@ -738,7 +783,42 @@ if (window.innerWidth > 1200) {
                         alt="dev pic" 
                         title='Click to learn more'
                       />
+                    </div>  
+                    
+                    <div
+                      className="devImg2"
+                      onMouseEnter={() => {
+                        setHover(false);
+                      }}
+                      onMouseLeave={() => {
+                        setHover(true);
+                      }}
+                      onClick={() => { 
+                        window.location.replace('/projects')
+                        // window.location.replace('http://localhost:3000/projects')
+                        window.scrollBy({ behavior: 'smooth' });
+                      }}
+                    >
+                      <div style={{ position: 'fixed', top: '30%', bottom: 0, left: 0, right: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div>
+                          <Button fontSize='1.2em' text='Go to projects &#10230;' link='/projects'></Button>
+                        </div>
+                      </div>
+
+                      <img 
+                        src={devImg} 
+                        alt="dev pic" 
+                        title='Click to learn more'
+                      />
                     </div>
+                  </div> 
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className='about-dev-container2'>
+                    <div className='dev-text-border2'>
+                      <h4 className="dev-introduction1-2 hidden">
+                        As a former educator, I convey information using clear and concise methods.
+                      </h4>
                   </div> 
                 </SwiperSlide>
                 <SwiperSlide>
@@ -773,8 +853,38 @@ if (window.innerWidth > 1200) {
                         alt="blog pic" 
                         title='Click to learn more'
                       />
+                      
+                    <div 
+                      className="devImg2"
+                      onMouseEnter={() => {
+                        setHover(true);
+                      }}
+                      onMouseLeave={() => {
+                        setHover(false);
+                      }}
+                      onClick={() => { 
+                        window.location.replace('/blog');
+                        // window.location.replace('http://localhost:3000/blog');
+                        window.scrollBy({ behavior: 'smooth' });
+                      }}
+                    >
+                      <div style={{ position: 'fixed', top: '30%', bottom: 0, left: 0, right: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div>
+                          <Button fontSize='1.2em' text='Go to blog &#10230;' link='/blog'></Button>
+                        </div>
+                      </div>
+                      <img
+                        src={blogPic1} 
+                        alt="blog pic" 
+                        title='Click to learn more'
+                      />
                     </div>
                   </div>
+                </SwiperSlide>
+                <SwiperSlide>  
+                  <div className='about-dev-container2'>
+                    <div className='dev-text-border2'>
+                    <h4 className="dev-introduction1-2 hidden">
                 </SwiperSlide>
                 <SwiperSlide>  
                   <div className='about-dev-container2'>
@@ -783,6 +893,30 @@ if (window.innerWidth > 1200) {
                           As an artist, I explore visual narratives within the aesthetic of mathematics.
                       </h4>
                     </div>
+                    <div 
+                      className="devImg2"
+                      onMouseEnter={() => {
+                          setHover(false);
+                      }}
+                      onMouseLeave={() => {
+                          setHover(true);
+                      }}
+                      onClick={() => { 
+                          window.location.replace('/art');
+                          // window.location.replace('http://localhost:3000/art');
+                          window.scrollBy({ behavior: 'smooth' });
+                          }}
+                      >
+                      <div style={{ position: 'fixed', top: '30%', bottom: 0, left: 0, right: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div>
+                          <Button fontSize='1.2em' text='Go to art &#10230;' link='/art'></Button>
+                        </div>
+                      </div>
+                      <img 
+                          src={StandArt} 
+                          alt="stand art" 
+                          title='Click to learn more'
+                      />
                     <div 
                       className="devImg2"
                       onMouseEnter={() => {
@@ -869,6 +1003,7 @@ if (window.innerWidth > 1200) {
     <div className='font-load'>
        <div>{screen}</div>
       <Footer/>
+    </div>
     </div>
   );
 }

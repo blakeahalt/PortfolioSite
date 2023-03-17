@@ -47,6 +47,9 @@ padding: 3vh;
     @media screen and (max-width: 75em) {
   }
     @media screen and (max-width: 42em) {
+    @media screen and (max-width: 75em) {
+  }
+    @media screen and (max-width: 42em) {
       margin-top: 0px;
       height: 95%;
       width: 95vw;
@@ -88,9 +91,11 @@ padding: 3vh;
     }
 
     @media screen and (max-width: 75em) {
+    @media screen and (max-width: 75em) {
     width: 3rem;
     right: -75px;
     }
+     @media screen and (max-width: 42em) {
      @media screen and (max-width: 42em) {
     width: 2rem;
     right: 10px;
@@ -111,9 +116,11 @@ padding: 3vh;
         display: none;
     }
     @media screen and (max-width: 75em) {
+    @media screen and (max-width: 75em) {
     width: 3rem;
     left: -75px;
   }
+   @media screen and (max-width: 42em) {
    @media screen and (max-width: 42em) {
     width: 2rem;
     left: 10px;
@@ -253,7 +260,7 @@ useEffect(() => {
       screen =(
         <div className='font-load' >
             <h1 className="features-title">Features</h1>
-            <div className="icons">
+            <div style={{ marginBottom: '5vh' }} className="icons">
               <div className="icon">
                 <img 
                   style={{ padding: 5, width:'14vh', height:'14vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 

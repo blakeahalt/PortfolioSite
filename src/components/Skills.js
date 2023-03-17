@@ -69,18 +69,33 @@ border-radius: 25px;
 box-shadow: 0.3vw 0.7vw 1.5vw 0.2vw rgba(0,0,0,0.2);
 
 
+margin: .5vh;
+width: auto;
+padding: 1vh;
+height: auto;
+border: 1px solid rgb(0,0,0,0.3);
+background-color: rgb(255,255,255,0.4);
+border-radius: 25px;
+box-shadow: 0.3vw 0.7vw 1.5vw 0.2vw rgba(0,0,0,0.2);
 
+
+
+@media screen and (max-width: 75em){
+  width: auto;
+  margin: .5vh;
 @media screen and (max-width: 75em){
   width: auto;
   margin: .5vh;
 }
 @media screen and (max-width: 42em){
   width: auto;
+@media screen and (max-width: 42em){
+  width: auto;
 }
 `
 
 const Skills = styled.h2`
-font-size: 1.2em;
+font-size: 1.5em;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -91,15 +106,20 @@ border: 1px solid rgb(0, 62, 128);
 border-radius: 10px;
 padding: .5vh;
 margin: .5vh;
+padding: .5vh;
+margin: .5vh;
 
+@media screen and (max-width: 75em){
 @media screen and (max-width: 75em){
   align-items: center;
   border-radius: 10px;
-  font-size: 1.1em;
+  font-size: 1.4em;
 }
+@media screen and (max-width: 42em){
 @media screen and (max-width: 42em){
   align-items: center;
   border-radius: 10px;
+  margin: .2vh;
   margin: .2vh;
   font-size: 1em;
 }
@@ -108,6 +128,7 @@ margin: .5vh;
 
 const MemberComponent = ({skills=[]}) => {
   return(
+    <div >
     <div >
       <SkillsContainer>
         {skills.map((skill, index) => (
@@ -131,8 +152,20 @@ const Icons = () => {
                 <MemberComponent skills={["Javascript","React","HTML5","CSS","Bootstrap","React Router","Styled Components"]} />
           </SkillsItem>
           <SkillsItem >
+          </SkillsItem>
+          <SkillsItem >
             <div className="skills-title">Backend Development</div>
             <MemberComponent skills={["Node.js","Express.js","Python","Flask","Jinja","SQL","MySQL","SQLite","MongoDB"]} />
+          </SkillsItem>
+          <SkillsItem >
+            <div className="skills-title" >Testing and Deployment</div>
+            <MemberComponent  skills={["Jest","Cypress","Heroku","Styled Components"]} />
+          </SkillsItem>
+          <SkillsItem >
+            <div className="skills-title" >Other Technologies</div>
+            <MemberComponent skills={["Authorization: OAth2, JSON web tokens","Version Control: Git","Design: Procreate"]} />
+          </SkillsItem>
+        </SkillsFeatures>
           </SkillsItem>
           <SkillsItem >
             <div className="skills-title" >Testing and Deployment</div>
@@ -148,14 +181,28 @@ const Icons = () => {
     screen =(
       <>
        <SkillsFeatures>
+       <SkillsFeatures>
         <h1 className="features-title" >Skills</h1>
+        <SkillsItem>
         <SkillsItem>
             <div className="skills-title">Frontend Development</div>
                 <MemberComponent skills={["Javascript","React","HTML5","CSS","Bootstrap","React Router","Styled Components"]} />
           </SkillsItem>
           <SkillsItem >
+          </SkillsItem>
+          <SkillsItem >
             <div className="skills-title">Backend Development</div>
             <MemberComponent skills={["Node.js","Express.js","Python","Flask","Jinja","SQL","MySQL","SQLite","MongoDB"]} />
+          </SkillsItem>
+          <SkillsItem >
+            <div className="skills-title" >Testing and Deployment</div>
+            <MemberComponent  skills={["Jest","Cypress","Heroku","Styled Components"]} />
+          </SkillsItem>
+          <SkillsItem >
+            <div className="skills-title" >Other Technologies</div>
+            <MemberComponent skills={["Authorization: OAth2, JSON web tokens","Version Control: Git","Design: Procreate"]} />
+          </SkillsItem>
+        </SkillsFeatures>
           </SkillsItem>
           <SkillsItem >
             <div className="skills-title" >Testing and Deployment</div>
@@ -172,22 +219,33 @@ const Icons = () => {
   screen = (
       <> 
        <SkillsFeatures>
+       <SkillsFeatures>
         <h1 className="features-title" >Skills</h1>
+          <SkillsItem >
           <SkillsItem >
             <div className="skills-title">Frontend Development</div>
               <MemberComponent skills={["Javascript","React","HTML5","CSS","Bootstrap","React Router","Styled Components"]} />
+          </SkillsItem>
+          <SkillsItem >
           </SkillsItem>
           <SkillsItem >
             <div className="skills-title">Backend Development</div>
             <MemberComponent skills={["Node.js","Express.js","Python","Flask","Jinja","SQL","MySQL","SQLite","MongoDB"]} />
           </SkillsItem>
           <SkillsItem >
+          </SkillsItem>
+          <SkillsItem >
             <div className="skills-title">Testing and Deployment</div>
+              <MemberComponent skills={["Jest","Cypress","Heroku","Fly.io"]} />
+            </SkillsItem>
+          <SkillsItem >
               <MemberComponent skills={["Jest","Cypress","Heroku","Fly.io"]} />
             </SkillsItem>
           <SkillsItem >
             <div className="skills-title">Other Technologies</div>
               <MemberComponent skills={["Authorization: OAth2, JSON web tokens","Version Control: Git","Design: Procreate"]} />
+            </SkillsItem>
+        </SkillsFeatures> 
             </SkillsItem>
         </SkillsFeatures> 
       </>

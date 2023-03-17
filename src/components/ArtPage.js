@@ -6,6 +6,8 @@ import Nav from './NavBar'
 import Footer from './Footer'
 import '../App2.css'
 
+import '../App2.css'
+
 
 function ArtPage () {
     
