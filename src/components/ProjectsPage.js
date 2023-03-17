@@ -95,8 +95,8 @@ background-color: rgb(217,194,165);
 
 @media screen and (max-width: 75em) {
   position: relative;  
-  min-width: 25vh;
-  max-width: 32vh;
+  min-width: 30vh;
+  max-width: 45vh;
   margin: 1vh;
   display: flex;
   flex-wrap: wrap;
@@ -106,7 +106,7 @@ background-color: rgb(217,194,165);
 
 @media screen and (max-width: 42em) {
   position: relative;
-  min-width: 25vw;
+  min-width: 35vw;
   max-width: 40vh;
   display: flex;
   flex-wrap: wrap;
@@ -242,8 +242,8 @@ const SkillsContainer = styled.div`
     justify-content: center;
     width: 90%;
     align-items: center;
-    max-height: 23vw;
-    min-height: 20vh;
+    max-height: 25vw;
+    min-height: 24vh;
   }
 @media screen and (max-width: 42em) {
     display: flex;
@@ -273,6 +273,7 @@ const Skills = styled.h2`
 @media screen and (max-width: 75em) {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
     border: 1px solid rgb(0, 62, 128, 0.7);
     border-radius: 10px;
@@ -283,6 +284,7 @@ const Skills = styled.h2`
 @media screen and (max-width: 42em) {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
     border: 1px solid rgb(0, 62, 128,0.7);
     border-radius: 10px;
