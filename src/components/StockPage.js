@@ -166,7 +166,7 @@ function Page() {
     }
 
   return (
-    <>
+    <div className='font-load'>
     {screen}
       <div>
         <Parallax >
@@ -175,7 +175,7 @@ function Page() {
       </div>
 
       <Footer/>
-    </>
+    </div>
   );
 }
 

@@ -311,68 +311,71 @@ margin: 2px;
 }
 `
 const MemberComponent = ({ name='', desc='', desc2='', images}) => {
+  const [isFullScreen, setIsFullScreen] = useState(false);
+  const [fullScreenMessage, setFullScreenMessage] = useState('Tap or click to exit full screen');
 
-    const [isFullScreen, setIsFullScreen] = useState(false);
+  const handleFullScreen = (e) => {
+    const imageElement = e.target;
+    if (imageElement.requestFullscreen && !imageElement.classList.contains('slick-next') || !imageElement.classList.contains('slick-prev') ) {
+      imageElement.requestFullscreen();
+      setIsFullScreen(true);
+      document.addEventListener("fullscreenchange", handleFullScreenChange);
+    }
+    e.preventDefault();
+  };
 
-    const handleFullScreen = (e) => {
-      const imageElement = e.target;
-      if (imageElement.requestFullscreen && !imageElement.classList.contains('slick-next') || !imageElement.classList.contains('slick-prev') ) {
-        imageElement.requestFullscreen();
-        setIsFullScreen(true);
-        document.addEventListener("fullscreenchange", handleFullScreenChange);
-      }
-      e.preventDefault();
-    };
+  const handleFullScreenChange = () => {
+    if (document.fullscreenElement === null) {
+      setIsFullScreen(false);
+      setFullScreenMessage('Tap or click to exit full screen');
+      document.removeEventListener("fullscreenchange", handleFullScreenChange);
+    } else {
+      setFullScreenMessage('Click the back button to exit full screen');
+    }
+  };
 
-    const handleFullScreenChange = () => {
-      if (document.fullscreenElement === null) {
-        setIsFullScreen(false);
-        document.removeEventListener("fullscreenchange", handleFullScreenChange);
-      }
-    };
-    
-    const handleExitFullScreen = () => {
-      if (isFullScreen) {
-        document.exitFullscreen();
-      }
-    };
-    
-      const settings = {
-        dots: true,
-        infinite: false,     
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      };
+  const handleExitFullScreen = () => {
+    if (isFullScreen) {
+      document.exitFullscreen();
+    }
+  };
   
-      return (
-        <Item>
-          <ImageContainer >
-              {images.length === 1 ? (
-            <a onClick={isFullScreen ? handleExitFullScreen : handleFullScreen}>
-                  <img src={images[0]} alt={name} className="ImageContainerSize" />
-                  </a>
-              ) : (
-                <Slider className="SliderSettings" {...settings}>
-                  {images.map((image) => (
-                        <a onClick={isFullScreen ? handleExitFullScreen : handleFullScreen}>
-                    <div key={image}>
-                          <img src={image} alt={name} className="SliderContainerSize" />
-                      </div>
-                    </a>
-                  ))}
-                </Slider>
-              )}
+  const settings = {
+    dots: true,
+    infinite: false,     
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
-          </ImageContainer>
-          <div className="portrait-name-desc-container">
-            <Name>{name}</Name>
-            <Description>{desc}</Description>
-            <Description2>{desc2}</Description2>
-          </div>
-        </Item>
-      );
-    };
-    
+  return (
+    <Item>
+      <ImageContainer >
+        {images.length === 1 ? (
+          <a onClick={isFullScreen ? handleExitFullScreen : handleFullScreen}>
+            <img src={images[0]} alt={name} className="ImageContainerSize" />
+          </a>
+        ) : (
+          <Slider className="SliderSettings" {...settings}>
+            {images.map((image) => (
+              <a onClick={isFullScreen ? handleExitFullScreen : handleFullScreen}>
+                <div key={image}>
+                  <img src={image} alt={name} className="SliderContainerSize" />
+                </div>
+              </a>
+            ))}
+          </Slider>
+        )}
+      </ImageContainer>
+      <div className="portrait-name-desc-container">
+        <Name>{name}</Name>
+        <Description>{desc}</Description>
+        <Description2>{desc2}</Description2>
+      </div>
+      {isFullScreen && <fullScreenMessage>{fullScreenMessage}</fullScreenMessage>}
+    </Item>
+  );
+};
+
 
 const ProjectCards = () => {
 

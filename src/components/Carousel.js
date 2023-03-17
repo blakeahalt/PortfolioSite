@@ -32,7 +32,7 @@ padding: 1vh;
 align-items: center;
 width: auto;
 height: 100%;
-z-index: 1;
+z-index: -1;
 
 @media screen and (max-width: 75em) {
     display: flex;

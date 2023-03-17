@@ -35,7 +35,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 80vh; 
+  height: 70vh; 
   align-items: center;
 
   .swiper {
@@ -45,7 +45,7 @@ const Container = styled.div`
     justify-content: center;
     margin: 0 auto;
     width: 90%;
-    height: 90%;
+    height: auto;
     display: flex;
   }
 
@@ -64,7 +64,9 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+
     img {
       display: relative;
       object-fit: cover;
@@ -122,10 +124,10 @@ const ContainerTitle = styled.div`
 
 const ImageContainer = styled.div`
   display: flex;
-  height: 30vh;
+  height: auto;
   width: 90%;
+  margin-top: 1vh;
   justify-content: center;
-  margin-top: -1vh;
   overflow: hidden;
   box-shadow: 7px 7px 15px -3px rgba(0,0,0,0.3);
   background-color: rgb(255,255,255);
@@ -170,7 +172,7 @@ const SkillsContainer = styled.div`
   padding: 1vh;
   flex-wrap: wrap;
   margin-top: 1vh;
-  margin-bottom: -1vh;
+  margin-bottom: 1vh;
   border-radius: 25px;
   box-shadow: 3px 7px 15px 2px rgba(0, 0, 0, 0.3);
   background-color: rgb(255, 255, 255, 0.4);
@@ -864,7 +866,7 @@ if (window.innerWidth > 1200) {
   )
   }
   return (
-    <div >
+    <div className='font-load'>
        <div>{screen}</div>
       <Footer/>
     </div>

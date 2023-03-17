@@ -145,7 +145,7 @@ background-color: rgb(204,145,29,0.1);
   margin-left: auto;
   align-items: center;
   margin-right: auto;
-  height: 475px;
+  height: auto;
   margin: 10px;
 }
 

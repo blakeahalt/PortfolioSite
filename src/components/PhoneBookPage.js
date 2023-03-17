@@ -169,14 +169,14 @@ function PhoneBook() {
     }
 
   return (
-    < >
+    <div className='font-load' >
       {screen}
         <Parallax className='phonebookPage-features'>
           <Icons />
         </Parallax>
     
       <Footer/>
-    </>
+    </div>
   );
 }
 

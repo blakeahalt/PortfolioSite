@@ -217,7 +217,7 @@ function Page() {
 
 
   return (
-    <div >
+    <div className='font-load'>
       {screen}
         <Parallax >
           <Icons />

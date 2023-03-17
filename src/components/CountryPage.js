@@ -169,7 +169,7 @@ function CountryPage() {
   }
 
   return (
-    <div>
+    <div className='font-load'>
       {screen}
         <Parallax>
           <Icons />

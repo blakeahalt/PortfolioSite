@@ -34,9 +34,7 @@ function Nav({ isWhite }) {
           <div
             className={`nav-titles ${showNav ? 'show' : 'hide'}`}
             style={{
-              fontSize: '2em',
               backgroundColor: 'rgb(0,0,0,0.7)',
-              height: '60vh',
               width: '70%',
               borderRadius: '25px 0 0 25px',
               display: 'flex',
@@ -50,39 +48,31 @@ function Nav({ isWhite }) {
             }}
           >
                 <div className="navbar-title">
-                  <a
+                  <a className='menu-a'
                     href="/about"
                     onClick={handleNavTitleClick}
                   >
                     About
                   </a>
-                </div>
-                <div className="navbar-title">
-                  <a
+                  <a className='menu-a'
                     href="/projects"
                     onClick={handleNavTitleClick}
                   >
                     Projects
                   </a>
-                </div>
-                <div className="navbar-title">
-                  <a
+                  <a className='menu-a'
                     href="/art"
                     onClick={handleNavTitleClick}
                   >
                     Art
                   </a>
-                </div>
-                <div className="navbar-title">
-                  <a
+                  <a className='menu-a'
                     href="/blog"
                     onClick={handleNavTitleClick}
                   >
                     Blog
                   </a>
-                </div>
-                <div className="navbar-title">
-                  <a
+                  <a className='menu-a'
                     href="/resume"
                     onClick={handleNavTitleClick}
                   >

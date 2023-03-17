@@ -54,7 +54,6 @@ align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 3px solid pink;
 }
 `
 
@@ -148,7 +147,6 @@ const ButtonContainer = styled.div`
   }
 
   @media screen and (max-width: 42em) {
-    
   }
 `
 

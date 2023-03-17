@@ -18,7 +18,7 @@ useEffect(() => {
     }, []);
     
     return (
-        <div className='artpage font-load' style={{backgroundColor: 'rgb(221,208,195)'}}>
+        <div className='artpage font-load'>
             <Nav  />
             <div  >
                 <SpiroArt/>
