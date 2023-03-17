@@ -69,7 +69,7 @@ const Item = styled.div`
 
   @media screen and (max-width: 75rem) {
     padding: 1em;
-    min-height: 30vh;
+    height: auto;
     width: 40vw;
     flex-wrap: wrap;
     justify-content: center;
@@ -185,7 +185,7 @@ const SkillsContainer = styled.div`
 
   @media screen and (max-width: 75em) {
     width: auto;
-    height: 11vw;
+    height: 13vw;
     font-size: 1em;
     padding: 2vh;
     display: flex;
