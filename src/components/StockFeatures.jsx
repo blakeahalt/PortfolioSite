@@ -170,7 +170,7 @@ useEffect(() => {
               <div>
             </div>
           </div>
-          <div className="icon" style={{ marginLeft: '0vh' }}>
+          <div className="icon">
               <img 
                 style={{ padding: 5, width:'20vh', height:'20vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                 src={transactions} 
@@ -266,7 +266,7 @@ useEffect(() => {
                 <div>
               </div>
             </div>
-            <div className="icon">
+            <div className="icon" style={{ marginLeft: '0vh' }}>
                 <img 
                   style={{ display: 'flex', padding: 5, width:'14vh', height:'14vh', border: '1px solid black',borderRadius: '125px', filter: 'blur(1px)' }} 
                   src={transactions} 
